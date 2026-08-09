@@ -25,6 +25,7 @@
 | Sector directory | Six sector labels and short routes | Working structure pending list confirmation |
 | Connected view | “Different disciplines. A shared standard of accountability.” | Working / generic |
 | Community feature | “Present where people come together.” | Working / generic; uses supplied event image |
+| FAQ guidance | Four factual enquiry questions in native accordions | Working / generic, tied to the current contact workflow only |
 | CTA | “Bring the right work into focus.” | Working / generic |
 
 ## About `/about`
@@ -69,6 +70,13 @@ Each sector page has: hero, “What we do” service breakdown, visual “On sit
 | Contact hero | Reused supplied technology/site-context photograph | Real Mendozer-context photo; no abstract placeholder visual |
 | Enquiry fields | Name, organisation, email, phone, sector, message | Functional static-form configuration |
 | Form delivery | Pre-addressed mailto composer; optional approved endpoint env var | Functional, requires no visitor data storage |
+
+## Privacy and terms `/privacy`, `/terms`
+
+| Route | Content | Status |
+|---|---|---|
+| `/privacy` | Current mailto contact flow, hosting technical delivery, no embedded analytics/advertising tracker, privacy contact route | Factual to the current implementation. Requires client/legal review before production cutover. |
+| `/terms` | Informational website-use context, image/public-record limitations, direct contact route | Factual to the current implementation. Requires client/legal review before production cutover. |
 
 ## Footer
 

@@ -149,6 +149,7 @@ All entries below are real, reusable SVG outputs in both `/assets/vectors/` (sou
 |---|---|---|
 | `sector-structure.svg`, `sector-signal.svg`, `sector-cooling.svg`, `sector-route.svg`, `sector-energy.svg`, `sector-landscape.svg` | Six sector cards, sector intro/service areas, connected group map | External SVG masks used by `SectorGlyph`; no inline SVG icon geometry remains in React. |
 | `arrow-right.svg` | CTA and text-link affordance | External SVG mask used by `ArrowIcon`. |
+| `accordion-plus.svg` | Homepage enquiry FAQ disclosure control | External SVG mask used by the native details accordion. |
 | `menu-two-line.svg`, `close-two-line.svg` | Floating navigation and off-canvas menu controls | External SVG masks used by the accessible floating navigation control. |
 | `connected-network.svg` | Connected group map | Real SVG graphic rendered behind the six dynamically labelled sector nodes. |
 | `section-orbit.svg` | Connected group section and sector cross-over accent | Real SVG motif replaces CSS-drawn rings. |

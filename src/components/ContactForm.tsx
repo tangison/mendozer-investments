@@ -20,7 +20,7 @@ export function ContactForm() {
     const phone = String(data.get("phone") ?? "");
     const sector = String(data.get("sector") ?? "");
     const message = String(data.get("message") ?? "");
-    const subject = `Website enquiry${sector ? ` — ${sector}` : ""}`;
+    const subject = `Website enquiry${sector ? `: ${sector}` : ""}`;
     const body = [
       `Name: ${name}`,
       `Organisation: ${organisation || "Not provided"}`,
@@ -88,7 +88,7 @@ export function ContactForm() {
       </label>
       <div className="contact-form__bottom">
         <button className="button button--primary" type="submit">Prepare email enquiry <ArrowIcon /></button>
-        <p id="contact-form-note">Your email app will open with this message addressed to Mendozer.</p>
+        <p id="contact-form-note">Your email app will open with this message addressed to Mendozer. <a href="/privacy">Read the privacy notice.</a></p>
       </div>
       <p aria-live="polite" className={`contact-form__status contact-form__status--${submissionState}`}>
         {submissionState === "opening" ? "Your email enquiry is ready. If your mail app did not open, use the email link above." : null}

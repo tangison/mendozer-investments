@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-const coreRoutes = ["/", "/about", "/sectors/construction", "/sectors/technology", "/sectors/cooling", "/sectors/logistics", "/sectors/energy", "/sectors/tourism", "/community", "/contact"];
+const coreRoutes = ["/", "/about", "/sectors/construction", "/sectors/technology", "/sectors/cooling", "/sectors/logistics", "/sectors/energy", "/sectors/tourism", "/community", "/contact", "/privacy", "/terms"];
 
 test.describe("core routes", () => {
   for (const route of coreRoutes) {
@@ -27,7 +27,30 @@ test("mobile and desktop home layouts do not create horizontal overflow", async 
     expect(overflow, `horizontal overflow at ${viewport.width}px`).toBeFalsy();
     await expect(page.locator(".site-header__brand")).toBeVisible();
     await expect(page.locator(".site-footer")).toBeVisible();
+    const heroHeadingOverflows = await page.locator(".home-hero h1").evaluate((heading) => {
+      const rect = heading.getBoundingClientRect();
+      return rect.left < -1 || rect.right > window.innerWidth + 1 || heading.scrollWidth > heading.clientWidth + 1;
+    });
+    expect(heroHeadingOverflows, `hero heading overflow at ${viewport.width}px`).toBeFalsy();
   }
+});
+
+test("hero sector navigator behaves as an accessible tabbed slider", async ({ page }) => {
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  const tabs = page.getByRole("tab");
+  await expect(tabs).toHaveCount(6);
+  await tabs.nth(1).click();
+  await expect(tabs.nth(1)).toHaveAttribute("aria-selected", "true");
+  await expect(page.getByRole("tabpanel")).toContainText("Technology & Systems");
+  await expect(page.locator(".home-hero__slide-image")).toHaveAttribute("src", /technology/);
+});
+
+test("home FAQ disclosures open with useful enquiry guidance", async ({ page }) => {
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  const firstDisclosure = page.locator(".accordion-item").first();
+  await firstDisclosure.locator("summary").click();
+  await expect(firstDisclosure).toHaveAttribute("open", "");
+  await expect(firstDisclosure).toContainText("Group enquiry");
 });
 
 test("floating two-line navigation opens, traps access to the group menu, and closes", async ({ page }) => {

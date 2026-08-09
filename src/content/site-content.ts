@@ -35,6 +35,18 @@ export type Service = {
   description: string;
 };
 
+export type FaqItem = {
+  question: string;
+  answer: string;
+};
+
+export type LegalPage = {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  sections: readonly { heading: string; paragraphs: readonly string[] }[];
+};
+
 export type VerifiedFact = {
   eyebrow: string;
   title: string;
@@ -114,6 +126,29 @@ export const siteContent = {
       eyebrow: "A connected view",
       title: "Different disciplines. A shared standard of accountability.",
       body: "From physical works to essential systems, each direction remains connected to the wider group.",
+    },
+    faq: {
+      eyebrow: "Starting point",
+      title: "Start with the work in front of you.",
+      body: "A few practical answers before you prepare a group or sector enquiry.",
+      items: [
+        {
+          question: "Which sector should I choose?",
+          answer: "Choose the working direction closest to the enquiry. If the work crosses more than one area, select Group enquiry in the contact form.",
+        },
+        {
+          question: "What should I include in an enquiry?",
+          answer: "Include a short description of the work or opportunity, the relevant sector, any useful site or operating context, and the best person to contact.",
+        },
+        {
+          question: "Can I contact the group directly?",
+          answer: "Yes. The contact route lets you prepare a message to contact@mendozer.com without storing the enquiry on this website.",
+        },
+        {
+          question: "Where can I find published project detail?",
+          answer: "Project and service detail is added only when it has been approved for publication. The site does not use unverified project claims as proof.",
+        },
+      ] satisfies FaqItem[],
     },
     community: {
       eyebrow: "In the community",
@@ -462,12 +497,73 @@ export const sectors: Sector[] = [
   },
 ];
 
+export const legalPages = {
+  privacy: {
+    eyebrow: "Privacy notice",
+    title: "A clear note on website enquiries.",
+    intro: "This site is designed to present Mendozer Investments and give visitors a direct contact route. It does not operate an account area, client portal, payment flow, or on-site lead database.",
+    sections: [
+      {
+        heading: "When you prepare an enquiry",
+        paragraphs: [
+          "The contact form prepares an email in your own mail application, addressed to contact@mendozer.com. The website does not receive, store, or forward that message itself.",
+          "Your email provider and Mendozer’s inbox handle the message after you choose to send it. Include only information that is relevant to the enquiry.",
+        ],
+      },
+      {
+        heading: "Technical delivery",
+        paragraphs: [
+          "The website is hosted through Vercel to deliver pages, images, and security protections. Standard technical request information may be processed by the hosting provider as needed to operate and secure the service.",
+          "This build does not embed advertising pixels, social feeds, or a third-party analytics script.",
+        ],
+      },
+      {
+        heading: "Questions about this notice",
+        paragraphs: [
+          "For a privacy-related website enquiry, use contact@mendozer.com and state the nature of the request clearly.",
+          "This notice should be reviewed when the contact workflow, analytics, or any client-facing service changes.",
+        ],
+      },
+    ],
+  },
+  terms: {
+    eyebrow: "Website terms",
+    title: "Information for a clear first conversation.",
+    intro: "The Mendozer Investments website provides introductory group and sector information. It is not a quote, service agreement, or confirmation of project availability.",
+    sections: [
+      {
+        heading: "Information on this website",
+        paragraphs: [
+          "Content is provided to help visitors identify a relevant Mendozer working direction and begin an enquiry. Service, project, and availability detail should be confirmed directly with the group.",
+          "Mendozer may update website information as approved material becomes available.",
+        ],
+      },
+      {
+        heading: "Images and public records",
+        paragraphs: [
+          "Supplied project-context photography is captioned generically unless a specific project is approved for publication. Generated contextual imagery is labelled and is not presented as documentary project or event evidence.",
+          "The website also links to a public Namibia Government Gazette record for wholesale fuel distribution licence W/188/2017. The linked record is cited as a source, not as a broader performance claim.",
+        ],
+      },
+      {
+        heading: "Using the site",
+        paragraphs: [
+          "Do not rely on website information as a substitute for a written agreement or direct confirmation from Mendozer Investments.",
+          "For a group or sector enquiry, contact contact@mendozer.com.",
+        ],
+      },
+    ],
+  },
+} as const satisfies Record<string, LegalPage>;
+
 export const routes = [
   "/",
   "/about",
   ...sectors.map((sector) => `/sectors/${sector.slug}`),
   "/community",
   "/contact",
+  "/privacy",
+  "/terms",
 ] as const;
 
 export function getSector(slug: string): Sector | undefined {

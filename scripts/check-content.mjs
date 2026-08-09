@@ -15,6 +15,12 @@ for (const slug of requiredSlugs) {
   if (!content.includes(`/og/${slug}.png`) && !existsSync(resolve(root, `public/og/${slug}.png`))) failures.push(`Missing Open Graph asset: ${slug}`);
 }
 
+for (const utilityRoute of ["privacy", "terms"]) {
+  if (!content.includes(`"/${utilityRoute}"`)) failures.push(`Missing sitemap route: /${utilityRoute}`);
+  if (!existsSync(resolve(root, `src/app/${utilityRoute}/page.tsx`))) failures.push(`Missing public utility page: /${utilityRoute}`);
+}
+if (!content.includes("legalPages")) failures.push("Legal page content is missing");
+
 // Active asset-policy enforcement: no brand-gradient photo substitute may survive in application data.
 if (content.includes('status: "placeholder"')) failures.push("Placeholder media status remains in content data");
 if (content.includes("community-sport-gradient") || content.includes("BrandArtwork")) failures.push("Retired brand-gradient visual remains in content data");
@@ -22,7 +28,7 @@ if (!content.includes("W/188/2017") || !content.includes("Namibia Government Gaz
 if (!assetManifest.includes("GEN-001") || !assetManifest.includes("community-otjiwarongo-sport-context.png") || !assetManifest.includes("Exact prompt used")) failures.push("Generated asset ledger is incomplete for GEN-001");
 
 const vectorAssets = [
-  "arrow-right.svg", "close-two-line.svg", "connected-network.svg", "cta-accent.svg", "eyebrow-rule-blue.svg", "eyebrow-rule-navy.svg", "menu-two-line.svg", "section-orbit.svg", "sector-cooling.svg", "sector-energy.svg", "sector-landscape.svg", "sector-route.svg", "sector-signal.svg", "sector-structure.svg", "vertical-rule.svg",
+  "accordion-plus.svg", "arrow-right.svg", "close-two-line.svg", "connected-network.svg", "cta-accent.svg", "eyebrow-rule-blue.svg", "eyebrow-rule-navy.svg", "menu-two-line.svg", "section-orbit.svg", "sector-cooling.svg", "sector-energy.svg", "sector-landscape.svg", "sector-route.svg", "sector-signal.svg", "sector-structure.svg", "vertical-rule.svg",
 ];
 for (const filename of vectorAssets) {
   const source = resolve(root, "assets/vectors", filename);

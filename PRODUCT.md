@@ -34,6 +34,8 @@ The website is deliberately a **branded house**, not six sub-brands: the group i
 | `/sectors/tourism` | Dedicated sector route | Same reusable sector template, data-driven content |
 | `/community` | Sponsorship presence | Event hero, factual sponsorship cards, supplied event gallery |
 | `/contact` | Enquiry conversion | Direct email, privacy-preserving pre-addressed enquiry form, verified legal details |
+| `/privacy` | Privacy notice | Factual explanation of the current static-site and mailto enquiry workflow |
+| `/terms` | Website terms | Clear website-use context with no invented service, project, or availability claim |
 
 ## Functional requirements implemented
 

@@ -39,6 +39,8 @@ Open `http://localhost:3000`.
 - `/sectors/tourism`
 - `/community` — sponsorship presence
 - `/contact` — direct enquiry
+- `/privacy` — factual privacy notice for the current static/mailto workflow
+- `/terms` — website-use terms for current introductory group information
 
 ## Project structure
 
@@ -147,3 +149,4 @@ NEXT_PUBLIC_SITE_URL=https://mendozer.tangison.com
 - `CONTENT_PLAN.md` — content inventory/status
 - `ASSET_MANIFEST.md` — source/usage/status of visual assets
 - `PROOF.md` — intake, implementation, QA, and deployment record
+- `LAUNCH_READINESS.md`: completed checklist items, intentional exclusions, and client-authority items before production-domain cutover

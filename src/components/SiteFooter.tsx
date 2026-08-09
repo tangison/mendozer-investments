@@ -46,6 +46,8 @@ export function SiteFooter() {
             <p className="eyebrow">Company details</p>
             <span>Registration {siteContent.footer.registrationLabel}</span>
             <span>{siteContent.footer.vatLabel}</span>
+            <Link href="/privacy">Privacy notice</Link>
+            <Link href="/terms">Website terms</Link>
             <a href={fuelLicence.sourceUrl} rel="noreferrer" target="_blank">
               Wholesale fuel licence W/188/2017
             </a>

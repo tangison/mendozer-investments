@@ -5,6 +5,7 @@ import "@fontsource/poppins/600.css";
 import "@fontsource/poppins/700.css";
 import "@fontsource/poppins/800.css";
 import "./globals.css";
+import { brandAssets } from "@/brand/assets";
 import { siteConfig } from "@/brand/site-config";
 import { MotionController } from "@/components/MotionController";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -52,9 +53,23 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    logo: new URL(brandAssets.logoLight, siteConfig.url).toString(),
+    email: siteConfig.email,
+    identifier: [
+      { "@type": "PropertyValue", propertyID: "Registration number", value: siteConfig.registration },
+      { "@type": "PropertyValue", propertyID: "VAT number", value: siteConfig.vat },
+    ],
+  };
+
   return (
     <html lang="en">
       <body>
+        <script dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} type="application/ld+json" />
         <MotionController />
         <SkipLink />
         <SiteHeader />

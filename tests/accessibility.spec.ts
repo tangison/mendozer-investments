@@ -1,7 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-for (const route of ["/", "/about", "/sectors/technology", "/community", "/contact"]) {
+for (const route of ["/", "/about", "/sectors/technology", "/community", "/contact", "/privacy", "/terms"]) {
   test(`accessibility baseline: ${route}`, async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto(route, { waitUntil: "domcontentloaded" });

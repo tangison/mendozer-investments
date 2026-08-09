@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { AccordionList } from "@/components/AccordionList";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { HomeHero } from "@/components/HomeHero";
 import { MediaFrame } from "@/components/MediaFrame";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -14,34 +16,21 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const { hero, home } = siteContent;
+  const { home } = siteContent;
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: home.faq.items.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
 
   return (
     <>
-      <section className="home-hero">
-        <div className="home-hero__media"><MediaFrame asset={hero.media} caption={false} priority sizes="100vw" /></div>
-        <div className="home-hero__overlay" />
-        <div aria-hidden="true" className="home-hero__rule" />
-        <div className="home-hero__inner site-container">
-          <div className="home-hero__copy">
-            <p className="eyebrow eyebrow--light hero-reveal hero-reveal--one">{hero.eyebrow}</p>
-            <h1 aria-label={`${hero.titleLineOne} ${hero.titleLineTwo}`}>
-              <span className="hero-word hero-reveal hero-reveal--two">{hero.titleLineOne}</span>
-              <span className="hero-word hero-reveal hero-reveal--three">{hero.titleLineTwo}</span>
-            </h1>
-            <p className="home-hero__supporting hero-reveal hero-reveal--four">{hero.supporting}</p>
-            <div className="home-hero__actions hero-reveal hero-reveal--five">
-              <Link className="button button--primary" href={hero.primaryCta.href}>{hero.primaryCta.label} <ArrowIcon /></Link>
-              <Link className="text-link text-link--light" href={hero.secondaryCta.href}>{hero.secondaryCta.label} <ArrowIcon /></Link>
-            </div>
-          </div>
-          <div className="home-hero__marker hero-reveal hero-reveal--five">
-            <span>01</span>
-            <p>Group overview</p>
-          </div>
-        </div>
-        <p className="home-hero__caption">{hero.media.caption}</p>
-      </section>
+      <script dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} type="application/ld+json" />
+      <HomeHero />
 
       <section className="section introduction-section">
         <div className="site-container introduction-section__grid">
@@ -126,6 +115,17 @@ export default function HomePage() {
             />
             <Reveal delay={230}><Link className="text-link" href="/community">View community & sponsorship <ArrowIcon /></Link></Reveal>
           </div>
+        </div>
+      </section>
+
+      <section className="section home-faq">
+        <div className="site-container home-faq__grid">
+          <SectionHeading
+            body={home.faq.body}
+            eyebrow={home.faq.eyebrow}
+            title={home.faq.title}
+          />
+          <Reveal delay={110} variant="right"><AccordionList items={home.faq.items} /></Reveal>
         </div>
       </section>
 

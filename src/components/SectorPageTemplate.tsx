@@ -42,7 +42,7 @@ export function SectorPageTemplate({ sector }: SectorPageTemplateProps) {
       </section>
 
       <section className="section section--services">
-        {/* PLACEHOLDER: replace with client copy — service descriptions are generic pending client confirmation. */}
+        {/* PLACEHOLDER: replace with client copy. Service descriptions are generic pending client confirmation. */}
         <div className="site-container">
           <div className="service-list">
             {sector.services.map((service, index) => (
