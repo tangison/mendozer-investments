@@ -1,0 +1,147 @@
+# Mendozer Investments
+
+A production-ready, image-led corporate website for Mendozer Investments. Built with **Next.js, TypeScript, Tailwind, and Vercel** as a static-first site with a reusable Tangison multi-sector corporate starter architecture.
+
+> **Deployment guardrail:** this build stages on `mendozer.tangison.com`. Do **not** connect or deploy `mendozer.com` without separate written authorisation.
+
+## Quick start
+
+```bash
+npm install
+cp .env.example .env.local
+npm run dev
+```
+
+Open `http://localhost:3000`.
+
+### Available commands
+
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Local Next.js development server |
+| `npm run typecheck` | Strict TypeScript validation |
+| `npm run lint` | ESLint / Next Core Web Vitals rules |
+| `npm run test:content` | Static content and architecture safety checks |
+| `npm run build` | Production build |
+| `npm run test:responsive` | Playwright responsive regression suite |
+| `npm run test:a11y` | Axe accessibility test suite |
+| `npm run qa` | Type-check, lint, content checks, and production build |
+
+## Routes
+
+- `/` — group homepage
+- `/about` — group overview, working leadership card, verified registration details
+- `/sectors/construction`
+- `/sectors/technology`
+- `/sectors/cooling`
+- `/sectors/logistics`
+- `/sectors/energy`
+- `/sectors/tourism`
+- `/community` — sponsorship presence
+- `/contact` — direct enquiry
+
+## Project structure
+
+```text
+src/
+├── app/                       # Next.js routes and global presentation CSS
+│   ├── sectors/[slug]/         # One statically-generated dynamic sector route
+│   ├── about/ community/ contact/
+│   ├── robots.ts sitemap.ts manifest.ts
+│   └── globals.css
+├── brand/                     # BRAND LAYER: tokens, deployment config, official asset map
+│   ├── tokens.css
+│   ├── site-config.ts
+│   └── assets.ts
+├── content/                   # CONTENT LAYER: Mendozer copy, route labels, sectors, image mapping
+│   └── site-content.ts
+└── components/                # STRUCTURAL LAYER: reusable components/templates, no brand copy
+    ├── SectorPageTemplate.tsx
+    ├── PageHero.tsx
+    ├── SiteHeader.tsx / SiteFooter.tsx
+    └── …
+assets/                        # Exact supplied source logo/favicons; retained for provenance
+public/
+├── assets/                    # Byte-identical browser-served copies of official identity files
+├── images/projects/           # Curated public copies of supplied reference photography
+├── images/placeholders/       # Explicitly labelled abstract fallback graphics only
+└── og/                        # 1200×630 social-sharing images
+reference/photography/         # Full delivered original photo archive; not transformed
+scripts/                       # Deterministic build-time helpers (OG generation, checks)
+```
+
+## Brand / content / structure separation
+
+This repository is intentionally organised as a **Tangison starter template** for future corporate multi-sector builds:
+
+- **Brand layer:** swap `src/brand/tokens.css`, `src/brand/site-config.ts`, `src/brand/assets.ts`, `assets/`, and `public/assets/`. Components resolve tokens rather than hardcoding a palette or type pairing.
+- **Content layer:** swap `src/content/site-content.ts`; it holds client-specific copy, navigation labels, sector data, media paths, and route content. The six sector pages come from one `sectors` array.
+- **Structural layer:** retain `src/components/`, route shell, accessibility patterns, motion controller, and responsive CSS. `SectorPageTemplate` stays unchanged unless the future project needs a genuinely different page model.
+
+### Fork recipe for a future Tangison client
+
+1. Fork this repository and rename it.
+2. Replace official identity assets under `assets/`, then copy them identically to `public/assets/`.
+3. Replace the locked values in `src/brand/tokens.css` and update `src/brand/assets.ts`.
+4. Replace `src/content/site-content.ts` with approved client content and update sector/media records.
+5. Replace `/reference/photography/` and curate browser-ready copies under `/public/images/projects/`.
+6. Update `ASSET_MANIFEST.md`, `BRAND.md`, `CONTENT_PLAN.md`, OG assets (`python3 scripts/generate-og.py`), metadata, and environment URL.
+7. Run the full QA gate before deployment.
+
+Do not use the reusable structure as a reason to carry Mendozer content, logo files, or token values into another client project.
+
+## Content and asset integrity
+
+- Mendozer logo files are supplied assets; they have not been regenerated.
+- Sector photo tags are visual best-guesses pending client confirmation. Page captions deliberately avoid named project claims.
+- Placeholder gradient art is allowed only where no relevant real photo exists and is marked in source plus `ASSET_MANIFEST.md`.
+- No fake statistics, testimonials, certifications, named clients, or project claims are used.
+- The current six-sector structure and generic sector descriptions need client confirmation; see `CONTENT_PLAN.md`.
+
+## Motion and accessibility
+
+The site uses a single `IntersectionObserver` reveal controller. The homepage hero adds controlled stagger/clip reveals; other movement is intentionally minimal. `prefers-reduced-motion: reduce` disables motion and leaves content visible.
+
+Accessibility foundations include semantic landmarks, skip link, visible focus treatments, labelled form controls, local fonts, reduced motion, image alt text, responsive layouts, and an Axe/Playwright gate.
+
+## Contact form delivery
+
+The site is static-first and does not collect messages itself. By default, the form opens the visitor’s email app with an addressed message to `contact@mendozer.com`.
+
+For direct in-page submission, configure an approved form delivery service and set:
+
+```bash
+NEXT_PUBLIC_CONTACT_FORM_ENDPOINT=https://your-approved-endpoint.example/contact
+```
+
+The endpoint should accept a JSON `POST` with `name`, `organisation`, `email`, `phone`, `sector`, and `message`, securely send to the verified inbox, validate input server-side, and apply rate limiting / spam control. Never place an SMTP, Resend, or other secret in `NEXT_PUBLIC_*` variables.
+
+## Deployment
+
+### Environment
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://mendozer.tangison.com
+```
+
+`NEXT_PUBLIC_SITE_URL` is the only canonical-domain setting. It keeps staging and later cutover changes out of components, metadata, and sitemap code.
+
+### Vercel
+
+1. Import the private GitHub repository into the intended Vercel account/team or deploy via the Vercel CLI.
+2. Set `NEXT_PUBLIC_SITE_URL=https://mendozer.tangison.com` for the staging production deployment.
+3. Confirm build success, production preview URL, headers, mobile layout, metadata, and TLS.
+4. Connect **only** `mendozer.tangison.com` at this stage.
+5. Do not add `mendozer.com` until an explicit domain-cutover authorisation is provided.
+
+`vercel.json` includes conservative browser security headers. The site has no database or server-side secrets.
+
+## Documentation
+
+- `SYSTEM.md` — original operating constraints
+- `BUILD_PLAN.md` — supplied build plan
+- `BRAND.md` — implementation brand reference
+- `PRODUCT.md` — product scope and non-goals
+- `CONTENT_PLAN.md` — content inventory/status
+- `ASSET_MANIFEST.md` — source/usage/status of visual assets
+- `PROOF.md` — intake, implementation, QA, and deployment record
