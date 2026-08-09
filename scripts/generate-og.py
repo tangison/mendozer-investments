@@ -26,7 +26,7 @@ pages = {
     "energy": ("Fuel & Energy\nDistribution", "Mendozer Investments", ROOT / "public/images/projects/fuel-energy/plant-piping.jpg"),
     "tourism": ("Tourism &\nAgriculture", "Mendozer Investments", ROOT / "public/images/projects/tourism/IMG-20260808-WA0055.jpg"),
     "community": ("Community &\nSponsorship", "Mendozer Investments", ROOT / "public/images/projects/community/IMG-20260808-WA0077.jpg"),
-    "contact": ("Start with the right\nconversation.", "Contact Mendozer Investments", None),
+    "contact": ("Start with the right\nconversation.", "Contact Mendozer Investments", ROOT / "public/images/projects/technology/IMG-20260808-WA0061.jpg"),
 }
 
 
@@ -50,19 +50,10 @@ def add_gradient_overlay(image: Image.Image):
     return Image.alpha_composite(image.convert("RGBA"), overlay)
 
 
-def add_contact_background():
-    image = Image.new("RGBA", (W, H), NAVY + (255,))
-    draw = ImageDraw.Draw(image, "RGBA")
-    draw.polygon([(520, 680), (840, 170), (1120, 450), (1200, 680)], fill=CYAN + (220,))
-    draw.polygon([(780, 680), (1030, 300), (1240, 510), (1240, 680)], fill=(30, 79, 199, 210))
-    draw.line([(510, 630), (835, 172), (1118, 450)], fill=WHITE + (90,), width=2)
-    return image
-
-
 logo = Image.open(LOGO).convert("RGBA")
 for slug, (title, subtitle, photo_path) in pages.items():
-    background = crop_cover(Image.open(photo_path)) if photo_path else add_contact_background()
-    canvas = add_gradient_overlay(background) if photo_path else background
+    background = crop_cover(Image.open(photo_path))
+    canvas = add_gradient_overlay(background)
     draw = ImageDraw.Draw(canvas, "RGBA")
 
     # Exact client-supplied logo asset is placed intact on a quiet field.

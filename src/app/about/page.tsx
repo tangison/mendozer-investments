@@ -74,11 +74,18 @@ export default function AboutPage() {
             <SectionHeading inverse eyebrow="Company details" title="Verified registration details." />
           </div>
           <Reveal delay={140}>
-            <dl>
-              <div><dt>Registration no.</dt><dd>{siteConfig.registration}</dd></div>
-              <div><dt>VAT no.</dt><dd>{siteConfig.vat}</dd></div>
-              <div><dt>Contact</dt><dd><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></dd></div>
-            </dl>
+            <div>
+              <dl>
+                <div><dt>Registration no.</dt><dd>{siteConfig.registration}</dd></div>
+                <div><dt>VAT no.</dt><dd>{siteConfig.vat}</dd></div>
+                <div><dt>Contact</dt><dd><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></dd></div>
+              </dl>
+              <div className="legal-section__licence">
+                <p className="eyebrow eyebrow--light">{about.fuelLicence.eyebrow}</p>
+                <p>{about.fuelLicence.body}</p>
+                <a href={about.fuelLicence.sourceUrl} rel="noreferrer" target="_blank">Source: {about.fuelLicence.sourceLabel}</a>
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>

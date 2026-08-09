@@ -61,6 +61,23 @@ export function SectorPageTemplate({ sector }: SectorPageTemplateProps) {
         </div>
       </section>
 
+      {sector.verifiedFact ? (
+        <section className="section sector-verified">
+          <div className="site-container sector-verified__inner">
+            <Reveal variant="left">
+              <p className="eyebrow">{sector.verifiedFact.eyebrow}</p>
+              <h2>{sector.verifiedFact.title}</h2>
+            </Reveal>
+            <Reveal delay={120} variant="right">
+              <p>{sector.verifiedFact.body}</p>
+              <a className="text-link" href={sector.verifiedFact.sourceUrl} rel="noreferrer" target="_blank">
+                <span>Source: {sector.verifiedFact.sourceLabel}</span><ArrowIcon />
+              </a>
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
+
       <section className="section section--gallery">
         <div className="site-container sector-gallery">
           <div className="sector-gallery__heading">

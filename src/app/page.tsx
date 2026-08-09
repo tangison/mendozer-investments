@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { MediaFrame } from "@/components/MediaFrame";
@@ -94,16 +95,21 @@ export default function HomePage() {
           </div>
           <Reveal delay={140} variant="right">
             <div className="connected-map" aria-label="Six connected Mendozer working areas" role="img">
+              <Image
+                alt=""
+                aria-hidden="true"
+                className="connected-map__network"
+                fill
+                sizes="(max-width: 760px) 100vw, 40vw"
+                src="/assets/vectors/connected-network.svg"
+                unoptimized
+              />
               {sectors.map((sector, index) => (
                 <div className={`connected-map__node connected-map__node--${index + 1}`} key={sector.slug}>
                   <SectorGlyph name={sector.glyph} />
                   <span>{sector.shortTitle}</span>
                 </div>
               ))}
-              <span aria-hidden="true" className="connected-map__line connected-map__line--one" />
-              <span aria-hidden="true" className="connected-map__line connected-map__line--two" />
-              <span aria-hidden="true" className="connected-map__line connected-map__line--three" />
-              <span aria-hidden="true" className="connected-map__core" />
             </div>
           </Reveal>
         </div>

@@ -7,6 +7,18 @@
 - All 50 supplied `IMG-*` files are retained in `/reference/photography/`, exactly as delivered. Selected presentation copies are in `/public/images/projects/`; source originals remain untouched in `/reference/photography/`.
 - Every sector assignment below is an **unconfirmed visual best-guess**. Do not use a filename or this inferred category as a public project name. On site, captions remain generic (for example, “Infrastructure work in progress”).
 
+## Active asset policy — 2026-08-09 amendment
+
+This amendment supersedes every prior instruction that permitted a brand-gradient graphic to stand in for missing photography.
+
+1. **Supplied photography comes first.** Use the real Mendozer-context archive when it fits the individual page placement.
+2. **Generated photography is the only missing-photo fallback.** If no relevant supplied or approved reusable generated master exists, commission one real-photography-style master through `tangison-imagegen`.
+3. **Ultra-minimalism is mandatory.** A generated frame may contain only one, two, or three deliberate elements, with generous negative space. It must avoid staged corporate-stock scenes, crowded compositions, fake branding, fake text, and generic regional tropes.
+4. **Mendozer context is mandatory.** Prompts are grounded in the actual supplied archive: telecom tower rigging, road construction, steel structural work, plant piping, crew/site visits, and relevant Namibian desert, Windhoek, or coastal industrial conditions. Generated output is contextual visual support, never evidence of a named project.
+5. **Complete ledger required.** Every generated master records its exact prompt, source file path, target pages/placements, caption, alt text, and reuse in the generated-asset ledger below.
+6. **Vector route required.** Icons, dividers, arrows, connection maps, and decorative motifs are packaged as reusable SVG outputs through `tangison-vectorgraphics`. CSS/Tailwind handles layout and motion, not imitations of vector artwork.
+7. **No logo generation.** The official supplied Mendozer logo is never regenerated or inserted by an image model.
+
 ## Logos
 
 | Asset | Source | Status | Use |
@@ -88,7 +100,7 @@
 | Asset / record | Status | Use |
 |---|---|---|
 | Miss Teen Namibia 2026 event-backdrop photos (`WA0076–WA0078`) | Real, client-supplied | Community/Sponsorship page; describes sponsorship visibility, not event organisation |
-| Otjiwarongo Sports Bonanza | Listed in original client-supplied manifest as a sponsor acknowledgement | No supplied usable event photo located in the intake batch; represented with labelled brand-gradient placeholder only |
+| Otjiwarongo Sports Bonanza | Listed in original client-supplied manifest as a sponsor acknowledgement | No supplied usable event photo located in the intake batch; `/public/images/generated/community-otjiwarongo-sport-context.png` is an explicitly labelled generated local-sport context visual, not event documentation |
 
 ## Curated public page photography
 
@@ -101,13 +113,46 @@
 | `/public/images/projects/fuel-energy/`, `/energy/` | Energy page | Real supplied photos; generic captions only |
 | `/public/images/projects/tourism/` | Tourism & Agriculture page | Real supplied photos; generic captions only |
 | `/public/images/projects/community/` | Community/Sponsorship page | Real supplied event images; no organiser claim |
+| `/public/images/generated/community-otjiwarongo-sport-context.png` | Otjiwarongo Sports Bonanza sponsorship card | `GEN-001` tangison-imagegen contextual visual; explicit non-documentary caption and complete ledger below |
 
-## Brand-gradient placeholder assets
+## Retired placeholder assets — removed by the amendment
 
-| Asset | Why it exists | Status |
+| Retired asset | Previous purpose | Replacement / result |
 |---|---|---|
-| `/public/images/placeholders/community-sport-gradient.svg` | No supplied usable Otjiwarongo Sports Bonanza photo found in intake | Hand-authored abstract brand-gradient placeholder; labelled in source and page data; never presented as event photography |
-| CSS `BrandArtwork` contact visual | No relevant contact-page photo exists | Abstract brand-gradient placeholder; labelled in `BrandArtwork.tsx` and `contact/page.tsx`; never presented as a project |
+| `/public/images/placeholders/community-sport-gradient.svg` | Abstract fill for the Otjiwarongo Sports Bonanza card | Removed. Replaced by `GEN-001`, a labelled tangison-imagegen local-sport context master. |
+| CSS `BrandArtwork` contact visual | Abstract contact-page background | Removed. Contact now reuses supplied real group-context photography (`IMG-20260808-WA0061.jpg`). |
+
+## Generated-asset ledger
+
+### GEN-001 — Otjiwarongo local-sport context master
+
+| Field | Record |
+|---|---|
+| File path | `/public/images/generated/community-otjiwarongo-sport-context.png` |
+| Created through | `tangison-imagegen` route, using the available image-generation service |
+| Relevant source grounding | `/reference/photography/IMG-20260808-WA0055.jpg`, `IMG-20260808-WA0067.jpg`, and `IMG-20260808-WA0076.jpg` supplied as visual references for Namibian light, semi-arid terrain, and restrained community-event context. |
+| Purpose | A quiet, non-documentary local-sport context image for the Otjiwarongo Sports Bonanza sponsorship card because no usable supplied event photograph exists for that placement. |
+| Page and placement | `/community`, Otjiwarongo Sports Bonanza sponsorship card. It is a reusable master, but has no other placement at this time. |
+| Visible status / caption | `Generated local-sport context, not event documentation` |
+| Alt text | `An empty local sport ground with a weathered football goal and low pavilion` |
+| Authenticity guard | No Mendozer logo, text, signage, people, crowd, vehicle, or claim of actual event coverage appears in the generated frame. |
+
+**Exact prompt used**
+
+> Create a restrained, photorealistic editorial photograph for the Mendozer Investments Community page. Ground the atmosphere in the attached Mendozer reference photography: truthful Namibian light, semi-arid earth tones, practical regional built context, and unembellished documentary realism. Show a quiet local sports ground at late afternoon with exactly two deliberate elements: one weathered metal football goal and one low, empty pavilion edge in the far distance. Wide landscape composition, generous open dusty field and sky, no people, no vehicles, no crowd, no staged corporate scene, no text, no signage, no logos, no watermarks, no flags, no graphic overlays. It must be clearly a generic generated local-sport context image, not a documentary photograph of Otjiwarongo Sports Bonanza. Avoid generic African stock-photo clichés. Natural color, modest contrast, authentic camera perspective.
+
+## Vector asset ledger
+
+All entries below are real, reusable SVG outputs in both `/assets/vectors/` (source) and `/public/assets/vectors/` (byte-identical served copies). They are the tangison-vectorgraphics route for all interface iconography, dividers, and non-photographic motifs.
+
+| Vector asset | Required use | Current implementation |
+|---|---|---|
+| `sector-structure.svg`, `sector-signal.svg`, `sector-cooling.svg`, `sector-route.svg`, `sector-energy.svg`, `sector-landscape.svg` | Six sector cards, sector intro/service areas, connected group map | External SVG masks used by `SectorGlyph`; no inline SVG icon geometry remains in React. |
+| `arrow-right.svg` | CTA and text-link affordance | External SVG mask used by `ArrowIcon`. |
+| `connected-network.svg` | Connected group map | Real SVG graphic rendered behind the six dynamically labelled sector nodes. |
+| `section-orbit.svg` | Connected group section and sector cross-over accent | Real SVG motif replaces CSS-drawn rings. |
+| `cta-accent.svg` | CTA and leadership decorative accent | Real SVG motif replaces CSS gradient/cutout shapes. |
+| `eyebrow-rule-navy.svg`, `eyebrow-rule-blue.svg`, `vertical-rule.svg` | Eyebrow and vertical divider accents | Real SVG divider assets replace CSS line approximations. |
 
 ## Social sharing assets
 
@@ -119,4 +164,5 @@
 
 - Business card, roll-up banner, and step-and-repeat/banner reference images as final project imagery
 - Any generated or placeholder graphic as a claimed project, employee, credential, or event photograph
+- Brand-gradient placeholder graphics as substitutes for a missing photograph
 - Named projects, named clients, testimonials, certifications, or metrics not verified in the brief

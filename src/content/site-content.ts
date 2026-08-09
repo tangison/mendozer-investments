@@ -26,7 +26,7 @@ export type MediaAsset = {
   src: string;
   alt: string;
   caption: string;
-  status: "real" | "placeholder";
+  status: "real" | "generated";
   focus?: string;
 };
 
@@ -34,6 +34,25 @@ export type Service = {
   title: string;
   description: string;
 };
+
+export type VerifiedFact = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  sourceLabel: string;
+  sourceUrl: string;
+};
+
+/** Independently verifiable public record, safe to state without a client-verification marker. */
+export const verifiedFacts = {
+  wholesaleFuelLicence: {
+    eyebrow: "Verified public record",
+    title: "Wholesale fuel distribution licence",
+    body: "Mendozer Investments CC holds wholesale fuel distribution licence W/188/2017.",
+    sourceLabel: "Namibia Government Gazette No. 8287, 3 January 2024, p. 6",
+    sourceUrl: "https://www.lac.org.na/laws/2024/8287.pdf",
+  },
+} as const satisfies Record<string, VerifiedFact>;
 
 export type Sector = {
   slug: SectorSlug;
@@ -48,6 +67,7 @@ export type Sector = {
   gallery: [MediaAsset, MediaAsset];
   services: Service[];
   crossover: string;
+  verifiedFact?: VerifiedFact;
 };
 
 export const siteContent = {
@@ -143,6 +163,7 @@ export const siteContent = {
       role: "Managing Director",
       note: "A formal leadership profile will be added once approved by the client.",
     },
+    fuelLicence: verifiedFacts.wholesaleFuelLicence,
   },
   community: {
     eyebrow: "Community & sponsorship",
@@ -169,12 +190,13 @@ export const siteContent = {
       },
       {
         title: "Otjiwarongo Sports Bonanza",
-        body: "Listed in the client-supplied sponsorship record as a Mendozer sponsor acknowledgement, not an organiser credit.",
+        body: "Listed in the client-supplied sponsorship record as a Mendozer sponsor acknowledgement, not an organiser credit. The visual is generated local-sport context, not event documentation.",
         media: {
-          src: "/images/placeholders/community-sport-gradient.svg",
-          alt: "Abstract Mendozer brand-gradient graphic",
-          caption: "Brand-gradient placeholder graphic",
-          status: "placeholder",
+          src: "/images/generated/community-otjiwarongo-sport-context.png",
+          alt: "An empty local sport ground with a weathered football goal and low pavilion",
+          caption: "Generated local-sport context, not event documentation",
+          status: "generated",
+          focus: "50% 54%",
         } satisfies MediaAsset,
       },
     ],
@@ -183,6 +205,14 @@ export const siteContent = {
     eyebrow: "Contact",
     title: "Start with the right conversation.",
     body: "Tell us what you are considering and the relevant Mendozer sector. Your email app will open with the enquiry prepared for the group.",
+    // Reused real group-context photography. No abstract placeholder is required for this placement.
+    media: {
+      src: "/images/projects/technology/IMG-20260808-WA0061.jpg",
+      alt: "A communications tower above a prepared site",
+      caption: "Infrastructure work in progress",
+      status: "real",
+      focus: "50% 53%",
+    } satisfies MediaAsset,
     email: "contact@mendozer.com",
   },
   footer: {
@@ -388,6 +418,7 @@ export const sectors: Sector[] = [
       { title: "Site support", description: "Working with the visible infrastructure behind essential services." },
       { title: "Operational alignment", description: "Considering continuity across related group capabilities." },
     ],
+    verifiedFact: verifiedFacts.wholesaleFuelLicence,
     crossover: "Energy work is introduced alongside the infrastructure, logistics, and systems around it.",
   },
   {

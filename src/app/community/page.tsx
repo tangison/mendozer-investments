@@ -33,7 +33,7 @@ export default function CommunityPage() {
           {community.initiatives.map((initiative, index) => (
             <Reveal delay={index * 120} key={initiative.title} variant={index === 0 ? "left" : "right"}>
               <article className="initiative-card">
-                {/* PLACEHOLDER: second initiative image is an explicitly labelled brand-gradient graphic until supplied event photography is available. */}
+                {/* GEN-001: generated local-sport context master, labelled as non-documentary event context in page data and ASSET_MANIFEST.md. */}
                 <MediaFrame asset={initiative.media} className="media-frame--initiative" sizes="(max-width: 900px) 100vw, 50vw" />
                 <div className="initiative-card__body">
                   <p className="eyebrow">Sponsorship</p>

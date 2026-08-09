@@ -13,6 +13,8 @@
 3. Caption every sector-context image generically — primarily **“Infrastructure work in progress.”**
 4. The six-sector model is a working configuration awaiting confirmation. Content source marks the service descriptions as placeholders.
 5. The verified public contact endpoint is `contact@mendozer.com`.
+6. A missing specific photograph uses a logged, ultra-minimal tangison-imagegen contextual master only after relevant supplied photography has been ruled out. Brand-gradient substitutes are not used.
+7. Generated visual captions must state their non-documentary status when a visitor could confuse them with real project or event coverage.
 
 ## Home `/`
 
@@ -33,6 +35,7 @@
 | Approach | One identity / multi-sector perspective / local context | Working / generic, not proof claims |
 | Leadership | Johannes Negumbo, Managing Director | Name and role indicated by onboarding form; formal bio is **Placeholder** |
 | Registration | `CC/2009/2399`, `VAT 04948459-015` | Verified |
+| Fuel licence | Mendozer Investments CC holds wholesale fuel distribution licence `W/188/2017` | Verified public record. Plain source citation: Namibia Government Gazette No. 8287, 3 January 2024, p. 6. |
 
 ## Sectors `/sectors/[slug]`
 
@@ -44,7 +47,7 @@ All six pages consume a single reusable template and content record. The current
 | `technology` | Technology & Systems | Supplied tower / systems context, generic caption |
 | `cooling` | Cooling & Cold Chain | Supplied industrial facility context, generic caption only |
 | `logistics` | Logistics & Support Services | Supplied vehicle/container/field context, generic caption |
-| `energy` | Fuel & Energy Distribution | Supplied piping / industrial context, generic caption |
+| `energy` | Fuel & Energy Distribution | Supplied piping / industrial context, generic caption; verified licence fact cites Namibia Government Gazette No. 8287, 3 January 2024, p. 6 |
 | `tourism` | Tourism & Agriculture | Supplied landscape/rural context, generic caption |
 
 Each sector page has: hero, “What we do” service breakdown, visual “On site” context, a cross-sector link, and a contact CTA. No fabricated proof section appears; named project/certification content is intentionally absent.
@@ -55,7 +58,7 @@ Each sector page has: hero, “What we do” service breakdown, visual “On sit
 |---|---|---|
 | Hero and gallery | Client-supplied Mendozer event-backdrop photos | Verified imagery; generic “Community sponsorship event” caption |
 | Miss Teen Namibia 2026 | Sponsorship visibility documented by supplied event imagery | Verified by original asset manifest; not called an organiser credit |
-| Otjiwarongo Sports Bonanza | Sponsor acknowledgement | Verified by original asset manifest; image is **Placeholder** because no usable source photo was found in the intake batch |
+| Otjiwarongo Sports Bonanza | Sponsor acknowledgement | Verified by original asset manifest; uses `GEN-001`, an explicitly captioned generated local-sport context visual, not event documentation, because no usable source photo was found in the intake batch |
 
 ## Contact `/contact`
 
@@ -63,6 +66,7 @@ Each sector page has: hero, “What we do” service breakdown, visual “On sit
 |---|---|---|
 | Primary email | `contact@mendozer.com` | Verified by site architecture / system brief |
 | Registration/VAT | `CC/2009/2399`, `04948459-015` | Verified |
+| Contact hero | Reused supplied technology/site-context photograph | Real Mendozer-context photo; no abstract placeholder visual |
 | Enquiry fields | Name, organisation, email, phone, sector, message | Functional static-form configuration |
 | Form delivery | Pre-addressed mailto composer; optional approved endpoint env var | Functional, requires no visitor data storage |
 

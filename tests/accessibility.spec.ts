@@ -3,6 +3,7 @@ import { expect, test } from "@playwright/test";
 
 for (const route of ["/", "/about", "/sectors/technology", "/community", "/contact"]) {
   test(`accessibility baseline: ${route}`, async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
     await page.goto(route, { waitUntil: "domcontentloaded" });
     const results = await new AxeBuilder({ page })
       .withTags(["wcag2a", "wcag2aa"])

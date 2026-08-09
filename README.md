@@ -64,7 +64,8 @@ assets/                        # Exact supplied source logo/favicons; retained f
 public/
 ├── assets/                    # Byte-identical browser-served copies of official identity files
 ├── images/projects/           # Curated public copies of supplied reference photography
-├── images/placeholders/       # Explicitly labelled abstract fallback graphics only
+├── images/generated/          # Logged tangison-imagegen contextual masters only when a specific photo is unavailable
+├── assets/vectors/            # Byte-identical served SVG output from the tangison-vectorgraphics route
 └── og/                        # 1200×630 social-sharing images
 reference/photography/         # Full delivered original photo archive; not transformed
 scripts/                       # Deterministic build-time helpers (OG generation, checks)
@@ -94,7 +95,8 @@ Do not use the reusable structure as a reason to carry Mendozer content, logo fi
 
 - Mendozer logo files are supplied assets; they have not been regenerated.
 - Sector photo tags are visual best-guesses pending client confirmation. Page captions deliberately avoid named project claims.
-- Placeholder gradient art is allowed only where no relevant real photo exists and is marked in source plus `ASSET_MANIFEST.md`.
+- Brand-gradient graphics are never used as substitutes for missing photography. When a specific placement lacks a relevant supplied photo, use one logged, ultra-minimal tangison-imagegen contextual master and disclose its non-documentary status in `ASSET_MANIFEST.md`.
+- Sector icons, dividers, arrows, and decorative motifs are reusable SVG assets from the tangison-vectorgraphics route, not CSS/Tailwind approximations.
 - No fake statistics, testimonials, certifications, named clients, or project claims are used.
 - The current six-sector structure and generic sector descriptions need client confirmation; see `CONTENT_PLAN.md`.
 

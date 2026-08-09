@@ -26,11 +26,7 @@ export function SiteHeader() {
           Contact
         </Link>
         <details className="site-header__menu">
-          <summary aria-label="Open navigation menu">
-            <span />
-            <span />
-            <span />
-          </summary>
+          <summary>Menu</summary>
           <nav aria-label="Mobile navigation" className="site-header__mobile-nav">
             <Link href="/">Home</Link>
             {siteContent.navigation.map((item) => (

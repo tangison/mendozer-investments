@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/ContactForm";
-import { BrandArtwork } from "@/components/BrandArtwork";
+import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { siteConfig } from "@/brand/site-config";
@@ -17,15 +17,7 @@ export default function ContactPage() {
   const { contact } = siteContent;
   return (
     <>
-      <section className="contact-hero">
-        {/* PLACEHOLDER: an abstract brand-gradient visual is used because no relevant contact-page photography exists. */}
-        <BrandArtwork className="contact-hero__artwork" />
-        <div className="site-container contact-hero__inner">
-          <Reveal><p className="eyebrow eyebrow--light">{contact.eyebrow}</p></Reveal>
-          <Reveal delay={90}><h1>{contact.title}</h1></Reveal>
-          <Reveal delay={180}><p>{contact.body}</p></Reveal>
-        </div>
-      </section>
+      <PageHero body={contact.body} eyebrow={contact.eyebrow} media={contact.media} title={contact.title} />
       <section className="section contact-section">
         <div className="site-container contact-section__grid">
           <div className="contact-section__details">

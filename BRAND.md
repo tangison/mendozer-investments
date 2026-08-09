@@ -62,13 +62,16 @@ Structural additions in `tokens.css` (`--container-max`, modest radii, shadow, a
 - Do not place the full-color lockup over busy photography. The site uses it only in quiet header/footer fields and social layout panels.
 - Tangison’s supplied white logo is used only in the required footer credit link.
 
-## Imagery
+## Imagery and vector policy
 
-- Use client-supplied photography where it visually fits.
+- Use client-supplied photography where it visually fits the individual placement.
 - All sector assignments are **unconfirmed visual matches**. Captions therefore say “Infrastructure work in progress” or another generic observational phrase, never a named project.
 - Event imagery is restricted to Community & Sponsorship.
-- The only placeholder visuals are abstract Mendozer gradient graphics where no relevant real photo was supplied. They are explicitly marked in both source and `ASSET_MANIFEST.md`.
-- No generated graphic represents a real site, staff member, credential, or event.
+- A missing specific photograph uses a recorded `tangison-imagegen` real-photography-style master only after the supplied archive and existing generated masters have been assessed.
+- Generated frames are ultra-minimal: one, two, or three deliberate elements, generous negative space, no staged corporate stock composition, no generated logos, no fake text, and no generic regional trope.
+- Generated imagery is grounded in the supplied Mendozer archive and clearly captioned as contextual visual support when it could be confused with documentary coverage. It never represents a real named project, staff member, credential, or event.
+- Brand-gradient graphics are not used as photo stand-ins.
+- `tangison-vectorgraphics` supplies real reusable SVG assets for sector icons, arrows, dividers, connection maps, and decorative motifs. CSS is limited to layout, state, and motion rather than imitating those assets.
 
 ## Motion system
 
