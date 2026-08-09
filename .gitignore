@@ -20,3 +20,4 @@ _logo-intake/
 # operating-system and editor files
 .DS_Store
 *.log
+.vercel

@@ -44,9 +44,9 @@ This is the material-action record for the implementation and release gate. No a
 | Accessibility | Axe WCAG 2 A/AA + keyboard skip-link test | **PASS** — Axe clean on Home, About, Technology, Community, Contact; skip link moves focus to main content |
 | Hallmark audit | Desktop/mobile visual inspection plus structural review | **PASS** — image-led hero hierarchy, custom sector glyph family, page-specific rhythm, no hand-copied sector pages, controlled density |
 | Impeccable critique | Brand, content, and visual polish review | **PASS** — locked palette/type observed, no fake proof, no stock imagery, generic captions, restrained gradient/motion use, readable contrast |
-| Remote Git verification | Push, resolve remote `main`, compare SHAs | Repository created private; push/SHA comparison pending final commit |
-| Vercel preview | Build/deploy/TLS/URL verification | Pending post-gate deployment |
-| Staging custom domain | `mendozer.tangison.com` alias/TLS verification only | Pending post-gate Vercel domain connection; **mendozer.com is excluded** |
+| Remote Git verification | Push, resolve remote `main`, compare SHAs | **PASS (initial release commit)** — `dc7e0f24bb3d68b80e79942b5526791688e1c570` matched `origin/main`; final documentation commit will be verified separately |
+| Vercel preview | Build/deploy/TLS/URL verification | **PASS** — Vercel built Next.js 16.3.0 successfully and served TLS at `https://mendozer-tangison-preview.vercel.app` |
+| Staging custom domain | `mendozer.tangison.com` alias/TLS verification only | **Attached to Vercel, DNS pending** — Vercel API reports the project domain `verified: true`, but its external Cloudflare zone has no required CNAME, so public DNS/TLS cannot yet be verified. **mendozer.com is excluded.** |
 
 ## Known content follow-up, not a build blocker
 
@@ -71,3 +71,22 @@ This is the material-action record for the implementation and release gate. No a
 - **Lighthouse (local production server, warm image cache):** Performance **91**, Accessibility **100**, Best Practices **100**, SEO **100**; FCP 0.8s, LCP 3.4s, TBT 110ms, CLS 0. The initial cold image-optimizer pass is slower locally; the release score was captured after the responsive image cache warmed.
 - **Domain guard:** source scan found no `https://mendozer.com` / `//mendozer.com` endpoint. Canonical configuration remains `NEXT_PUBLIC_SITE_URL` → `https://mendozer.tangison.com` by default.
 - **Secret guard:** source scan found no common GitHub, Vercel, cloud, or private-key credential pattern. User-provided deployment credentials were used only ephemerally and are not written to repository files.
+
+
+## GitHub and Vercel release record
+
+- **GitHub:** created fresh private repository `https://github.com/tangison/mendozer-investments`; local repository initialized on `main`.
+- **Git push:** first release commit `dc7e0f24bb3d68b80e79942b5526791688e1c570` pushed to `origin/main`; local and remote SHA were compared and matched. Remote URL contains no access token.
+- **Vercel project:** created `mendozer-tangison-preview` and connected it to the GitHub repository on the Tangison Vercel workspace. `NEXT_PUBLIC_SITE_URL` is configured for production and preview as `https://mendozer.tangison.com`.
+- **Vercel deployment:** production build completed successfully in Vercel’s build environment. Working custom Vercel preview URL: `https://mendozer-tangison-preview.vercel.app`.
+- **Preview verification:** HTTPS returned `200`, title is `Mendozer Investments | Multi-Sector Solutions, Built for Namibia`, and configured security headers are present (`Strict-Transport-Security`, `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, `Permissions-Policy`).
+- **Staging domain attachment:** attached **only** `mendozer.tangison.com` to the Vercel project. No call or configuration touched `mendozer.com`.
+- **Staging DNS blocker:** Vercel reports the `tangison.com` zone is externally managed on Cloudflare and `mendozer.tangison.com` is currently misconfigured / non-resolving. Its recommended unique CNAME is:
+
+  ```text
+  Host/Name: mendozer
+  Type: CNAME
+  Target: d518d3e54da4658b.vercel-dns-017.com
+  ```
+
+  The Vercel token does not provide Cloudflare DNS write access. After that CNAME is added in the Cloudflare zone, verify public DNS propagation and HTTPS at `https://mendozer.tangison.com`; no production-domain action is needed or authorised.
