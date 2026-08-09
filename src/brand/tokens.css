@@ -41,6 +41,7 @@
   --radius-sm: 0.5rem;
   --radius-md: 1rem;
   --radius-lg: 1.5rem;
+  --radius-pill: 999px;
   --shadow-lift: 0 1.5rem 4rem color-mix(in srgb, var(--color-bg-dark-primary) 15%, transparent);
   --ease-out-expressive: cubic-bezier(0.16, 1, 0.3, 1);
   --duration-fast: 180ms;

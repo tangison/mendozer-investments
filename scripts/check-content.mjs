@@ -22,7 +22,7 @@ if (!content.includes("W/188/2017") || !content.includes("Namibia Government Gaz
 if (!assetManifest.includes("GEN-001") || !assetManifest.includes("community-otjiwarongo-sport-context.png") || !assetManifest.includes("Exact prompt used")) failures.push("Generated asset ledger is incomplete for GEN-001");
 
 const vectorAssets = [
-  "arrow-right.svg", "connected-network.svg", "cta-accent.svg", "eyebrow-rule-blue.svg", "eyebrow-rule-navy.svg", "section-orbit.svg", "sector-cooling.svg", "sector-energy.svg", "sector-landscape.svg", "sector-route.svg", "sector-signal.svg", "sector-structure.svg", "vertical-rule.svg",
+  "arrow-right.svg", "close-two-line.svg", "connected-network.svg", "cta-accent.svg", "eyebrow-rule-blue.svg", "eyebrow-rule-navy.svg", "menu-two-line.svg", "section-orbit.svg", "sector-cooling.svg", "sector-energy.svg", "sector-landscape.svg", "sector-route.svg", "sector-signal.svg", "sector-structure.svg", "vertical-rule.svg",
 ];
 for (const filename of vectorAssets) {
   const source = resolve(root, "assets/vectors", filename);

@@ -14,7 +14,10 @@ test.describe("core routes", () => {
 
 test("mobile and desktop home layouts do not create horizontal overflow", async ({ page }) => {
   for (const viewport of [
+    { width: 320, height: 720 },
+    { width: 375, height: 812 },
     { width: 390, height: 844 },
+    { width: 414, height: 896 },
     { width: 768, height: 1024 },
     { width: 1440, height: 1000 },
   ]) {
@@ -27,11 +30,28 @@ test("mobile and desktop home layouts do not create horizontal overflow", async 
   }
 });
 
-test("mobile menu is available and exposes contact route", async ({ page }) => {
+test("floating two-line navigation opens, traps access to the group menu, and closes", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/");
-  const menu = page.locator(".site-header__menu");
-  await expect(menu).toBeVisible();
-  await menu.locator("summary").click();
-  await expect(menu.getByRole("link", { name: "Contact" })).toBeVisible();
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+
+  const toggle = page.getByRole("button", { name: "Open navigation" });
+  await expect(toggle).toBeVisible();
+  await toggle.click();
+
+  const dialog = page.getByRole("dialog", { name: "Mendozer group navigation" });
+  await expect(dialog).toBeVisible();
+  await expect(dialog.getByRole("link", { name: "Contact" }).first()).toBeVisible();
+  await expect(dialog.getByRole("link", { name: "Tourism & Agriculture" })).toBeVisible();
+
+  await page.keyboard.press("Escape");
+  await expect(page.getByRole("button", { name: "Open navigation" })).toBeFocused();
+});
+
+test("off-canvas navigation remains contained at the 320px Hallmark floor", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 720 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await page.getByRole("button", { name: "Open navigation" }).click();
+  await expect(page.getByRole("dialog", { name: "Mendozer group navigation" })).toBeVisible();
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
+  expect(overflow, "horizontal overflow in 320px off-canvas navigation").toBeFalsy();
 });

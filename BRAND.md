@@ -52,7 +52,7 @@ The web build packages local `@fontsource/poppins` files instead of relying on a
 
 The verified 4px scale is retained as CSS variables: `4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 / 128`.
 
-Structural additions in `tokens.css` (`--container-max`, modest radii, shadow, and motion timing) are implementation-only extensions. They do not introduce an alternate palette or type pairing. Geometry remains restrained: mostly simple panels, fine borders, wide media, and soft but not playful radii.
+Structural additions in `tokens.css` (`--container-max`, restrained card radii, `--radius-pill` for controls, shadow, and motion timing) are implementation-only extensions. They do not introduce an alternate palette or type pairing. Geometry remains restrained: mostly simple panels, fine borders, wide media, fully rounded action controls, and modest card radii.
 
 ## Logo usage
 
