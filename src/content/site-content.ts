@@ -85,7 +85,7 @@ export type Sector = {
 export const siteContent = {
   navigation: [
     { label: "About", href: "/about" },
-    { label: "Sectors", href: "/#sectors" },
+    { label: "Sectors", href: "/sectors" },
     { label: "Community", href: "/community" },
   ],
   hero: {
@@ -99,6 +99,18 @@ export const siteContent = {
     media: {
       src: "/images/projects/construction/road-works-2.jpg",
       alt: "A site team beside active infrastructure work",
+      caption: "Infrastructure work in progress",
+      status: "real",
+      focus: "50% 55%",
+    } satisfies MediaAsset,
+  },
+  sectorHub: {
+    eyebrow: "Mendozer sectors",
+    title: "Choose the right working direction.",
+    body: "Start with the sector closest to the work in front of you. If the scope crosses disciplines, use the group contact route.",
+    hero: {
+      src: "/images/projects/construction/road-works-2.jpg",
+      alt: "Site team beside active infrastructure work",
       caption: "Infrastructure work in progress",
       status: "real",
       focus: "50% 55%",
@@ -559,6 +571,7 @@ export const legalPages = {
 export const routes = [
   "/",
   "/about",
+  "/sectors",
   ...sectors.map((sector) => `/sectors/${sector.slug}`),
   "/community",
   "/contact",

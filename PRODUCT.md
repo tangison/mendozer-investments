@@ -26,6 +26,7 @@ The website is deliberately a **branded house**, not six sub-brands: the group i
 |---|---|---|
 | `/` | Group overview | Motion-led image hero, group introduction, six-sector directory, connected-group visual, community feature, CTA |
 | `/about` | Group context | Group framing, operating approach, leadership placeholder, verified registration details |
+| `/sectors` | Services hub | Crawlable directory for all six Mendozer working directions |
 | `/sectors/construction` | Dedicated sector route | Hero, services, supplied visual context, cross-sector connection, contact CTA |
 | `/sectors/technology` | Dedicated sector route | Same reusable sector template, data-driven content |
 | `/sectors/cooling` | Dedicated sector route | Same reusable sector template, data-driven content |

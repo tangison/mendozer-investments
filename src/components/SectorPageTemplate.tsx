@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { MediaFrame } from "@/components/MediaFrame";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -25,6 +26,10 @@ export function SectorPageTemplate({ sector }: SectorPageTemplateProps) {
         media={sector.hero}
         title={sector.title}
       />
+
+      <div className="breadcrumbs-wrap">
+        <div className="site-container"><Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Sectors", href: "/sectors" }, { label: sector.title }]} /></div>
+      </div>
 
       <section className="section section--surface">
         <div className="site-container sector-intro">

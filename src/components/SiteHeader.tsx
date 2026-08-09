@@ -19,7 +19,7 @@ const primaryLinks = [
 
 function isLinkActive(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
-  if (href === "/#sectors") return pathname.startsWith("/sectors");
+  if (href === "/sectors") return pathname === "/sectors" || pathname.startsWith("/sectors/");
   return pathname === href;
 }
 

@@ -31,6 +31,7 @@ Open `http://localhost:3000`.
 
 - `/` — group homepage
 - `/about` — group overview, working leadership card, verified registration details
+- `/sectors` — crawlable directory of the six working directions
 - `/sectors/construction`
 - `/sectors/technology`
 - `/sectors/cooling`
@@ -150,3 +151,5 @@ NEXT_PUBLIC_SITE_URL=https://mendozer.tangison.com
 - `ASSET_MANIFEST.md` — source/usage/status of visual assets
 - `PROOF.md` — intake, implementation, QA, and deployment record
 - `LAUNCH_READINESS.md`: completed checklist items, intentional exclusions, and client-authority items before production-domain cutover
+- `SEO_STRATEGY.md`: page-intent map, current technical SEO, and Search Console follow-up
+- `OPERATIONS_MANUAL.md`: content, asset, verification, deployment, rollback, and maintenance procedure

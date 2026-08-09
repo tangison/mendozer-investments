@@ -38,9 +38,9 @@
 | Registration | `CC/2009/2399`, `VAT 04948459-015` | Verified |
 | Fuel licence | Mendozer Investments CC holds wholesale fuel distribution licence `W/188/2017` | Verified public record. Plain source citation: Namibia Government Gazette No. 8287, 3 January 2024, p. 6. |
 
-## Sectors `/sectors/[slug]`
+## Sectors `/sectors`, `/sectors/[slug]`
 
-All six pages consume a single reusable template and content record. The current one-line sector introductions and 3-service lists are **Placeholder — replace with client-confirmed service copy.** They use deliberately non-claiming language.
+The `/sectors` hub gives search and navigation users a crawlable directory of all six working directions. Each individual page consumes a single reusable template and content record. The current one-line sector introductions and 3-service lists are **Placeholder: replace with client-confirmed service copy.** They use deliberately non-claiming language.
 
 | Slug | Page title | Hero / image treatment |
 |---|---|---|
