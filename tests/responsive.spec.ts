@@ -53,6 +53,14 @@ test("home FAQ disclosures open with useful enquiry guidance", async ({ page }) 
   await expect(firstDisclosure).toContainText("Group enquiry");
 });
 
+test("editorial navigation condenses into a floating bar after scroll", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await page.evaluate(() => window.scrollTo(0, 600));
+  await expect(page.locator(".site-header")).toHaveClass(/site-header--scrolled/);
+  await expect(page.getByRole("button", { name: "Open navigation" })).toBeVisible();
+});
+
 test("floating two-line navigation opens, traps access to the group menu, and closes", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/", { waitUntil: "domcontentloaded" });

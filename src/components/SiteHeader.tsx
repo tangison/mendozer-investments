@@ -17,16 +17,14 @@ const primaryLinks = [
   { label: "Contact", href: "/contact" },
 ] as const;
 
-function isLinkActive(pathname: string, href: string) {
-  if (href === "/") return pathname === "/";
-  if (href === "/sectors") return pathname === "/sectors" || pathname.startsWith("/sectors/");
-  return pathname === href;
+function usesDarkHero(pathname: string) {
+  return pathname === "/" || pathname === "/about" || pathname === "/sectors" || pathname.startsWith("/sectors/") || pathname === "/community" || pathname === "/contact";
 }
 
 /**
- * Floating group navigation with a Collins-inspired sparse chrome rhythm.
- * The composition is original to Mendozer: it preserves the supplied identity,
- * adds an accessible two-line menu control, and opens a full group directory.
+ * A sparse, editorial navigation rhythm: brand mark and two-line menu control
+ * sit directly over the page at rest, then condense into a floating bar on scroll.
+ * The off-canvas directory retains all group navigation and contact access.
  */
 export function SiteHeader() {
   const pathname = usePathname();
@@ -34,15 +32,17 @@ export function SiteHeader() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const menuRef = useRef<HTMLDivElement>(null);
-  const toggleRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+
+  const isOverDarkHero = usesDarkHero(pathname);
+  const logoSrc = isOverDarkHero && !isScrolled ? brandAssets.logoDark : brandAssets.logoLight;
 
   useEffect(() => {
     let frame = 0;
     const updateNavigationState = () => {
       const currentScroll = window.scrollY;
       const scrollableDistance = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-      setIsScrolled(currentScroll > 20);
+      setIsScrolled(currentScroll > 24);
       setScrollProgress(Math.min(currentScroll / scrollableDistance, 1));
       frame = 0;
     };
@@ -104,37 +104,22 @@ export function SiteHeader() {
 
   return (
     <>
-      <header className={`site-header ${isScrolled ? "site-header--scrolled" : ""}`}>
+      <header className={`site-header ${isOverDarkHero ? "site-header--over-dark" : ""} ${isScrolled ? "site-header--scrolled" : ""}`}>
         <div className="site-header__shell site-container">
           <div className="site-header__bar">
             <Link aria-label="Mendozer Investments home" className="site-header__brand" href="/">
-              <Image alt="Mendozer Investments" height={56} priority src={brandAssets.logoLight} unoptimized width={178} />
+              <Image alt="Mendozer Investments" height={56} priority src={logoSrc} unoptimized width={178} />
             </Link>
-
-            <nav aria-label="Primary navigation" className="site-header__desktop-nav">
-              {siteContent.navigation.map((item) => (
-                <Link className={isLinkActive(pathname, item.href) ? "is-active" : ""} href={item.href} key={item.href}>
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-
-            <div className="site-header__actions">
-              <Link className="button button--small site-header__contact" href="/contact">
-                Start an enquiry
-              </Link>
-              <button
-                aria-controls="group-menu"
-                aria-expanded={isOpen}
-                aria-label={isOpen ? "Close navigation" : "Open navigation"}
-                className="site-header__menu-toggle"
-                onClick={() => setIsOpen((open) => !open)}
-                ref={toggleRef}
-                type="button"
-              >
-                <span aria-hidden="true" className={`menu-icon ${isOpen ? "menu-icon--close" : ""}`} />
-              </button>
-            </div>
+            <button
+              aria-controls="group-menu"
+              aria-expanded={isOpen}
+              aria-label={isOpen ? "Close navigation" : "Open navigation"}
+              className="site-header__menu-toggle"
+              onClick={() => setIsOpen((open) => !open)}
+              type="button"
+            >
+              <span aria-hidden="true" className={`menu-icon ${isOpen ? "menu-icon--close" : ""}`} />
+            </button>
           </div>
         </div>
         <div
@@ -176,6 +161,7 @@ export function SiteHeader() {
                   </Link>
                 ))}
               </div>
+              <Link className="site-menu__enquiry" href="/contact" onClick={closeMenu}>Start an enquiry</Link>
             </div>
           </div>
 
