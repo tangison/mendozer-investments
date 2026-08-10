@@ -224,3 +224,12 @@ The user requested a focused mobile, hero, off-canvas, and footer refinement aft
 ### Current Audit Status
 
 The implementation-level follow-up score is **19/20, Excellent**. The only remaining P1 is provisioning the approved Resend credentials, verified sender domain, and durable production rate limiter in Vercel. That action requires external account authority and cannot be truthfully simulated in source code.
+
+### Deployment Verification
+
+The remediation deployment was verified at both `https://mendozer-tangison-preview.vercel.app` and `https://mendozer.tangison.com`.
+
+- The Content-Security-Policy header is present and the pages render successfully.
+- HSTS, type protection, referrer policy, frame policy, and permissions policy remain present.
+- The desktop pause control and first-view WebP hero derivative are present in delivered HTML.
+- The only remaining production-readiness dependency is Vercel configuration of `RESEND_API_KEY` and `CONTACT_FROM_EMAIL`, plus an approved durable distributed rate limiter. Those secrets and provider ownership cannot be created from repository code.
