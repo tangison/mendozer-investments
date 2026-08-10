@@ -176,3 +176,36 @@ The most meaningful remaining concerns are operational rather than visual:
 8. **[P3] `/polish`**: Re-run the visual pass after the higher-priority accessibility and performance work is complete.
 
 You can ask me to run these one at a time, all at once, or in any order you prefer. Re-run `/audit` after fixes to see the score improve.
+
+## Remediation Follow-Up: 2026-08-10
+
+The user requested a focused mobile, hero, off-canvas, and footer refinement after the initial audit. The following previously reported items were addressed and re-tested.
+
+| Previous finding | Remediation | Evidence | Status |
+|---|---|---|---|
+| P1 auto-advancing hero lacked a pause control | Added an explicit pause/resume rotation control on the desktop sector explorer. Any direct tab selection pauses rotation. Mobile hides the explorer and disables auto-rotation so the hero remains intentionally focused. | `src/components/HomeHero.tsx`; responsive test checks `aria-pressed` and Resume state | Resolved |
+| P2 mobile touch targets below 44px | Increased the mobile menu target to 44px, increased sector links in the off-canvas menu to 44px minimum, and removed the small hero tab rail from compact mobile hero layouts. | `src/app/globals.css`; responsive mobile target test | Resolved |
+| P2 modal navigation did not isolate background content | Main content and footer receive `inert` while the menu is open and are restored after close. | `src/components/SiteHeader.tsx`; off-canvas regression test | Resolved |
+| P2 mobile hero felt overloaded | Mobile hero now contains only the brand statement, image, and two direct actions. Sector discovery remains available in the sector hub and off-canvas navigation. | `src/components/HomeHero.tsx`, `src/app/globals.css`; 320px through 414px responsive checks | Resolved |
+| P3 footer lacked a dominant brand row | Footer now begins with the official Mendozer dark-theme lockup at large full-row scale and keeps all operational links below it compact. | `src/components/SiteFooter.tsx`, `src/app/globals.css` | Resolved |
+
+### Follow-Up Health Score
+
+| Dimension | Score | Current key finding |
+|---|---:|---|
+| Accessibility | **4/4** | Automated WCAG AA checks pass; hero pause control, background inert behavior, focus restoration, and keyboard navigation are covered. |
+| Performance | **3/4** | Cold first-image optimization and header scroll state remain the main measurable improvement areas. |
+| Responsive Design | **4/4** | Mobile hero is intentionally reduced, controls meet the 44px target where applicable, and no overflow appears across tested widths. |
+| Theming | **4/4** | Token-led runtime styling remains consistent. |
+| Anti-Patterns | **4/4** | The editorial navigation, large identity row, real imagery, and restrained widgets remain intentional and distinct. |
+
+**Follow-Up Total: 19/20, Excellent**
+
+### Remaining prioritized findings
+
+1. **[P1] `/harden`**: Replace the mailto-only production lead path with approved server-side delivery, validation, spam protection, rate limiting, recipient confirmation, and tracking.
+2. **[P2] `/optimize`**: Decouple scroll-progress painting from React state and measure cold-cache staging LCP.
+3. **[P2] `/harden`**: Design and test a CSP on staging.
+4. **[P3] `/colorize`**: Centralize static PWA metadata values with token-source documentation.
+5. **[P3] `/optimize`**: Add BreadcrumbList schema and decide utility-page social-card policy.
+6. **[P3] `/polish`**: Perform a final visual pass after any future form/backend implementation.

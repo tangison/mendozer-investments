@@ -36,6 +36,7 @@ test("mobile and desktop home layouts do not create horizontal overflow", async 
 });
 
 test("hero sector navigator behaves as an accessible tabbed slider", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("/", { waitUntil: "domcontentloaded" });
   const tabs = page.getByRole("tab");
   await expect(tabs).toHaveCount(6);
@@ -43,6 +44,10 @@ test("hero sector navigator behaves as an accessible tabbed slider", async ({ pa
   await expect(tabs.nth(1)).toHaveAttribute("aria-selected", "true");
   await expect(page.getByRole("tabpanel")).toContainText("Technology & Systems");
   await expect(page.locator(".home-hero__slide-image")).toHaveAttribute("src", /technology/);
+  const resumeControl = page.getByRole("button", { name: "Resume sector rotation" });
+  await expect(resumeControl).toHaveAttribute("aria-pressed", "true");
+  await resumeControl.click();
+  await expect(page.getByRole("button", { name: "Pause sector rotation" })).toBeVisible();
 });
 
 test("home FAQ disclosures open with useful enquiry guidance", async ({ page }) => {
@@ -61,6 +66,15 @@ test("editorial navigation condenses into a floating bar after scroll", async ({
   await expect(page.getByRole("button", { name: "Open navigation" })).toBeVisible();
 });
 
+test("mobile hero remains intentionally focused while the sector directory stays in page content", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await expect(page.locator(".home-hero__navigator")).toBeHidden();
+  const menuBox = await page.getByRole("button", { name: "Open navigation" }).boundingBox();
+  expect(menuBox?.width).toBeGreaterThanOrEqual(44);
+  expect(menuBox?.height).toBeGreaterThanOrEqual(44);
+});
+
 test("floating two-line navigation opens, traps access to the group menu, and closes", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/", { waitUntil: "domcontentloaded" });
@@ -73,9 +87,12 @@ test("floating two-line navigation opens, traps access to the group menu, and cl
   await expect(dialog).toBeVisible();
   await expect(dialog.getByRole("link", { name: "Contact" }).first()).toBeVisible();
   await expect(dialog.getByRole("link", { name: "Tourism & Agriculture" })).toBeVisible();
+  expect(await page.locator("#main-content").evaluate((element) => element.hasAttribute("inert"))).toBeTruthy();
+  expect(await page.locator("footer").evaluate((element) => element.hasAttribute("inert"))).toBeTruthy();
 
   await page.keyboard.press("Escape");
   await expect(page.getByRole("button", { name: "Open navigation" })).toBeFocused();
+  expect(await page.locator("#main-content").evaluate((element) => element.hasAttribute("inert"))).toBeFalsy();
 });
 
 test("off-canvas navigation remains contained at the 320px Hallmark floor", async ({ page }) => {

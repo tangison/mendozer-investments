@@ -10,38 +10,49 @@ import { sectors, siteContent } from "@/content/site-content";
 
 /**
  * A six-direction hero navigator. On wide screens it works as a vertical
- * selector; on small screens its tabs become a touch-scrollable horizontal rail.
- * All images come from the approved Mendozer asset map.
+ * selector; on small screens the hero intentionally stays focused and the
+ * separate sector directory becomes the discovery surface.
  */
 export function HomeHero() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const [isCompactViewport, setIsCompactViewport] = useState(false);
   const activeSector = sectors[activeIndex];
   const { hero } = siteContent;
 
   const selectedLabel = useMemo(() => `${activeSector.number} / 06`, [activeSector.number]);
 
   useEffect(() => {
+    const compactQuery = window.matchMedia("(max-width: 46rem)");
+    const updateCompactState = () => setIsCompactViewport(compactQuery.matches);
+    updateCompactState();
+    compactQuery.addEventListener("change", updateCompactState);
+    return () => compactQuery.removeEventListener("change", updateCompactState);
+  }, []);
+
+  useEffect(() => {
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reducedMotion.matches) return;
+    if (reducedMotion.matches || isCompactViewport || isPaused) return;
 
     const timer = window.setInterval(() => {
       setActiveIndex((index) => (index + 1) % sectors.length);
     }, 7200);
     return () => window.clearInterval(timer);
-  }, [activeIndex]);
+  }, [activeIndex, isCompactViewport, isPaused]);
 
   function selectDirection(index: number) {
+    setIsPaused(true);
     setActiveIndex(index);
   }
 
   function handleTabKeys(event: KeyboardEvent<HTMLDivElement>) {
-    if (!['ArrowDown', 'ArrowUp', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+    if (!["ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
     event.preventDefault();
     let nextIndex = activeIndex;
-    if (event.key === 'ArrowDown' || event.key === 'ArrowRight') nextIndex = (activeIndex + 1) % sectors.length;
-    if (event.key === 'ArrowUp' || event.key === 'ArrowLeft') nextIndex = (activeIndex - 1 + sectors.length) % sectors.length;
-    if (event.key === 'Home') nextIndex = 0;
-    if (event.key === 'End') nextIndex = sectors.length - 1;
+    if (event.key === "ArrowDown" || event.key === "ArrowRight") nextIndex = (activeIndex + 1) % sectors.length;
+    if (event.key === "ArrowUp" || event.key === "ArrowLeft") nextIndex = (activeIndex - 1 + sectors.length) % sectors.length;
+    if (event.key === "Home") nextIndex = 0;
+    if (event.key === "End") nextIndex = sectors.length - 1;
     selectDirection(nextIndex);
     document.getElementById(`hero-direction-${nextIndex}`)?.focus();
   }
@@ -100,6 +111,14 @@ export function HomeHero() {
             <strong>{activeSector.title}</strong>
             <Link href={`/sectors/${activeSector.slug}`}>Explore this sector <ArrowIcon /></Link>
           </div>
+          <button
+            aria-pressed={isPaused}
+            className="home-hero__rotation-control"
+            onClick={() => setIsPaused((paused) => !paused)}
+            type="button"
+          >
+            {isPaused ? "Resume sector rotation" : "Pause sector rotation"}
+          </button>
         </aside>
       </div>
       <p className="home-hero__caption">{activeSector.hero.caption}</p>

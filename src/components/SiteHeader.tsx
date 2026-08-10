@@ -36,6 +36,7 @@ export function SiteHeader() {
 
   const isOverDarkHero = usesDarkHero(pathname);
   const logoSrc = isOverDarkHero && !isScrolled ? brandAssets.logoDark : brandAssets.logoLight;
+  const menuFeature = siteContent.home.introduction.media;
 
   useEffect(() => {
     let frame = 0;
@@ -65,7 +66,9 @@ export function SiteHeader() {
 
     const previousFocus = document.activeElement as HTMLElement | null;
     const previousOverflow = document.body.style.overflow;
+    const backgroundRegions = [document.getElementById("main-content"), document.querySelector("footer")].filter(Boolean) as HTMLElement[];
     document.body.style.overflow = "hidden";
+    backgroundRegions.forEach((region) => region.setAttribute("inert", ""));
     closeRef.current?.focus();
 
     const onKeyDown = (event: KeyboardEvent) => {
@@ -95,6 +98,7 @@ export function SiteHeader() {
     window.addEventListener("keydown", onKeyDown);
     return () => {
       document.body.style.overflow = previousOverflow;
+      backgroundRegions.forEach((region) => region.removeAttribute("inert"));
       window.removeEventListener("keydown", onKeyDown);
       previousFocus?.focus();
     };
@@ -152,6 +156,10 @@ export function SiteHeader() {
             </div>
 
             <div className="site-menu__sectors">
+              <figure className="site-menu__feature">
+                <Image alt={menuFeature.alt} fill sizes="(max-width: 58rem) 100vw, 32vw" src={menuFeature.src} />
+                <figcaption>{menuFeature.caption}</figcaption>
+              </figure>
               <p className="eyebrow eyebrow--light">Six working directions</p>
               <div>
                 {sectors.map((sector) => (
