@@ -1,4 +1,4 @@
-# PROOF.md — Mendozer Investments Build Record
+# PROOF.md: Mendozer Investments Build Record
 
 This is the material-action record for the implementation and release gate. No access token, secret, or credential is retained in this repository.
 
@@ -36,16 +36,16 @@ This is the material-action record for the implementation and release gate. No a
 
 | Gate | Command / method | Result |
 |---|---|---|
-| Type-check | `npm run typecheck` | **PASS** — strict TypeScript completed cleanly on Next.js 16.3.0 |
-| Lint | `npm run lint` | **PASS** — ESLint / Next Core Web Vitals rules clean, zero warnings |
-| Content safety | `npm run test:content` | **PASS** — 6 sectors, 25 mapped assets, 10 OG images, byte-identical primary logo confirmed |
-| Production build | `npm run build` | **PASS** — Next.js 16.3.0 static/SSG build generated all 15 app outputs |
-| Responsive checks | Playwright at 390px / 768px / 1440px plus all routes | **PASS** — all 18 production-server tests passed; no horizontal overflow; mobile menu verified |
-| Accessibility | Axe WCAG 2 A/AA + keyboard skip-link test | **PASS** — Axe clean on Home, About, Technology, Community, Contact; skip link moves focus to main content |
-| Hallmark audit | Desktop/mobile visual inspection plus structural review | **PASS** — image-led hero hierarchy, custom sector glyph family, page-specific rhythm, no hand-copied sector pages, controlled density |
-| Impeccable critique | Brand, content, and visual polish review | **PASS** — locked palette/type observed, no fake proof, no stock imagery, generic captions, restrained gradient/motion use, readable contrast |
-| Remote Git verification | Push, resolve remote `main`, compare SHAs | **PASS (initial release commit)** — `dc7e0f24bb3d68b80e79942b5526791688e1c570` matched `origin/main`; final documentation commit will be verified separately |
-| Vercel preview | Build/deploy/TLS/URL verification | **PASS** — Vercel built Next.js 16.3.0 successfully and served TLS at `https://mendozer-tangison-preview.vercel.app` |
+| Type-check | `npm run typecheck` | **PASS**: strict TypeScript completed cleanly on Next.js 16.3.0 |
+| Lint | `npm run lint` | **PASS**: ESLint / Next Core Web Vitals rules clean, zero warnings |
+| Content safety | `npm run test:content` | **PASS**: 6 sectors, 25 mapped assets, 10 OG images, byte-identical primary logo confirmed |
+| Production build | `npm run build` | **PASS**: Next.js 16.3.0 static/SSG build generated all 15 app outputs |
+| Responsive checks | Playwright at 390px / 768px / 1440px plus all routes | **PASS**: all 18 production-server tests passed; no horizontal overflow; mobile menu verified |
+| Accessibility | Axe WCAG 2 A/AA + keyboard skip-link test | **PASS**: Axe clean on Home, About, Technology, Community, Contact; skip link moves focus to main content |
+| Hallmark audit | Desktop/mobile visual inspection plus structural review | **PASS**: image-led hero hierarchy, custom sector glyph family, page-specific rhythm, no hand-copied sector pages, controlled density |
+| Impeccable critique | Brand, content, and visual polish review | **PASS**: locked palette/type observed, no fake proof, no stock imagery, generic captions, restrained gradient/motion use, readable contrast |
+| Remote Git verification | Push, resolve remote `main`, compare SHAs | **PASS (initial release commit)**: `dc7e0f24bb3d68b80e79942b5526791688e1c570` matched `origin/main`; final documentation commit will be verified separately |
+| Vercel preview | Build/deploy/TLS/URL verification | **PASS**: Vercel built Next.js 16.3.0 successfully and served TLS at `https://mendozer-tangison-preview.vercel.app` |
 | Staging custom domain | `mendozer.tangison.com` alias/TLS verification only | **PASS**: public CNAME resolves to the Vercel target, Vercel reports `misconfigured: false`, and `https://mendozer.tangison.com` returns HTTPS 200 with configured security headers. **mendozer.com is excluded.** |
 
 ## Known content follow-up, not a build blocker
@@ -179,3 +179,14 @@ This is the material-action record for the implementation and release gate. No a
 | Theming and SEO polish | Centralized browser theme metadata, added BreadcrumbList schema, and applied legal utility route noindex policy | Metadata, manifest, sector routes, legal pages | Token/config refactor and JSON-LD | Runtime hard-coded browser theme values are removed. Sector hierarchy now emits BreadcrumbList. Privacy and Terms remain accessible but are excluded from acquisition indexing. | `src/brand/site-config.ts`, `src/app/layout.tsx`, `src/app/manifest.ts`, `src/components/SectorPageTemplate.tsx` | 2026-08-10 06:07 UTC | Complete |
 | Verification | Re-ran build, accessibility, responsive, form API, content, and performance gates | Full public build and API route | TypeScript, ESLint, content check, production build, Axe, Playwright, Lighthouse | Build passed with dynamic contact API route. 8 accessibility tests and 31 responsive/route/API/widget tests passed. Production dependency audit remains clean. | Terminal verification record, `AUDIT_REPORT.md` | 2026-08-10 06:09 UTC | Complete |
 | Deployment | Published security, delivery, and performance remediation | `main`, preview and authorised staging hostname | Git push, SHA comparison, Vercel `inspect --wait`, preview/staging HTTPS and CSP smoke | Commit `9d404d87cd63d8fc00ec1633e69c47d42f874fe0` matched local and `origin/main`. Vercel deployment reached `READY`; both preview and staging return the new CSP, secure headers, desktop pause control, and WebP hero delivery over HTTPS. | `https://mendozer-tangison-preview.vercel.app`; `https://mendozer.tangison.com`; Vercel deployment `mendozer-tangison-preview-g0rz4khwg-tangison-s-projects.vercel.app` | 2026-08-10 06:14 UTC | Complete |
+
+## Copy, typography, and language refinement: 2026-08-10
+
+| Phase | Action | Target | Command or method | Result | Evidence path or URL | Timestamp | Status |
+|---|---|---|---|---|---|---|---|
+| Copywriting pass | Reworked homepage, about, sector, contact, community, CTA, FAQ, and footer copy for formal Namibian business audiences | `src/content/site-content.ts` | Tangison copywriting review using approved working-sector context and verified facts only | Copy is shorter, clearer, customer-directed, and sector-specific without adding testimonials, metrics, prices, local-language tokenism, or unsupported service claims. | `src/content/site-content.ts`, `CONTENT_PLAN.md` | 2026-08-10 06:18 UTC | Complete |
+| Hero copy | Reduced mobile hero supporting copy to one concise business proposition | Homepage mobile hero | Copy and visual review | Hero now states “A direct route to six working directions across Namibia.” It remains skimmable at 390px with clear direct actions. | `/tmp/mendozer-copy-final-mobile.png` | 2026-08-10 06:19 UTC | Complete |
+| Typography and spacing | Applied balanced heading wrapping and disabled synthetic font rendering | Global type system | Token-led CSS refinement | Headings use `text-wrap: balance`; body avoids synthetic font variants. Mobile hero spacing and action rhythm were rechecked visually. | `src/app/globals.css`, `src/brand/tokens.css` | 2026-08-10 06:19 UTC | Complete |
+| Language cleanup | Removed em dashes from tracked text content and source comments | Repository text content | Controlled text-only normalization | User-facing copy, implementation comments, brief-derived documents, and project documentation now avoid em dashes. | Git tracked text files | 2026-08-10 06:20 UTC | Complete |
+| Verification | Rebuilt and re-tested copy and typography refinement | Full production build | TypeScript, ESLint, content check, build, Axe, Playwright | Type/lint/content/build passed. 8 accessibility tests and 31 responsive/route/API/widget tests passed. | Terminal verification record | 2026-08-10 06:22 UTC | Complete |
+| Deployment | Publish verified copy and typography refinement | `main`, preview and authorised staging hostname | Pending commit, SHA match, Vercel Git deployment, HTTPS and CSP smoke | Local copy and typography refinement is verified and ready to publish. | Git/Vercel release record above | 2026-08-10 06:22 UTC | Pending |

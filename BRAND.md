@@ -1,14 +1,14 @@
-# BRAND.md — Mendozer Investments Brand Layer
+# BRAND.md: Mendozer Investments Brand Layer
 
 This document folds the implementation-relevant direction from `brand-guidelines.md` and `design-tokens.md` into one build reference. The supplied identity and locked design tokens take precedence over generic foundation-skill preferences.
 
 ## Brand stance
 
-### Proposed strategic direction — pending client confirmation
+### Proposed strategic direction: pending client confirmation
 
 - **Purpose:** dependable, multi-sector infrastructure and operational solutions across Namibia.
 - **Positioning:** one accountable group spanning Construction & Infrastructure, Technology & Systems, Cooling & Cold Chain, Logistics & Support Services, Fuel & Energy Distribution, and Tourism & Agriculture.
-- **Archetype:** Ruler with a Sage undertone — authoritative, structured, credible, not flashy.
+- **Archetype:** Ruler with a Sage undertone: authoritative, structured, credible, not flashy.
 - **Audience:** investors/business partners; institutional/commercial clients; community stakeholders.
 - **Voice:** confident, direct, credible, and plain-spoken. Prefer “built for Namibia,” “multi-sector,” “delivered,” and “accountable.” Avoid inflated language such as “world-class,” “cutting-edge,” “synergy,” or “revolutionize.”
 

@@ -1,4 +1,4 @@
-# PRODUCT.md — Mendozer Investments Website
+# PRODUCT.md: Mendozer Investments Website
 
 ## Product definition
 
@@ -8,9 +8,9 @@ The website is deliberately a **branded house**, not six sub-brands: the group i
 
 ## Primary audiences
 
-1. **Business partners and investors** — need a credible, easy-to-scan view of the group’s breadth.
-2. **Institutional and commercial enquiries** — need to identify a relevant sector and make contact without navigating a complex organisation.
-3. **Community stakeholders** — need a clear, factual view of visible sponsorship presence.
+1. **Business partners and investors**: need a credible, easy-to-scan view of the group’s breadth.
+2. **Institutional and commercial enquiries**: need to identify a relevant sector and make contact without navigating a complex organisation.
+3. **Community stakeholders**: need a clear, factual view of visible sponsorship presence.
 
 ## Experience principles
 
@@ -35,7 +35,7 @@ The website is deliberately a **branded house**, not six sub-brands: the group i
 | `/sectors/tourism` | Dedicated sector route | Same reusable sector template, data-driven content |
 | `/community` | Sponsorship presence | Event hero, factual sponsorship cards, supplied event gallery |
 | `/contact` | Enquiry conversion | Direct email, privacy-preserving pre-addressed enquiry form, verified legal details |
-| `/privacy` | Privacy notice | Factual explanation of the current static-site and mailto enquiry workflow |
+| `/privacy` | Privacy notice | Factual explanation of secure delivery when configured and the mailto fallback |
 | `/terms` | Website terms | Clear website-use context with no invented service, project, or availability claim |
 
 ## Functional requirements implemented
@@ -44,7 +44,7 @@ The website is deliberately a **branded house**, not six sub-brands: the group i
 - SEO metadata, canonical URLs, Open Graph assets per major page, `robots.txt`, `sitemap.xml`, and a web manifest.
 - Canonical URL sourced from `NEXT_PUBLIC_SITE_URL`, defaulting to the authorised staging URL rather than hardcoded through components.
 - Official supplied logo and favicon assets served unchanged from `/public/assets`.
-- Reusable `SectorPageTemplate` driven by the `sectors` content array — no duplicated sector-page implementations.
+- Reusable `SectorPageTemplate` driven by the `sectors` content array: no duplicated sector-page implementations.
 - Header navigation, mobile navigation, footer route map, Tangison Studio credit, and accessible contact form.
 - Contact form uses a server-side delivery route with validation, honeypot, basic rate limit, approved Resend configuration, group notification, visitor confirmation, and mailto fallback when delivery credentials are absent.
 

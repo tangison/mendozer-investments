@@ -29,19 +29,19 @@ Open `http://localhost:3000`.
 
 ## Routes
 
-- `/` — group homepage
-- `/about` — group overview, working leadership card, verified registration details
-- `/sectors` — crawlable directory of the six working directions
+- `/`: group homepage
+- `/about`: group overview, working leadership card, verified registration details
+- `/sectors`: crawlable directory of the six working directions
 - `/sectors/construction`
 - `/sectors/technology`
 - `/sectors/cooling`
 - `/sectors/logistics`
 - `/sectors/energy`
 - `/sectors/tourism`
-- `/community` — sponsorship presence
-- `/contact` — direct enquiry
-- `/privacy` — factual privacy notice for the secure delivery workflow and mailto fallback
-- `/terms` — website-use terms for current introductory group information
+- `/community`: sponsorship presence
+- `/contact`: direct enquiry
+- `/privacy`: factual privacy notice for the secure delivery workflow and mailto fallback
+- `/terms`: website-use terms for current introductory group information
 
 ## Project structure
 
@@ -145,13 +145,13 @@ NEXT_PUBLIC_SITE_URL=https://mendozer.tangison.com
 
 ## Documentation
 
-- `SYSTEM.md` — original operating constraints
-- `BUILD_PLAN.md` — supplied build plan
-- `BRAND.md` — implementation brand reference
-- `PRODUCT.md` — product scope and non-goals
-- `CONTENT_PLAN.md` — content inventory/status
-- `ASSET_MANIFEST.md` — source/usage/status of visual assets
-- `PROOF.md` — intake, implementation, QA, and deployment record
+- `SYSTEM.md`: original operating constraints
+- `BUILD_PLAN.md`: supplied build plan
+- `BRAND.md`: implementation brand reference
+- `PRODUCT.md`: product scope and non-goals
+- `CONTENT_PLAN.md`: content inventory/status
+- `ASSET_MANIFEST.md`: source/usage/status of visual assets
+- `PROOF.md`: intake, implementation, QA, and deployment record
 - `LAUNCH_READINESS.md`: completed checklist items, intentional exclusions, and client-authority items before production-domain cutover
 - `SEO_STRATEGY.md`: page-intent map, current technical SEO, and Search Console follow-up
 - `OPERATIONS_MANUAL.md`: content, asset, verification, deployment, rollback, and maintenance procedure

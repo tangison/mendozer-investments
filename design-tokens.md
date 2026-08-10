@@ -1,6 +1,6 @@
-# Mendozer Investments — Design Tokens
+# Mendozer Investments: Design Tokens
 
-Extracted from source logo files (logo-full.png, icon-mark.png). Colors sampled directly from pixel data. Typography identified by letterform analysis — flagged where it is a closest-match assessment rather than a confirmed font file.
+Extracted from source logo files (logo-full.png, icon-mark.png). Colors sampled directly from pixel data. Typography identified by letterform analysis: flagged where it is a closest-match assessment rather than a confirmed font file.
 
 ---
 
@@ -25,7 +25,7 @@ Extracted from source logo files (logo-full.png, icon-mark.png). Colors sampled 
 | `--bg-primary` | `#FFFFFF` | page background |
 | `--bg-secondary` | `#F5F8FC` | section alternation |
 | `--text-primary` | `#1C4E89` | headings |
-| `--text-body` | `#2B2F36` | body copy (not sampled from logo — standard near-black for readability) |
+| `--text-body` | `#2B2F36` | body copy (not sampled from logo: standard near-black for readability) |
 | `--border-subtle` | `#E3EAF2` | dividers, card borders |
 | `--accent` | `#2FA1DB` | links, small accents |
 
@@ -37,15 +37,15 @@ Extracted from source logo files (logo-full.png, icon-mark.png). Colors sampled 
 | `--text-primary` | `#FFFFFF` | headings |
 | `--text-body` | `#C7D3E3` | body copy |
 | `--border-subtle` | `#1E3B66` | dividers, card borders |
-| `--accent` | `#2FA1DB` | links, small accents (unchanged — already reads on dark) |
+| `--accent` | `#2FA1DB` | links, small accents (unchanged: already reads on dark) |
 
-Note: the icon gradient (`--brand-gradient`) is used unchanged in both themes — it already has enough contrast against both white and deep navy.
+Note: the icon gradient (`--brand-gradient`) is used unchanged in both themes: it already has enough contrast against both white and deep navy.
 
 ---
 
 ## 2. Typography
 
-**Closest-match assessment** (not extracted from an embedded font file — based on letterform geometry: perfectly circular counters, single-story geometric letterforms, flat stroke terminals, wide even letter-spacing on the subword):
+**Closest-match assessment** (not extracted from an embedded font file: based on letterform geometry: perfectly circular counters, single-story geometric letterforms, flat stroke terminals, wide even letter-spacing on the subword):
 
 - **Primary candidate: Poppins** (ExtraBold/Bold for "MENDOZER", Medium/SemiBold + letter-spacing for "INVESTMENTS")
 - Close alternatives if Poppins doesn't render identically: Montserrat, Century Gothic
@@ -73,7 +73,7 @@ Wordmark-specific (matching the logo itself):
 
 - **Clear space**: minimum clear space around the logo = height of the icon mark's "M" peak (approx. 1x icon height on all sides)
 - **Minimum size**: icon mark alone should not render below 24px height (favicon-scale is the floor); full lockup should not render below 120px width
-- **Icon-to-wordmark gap** (in full lockup): approx. 0.33x icon width, already baked into the traced SVG — don't manually adjust spacing when placing the pre-built lockup
+- **Icon-to-wordmark gap** (in full lockup): approx. 0.33x icon width, already baked into the traced SVG: don't manually adjust spacing when placing the pre-built lockup
 
 ### Do
 - Use SVG source files for all placements needing scaling (favicon, print, hero)
@@ -82,8 +82,8 @@ Wordmark-specific (matching the logo itself):
 
 ### Don't
 - Don't recolor the gradient icon to a flat single color except in the dedicated mono-white/mono-navy variants (for watermarks, single-color print, embossing)
-- Don't stretch or skew the lockup — icon and wordmark proportions are fixed relative to each other
-- Don't place the full-color lockup on busy photographic backgrounds — use mono-white instead
+- Don't stretch or skew the lockup: icon and wordmark proportions are fixed relative to each other
+- Don't place the full-color lockup on busy photographic backgrounds: use mono-white instead
 
 ---
 

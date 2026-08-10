@@ -1,4 +1,4 @@
-# CONTENT_PLAN.md — Mendozer Investments
+# CONTENT_PLAN.md: Mendozer Investments
 
 ## Content status key
 
@@ -10,7 +10,7 @@
 
 1. Keep copy short; headline first, supporting line second.
 2. Never invent testimonials, named clients, projects, certifications, staff biographies, metrics, operating hours, addresses, founding year, or social profiles.
-3. Caption every sector-context image generically — primarily **“Infrastructure work in progress.”**
+3. Caption every sector-context image generically: primarily **“Infrastructure work in progress.”**
 4. The six-sector model is a working configuration awaiting confirmation. Content source marks the service descriptions as placeholders.
 5. The verified public contact endpoint is `contact@mendozer.com`.
 6. A missing specific photograph uses a logged, ultra-minimal tangison-imagegen contextual master only after relevant supplied photography has been ruled out. Brand-gradient substitutes are not used.
@@ -20,7 +20,7 @@
 
 | Section | Content | Status |
 |---|---|---|
-| Hero | “One group. Six directions.” / “Multi-sector solutions, built for Namibia.” | Working / generic (proposed tagline noted in onboarding form) |
+| Hero | “One group. Six directions.” / “A direct route to six working directions across Namibia.” | Working / generic, concise for mobile and formal business audiences |
 | Group intro | “Built to move between the work that matters.” | Working / generic |
 | Sector directory | Six sector labels and short routes | Working structure pending list confirmation |
 | Connected view | “Different disciplines. A shared standard of accountability.” | Working / generic |
@@ -75,12 +75,12 @@ Each sector page has: hero, “What we do” service breakdown, visual “On sit
 
 | Route | Content | Status |
 |---|---|---|
-| `/privacy` | Current mailto contact flow, hosting technical delivery, no embedded analytics/advertising tracker, privacy contact route | Factual to the current implementation. Requires client/legal review before production cutover. |
+| `/privacy` | Secure delivery when configured, mailto fallback, hosting technical delivery, no embedded analytics/advertising tracker, privacy contact route | Factual to the current implementation. Requires client/legal review before production cutover. |
 | `/terms` | Informational website-use context, image/public-record limitations, direct contact route | Factual to the current implementation. Requires client/legal review before production cutover. |
 
 ## Footer
 
-- Brand statement: “Multi-sector solutions, built for Namibia.” — working/proposed tagline.
-- Group route list and six sector routes — working structure.
-- Registration/VAT — verified.
+- Brand statement: “Multi-sector solutions, built for Namibia.”: working/proposed tagline.
+- Group route list and six sector routes: working structure.
+- Registration/VAT: verified.
 - Required credit: **Made by Tangison Studio** linked to `https://studio.tangison.com` using the supplied Tangison white logo asset.

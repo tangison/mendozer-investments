@@ -92,9 +92,9 @@ export const siteContent = {
     eyebrow: "Mendozer Investments",
     titleLineOne: "One group.",
     titleLineTwo: "Six directions.",
-    supporting: "Multi-sector solutions, built for Namibia.",
-    primaryCta: { label: "Explore our sectors", href: "/#sectors" },
-    secondaryCta: { label: "Talk to the group", href: "/contact" },
+    supporting: "A direct route to six working directions across Namibia.",
+    primaryCta: { label: "See the six directions", href: "/#sectors" },
+    secondaryCta: { label: "Prepare a group enquiry", href: "/contact" },
     // Real client-supplied photography; sector tag remains unconfirmed.
     media: {
       src: "/images/projects/construction/road-works-2.jpg",
@@ -119,8 +119,8 @@ export const siteContent = {
   home: {
     introduction: {
       eyebrow: "The Mendozer group",
-      title: "Built to move between the work that matters.",
-      body: "A single group designed to hold multiple operational directions with a clear route to contact.",
+      title: "Start with the work in front of you.",
+      body: "Choose the working direction closest to the need. If the brief crosses more than one area, begin with one accountable group.",
       media: {
         src: "/images/projects/technology/tower-full-view.jpg",
         alt: "A communications tower above a work site",
@@ -131,13 +131,13 @@ export const siteContent = {
     },
     sectorIntro: {
       eyebrow: "Our sectors",
-      title: "Six capabilities. One accountable group.",
-      body: "Explore the working areas that shape the Mendozer portfolio.",
+      title: "Find the right starting point.",
+      body: "Six working directions, one clear route to the group.",
     },
     connective: {
       eyebrow: "A connected view",
-      title: "Different disciplines. A shared standard of accountability.",
-      body: "From physical works to essential systems, each direction remains connected to the wider group.",
+      title: "One group keeps the whole brief in view.",
+      body: "A site, system, facility and supply route can be connected. Start with the need, then bring the right direction into the conversation.",
     },
     faq: {
       eyebrow: "Starting point",
@@ -164,8 +164,8 @@ export const siteContent = {
     },
     community: {
       eyebrow: "In the community",
-      title: "Present where people come together.",
-      body: "See the sponsorship moments currently documented in the Mendozer visual archive.",
+      title: "Visible support for local moments.",
+      body: "Explore the sponsorship context currently approved for publication.",
       media: {
         src: "/images/projects/community/IMG-20260808-WA0076.jpg",
         alt: "Guests at a Mendozer-branded community event backdrop",
@@ -177,8 +177,8 @@ export const siteContent = {
   },
   about: {
     eyebrow: "About the group",
-    title: "A group built for the whole picture.",
-    body: "Mendozer Investments brings multiple operating directions together under one group identity.",
+    title: "One group for work that crosses disciplines.",
+    body: "Mendozer Investments brings six working directions into one group conversation for partners, institutions and commercial enquiries.",
     hero: {
       src: "/images/projects/logistics/crew-roadside.jpg",
       alt: "A work crew gathered beside a road",
@@ -189,33 +189,33 @@ export const siteContent = {
     commitments: [
       {
         number: "01",
-        title: "One route in",
-        body: "A clear first point of contact across the group.",
+        title: "Start in one place",
+        body: "One direct route for enquiries that need more than one capability.",
       },
       {
         number: "02",
-        title: "Multi-sector perspective",
-        body: "Six working directions presented within a single group view.",
+        title: "Choose the closest fit",
+        body: "Begin with the sector that matches the immediate work, then widen the conversation where needed.",
       },
       {
         number: "03",
         title: "Built for Namibia",
-        body: "A local context stays central to how the group is introduced.",
+        body: "The group is introduced through local working context, not a generic imported template.",
       },
     ],
     leadership: {
       eyebrow: "Leadership",
-      title: "Accountability starts with a clear line of leadership.",
+      title: "A clear line of accountability.",
       name: "Johannes Negumbo",
       role: "Managing Director",
-      note: "A formal leadership profile will be added once approved by the client.",
+      note: "Formal leadership profile pending client approval.",
     },
     fuelLicence: verifiedFacts.wholesaleFuelLicence,
   },
   community: {
     eyebrow: "Community & sponsorship",
-    title: "Supporting public moments with a visible local presence.",
-    body: "Mendozer’s supplied event archive records sponsorship visibility at community-facing occasions.",
+    title: "Sponsorship visible where people gather.",
+    body: "Mendozer’s approved event archive records sponsorship visibility at community-facing occasions.",
     hero: {
       src: "/images/projects/community/IMG-20260808-WA0077.jpg",
       alt: "Attendees in front of a Mendozer-branded event backdrop",
@@ -250,8 +250,8 @@ export const siteContent = {
   },
   contact: {
     eyebrow: "Contact",
-    title: "Start with the right conversation.",
-    body: "Tell us what you are considering and the relevant Mendozer sector. Secure delivery is used where configured, with your email app available as a fallback.",
+    title: "Start with the work in front of you.",
+    body: "Tell the group what needs attention, which sector is closest, and how to contact you. Secure delivery is used where configured, with your email app available as a fallback.",
     // Reused real group-context photography. No abstract placeholder is required for this placement.
     media: {
       src: "/images/projects/technology/IMG-20260808-WA0061.jpg",
@@ -263,7 +263,7 @@ export const siteContent = {
     email: "contact@mendozer.com",
   },
   footer: {
-    statement: "Multi-sector solutions, built for Namibia.",
+    statement: "Multi-sector direction, one group.",
     registrationLabel: "CC/2009/2399",
     vatLabel: "VAT 04948459-015",
   },
@@ -279,7 +279,7 @@ export const sectors: Sector[] = [
     title: "Construction & Infrastructure",
     shortTitle: "Construction",
     eyebrow: "Sector 01",
-    description: "Built environments and the groundwork around them.",
+    description: "Construction and infrastructure work starts with the conditions on the ground.",
     glyph: "structure",
     hero: {
       src: "/images/projects/construction/IMG-20260808-WA0033.jpg",
@@ -305,11 +305,11 @@ export const sectors: Sector[] = [
       },
     ],
     services: [
-      { title: "Site preparation", description: "Planning the groundwork before visible works begin." },
-      { title: "Built works", description: "Structures and supporting infrastructure shaped around the brief." },
-      { title: "Site coordination", description: "Keeping the people, materials, and workfront aligned." },
+      { title: "Site preparation", description: "Plan practical work around access, ground conditions and the active site." },
+      { title: "Built structures", description: "Bring structural and supporting work into one clear scope." },
+      { title: "Site coordination", description: "Keep people, materials and workfronts aligned." },
     ],
-    crossover: "Construction connects naturally with logistics, systems, and energy-ready infrastructure.",
+    crossover: "Construction often meets logistics, technology and energy on the same brief.",
   },
   {
     slug: "technology",
@@ -318,7 +318,7 @@ export const sectors: Sector[] = [
     title: "Technology & Systems",
     shortTitle: "Technology",
     eyebrow: "Sector 02",
-    description: "Practical systems that keep operations connected.",
+    description: "Technology and systems work where field infrastructure supports day-to-day operations.",
     glyph: "signal",
     hero: {
       src: "/images/projects/technology/IMG-20260808-WA0061.jpg",
@@ -344,11 +344,11 @@ export const sectors: Sector[] = [
       },
     ],
     services: [
-      { title: "Systems planning", description: "Defining the operational context before implementation." },
-      { title: "Connectivity infrastructure", description: "Supporting the equipment and sites that keep teams linked." },
-      { title: "Field coordination", description: "Managing the practical work around live operating environments." },
+      { title: "Systems direction", description: "Define the operational need before choosing the system response." },
+      { title: "Telecom infrastructure", description: "Support the tower, equipment and site context that keep teams linked." },
+      { title: "Field coordination", description: "Coordinate work around active operating environments." },
     ],
-    crossover: "Technology is considered alongside the physical infrastructure that supports it.",
+    crossover: "Technology must work with the physical infrastructure that carries it.",
   },
   {
     slug: "cooling",
@@ -357,7 +357,7 @@ export const sectors: Sector[] = [
     title: "Cooling & Cold Chain",
     shortTitle: "Cooling",
     eyebrow: "Sector 03",
-    description: "Temperature-sensitive operations with a focus on continuity.",
+    description: "Cooling and cold-chain work where facility continuity depends on controlled conditions.",
     glyph: "cooling",
     hero: {
       src: "/images/projects/cooling/IMG-20260808-WA0047.jpg",
@@ -383,11 +383,11 @@ export const sectors: Sector[] = [
       },
     ],
     services: [
-      { title: "Cold-chain planning", description: "Considering the route from controlled environment to delivery point." },
-      { title: "Facility support", description: "Working around the practical systems that protect continuity." },
-      { title: "Operational coordination", description: "Aligning site work with the requirements of active facilities." },
+      { title: "Cold-chain planning", description: "Plan the route from controlled environment to delivery point." },
+      { title: "Cooling facilities", description: "Focus facility work on the systems that protect continuity." },
+      { title: "Operational coordination", description: "Align site work with the requirements of active facilities." },
     ],
-    crossover: "Cooling and cold-chain work is viewed in relation to logistics and essential site services.",
+    crossover: "Cold-chain continuity can involve cooling, logistics and site support.",
   },
   {
     slug: "logistics",
@@ -396,7 +396,7 @@ export const sectors: Sector[] = [
     title: "Logistics & Support Services",
     shortTitle: "Logistics",
     eyebrow: "Sector 04",
-    description: "Practical support that helps work keep moving.",
+    description: "Logistics and support work that keeps sites, crews and materials moving.",
     glyph: "route",
     hero: {
       src: "/images/projects/logistics/founder-site-visit.jpg",
@@ -422,11 +422,11 @@ export const sectors: Sector[] = [
       },
     ],
     services: [
-      { title: "Route support", description: "Supporting the movement of people and materials through the workday." },
-      { title: "Site readiness", description: "Helping operational sites stay prepared for the next task." },
-      { title: "Working coordination", description: "Keeping the practical details in view across a changing workfront." },
+      { title: "Site logistics", description: "Support the movement of people and materials through the workday." },
+      { title: "Crew and material support", description: "Keep operational sites prepared for the next task." },
+      { title: "Field coordination", description: "Keep practical detail in view across a changing workfront." },
     ],
-    crossover: "Logistics provides a working link across construction, energy, cooling, and field systems.",
+    crossover: "Logistics connects sites, people, materials and related group directions.",
   },
   {
     slug: "energy",
@@ -435,7 +435,7 @@ export const sectors: Sector[] = [
     title: "Fuel & Energy Distribution",
     shortTitle: "Energy",
     eyebrow: "Sector 05",
-    description: "Essential energy infrastructure approached with operational care.",
+    description: "Wholesale fuel distribution and supporting infrastructure in one working direction.",
     glyph: "energy",
     hero: {
       src: "/images/projects/fuel-energy/plant-piping.jpg",
@@ -461,12 +461,12 @@ export const sectors: Sector[] = [
       },
     ],
     services: [
-      { title: "Distribution context", description: "Understanding the practical environments that support energy movement." },
-      { title: "Site support", description: "Working with the visible infrastructure behind essential services." },
-      { title: "Operational alignment", description: "Considering continuity across related group capabilities." },
+      { title: "Wholesale distribution", description: "Bring the verified distribution direction into the group conversation." },
+      { title: "Infrastructure context", description: "Work with the visible infrastructure behind essential services." },
+      { title: "Operational alignment", description: "Coordinate the related group directions around energy work." },
     ],
     verifiedFact: verifiedFacts.wholesaleFuelLicence,
-    crossover: "Energy work is introduced alongside the infrastructure, logistics, and systems around it.",
+    crossover: "Energy distribution depends on the infrastructure, logistics and systems around it.",
   },
   {
     slug: "tourism",
@@ -475,7 +475,7 @@ export const sectors: Sector[] = [
     title: "Tourism & Agriculture",
     shortTitle: "Tourism & Agriculture",
     eyebrow: "Sector 06",
-    description: "Land, place, and operational possibility in one wider view.",
+    description: "Tourism and agriculture work rooted in place, land and operating context.",
     glyph: "landscape",
     hero: {
       src: "/images/projects/tourism/IMG-20260808-WA0055.jpg",
@@ -501,11 +501,11 @@ export const sectors: Sector[] = [
       },
     ],
     services: [
-      { title: "Place-led planning", description: "Starting with the land, access, and operational setting." },
-      { title: "Rural operations", description: "Considering practical needs beyond urban work environments." },
-      { title: "Long-view investment", description: "Keeping durability and local context in the conversation." },
+      { title: "Land and access context", description: "Start with land, access and the operating setting." },
+      { title: "Rural operating context", description: "Consider practical needs beyond urban work environments." },
+      { title: "Long-term planning", description: "Keep durability and local context in the conversation." },
     ],
-    crossover: "Tourism and agriculture add a land-led perspective to the wider Mendozer group.",
+    crossover: "Tourism and agriculture bring land, access and long-term operations into the wider group conversation.",
   },
 ];
 

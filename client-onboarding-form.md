@@ -1,20 +1,20 @@
-# Mendozer Investments — Website Onboarding Form
+# Mendozer Investments: Website Onboarding Form
 
 Please fill in what you can. Anything left blank will be marked as "to confirm" and won't appear on the live site until supplied.
 
 ## Company & Legal
 1. Full registered company name:
-2. CC/Reg No. and VAT Reg No.: *(confirmed: CC/2009/2399, VAT 04948459-015 — correct?)*
+2. CC/Reg No. and VAT Reg No.: *(confirmed: CC/2009/2399, VAT 04948459-015: correct?)*
 3. Year established:
-4. Official slogan/tagline: *(proposed: "Multi-Sector Solutions, Built for Namibia" — approve or replace)*
+4. Official slogan/tagline: *(proposed: "Multi-Sector Solutions, Built for Namibia": approve or replace)*
 5. One-paragraph company overview:
 
 ## People
-6. MD bio (2-3 sentences) — Johannes Negumbo:
+6. MD bio (2-3 sentences): Johannes Negumbo:
 7. Other directors/key staff to feature (names, titles, short bios):
 8. Professional headshot(s): *(attach separately)*
 
-## Sectors — please confirm which are current
+## Sectors: please confirm which are current
 9. Business card lists: Construction / Tourism / Farming / Investments
    Roll-up banner lists: Construction & Infrastructure / Technology & Systems / Cooling & Cold Chain / Logistics & Support Services / Fuel & Energy Distribution / Tourism & Agriculture
    **Which list is current?**

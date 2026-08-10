@@ -1,4 +1,4 @@
-# BUILD_PLAN.md — Mendozer Investments
+# BUILD_PLAN.md: Mendozer Investments
 
 ## Scope change (this revision)
 
@@ -28,7 +28,7 @@ Original plan assumed a lean, rush-timeline brochure site. Scope is now upgraded
 - CMS-backed dynamic site: rejected for now, content update frequency does not justify it; revisit if Mendozer needs self-service editing later.
 - Brand-gradient placeholder photography: rejected by the active asset policy. Abstract branded geometry is allowed only as a documented vector decoration, never as a substitute for a missing photograph.
 
-## Active asset generation policy — locked amendment
+## Active asset generation policy: locked amendment
 
 ### Photo selection order
 

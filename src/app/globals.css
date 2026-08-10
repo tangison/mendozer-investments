@@ -13,6 +13,7 @@ body {
   color: var(--color-text-body);
   font-family: var(--font-sans);
   font-size: 1rem;
+  font-synthesis: none;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
 }
@@ -22,7 +23,7 @@ button, input, textarea, select { font: inherit; }
 button { cursor: pointer; }
 img { max-width: 100%; }
 h1, h2, h3, p { margin: 0; }
-h1, h2, h3 { color: var(--color-text-primary); font-weight: 700; letter-spacing: -0.045em; line-height: 1.05; }
+h1, h2, h3 { color: var(--color-text-primary); font-weight: 700; letter-spacing: -0.045em; line-height: 1.05; text-wrap: balance; }
 ::selection { background: var(--color-brand-blue); color: var(--color-bg-primary); }
 
 .site-container { width: min(calc(100% - 3rem), var(--container-max)); margin: 0 auto; }
