@@ -153,3 +153,4 @@ NEXT_PUBLIC_SITE_URL=https://mendozer.tangison.com
 - `LAUNCH_READINESS.md`: completed checklist items, intentional exclusions, and client-authority items before production-domain cutover
 - `SEO_STRATEGY.md`: page-intent map, current technical SEO, and Search Console follow-up
 - `OPERATIONS_MANUAL.md`: content, asset, verification, deployment, rollback, and maintenance procedure
+- `AUDIT_REPORT.md`: prioritized code-level accessibility, performance, theming, responsive, security, and anti-pattern audit
