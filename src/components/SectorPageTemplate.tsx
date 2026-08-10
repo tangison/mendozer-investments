@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { absoluteUrl } from "@/brand/site-config";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { MediaFrame } from "@/components/MediaFrame";
@@ -16,9 +17,19 @@ type SectorPageTemplateProps = {
 export function SectorPageTemplate({ sector }: SectorPageTemplateProps) {
   const currentIndex = sectors.findIndex((item) => item.slug === sector.slug);
   const nextSector = sectors[(currentIndex + 1) % sectors.length];
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: absoluteUrl("/") },
+      { "@type": "ListItem", position: 2, name: "Sectors", item: absoluteUrl("/sectors") },
+      { "@type": "ListItem", position: 3, name: sector.title, item: absoluteUrl(`/sectors/${sector.slug}`) },
+    ],
+  };
 
   return (
     <>
+      <script dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} type="application/ld+json" />
       <PageHero
         body={sector.description}
         eyebrow={sector.eyebrow}

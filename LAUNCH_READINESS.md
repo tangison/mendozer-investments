@@ -47,7 +47,7 @@ These items do not apply to the current approved static corporate build:
 
 | Area | Required action | Why it cannot be completed autonomously |
 |---|---|---|
-| Contact delivery | Approve a mail provider or form endpoint, configure server-side validation, spam protection, rate limiting, and recipient delivery testing | The current privacy-preserving mailto flow works without collecting data, but no approved mail-service credentials or sender domain are available. |
+| Contact delivery | Configure approved Resend credentials, verified sender, durable rate limiting, spam protection, and recipient delivery testing | A server-side delivery route now exists with validation, honeypot, basic rate limit, confirmation, and mailto fallback, but no approved delivery credentials or sender domain are available. |
 | Contact details | Confirm public telephone number, physical address, operating hours, service areas, and social profiles | None were supplied as verified publishable facts. |
 | Legal review | Have Privacy Notice, Website Terms, licences, and any sector-specific disclaimer reviewed by the client or legal adviser | The pages accurately describe current technical behavior, but legal ownership and required wording belong to the client. |
 | Analytics and consent | Approve analytics platform, consent policy, conversion events, and cookie posture | The current build intentionally contains no analytics or advertising tracker. |

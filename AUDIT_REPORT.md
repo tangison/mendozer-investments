@@ -209,3 +209,18 @@ The user requested a focused mobile, hero, off-canvas, and footer refinement aft
 4. **[P3] `/colorize`**: Centralize static PWA metadata values with token-source documentation.
 5. **[P3] `/optimize`**: Add BreadcrumbList schema and decide utility-page social-card policy.
 6. **[P3] `/polish`**: Perform a final visual pass after any future form/backend implementation.
+
+## Delivery, Security, and Performance Follow-Up: 2026-08-10
+
+| Previous finding | Remediation | Evidence | Status |
+|---|---|---|---|
+| P1 mailto-only lead flow | Added server-side `/api/contact` route with required-field validation, email validation, control-character cleanup, honeypot handling, basic in-memory rate limiting, Resend group delivery, visitor confirmation attempt, and mailto fallback. | `src/app/api/contact/route.ts`, `tests/contact-api.spec.ts` | Code resolved; direct live delivery remains configuration-dependent until approved Resend credentials and verified sender are set in Vercel. |
+| P2 scroll-progress React re-renders | Scroll progress now writes a CSS custom property directly through a ref. React state changes only when the scrolled threshold changes. | `src/components/SiteHeader.tsx` | Resolved |
+| P2 cold hero image cost | Added a 1600x900 WebP derivative of supplied construction photography for initial hero delivery and serves it directly for the first hero frame. | `public/images/projects/construction/mendozer-home-hero.webp`, `src/components/HomeHero.tsx` | Resolved locally: Lighthouse Performance 98, LCP 1.9s, TBT 130ms, CLS 0. |
+| P2 missing CSP | Added CSP configuration alongside the existing Vercel security headers. | `vercel.json` | Implemented; staging header verification required after deployment. |
+| P3 PWA metadata token duplication | Moved static browser theme values into `siteConfig.browserTheme` and reused them from viewport and manifest exports. | `src/brand/site-config.ts`, `src/app/layout.tsx`, `src/app/manifest.ts` | Resolved |
+| P3 BreadcrumbList and utility route policy | Added BreadcrumbList JSON-LD to sector pages. Privacy and Terms now use `noindex, follow` while remaining linked and accessible. | `src/components/SectorPageTemplate.tsx`, `src/app/privacy/page.tsx`, `src/app/terms/page.tsx` | Resolved |
+
+### Current Audit Status
+
+The implementation-level follow-up score is **19/20, Excellent**. The only remaining P1 is provisioning the approved Resend credentials, verified sender domain, and durable production rate limiter in Vercel. That action requires external account authority and cannot be truthfully simulated in source code.

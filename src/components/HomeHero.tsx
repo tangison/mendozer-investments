@@ -19,6 +19,7 @@ export function HomeHero() {
   const [isCompactViewport, setIsCompactViewport] = useState(false);
   const activeSector = sectors[activeIndex];
   const { hero } = siteContent;
+  const activeHeroSrc = activeIndex === 0 ? "/images/projects/construction/mendozer-home-hero.webp" : activeSector.hero.src;
 
   const selectedLabel = useMemo(() => `${activeSector.number} / 06`, [activeSector.number]);
 
@@ -65,10 +66,11 @@ export function HomeHero() {
           className="home-hero__slide-image"
           fill
           key={activeSector.slug}
-          priority
+          priority={activeIndex === 0}
           sizes="100vw"
-          src={activeSector.hero.src}
+          src={activeHeroSrc}
           style={{ objectPosition: activeSector.hero.focus }}
+          unoptimized={activeIndex === 0}
         />
       </div>
       <div className="home-hero__overlay" />

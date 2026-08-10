@@ -106,7 +106,7 @@ This amendment supersedes every prior instruction that permitted a brand-gradien
 
 | Public directory | Purpose | Status |
 |---|---|---|
-| `/public/images/projects/construction/` | Home and Construction page | Real supplied photos; generic captions only |
+| `/public/images/projects/construction/` | Home and Construction page | Real supplied photos; generic captions only. `mendozer-home-hero.webp` is a WebP derivative of supplied `IMG-20260808-WA0033.jpg` for first-view hero delivery, not generated imagery. |
 | `/public/images/projects/technology/` | Home and Technology page | Real supplied photos; generic captions only |
 | `/public/images/projects/cooling/` | Cooling page | Real supplied photos; generic captions only |
 | `/public/images/projects/logistics/` | About and Logistics page | Real supplied photos; generic captions only |

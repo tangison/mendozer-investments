@@ -43,6 +43,7 @@ h1, h2, h3 { color: var(--color-text-primary); font-weight: 700; letter-spacing:
 .button { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-3); min-height: 3.375rem; padding: 0.75rem 1.25rem; border: 1px solid transparent; border-radius: var(--radius-pill); font-size: 0.875rem; font-weight: 600; line-height: 1.25; transition: background-color var(--duration-fast) ease, border-color var(--duration-fast) ease, color var(--duration-fast) ease, transform var(--duration-fast) ease, box-shadow var(--duration-fast) ease; }
 .button:hover { transform: translateY(-2px); }
 .button:active { transform: translateY(0); }
+.button:disabled { cursor: wait; opacity: 0.68; transform: none; }
 .button--primary { background: var(--color-brand-navy); color: var(--color-text-dark-primary); box-shadow: 0 0.75rem 1.75rem color-mix(in srgb, var(--color-brand-blue) 30%, transparent); }
 .button--primary:hover { background: var(--color-bg-dark-primary); box-shadow: 0 1rem 2.2rem color-mix(in srgb, var(--color-brand-blue) 42%, transparent); }
 .button--small { min-height: 2.75rem; padding: 0.5rem 1rem; border-radius: var(--radius-pill); font-size: 0.75rem; background: var(--color-brand-navy); color: var(--color-text-dark-primary); }
@@ -99,7 +100,7 @@ html[data-motion="enabled"] [data-reveal].is-revealed { transform: translate3d(0
 .site-header--scrolled .site-header__bar { min-height: 3.75rem; padding: 0.35rem var(--space-3) 0.35rem var(--space-4); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-pill); background: color-mix(in srgb, var(--color-bg-primary) 96%, transparent); box-shadow: 0 0.75rem 2.5rem color-mix(in srgb, var(--color-bg-dark-primary) 17%, transparent); color: var(--color-brand-navy); backdrop-filter: blur(1rem); }
 .site-header--scrolled .site-header__menu-toggle { width: 2.65rem; height: 2.65rem; background: var(--color-bg-secondary); }
 .site-header--scrolled .site-header__menu-toggle::before { width: 2.65rem; height: 2.65rem; border-color: var(--color-border-subtle); opacity: 1; }
-.site-header__progress { position: fixed; z-index: 81; top: 0; left: 0; width: 100%; height: 2px; background: var(--brand-gradient); opacity: 0; transform: scaleX(var(--scroll-progress)); transform-origin: 0 50%; pointer-events: none; transition: opacity var(--duration-fast) ease; }
+.site-header__progress { position: fixed; z-index: 81; top: 0; left: 0; width: 100%; height: 2px; background: var(--brand-gradient); opacity: 0; transform: scaleX(var(--scroll-progress, 0)); transform-origin: 0 50%; pointer-events: none; transition: opacity var(--duration-fast) ease; }
 .site-header--scrolled .site-header__progress { opacity: 1; }
 
 .site-menu { position: fixed; z-index: 90; inset: 0; display: grid; overflow: hidden; background: var(--color-bg-dark-primary); opacity: 0; pointer-events: none; visibility: hidden; clip-path: inset(0 0 100% 0 round 0 0 var(--radius-lg) var(--radius-lg)); transition: opacity var(--duration-fast) ease, visibility var(--duration-fast) step-end, clip-path var(--duration-slow) var(--ease-out-expressive); }
@@ -349,6 +350,7 @@ html[data-motion="enabled"] [data-reveal].is-revealed { transform: translate3d(0
 .contact-legal dt { color: var(--color-brand-navy); font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; }
 .contact-legal dd { margin: 0; color: var(--color-text-body); font-size: 0.8125rem; font-weight: 500; }
 .contact-form { padding: clamp(var(--space-6), 4.5vw, var(--space-12)); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-md); background: var(--color-bg-secondary); }
+.contact-form__honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 .contact-form label { display: grid; gap: var(--space-2); color: var(--color-brand-navy); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.03em; }
 .contact-form label > span b { color: var(--color-brand-navy); }
 .contact-form input, .contact-form textarea, .contact-form select { width: 100%; padding: 0.82rem 0.9rem; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-sm); outline: none; background: var(--color-bg-primary); color: var(--color-text-body); font-size: 0.9375rem; font-weight: 400; transition: border-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease; }

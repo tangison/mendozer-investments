@@ -40,7 +40,7 @@ Open `http://localhost:3000`.
 - `/sectors/tourism`
 - `/community` — sponsorship presence
 - `/contact` — direct enquiry
-- `/privacy` — factual privacy notice for the current static/mailto workflow
+- `/privacy` — factual privacy notice for the secure delivery workflow and mailto fallback
 - `/terms` — website-use terms for current introductory group information
 
 ## Project structure
@@ -111,15 +111,17 @@ Accessibility foundations include semantic landmarks, skip link, visible focus t
 
 ## Contact form delivery
 
-The site is static-first and does not collect messages itself. By default, the form opens the visitor’s email app with an addressed message to `contact@mendozer.com`.
+The contact route now posts to the server-side `/api/contact` endpoint. It validates required fields, uses a honeypot, applies a basic in-memory rate limit, sends the group notification and a best-effort visitor confirmation through Resend when delivery is configured, and falls back to a prepared `mailto:` message when delivery credentials are absent.
 
-For direct in-page submission, configure an approved form delivery service and set:
+Configure the following **server-only** Vercel environment variables before treating direct delivery as production-ready:
 
 ```bash
-NEXT_PUBLIC_CONTACT_FORM_ENDPOINT=https://your-approved-endpoint.example/contact
+RESEND_API_KEY=re_...
+CONTACT_FROM_EMAIL=website@your-verified-sending-domain.example
+CONTACT_TO_EMAIL=contact@mendozer.com
 ```
 
-The endpoint should accept a JSON `POST` with `name`, `organisation`, `email`, `phone`, `sector`, and `message`, securely send to the verified inbox, validate input server-side, and apply rate limiting / spam control. Never place an SMTP, Resend, or other secret in `NEXT_PUBLIC_*` variables.
+`CONTACT_FROM_EMAIL` must be a sender verified by the approved provider. Never place SMTP, Resend, or other delivery secrets in `NEXT_PUBLIC_*` variables. The in-memory limiter is a basic fallback only; use a durable rate-limit service before a production-domain launch.
 
 ## Deployment
 

@@ -39,15 +39,17 @@ The responsive suite covers the public route set, 320px through desktop viewport
 | Variable | Purpose | Safe value now |
 |---|---|---|
 | `NEXT_PUBLIC_SITE_URL` | Canonical URLs, sitemap, Open Graph base URL | `https://mendozer.tangison.com` |
-| `NEXT_PUBLIC_CONTACT_FORM_ENDPOINT` | Optional approved JSON form-delivery endpoint | Unset by default. The site currently uses a mailto workflow. |
+| `RESEND_API_KEY` | Server-side Resend credential | Required for direct server delivery. Keep secret in Vercel only. |
+| `CONTACT_FROM_EMAIL` | Verified Resend sender address | Required for direct server delivery. |
+| `CONTACT_TO_EMAIL` | Group recipient address | Defaults to `contact@mendozer.com`. |
 
 Never place SMTP credentials, API keys, Vercel tokens, GitHub tokens, or other secrets in `NEXT_PUBLIC_*` variables or committed files.
 
 ## Contact workflow
 
-The current contact form validates client-side fields and prepares an email to `contact@mendozer.com` in the visitor’s own email application. It is intentionally privacy-preserving and does not store form data in the site.
+The contact form posts to the server-side `/api/contact` route. The route validates required data, trims control characters, uses a honeypot, applies a basic in-memory rate limit, sends the group notification through Resend when configured, and attempts a visitor confirmation email. If server delivery is not configured, the form opens a prepared mailto fallback addressed to `contact@mendozer.com`.
 
-Before a production-domain launch, obtain an approved contact-delivery provider with server-side validation, rate limiting, spam protection, sender authentication, recipient confirmation, error handling, and lead-storage/privacy decisions. Update the Privacy Notice and Terms after that workflow is approved.
+Before a production-domain launch, configure a verified Resend sender, a durable distributed rate limiter, approved spam protection, recipient delivery testing, sender-domain authentication, lead-storage/privacy decisions, and monitoring. Update the Privacy Notice and Terms after the final workflow is approved.
 
 ## Image and vector rules
 

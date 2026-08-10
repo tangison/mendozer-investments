@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: "Privacy Notice",
   description: "Privacy notice for the Mendozer Investments website and contact workflow.",
   alternates: { canonical: "/privacy" },
+  robots: { index: false, follow: true },
 };
 
 export default function PrivacyPage() {

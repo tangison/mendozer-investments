@@ -5,57 +5,88 @@ import { ArrowIcon } from "@/components/ArrowIcon";
 import { siteConfig } from "@/brand/site-config";
 import { sectors } from "@/content/site-content";
 
-type SubmissionState = "idle" | "opening" | "error";
+type SubmissionState = "idle" | "sending" | "sent" | "opening" | "error";
+
+type DeliveryResponse = {
+  ok?: boolean;
+  code?: string;
+  message?: string;
+};
 
 export function ContactForm() {
   const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
+  const [statusMessage, setStatusMessage] = useState("");
+
+  function openMailto(fields: Record<string, string>) {
+    const subject = `Website enquiry${fields.sector ? `: ${fields.sector}` : ""}`;
+    const body = [
+      `Name: ${fields.name}`,
+      `Organisation: ${fields.organisation || "Not provided"}`,
+      `Email: ${fields.email}`,
+      `Phone: ${fields.phone || "Not provided"}`,
+      `Sector: ${fields.sector || "Not specified"}`,
+      "",
+      "Message:",
+      fields.message,
+    ].join("\n");
+    window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
     const data = new FormData(form);
-    const name = String(data.get("name") ?? "");
-    const organisation = String(data.get("organisation") ?? "");
-    const email = String(data.get("email") ?? "");
-    const phone = String(data.get("phone") ?? "");
-    const sector = String(data.get("sector") ?? "");
-    const message = String(data.get("message") ?? "");
-    const subject = `Website enquiry${sector ? `: ${sector}` : ""}`;
-    const body = [
-      `Name: ${name}`,
-      `Organisation: ${organisation || "Not provided"}`,
-      `Email: ${email}`,
-      `Phone: ${phone || "Not provided"}`,
-      `Sector: ${sector || "Not specified"}`,
-      "",
-      "Message:",
-      message,
-    ].join("\n");
+    const fields = {
+      name: String(data.get("name") ?? ""),
+      organisation: String(data.get("organisation") ?? ""),
+      email: String(data.get("email") ?? ""),
+      phone: String(data.get("phone") ?? ""),
+      sector: String(data.get("sector") ?? ""),
+      message: String(data.get("message") ?? ""),
+      website: String(data.get("website") ?? ""),
+    };
+
+    setSubmissionState("sending");
+    setStatusMessage("");
 
     try {
-      const configuredEndpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT;
-      if (configuredEndpoint) {
-        const response = await fetch(configuredEndpoint, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name, organisation, email, phone, sector, message }),
-        });
-        if (!response.ok) throw new Error("Contact endpoint failed");
-        setSubmissionState("opening");
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(fields),
+      });
+      const result = await response.json() as DeliveryResponse;
+
+      if (response.ok && result.ok) {
+        setSubmissionState("sent");
+        setStatusMessage("Your enquiry has been delivered to Mendozer Investments. A confirmation email is on its way.");
         form.reset();
         return;
       }
 
-      // Intentional static-site fallback: opens an addressed message without collecting visitor data on-site.
-      window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      setSubmissionState("opening");
+      if (result.code === "DELIVERY_NOT_CONFIGURED") {
+        openMailto(fields);
+        setSubmissionState("opening");
+        setStatusMessage("Direct delivery is being configured. Your email app is opening with the enquiry addressed to Mendozer.");
+        return;
+      }
+
+      setSubmissionState("error");
+      setStatusMessage(result.message ?? "The enquiry could not be delivered. Please email contact@mendozer.com directly.");
     } catch {
       setSubmissionState("error");
+      setStatusMessage("The enquiry could not be delivered. Please email contact@mendozer.com directly.");
     }
   }
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
+      <div className="contact-form__honeypot" aria-hidden="true">
+        <label>
+          <span>Website</span>
+          <input autoComplete="off" name="website" tabIndex={-1} type="text" />
+        </label>
+      </div>
       <div className="contact-form__grid">
         <label>
           <span>Name <b aria-hidden="true">*</b></span>
@@ -87,12 +118,13 @@ export function ContactForm() {
         <textarea name="message" required rows={6} />
       </label>
       <div className="contact-form__bottom">
-        <button className="button button--primary" type="submit">Prepare email enquiry <ArrowIcon /></button>
-        <p id="contact-form-note">Your email app will open with this message addressed to Mendozer. <a href="/privacy">Read the privacy notice.</a></p>
+        <button className="button button--primary" disabled={submissionState === "sending"} type="submit">
+          {submissionState === "sending" ? "Sending enquiry" : "Send enquiry"} <ArrowIcon />
+        </button>
+        <p id="contact-form-note">Enquiries are sent securely when delivery is configured. If secure delivery is unavailable, your email app opens as a fallback. <a href="/privacy">Read the privacy notice.</a></p>
       </div>
       <p aria-live="polite" className={`contact-form__status contact-form__status--${submissionState}`}>
-        {submissionState === "opening" ? "Your email enquiry is ready. If your mail app did not open, use the email link above." : null}
-        {submissionState === "error" ? "We could not prepare the enquiry. Please email contact@mendozer.com directly." : null}
+        {statusMessage}
       </p>
     </form>
   );

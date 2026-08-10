@@ -46,7 +46,7 @@ The website is deliberately a **branded house**, not six sub-brands: the group i
 - Official supplied logo and favicon assets served unchanged from `/public/assets`.
 - Reusable `SectorPageTemplate` driven by the `sectors` content array — no duplicated sector-page implementations.
 - Header navigation, mobile navigation, footer route map, Tangison Studio credit, and accessible contact form.
-- Contact form opens an addressed mail client message by default, which keeps the static deployment free of unapproved email-service credentials. It can POST to an approved provider only when `NEXT_PUBLIC_CONTACT_FORM_ENDPOINT` is configured.
+- Contact form uses a server-side delivery route with validation, honeypot, basic rate limit, approved Resend configuration, group notification, visitor confirmation, and mailto fallback when delivery credentials are absent.
 
 ## Intentional non-features
 

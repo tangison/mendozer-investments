@@ -9,6 +9,10 @@ export const siteConfig = {
   locale: "en_NA",
   registration: "CC/2009/2399",
   vat: "04948459-015",
+  browserTheme: {
+    background: "#FFFFFF",
+    dark: "#0B1E3D",
+  },
 } as const;
 
 export function absoluteUrl(path = "/"): string {

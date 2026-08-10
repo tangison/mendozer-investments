@@ -30,9 +30,9 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const menuRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const progressRef = useRef<HTMLDivElement>(null);
 
   const isOverDarkHero = usesDarkHero(pathname);
   const logoSrc = isOverDarkHero && !isScrolled ? brandAssets.logoDark : brandAssets.logoLight;
@@ -43,8 +43,9 @@ export function SiteHeader() {
     const updateNavigationState = () => {
       const currentScroll = window.scrollY;
       const scrollableDistance = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
-      setIsScrolled(currentScroll > 24);
-      setScrollProgress(Math.min(currentScroll / scrollableDistance, 1));
+      const nextScrolledState = currentScroll > 24;
+      setIsScrolled((currentState) => currentState === nextScrolledState ? currentState : nextScrolledState);
+      progressRef.current?.style.setProperty("--scroll-progress", String(Math.min(currentScroll / scrollableDistance, 1)));
       frame = 0;
     };
     const onScroll = () => {
@@ -126,11 +127,7 @@ export function SiteHeader() {
             </button>
           </div>
         </div>
-        <div
-          aria-hidden="true"
-          className="site-header__progress"
-          style={{ "--scroll-progress": scrollProgress } as CSSProperties}
-        />
+        <div aria-hidden="true" className="site-header__progress" ref={progressRef} />
       </header>
 
       <div aria-hidden={!isOpen} className={`site-menu ${isOpen ? "site-menu--open" : ""}`} id="group-menu">

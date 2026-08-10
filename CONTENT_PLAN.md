@@ -69,7 +69,7 @@ Each sector page has: hero, “What we do” service breakdown, visual “On sit
 | Registration/VAT | `CC/2009/2399`, `04948459-015` | Verified |
 | Contact hero | Reused supplied technology/site-context photograph | Real Mendozer-context photo; no abstract placeholder visual |
 | Enquiry fields | Name, organisation, email, phone, sector, message | Functional static-form configuration |
-| Form delivery | Pre-addressed mailto composer; optional approved endpoint env var | Functional, requires no visitor data storage |
+| Form delivery | Server-side `/api/contact` route with validation, honeypot, basic rate limit, Resend configuration, confirmation, and mailto fallback | Direct delivery activates only when approved Resend server credentials are configured |
 
 ## Privacy and terms `/privacy`, `/terms`
 

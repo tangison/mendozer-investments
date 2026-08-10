@@ -251,7 +251,7 @@ export const siteContent = {
   contact: {
     eyebrow: "Contact",
     title: "Start with the right conversation.",
-    body: "Tell us what you are considering and the relevant Mendozer sector. Your email app will open with the enquiry prepared for the group.",
+    body: "Tell us what you are considering and the relevant Mendozer sector. Secure delivery is used where configured, with your email app available as a fallback.",
     // Reused real group-context photography. No abstract placeholder is required for this placement.
     media: {
       src: "/images/projects/technology/IMG-20260808-WA0061.jpg",
@@ -518,8 +518,8 @@ export const legalPages = {
       {
         heading: "When you prepare an enquiry",
         paragraphs: [
-          "The contact form prepares an email in your own mail application, addressed to contact@mendozer.com. The website does not receive, store, or forward that message itself.",
-          "Your email provider and Mendozer’s inbox handle the message after you choose to send it. Include only information that is relevant to the enquiry.",
+          "When secure delivery is configured, the contact form validates the enquiry and sends it to contact@mendozer.com through the approved server-side delivery provider. The form may also send a confirmation email to the address you provide.",
+          "If secure delivery is unavailable, the website opens a prepared email in your own mail application, addressed to contact@mendozer.com. Include only information that is relevant to the enquiry.",
         ],
       },
       {
