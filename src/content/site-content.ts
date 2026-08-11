@@ -47,6 +47,23 @@ export type LegalPage = {
   sections: readonly { heading: string; paragraphs: readonly string[] }[];
 };
 
+export type WorkContext = {
+  sector: string;
+  title: string;
+  body: string;
+  media: MediaAsset;
+  href: string;
+};
+
+export type PublicUpdate = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  sourceLabel?: string;
+  sourceUrl?: string;
+  media: MediaAsset;
+};
+
 export type VerifiedFact = {
   eyebrow: string;
   title: string;
@@ -86,6 +103,9 @@ export const siteContent = {
   navigation: [
     { label: "About", href: "/about" },
     { label: "Sectors", href: "/sectors" },
+    { label: "Work", href: "/work" },
+    { label: "Updates", href: "/updates" },
+    { label: "Public records", href: "/compliance" },
     { label: "Community", href: "/community" },
   ],
   hero: {
@@ -99,7 +119,7 @@ export const siteContent = {
     media: {
       src: "/images/projects/construction/road-works-2.jpg",
       alt: "A site team beside active infrastructure work",
-      caption: "Infrastructure work in progress",
+      caption: "Construction work in progress",
       status: "real",
       focus: "50% 55%",
     } satisfies MediaAsset,
@@ -111,9 +131,45 @@ export const siteContent = {
     hero: {
       src: "/images/projects/construction/road-works-2.jpg",
       alt: "Site team beside active infrastructure work",
-      caption: "Infrastructure work in progress",
+      caption: "Construction work in progress",
       status: "real",
       focus: "50% 55%",
+    } satisfies MediaAsset,
+  },
+  work: {
+    eyebrow: "Work context",
+    title: "Published carefully, grounded in the work.",
+    body: "These client-supplied images show site, field and facility context from the Mendozer archive. Project names and client details are published only when approval is in place.",
+    hero: {
+      src: "/images/projects/work/IMG-20260808-WA0034.jpg",
+      alt: "A broad view across a building work site",
+      caption: "Construction work in progress",
+      status: "real",
+      focus: "50% 52%",
+    } satisfies MediaAsset,
+  },
+  updates: {
+    eyebrow: "Updates & public records",
+    title: "Activity, recorded with care.",
+    body: "This page brings together approved community context and publicly verifiable records. It does not turn unapproved site images into project claims.",
+    hero: {
+      src: "/images/projects/community/IMG-20260808-WA0077.jpg",
+      alt: "Attendees in front of a Mendozer-branded community event backdrop",
+      caption: "Community sponsorship event",
+      status: "real",
+      focus: "50% 38%",
+    } satisfies MediaAsset,
+  },
+  compliance: {
+    eyebrow: "Public records & licences",
+    title: "Verified details, stated plainly.",
+    body: "Mendozer publishes registration detail and public licensing records that can be verified. Additional compliance material is added only when it is approved for publication.",
+    hero: {
+      src: "/images/projects/fuel-energy/plant-piping.jpg",
+      alt: "Piping and infrastructure at an operational plant",
+      caption: "Energy infrastructure work in progress",
+      status: "real",
+      focus: "54% 52%",
     } satisfies MediaAsset,
   },
   home: {
@@ -124,7 +180,7 @@ export const siteContent = {
       media: {
         src: "/images/projects/technology/tower-full-view.jpg",
         alt: "A communications tower above a work site",
-        caption: "Infrastructure work in progress",
+        caption: "Field systems work in progress",
         status: "real",
         focus: "52% 42%",
       } satisfies MediaAsset,
@@ -182,7 +238,7 @@ export const siteContent = {
     hero: {
       src: "/images/projects/logistics/crew-roadside.jpg",
       alt: "A work crew gathered beside a road",
-      caption: "Infrastructure work in progress",
+      caption: "Site support work in progress",
       status: "real",
       focus: "50% 30%",
     } satisfies MediaAsset,
@@ -256,7 +312,7 @@ export const siteContent = {
     media: {
       src: "/images/projects/technology/IMG-20260808-WA0061.jpg",
       alt: "A communications tower above a prepared site",
-      caption: "Infrastructure work in progress",
+      caption: "Tower and systems work in progress",
       status: "real",
       focus: "50% 53%",
     } satisfies MediaAsset,
@@ -284,7 +340,7 @@ export const sectors: Sector[] = [
     hero: {
       src: "/images/projects/construction/IMG-20260808-WA0033.jpg",
       alt: "A building under construction on an open site",
-      caption: "Infrastructure work in progress",
+      caption: "Building work in progress",
       status: "real",
       focus: "50% 55%",
     },
@@ -292,14 +348,14 @@ export const sectors: Sector[] = [
       {
         src: "/images/projects/construction/road-works-1.jpg",
         alt: "A crew beside roadside infrastructure work",
-        caption: "Infrastructure work in progress",
+        caption: "Road and site work in progress",
         status: "real",
         focus: "52% 50%",
       },
       {
         src: "/images/projects/construction/IMG-20260808-WA0035.jpg",
         alt: "A broad view of a building work site",
-        caption: "Infrastructure work in progress",
+        caption: "Building work in progress",
         status: "real",
         focus: "50% 50%",
       },
@@ -323,7 +379,7 @@ export const sectors: Sector[] = [
     hero: {
       src: "/images/projects/technology/IMG-20260808-WA0061.jpg",
       alt: "A communications tower on a prepared site",
-      caption: "Infrastructure work in progress",
+      caption: "Tower and systems work in progress",
       status: "real",
       focus: "50% 55%",
     },
@@ -331,14 +387,14 @@ export const sectors: Sector[] = [
       {
         src: "/images/projects/technology/IMG-20260808-WA0056.jpg",
         alt: "Communications equipment mounted on a tower",
-        caption: "Infrastructure work in progress",
+        caption: "Tower equipment work in progress",
         status: "real",
         focus: "50% 45%",
       },
       {
         src: "/images/projects/technology/IMG-20260808-WA0060.jpg",
         alt: "Structural base work at a communications installation",
-        caption: "Infrastructure work in progress",
+        caption: "Tower base work in progress",
         status: "real",
         focus: "50% 48%",
       },
@@ -362,7 +418,7 @@ export const sectors: Sector[] = [
     hero: {
       src: "/images/projects/cooling/IMG-20260808-WA0047.jpg",
       alt: "Industrial piping beside a facility building",
-      caption: "Infrastructure work in progress",
+      caption: "Facility infrastructure work in progress",
       status: "real",
       focus: "52% 54%",
     },
@@ -370,14 +426,14 @@ export const sectors: Sector[] = [
       {
         src: "/images/projects/cooling/IMG-20260808-WA0046.jpg",
         alt: "A team walking beside industrial service equipment",
-        caption: "Infrastructure work in progress",
+        caption: "Facility support work in progress",
         status: "real",
         focus: "52% 52%",
       },
       {
         src: "/images/projects/cooling/IMG-20260808-WA0044.jpg",
         alt: "A team walking through an operational facility area",
-        caption: "Infrastructure work in progress",
+        caption: "Operational facility work in progress",
         status: "real",
         focus: "50% 50%",
       },
@@ -401,7 +457,7 @@ export const sectors: Sector[] = [
     hero: {
       src: "/images/projects/logistics/founder-site-visit.jpg",
       alt: "Vehicles and people gathered beside an unpaved work route",
-      caption: "Infrastructure work in progress",
+      caption: "Logistics support work in progress",
       status: "real",
       focus: "50% 53%",
     },
@@ -409,14 +465,14 @@ export const sectors: Sector[] = [
       {
         src: "/images/projects/logistics/IMG-20260808-WA0048.jpg",
         alt: "People beside a container at a work site",
-        caption: "Infrastructure work in progress",
+        caption: "Container support work in progress",
         status: "real",
         focus: "50% 50%",
       },
       {
         src: "/images/projects/logistics/IMG-20260808-WA0043.jpg",
         alt: "A group walking through a work environment",
-        caption: "Infrastructure work in progress",
+        caption: "Field support work in progress",
         status: "real",
         focus: "55% 50%",
       },
@@ -440,7 +496,7 @@ export const sectors: Sector[] = [
     hero: {
       src: "/images/projects/fuel-energy/plant-piping.jpg",
       alt: "Piping and infrastructure at an operational plant",
-      caption: "Infrastructure work in progress",
+      caption: "Energy infrastructure work in progress",
       status: "real",
       focus: "54% 52%",
     },
@@ -448,14 +504,14 @@ export const sectors: Sector[] = [
       {
         src: "/images/projects/energy/IMG-20260808-WA0045.jpg",
         alt: "People walking beside industrial storage infrastructure",
-        caption: "Infrastructure work in progress",
+        caption: "Energy facility context",
         status: "real",
         focus: "50% 50%",
       },
       {
         src: "/images/projects/energy/IMG-20260808-WA0052.jpg",
         alt: "A close view of industrial structural hardware",
-        caption: "Infrastructure work in progress",
+        caption: "Structural systems work in progress",
         status: "real",
         focus: "50% 52%",
       },
@@ -488,7 +544,7 @@ export const sectors: Sector[] = [
       {
         src: "/images/projects/tourism/IMG-20260808-WA0066.jpg",
         alt: "Outdoor work equipment beneath a tree",
-        caption: "Infrastructure work in progress",
+        caption: "Rural operating context",
         status: "real",
         focus: "50% 50%",
       },
@@ -506,6 +562,89 @@ export const sectors: Sector[] = [
       { title: "Long-term planning", description: "Keep durability and local context in the conversation." },
     ],
     crossover: "Tourism and agriculture bring land, access and long-term operations into the wider group conversation.",
+  },
+];
+
+export const workContexts: WorkContext[] = [
+  {
+    sector: "Construction & Infrastructure",
+    title: "Building work context",
+    body: "Client-supplied building and site context, shown without a named project claim.",
+    href: "/sectors/construction",
+    media: {
+      src: "/images/projects/work/IMG-20260808-WA0032.jpg",
+      alt: "A building under construction beside an open site",
+      caption: "Construction work in progress",
+      status: "real",
+      focus: "50% 52%",
+    },
+  },
+  {
+    sector: "Technology & Systems",
+    title: "Field systems context",
+    body: "Tower and field-installation context from the supplied Mendozer archive.",
+    href: "/sectors/technology",
+    media: {
+      src: "/images/projects/work/IMG-20260808-WA0063.jpg",
+      alt: "A communications antenna structure against the sky",
+      caption: "Field systems work in progress",
+      status: "real",
+      focus: "50% 50%",
+    },
+  },
+  {
+    sector: "Logistics & Support Services",
+    title: "Site support context",
+    body: "Container and site-support context, shown without an unverified location or client name.",
+    href: "/sectors/logistics",
+    media: {
+      src: "/images/projects/work/IMG-20260808-WA0049.jpg",
+      alt: "A team beside a container at a work site",
+      caption: "Logistics support work in progress",
+      status: "real",
+      focus: "50% 50%",
+    },
+  },
+];
+
+export const publicUpdates: PublicUpdate[] = [
+  {
+    eyebrow: "Public record",
+    title: "Wholesale fuel distribution licence",
+    body: "Mendozer Investments CC holds wholesale fuel distribution licence W/188/2017.",
+    sourceLabel: "Namibia Government Gazette No. 8287, 3 January 2024, p. 6",
+    sourceUrl: "https://www.lac.org.na/laws/2024/8287.pdf",
+    media: {
+      src: "/images/projects/fuel-energy/plant-piping.jpg",
+      alt: "Piping and infrastructure at an operational plant",
+      caption: "Energy infrastructure work in progress",
+      status: "real",
+      focus: "54% 52%",
+    },
+  },
+  {
+    eyebrow: "Community archive",
+    title: "Miss Teen Namibia 2026",
+    body: "Client-supplied event imagery records Mendozer sponsorship visibility at the event.",
+    media: {
+      src: "/images/projects/community/IMG-20260808-WA0078.jpg",
+      alt: "Guests at a Mendozer-branded community event backdrop",
+      caption: "Community sponsorship event",
+      status: "real",
+      focus: "50% 35%",
+    },
+  },
+  {
+    eyebrow: "Community archive",
+    title: "Otjiwarongo Sports Bonanza",
+    body: "The client-supplied record identifies Mendozer as a sponsor acknowledgement, not an organiser. The image is generated local-sport context, not event documentation.",
+    media: {
+      src: "/images/generated/community-otjiwarongo-sport-context.png",
+      alt: "An empty local sport ground with a weathered football goal and low pavilion",
+      caption: "Generated local-sport context, not event documentation",
+      status: "generated",
+      focus: "50% 54%",
+    },
   },
 ];
 
@@ -573,6 +712,9 @@ export const routes = [
   "/about",
   "/sectors",
   ...sectors.map((sector) => `/sectors/${sector.slug}`),
+  "/work",
+  "/updates",
+  "/compliance",
   "/community",
   "/contact",
   "/privacy",

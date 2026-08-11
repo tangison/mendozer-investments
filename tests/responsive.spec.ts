@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-const coreRoutes = ["/", "/about", "/sectors", "/sectors/construction", "/sectors/technology", "/sectors/cooling", "/sectors/logistics", "/sectors/energy", "/sectors/tourism", "/community", "/contact", "/privacy", "/terms"];
+const coreRoutes = ["/", "/about", "/sectors", "/sectors/construction", "/sectors/technology", "/sectors/cooling", "/sectors/logistics", "/sectors/energy", "/sectors/tourism", "/work", "/updates", "/compliance", "/community", "/contact", "/privacy", "/terms"];
 
 test.describe("core routes", () => {
   for (const route of coreRoutes) {

@@ -21,8 +21,11 @@ Help a Namibian investor, institutional buyer, commercial partner, or sector-spe
 | `/sectors/logistics` | Logistics and support services Namibia | site logistics, field coordination | Real vehicle/container/crew context imagery |
 | `/sectors/energy` | Wholesale fuel distribution Namibia | fuel and energy infrastructure | Verified wholesale licence W/188/2017 and public Gazette source |
 | `/sectors/tourism` | Tourism and agriculture Namibia | rural operations, land context | Real landscape/rural context imagery |
+| `/work` | Mendozer work context | construction, field systems, logistics support context Namibia | Real supplied work-context imagery without named project claims |
+| `/updates` | Mendozer updates and public records | community sponsorship, public licence record | Approved event context and publicly verifiable records |
+| `/compliance` | Mendozer public records and licences | registration, VAT, wholesale fuel distribution licence Namibia | Verified registration values and Gazette source |
 | `/community` | Mendozer community sponsorship | Miss Teen Namibia 2026, Otjiwarongo Sports Bonanza sponsor acknowledgement | Supplied event images and clearly labelled generated context image |
-| `/contact` | Contact Mendozer Investments | group enquiry, sector enquiry | Direct domain email and mailto enquiry flow |
+| `/contact` | Contact Mendozer Investments | group enquiry, sector enquiry | Server delivery route when configured, email fallback otherwise |
 
 ## Technical foundations already in place
 

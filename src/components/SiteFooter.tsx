@@ -31,6 +31,9 @@ export function SiteFooter() {
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/sectors">Sectors</Link>
+            <Link href="/work">Work context</Link>
+            <Link href="/updates">Updates</Link>
+            <Link href="/compliance">Public records</Link>
             <Link href="/community">Community</Link>
             <Link href="/contact">Contact</Link>
           </nav>

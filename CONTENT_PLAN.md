@@ -53,6 +53,28 @@ The `/sectors` hub gives search and navigation users a crawlable directory of al
 
 Each sector page has: hero, “What we do” service breakdown, visual “On site” context, a cross-sector link, and a contact CTA. No fabricated proof section appears; named project/certification content is intentionally absent.
 
+## Work context `/work`
+
+| Section | Content | Status |
+|---|---|---|
+| Work contexts | Construction, field systems, and logistics-support archive imagery | Verified real Mendozer-context imagery; project names, clients, locations, and scope remain unpublished until approved. |
+| Purpose | A portfolio structure without fabricated case studies | Working structure, honest about publication limits. |
+
+## Updates and public records `/updates`
+
+| Section | Content | Status |
+|---|---|---|
+| Wholesale fuel distribution licence | Licence W/188/2017 with Namibia Government Gazette source | Verified public record. |
+| Community archive | Miss Teen Namibia 2026 and Otjiwarongo Sports Bonanza sponsor acknowledgement | Verified source context; generated image is labelled as non-documentary. |
+
+## Public records and licences `/compliance`
+
+| Section | Content | Status |
+|---|---|---|
+| Registration and VAT | `CC/2009/2399`, `04948459-015` | Verified. |
+| Wholesale fuel distribution licence | W/188/2017 with Gazette source | Verified public record. |
+| Additional records | Publish only after client approval | Factual publication policy, not a claim of missing compliance. |
+
 ## Community `/community`
 
 | Section | Content | Status |

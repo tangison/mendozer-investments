@@ -233,3 +233,19 @@ The remediation deployment was verified at both `https://mendozer-tangison-previ
 - HSTS, type protection, referrer policy, frame policy, and permissions policy remain present.
 - The desktop pause control and first-view WebP hero derivative are present in delivered HTML.
 - The only remaining production-readiness dependency is Vercel configuration of `RESEND_API_KEY` and `CONTACT_FROM_EMAIL`, plus an approved durable distributed rate limiter. Those secrets and provider ownership cannot be created from repository code.
+
+## Structural and Content Follow-Up: 2026-08-11
+
+A direct structural review highlighted thin sector depth, no public proof mechanism, limited activity context, one visible leadership name, generic repeated captions, and weak internal discoverability of deep pages. The following response preserves factual restraint.
+
+| Observation | Response | Status |
+|---|---|---|
+| Sector pages were perceived as thin | Reworked generic service labels, descriptions, cross-sector context, CTAs, and sector captions for clearer capabilities language without inventing scope, clients, service areas, or results. | Improved, client service detail still pending |
+| No public work or project mechanism | Added `/work`, a real archive-context page that provides portfolio structure while explicitly withholding unapproved project names, client names, locations, and scope claims. | Resolved without fabricated case studies |
+| No visible activity mechanism | Added `/updates`, limited to approved community context and publicly verifiable records. | Resolved with factual publication boundary |
+| Licence buried in footer | Added `/compliance` with registration, VAT, verified wholesale fuel licence, and Gazette source. | Resolved |
+| Repeated generic image captions | Replaced generic repeated captions with sector-context captions such as construction work, field systems work, facility support, logistics support, energy infrastructure, and rural operating context. | Resolved |
+| Region acknowledgment needed | Copy now states Namibian working context and formal local business audience directly. Specific city/service-area claims remain excluded until verified. | Resolved within available facts |
+| Leadership depth limited | Kept Johannes Negumbo as the only named leader because no other client-approved team data exists. The site now has a visible work, records, and updates structure rather than invented leadership profiles. | Requires client data |
+
+The direct review correctly identified that unapproved information should not be faked to make a group site feel more active. The current site now has mechanisms for approved proof, work contexts, public records, and updates to be added without redesigning the architecture.

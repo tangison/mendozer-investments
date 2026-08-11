@@ -7,7 +7,7 @@ This register maps the implemented website against the practical items in an ind
 ### Strategy, structure, and content
 
 - Group objective, investor and partner audience, customer journey, page structure, and primary contact action are documented in `PRODUCT.md`, `BUILD_PLAN.md`, and `CONTENT_PLAN.md`.
-- The approved public route set is complete: Home, About, a sector directory, six sector pages, Community, Contact, Privacy Notice, Website Terms, and a custom 404 page.
+- The approved public route set is complete: Home, About, a sector directory, six sector pages, Work Context, Updates, Public Records and Licences, Community, Contact, Privacy Notice, Website Terms, and a custom 404 page.
 - FAQ-style enquiry guidance is available on the homepage through accessible native disclosure controls.
 - No testimonials, case studies, client logos, metrics, staff biography, service price, certification, location, phone number, hours, or social account is fabricated.
 - The public wholesale fuel distribution licence fact is cited accurately from the Namibia Government Gazette source.

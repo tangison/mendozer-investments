@@ -33,8 +33,11 @@ The website is deliberately a **branded house**, not six sub-brands: the group i
 | `/sectors/logistics` | Dedicated sector route | Same reusable sector template, data-driven content |
 | `/sectors/energy` | Dedicated sector route | Same reusable sector template, data-driven content |
 | `/sectors/tourism` | Dedicated sector route | Same reusable sector template, data-driven content |
+| `/work` | Work context | Real archive imagery with no unverified project, client, or location claims |
+| `/updates` | Updates and public records | Approved sponsorship context and publicly verifiable activity records |
+| `/compliance` | Public records and licences | Registration, VAT, verified fuel licence, and public source link |
 | `/community` | Sponsorship presence | Event hero, factual sponsorship cards, supplied event gallery |
-| `/contact` | Enquiry conversion | Direct email, privacy-preserving pre-addressed enquiry form, verified legal details |
+| `/contact` | Enquiry conversion | Secure delivery route when configured, direct email fallback, verified legal details |
 | `/privacy` | Privacy notice | Factual explanation of secure delivery when configured and the mailto fallback |
 | `/terms` | Website terms | Clear website-use context with no invented service, project, or availability claim |
 

@@ -18,7 +18,7 @@ const primaryLinks = [
 ] as const;
 
 function usesDarkHero(pathname: string) {
-  return pathname === "/" || pathname === "/about" || pathname === "/sectors" || pathname.startsWith("/sectors/") || pathname === "/community" || pathname === "/contact";
+  return pathname === "/" || pathname === "/about" || pathname === "/sectors" || pathname.startsWith("/sectors/") || pathname === "/work" || pathname === "/updates" || pathname === "/compliance" || pathname === "/community" || pathname === "/contact";
 }
 
 /**

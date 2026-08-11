@@ -112,8 +112,9 @@ This amendment supersedes every prior instruction that permitted a brand-gradien
 | `/public/images/projects/logistics/` | About and Logistics page | Real supplied photos; generic captions only |
 | `/public/images/projects/fuel-energy/`, `/energy/` | Energy page | Real supplied photos; generic captions only |
 | `/public/images/projects/tourism/` | Tourism & Agriculture page | Real supplied photos; generic captions only |
-| `/public/images/projects/community/` | Community/Sponsorship page | Real supplied event images; no organiser claim |
-| `/public/images/generated/community-otjiwarongo-sport-context.png` | Otjiwarongo Sports Bonanza sponsorship card | `GEN-001` tangison-imagegen contextual visual; explicit non-documentary caption and complete ledger below |
+| `/public/images/projects/community/` | Community/Sponsorship and Updates pages | Real supplied event images; no organiser claim |
+| `/public/images/projects/work/` | Work Context page | Real supplied construction, field-systems, and logistics-support context; no named project claim |
+| `/public/images/generated/community-otjiwarongo-sport-context.png` | Otjiwarongo Sports Bonanza sponsorship card and Updates archive item | `GEN-001` tangison-imagegen contextual visual; explicit non-documentary caption and complete ledger below |
 
 ## Retired placeholder assets: removed by the amendment
 
@@ -132,7 +133,7 @@ This amendment supersedes every prior instruction that permitted a brand-gradien
 | Created through | `tangison-imagegen` route, using the available image-generation service |
 | Relevant source grounding | `/reference/photography/IMG-20260808-WA0055.jpg`, `IMG-20260808-WA0067.jpg`, and `IMG-20260808-WA0076.jpg` supplied as visual references for Namibian light, semi-arid terrain, and restrained community-event context. |
 | Purpose | A quiet, non-documentary local-sport context image for the Otjiwarongo Sports Bonanza sponsorship card because no usable supplied event photograph exists for that placement. |
-| Page and placement | `/community`, Otjiwarongo Sports Bonanza sponsorship card. It is a reusable master, but has no other placement at this time. |
+| Page and placement | `/community`, Otjiwarongo Sports Bonanza sponsorship card; `/updates`, Otjiwarongo Sports Bonanza archive item. It is one reused contextual master, not multiple similar generated images. |
 | Visible status / caption | `Generated local-sport context, not event documentation` |
 | Alt text | `An empty local sport ground with a weathered football goal and low pavilion` |
 | Authenticity guard | No Mendozer logo, text, signage, people, crowd, vehicle, or claim of actual event coverage appears in the generated frame. |

@@ -15,7 +15,7 @@ for (const slug of requiredSlugs) {
   if (!content.includes(`/og/${slug}.png`) && !existsSync(resolve(root, `public/og/${slug}.png`))) failures.push(`Missing Open Graph asset: ${slug}`);
 }
 
-for (const utilityRoute of ["sectors", "privacy", "terms"]) {
+for (const utilityRoute of ["sectors", "work", "updates", "compliance", "privacy", "terms"]) {
   if (!content.includes(`"/${utilityRoute}"`)) failures.push(`Missing sitemap route: /${utilityRoute}`);
   if (!existsSync(resolve(root, `src/app/${utilityRoute}/page.tsx`))) failures.push(`Missing public utility page: /${utilityRoute}`);
 }

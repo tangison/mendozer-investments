@@ -38,6 +38,9 @@ Open `http://localhost:3000`.
 - `/sectors/logistics`
 - `/sectors/energy`
 - `/sectors/tourism`
+- `/work`: real work-context archive with disciplined publication boundaries
+- `/updates`: approved community context and public records
+- `/compliance`: registration, VAT, and verified public licence record
 - `/community`: sponsorship presence
 - `/contact`: direct enquiry
 - `/privacy`: factual privacy notice for the secure delivery workflow and mailto fallback

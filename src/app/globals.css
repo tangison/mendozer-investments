@@ -326,6 +326,27 @@ html[data-motion="enabled"] [data-reveal].is-revealed { transform: translate3d(0
 .community-gallery__item { min-height: clamp(19rem, 35vw, 28rem); }
 .community-gallery > div:nth-child(2) { margin-top: var(--space-16); }
 
+/* Work, updates, and public records -------------------------------------- */
+.work-contexts__grid, .updates-page__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: clamp(var(--space-8), 6vw, var(--space-16)); gap: var(--space-6); }
+.work-context-card, .update-card { height: 100%; overflow: hidden; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-md); background: var(--color-bg-primary); }
+.work-context-card .media-frame, .update-card .media-frame { min-height: clamp(18rem, 27vw, 24rem); border-radius: 0; }
+.work-context-card > div, .update-card > div { padding: var(--space-6); }
+.work-context-card h2, .update-card h2 { margin-top: var(--space-3); font-size: clamp(1.35rem, 2.3vw, 2rem); }
+.work-context-card > div > p:last-of-type, .update-card > div > p:last-of-type { margin-top: var(--space-3); color: var(--color-text-body); font-size: 0.875rem; line-height: 1.7; }
+.work-context-card .text-link, .update-card .text-link { margin-top: var(--space-6); font-size: 0.75rem; }
+.compliance-page__grid { display: grid; grid-template-columns: minmax(17rem, 0.85fr) minmax(0, 1.15fr); align-items: start; gap: clamp(var(--space-8), 8vw, var(--space-24)); }
+.compliance-page__records { display: grid; border-top: 1px solid var(--color-border-subtle); }
+.compliance-page__records > div { display: grid; grid-template-columns: minmax(8rem, 0.42fr) minmax(0, 1fr); padding: var(--space-5) 0; border-bottom: 1px solid var(--color-border-subtle); gap: var(--space-6); }
+.compliance-page__records dt { color: var(--color-brand-navy); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.05em; }
+.compliance-page__records dd { margin: 0; color: var(--color-text-body); font-size: 0.9375rem; line-height: 1.6; }
+.compliance-page__records a { color: var(--color-brand-navy); font-weight: 600; text-decoration: underline; text-underline-offset: 0.24rem; }
+.compliance-page__records a:hover { color: var(--color-brand-blue); }
+.compliance-page__note { text-align: left; }
+.compliance-page__note > .site-container { max-width: 54rem; }
+.compliance-page__note h2 { max-width: 18ch; margin-top: var(--space-4); font-size: clamp(2rem, 4vw, 3.75rem); }
+.compliance-page__note p:last-of-type { max-width: 42rem; margin-top: var(--space-6); color: var(--color-text-body); line-height: 1.72; }
+.compliance-page__note .text-link { margin-top: var(--space-6); }
+
 /* Legal information ------------------------------------------------------- */
 .legal-hero { position: relative; overflow: hidden; padding: clamp(10rem, 17vw, 14rem) 0 clamp(var(--space-12), 7vw, var(--space-24)); background: var(--color-bg-secondary); }
 .legal-hero__accent { position: absolute; right: -5rem; bottom: -10rem; width: min(48vw, 32rem); aspect-ratio: 1; background: url("/assets/vectors/cta-accent.svg") center / contain no-repeat; opacity: 0.28; pointer-events: none; }
@@ -416,6 +437,8 @@ html[data-motion="enabled"] [data-reveal].is-revealed { transform: translate3d(0
   .home-faq__grid { grid-template-columns: minmax(0, 1fr); }
   .legal-page__grid { grid-template-columns: minmax(0, 1fr); }
   .legal-page__aside { position: static; max-width: 34rem; }
+  .work-contexts__grid, .updates-page__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .compliance-page__grid { grid-template-columns: minmax(0, 1fr); }
   .introduction-section__grid, .community-feature__grid, .sector-gallery, .about-intro, .leadership-section__grid { grid-template-columns: 1fr; }
   .introduction-section__copy { padding-left: 0; }
   .introduction-section__grid > div:last-child { max-width: 40rem; }
@@ -477,6 +500,8 @@ html[data-motion="enabled"] [data-reveal].is-revealed { transform: translate3d(0
   .contact-form__bottom { align-items: flex-start; flex-direction: column; }
   .community-gallery { grid-template-columns: 1fr; }
   .community-gallery > div:last-child { grid-column: auto; }
+  .work-contexts__grid, .updates-page__grid { grid-template-columns: minmax(0, 1fr); }
+  .compliance-page__records > div { grid-template-columns: minmax(0, 1fr); gap: var(--space-2); }
   .site-footer__grid { grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
   .site-footer__column--details { grid-column: auto; }
   .site-footer__column--sectors > div { grid-template-columns: minmax(0, 1fr); }
