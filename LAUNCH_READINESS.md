@@ -62,8 +62,8 @@ These items do not apply to the current approved static corporate build:
 - Private source repository: `https://github.com/tangison/mendozer-investments`
 - Working Vercel preview: `https://mendozer-tangison-preview.vercel.app`
 - Authorised staging hostname: `https://mendozer.tangison.com`
-- Production canonical hostname: `https://mendozer.com`
-- Secondary hostname: `https://www.mendozer.com`, redirecting to the apex hostname
+- Production canonical hostname: `https://mendozer.com`, HTTPS verified
+- Secondary hostname: `https://www.mendozer.com`, HTTP 308 redirect verified to the apex hostname
 - Canonical URL is configurable through `NEXT_PUBLIC_SITE_URL`; changing it at launch does not require component-level edits.
 
 ## Post-cutover production gate
