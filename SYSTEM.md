@@ -61,8 +61,8 @@ Mendozer already has a locked brand identity (`design-tokens.md`): colors, typog
 ## Motion direction
 Reference example supplied for animation quality/pattern (staggered fade-up on load, clip-reveal headline words, custom easing): this is a pattern reference for *how* animation should feel, not literal content to reuse (that example's purple accent, video hero, and copy belong to a different brand). Apply the same discipline to Mendozer: staggered entrance animation on hero elements, restrained scroll motion elsewhere, full reduced-motion fallback. One primary motion engine, per `tangison-motion-master` and Ponytail discipline in the build prompt.
 
-## Deployment restrictions
-Do not deploy, connect the production domain, or change DNS without explicit authorization from Tangi. Demo/preview deploys only until sign-off.
+## Deployment authorization amendment
+Direct authorization has now been received to connect and deploy `mendozer.com` as the production canonical hostname. Retain `mendozer.tangison.com` for staging. Do not make unrelated DNS changes or remove the staging host.
 
 ## Verification and release gate
 Before this project is considered ready for `tangison-web-build`:

@@ -43,7 +43,7 @@ These items do not apply to the current approved static corporate build:
 - Third-party advertising pixels, social feeds, embedded maps, live chat, or heavy widgets.
 - Testimonials, case studies, public client names, project metrics, or certificates that were not supplied for publication.
 
-## Requires client or service-provider authority before launch on mendozer.com
+## Requires client or service-provider authority for full production operations
 
 | Area | Required action | Why it cannot be completed autonomously |
 |---|---|---|
@@ -55,19 +55,20 @@ These items do not apply to the current approved static corporate build:
 | Email domain | Confirm SPF, DKIM, DMARC, mailbox ownership, and sender reputation for `contact@mendozer.com` | DNS and mailbox administration are external to this repository. |
 | Backup and monitoring | Confirm owner, backup policy, error monitoring, uptime monitoring, rollback contact, and support responsibility | Vercel hosts the static build, but operational ownership and support terms are not provided. |
 | Content authority | Confirm active sector list, sector-specific services, named projects, clients, real case studies, leadership profile, and published imagery rights | The website does not invent supporting proof. |
-| Production domain | Explicitly authorize `mendozer.com` cutover only after the items above are approved | The active deployment guardrail permits `mendozer.tangison.com` only. |
+| Production search operations | Add Google and Bing verification values, submit the production sitemap, and review index coverage | `mendozer.com` is authorised and attached; search-console ownership verification remains external. |
 
 ## Current staging and ownership state
 
 - Private source repository: `https://github.com/tangison/mendozer-investments`
 - Working Vercel preview: `https://mendozer-tangison-preview.vercel.app`
 - Authorised staging hostname: `https://mendozer.tangison.com`
-- Production client hostname: `mendozer.com`, intentionally not connected
+- Production canonical hostname: `https://mendozer.com`
+- Secondary hostname: `https://www.mendozer.com`, redirecting to the apex hostname
 - Canonical URL is configurable through `NEXT_PUBLIC_SITE_URL`; changing it at launch does not require component-level edits.
 
-## Pre-cutover gate
+## Post-cutover production gate
 
-Before connecting `mendozer.com`, confirm:
+After production deployment, confirm:
 
 1. Approved final sector/service copy and publishable proof.
 2. Approved contact-delivery provider and successful recipient test.
@@ -75,4 +76,4 @@ Before connecting `mendozer.com`, confirm:
 4. Client ownership of domain, hosting, code repository, design assets, and email administration.
 5. Search Console, sitemap submission, analytics/consent decision, monitoring, backup, and support-owner decisions.
 6. Final mobile, accessibility, SEO, performance, form, external-link, and browser checks against the live staging hostname.
-7. Direct written authorization to add the production domain.
+7. Google Search Console and Bing Webmaster Tools verification, sitemap submission, and initial index monitoring.

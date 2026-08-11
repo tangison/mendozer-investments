@@ -2,7 +2,7 @@
 
 A production-ready, image-led corporate website for Mendozer Investments. Built with **Next.js, TypeScript, Tailwind, and Vercel** as a static-first site with a reusable Tangison multi-sector corporate starter architecture.
 
-> **Deployment guardrail:** this build stages on `mendozer.tangison.com`. Do **not** connect or deploy `mendozer.com` without separate written authorisation.
+> **Domain plan:** `mendozer.com` is the authorised production canonical hostname. `mendozer.tangison.com` remains the staging hostname for ongoing validation.
 
 ## Quick start
 
@@ -128,18 +128,19 @@ CONTACT_TO_EMAIL=contact@mendozer.com
 ### Environment
 
 ```bash
-NEXT_PUBLIC_SITE_URL=https://mendozer.tangison.com
+NEXT_PUBLIC_SITE_URL=https://mendozer.com
 ```
 
-`NEXT_PUBLIC_SITE_URL` is the only canonical-domain setting. It keeps staging and later cutover changes out of components, metadata, and sitemap code.
+`NEXT_PUBLIC_SITE_URL` is the only canonical-domain setting. Production uses `https://mendozer.com`; previews and staging use `https://mendozer.tangison.com`.
 
 ### Vercel
 
 1. Import the private GitHub repository into the intended Vercel account/team or deploy via the Vercel CLI.
-2. Set `NEXT_PUBLIC_SITE_URL=https://mendozer.tangison.com` for the staging production deployment.
-3. Confirm build success, production preview URL, headers, mobile layout, metadata, and TLS.
-4. Connect **only** `mendozer.tangison.com` at this stage.
-5. Do not add `mendozer.com` until an explicit domain-cutover authorisation is provided.
+2. Set `NEXT_PUBLIC_SITE_URL=https://mendozer.com` for production and `https://mendozer.tangison.com` for preview/staging.
+3. Confirm production build success, canonical URLs, headers, mobile layout, metadata, redirects, and TLS.
+4. Keep `mendozer.com` as the canonical hostname and redirect `www.mendozer.com` to the apex hostname with HTTP 308.
+5. Retain `mendozer.tangison.com` as the staging hostname for validation and rollback checks.
+6. Add Google and Bing verification values in Vercel when each platform provides its token, then submit `https://mendozer.com/sitemap.xml`.
 
 `vercel.json` includes conservative browser security headers. The site has no database or server-side secrets.
 

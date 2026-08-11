@@ -18,7 +18,7 @@ Original plan assumed a lean, rush-timeline brochure site. Scope is now upgraded
 
 - Static site, Next.js + Tailwind + Vercel
 - No auth, no payments, no database
-- Staging domain: `mendozer.tangison.com`; `mendozer.com` remains disconnected until separately authorised
+- Production canonical domain: `mendozer.com`; `mendozer.tangison.com` remains the staging hostname
 - Model: Branded House, one site, dedicated sector pages (see `site-architecture.md`)
 
 ## Rejected alternatives
@@ -75,7 +75,7 @@ A generated master is reused across compatible placements instead of generating 
 5. `tangison-web-build` implementation: complete all routes and reusable template behavior.
 6. `tangison-web-audit` full pass: accessibility, performance, SEO, responsive, content accuracy, Hallmark, and Impeccable review.
 7. Social asset generation: Open Graph images and sharing metadata.
-8. `tangison-web-deploy`: custom Vercel preview and authorised staging hostname only. `mendozer.com` requires separate explicit authorisation.
+8. `tangison-web-deploy`: production `mendozer.com`, apex canonical redirect policy, preview/staging validation, and search-verification handoff.
 
 ## Acceptance criteria
 

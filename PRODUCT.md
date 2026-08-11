@@ -42,7 +42,7 @@ The website is deliberately a **branded house**, not six sub-brands: the group i
 
 - Static compilation through Next.js; no database, CMS, authentication, payment, or tracking dependency.
 - SEO metadata, canonical URLs, Open Graph assets per major page, `robots.txt`, `sitemap.xml`, and a web manifest.
-- Canonical URL sourced from `NEXT_PUBLIC_SITE_URL`, defaulting to the authorised staging URL rather than hardcoded through components.
+- Canonical URL sourced from `NEXT_PUBLIC_SITE_URL`, with production set to `https://mendozer.com` and staging set separately without component changes.
 - Official supplied logo and favicon assets served unchanged from `/public/assets`.
 - Reusable `SectorPageTemplate` driven by the `sectors` content array: no duplicated sector-page implementations.
 - Header navigation, mobile navigation, footer route map, Tangison Studio credit, and accessible contact form.
@@ -53,7 +53,7 @@ The website is deliberately a **branded house**, not six sub-brands: the group i
 - No claims based on unavailable source information.
 - No CMS or editor interface; content is compiled from `src/content/site-content.ts`.
 - No real-time contact backend until an approved mail provider / sender domain is configured.
-- No mendozer.com domain connection, DNS change, or production cutover.
+- No CMS, database, payment, or unapproved third-party tracking integration.
 - No private analytics or third-party tracking script.
 
 ## Content release condition

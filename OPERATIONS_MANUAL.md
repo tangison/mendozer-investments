@@ -6,9 +6,10 @@
 - Package manager: npm
 - Hosting: Vercel
 - Source repository: private GitHub repository `tangison/mendozer-investments`
-- Working hostname: `mendozer.tangison.com`
+- Working staging hostname: `mendozer.tangison.com`
 - Preview hostname: `mendozer-tangison-preview.vercel.app`
-- Production client hostname: `mendozer.com`, intentionally disconnected
+- Production canonical hostname: `mendozer.com`
+- `www.mendozer.com` redirects to `mendozer.com`
 
 ## Routine content update process
 
@@ -38,7 +39,7 @@ The responsive suite covers the public route set, 320px through desktop viewport
 
 | Variable | Purpose | Safe value now |
 |---|---|---|
-| `NEXT_PUBLIC_SITE_URL` | Canonical URLs, sitemap, Open Graph base URL | `https://mendozer.tangison.com` |
+| `NEXT_PUBLIC_SITE_URL` | Canonical URLs, sitemap, Open Graph base URL | Production: `https://mendozer.com`; preview/staging: `https://mendozer.tangison.com` |
 | `RESEND_API_KEY` | Server-side Resend credential | Required for direct server delivery. Keep secret in Vercel only. |
 | `CONTACT_FROM_EMAIL` | Verified Resend sender address | Required for direct server delivery. |
 | `CONTACT_TO_EMAIL` | Group recipient address | Defaults to `contact@mendozer.com`. |
@@ -65,7 +66,7 @@ Before a production-domain launch, configure a verified Resend sender, a durable
 1. Vercel deploys `main` through the linked GitHub repository.
 2. Verify the Vercel deployment reaches `READY`.
 3. Check homepage, sector hub, one individual sector, Community, Contact, Privacy, Terms, sitemap, and robots on the deployment URL.
-4. Verify TLS and response headers on `mendozer.tangison.com`.
+4. Verify TLS, response headers, canonical URLs, sitemap, and redirects on `mendozer.com`, `www.mendozer.com`, and `mendozer.tangison.com`.
 5. If a release is faulty, revert the Git commit, push the revert to `main`, and verify the next Vercel deployment.
 
 ## Maintenance schedule
