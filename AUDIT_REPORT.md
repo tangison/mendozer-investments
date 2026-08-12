@@ -249,3 +249,53 @@ A direct structural review highlighted thin sector depth, no public proof mechan
 | Leadership depth limited | Kept Johannes Negumbo as the only named leader because no other client-approved team data exists. The site now has a visible work, records, and updates structure rather than invented leadership profiles. | Requires client data |
 
 The direct review correctly identified that unapproved information should not be faked to make a group site feel more active. The current site now has mechanisms for approved proof, work contexts, public records, and updates to be added without redesigning the architecture.
+
+## Editorial redesign and evidence-research validation: 2026-08-12
+
+### Reference boundary
+
+The live COLLINS website at `https://wearecollins.com/` was reviewed as a public reference for broad editorial principles only: direct hierarchy, quiet navigation, media-led pacing, and clear program discovery. The Mendozer implementation does not copy Collins code, text, assets, CSS, markup, layout, wireframe, or page composition. It uses the locked Mendozer identity, supplied assets, factual content boundary, and original React/CSS implementation.
+
+### Design outcome
+
+| Area | Result |
+|---|---|
+| Typography | Retained local Poppins, the verified brand family, and reduced active weights to 400, 500, and 600. Large displays now use 400 rather than heavy 700 or 800 treatment. |
+| Hero | Replaced the rotating sector widget with a direct full-viewport group statement, two actions, a supplied-photo WebM/MP4 motion derivative, and a static WebP poster. Compact and reduced-motion views use the poster only. |
+| Controls | Removed glow, shadow, gradient-driven UI, and rounded action treatment. Controls are compact rectangular elements with visible borders, clear focus states, and 44px mobile targets. |
+| Navigation | Rebuilt the menu as a full-viewport modal dialog with original Group, Sectors, and Contact tabs. It provides real contextual imagery, sector disclosures, keyboard tab navigation, Escape close, focus restoration, and inert background isolation. |
+| Discovery | Added an original sector explorer below the home hero. Desktop uses keyboard-accessible tabs. Compact layouts use native disclosures. No sector auto-rotation remains. |
+| Page system | Re-art-directed all 16 public routes and the not-found state through the shared editorial page system, retaining every verified fact, public record, legal route, contact route, and sitemap entry. |
+| Evidence research | Added `RESEARCH_LOG.md`. The June 2025 Gazette confirms the existing licence listing. A Kunene Regional Council candidate procurement record remains unpublished because its legal-name match and publication approval are unresolved. No founder or team claim was invented. |
+
+### Impeccable and Hallmark review
+
+- **Hierarchy:** Each public route now begins with a distinct, direct image-plus-editorial composition rather than a generic card stack.
+- **Authenticity:** The motion layer is a ten-second derivative of supplied construction photography. No arbitrary YouTube media, stock footage, generated logo, fake client, or unverified project is used.
+- **Restraint:** The interface has no glow, card-shadow decoration, dashboard UI, gradient text, fake proof, counter, testimonial, or copied agency treatment.
+- **Mobile:** The hero remains one-screen, legible, and action-led at 320px through 414px. The full-screen dialog is scrollable, contained, and uses large targets.
+- **Accessibility:** The original redesign corrected light-surface contrast issues before final verification. Native disclosures, focus visibility, semantic tabs, and reduced-motion behavior remain intact.
+
+### Final measured verification
+
+| Gate | Method | Result |
+|---|---|---|
+| Type safety | `npm run typecheck` | PASS |
+| Lint | `npm run lint` | PASS, zero warnings |
+| Content and asset integrity | `npm run test:content` | PASS: six sectors, 36 mapped assets, 10 OG images, supplied logo equality, motion ledger and files verified |
+| Production build | `npm run build` | PASS: 21 outputs including dynamic contact API |
+| Responsive and interaction | `npx playwright test tests/responsive.spec.ts` | PASS: 24 tests across all public routes, 320px through desktop, full-screen dialog, desktop tabs, mobile disclosures, and simple motion hero |
+| Accessibility | `npx playwright test tests/accessibility.spec.ts` | PASS: 11 Axe and keyboard tests |
+| Contact route | `npx playwright test tests/contact-api.spec.ts` | PASS: 3 validation, honeypot, and delivery-configuration tests |
+| Route smoke | Local production server and curl across 20 pages, feeds, and media paths | PASS: all returned HTTP 200 |
+| Dependency audit | `npm audit --omit=dev` | PASS: zero vulnerabilities |
+| Secret and style guard | Source scan | PASS: no tracked credential pattern, em dash, glow, shadow, or radial-gradient styling |
+| Mobile Lighthouse | Cold local production audit | Performance 96, Accessibility 100, Best Practices 100, SEO 100. FCP 0.8s, LCP 1.7s, TBT 210ms, CLS 0.053. |
+| Desktop Lighthouse | Local production audit | Performance 100, Accessibility 100, Best Practices 100, SEO 100. FCP 0.3s, LCP 0.6s, TBT 0ms, CLS 0.003. |
+
+### Remaining external dependencies
+
+1. Configure the approved Resend variables in Vercel, then conduct a live deployed form delivery and confirmation test.
+2. Provide the short-lived Vercel and GitHub access required to set environment variables, push the redesign, and verify the deployment reaches `READY`.
+3. Confirm whether the candidate Kunene Regional Council procurement record refers to Mendozer Investments CC before any public publication.
+4. Supply approved founder, leadership, team, project, client, location, and service information before expanding those content areas.

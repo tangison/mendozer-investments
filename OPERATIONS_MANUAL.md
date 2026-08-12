@@ -33,7 +33,7 @@ npm run test:responsive
 npm audit --omit=dev
 ```
 
-The responsive suite covers the public route set, 320px through desktop viewport behavior, hero tabs, FAQ disclosures, and off-canvas navigation. The accessibility suite runs Axe checks plus keyboard skip-link coverage.
+The responsive suite covers the public route set, 320px through desktop viewport behavior, the simple supplied-photo hero, sector-explorer tabs and mobile disclosures, FAQ disclosures, and full-screen navigation. The accessibility suite runs Axe checks plus keyboard skip-link coverage.
 
 ## Environment variables
 
@@ -58,6 +58,7 @@ Before a production-domain launch, configure a verified Resend sender, a durable
 - Keep source identity assets under `/assets` and byte-identical served copies under `/public/assets`.
 - Keep real source photography in `/reference/photography`.
 - Keep browser-served, selected images under `/public/images/projects`.
+- Keep supplied-photo motion derivatives under `/public/media`, with a static poster, no audio, a reduced-motion fallback, and a complete ledger entry in `ASSET_MANIFEST.md`.
 - Use documented generated masters under `/public/images/generated` only when no relevant supplied image exists for a placement.
 - Keep SVG icon/divider/motif source assets under `/assets/vectors` with byte-identical public copies under `/public/assets/vectors`.
 

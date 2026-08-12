@@ -55,7 +55,7 @@ The website is deliberately a **branded house**, not six sub-brands: the group i
 
 - No claims based on unavailable source information.
 - No CMS or editor interface; content is compiled from `src/content/site-content.ts`.
-- No real-time contact backend until an approved mail provider / sender domain is configured.
+- No database-backed lead store, CRM, or client portal. The server-side delivery route activates only after approved Resend variables are configured in Vercel.
 - No CMS, database, payment, or unapproved third-party tracking integration.
 - No private analytics or third-party tracking script.
 

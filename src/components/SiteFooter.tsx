@@ -1,12 +1,9 @@
-/* Hallmark pre-emit critique: P5 H5 E5 S5 R5 V5 */
-
 import Image from "next/image";
 import Link from "next/link";
 import { brandAssets } from "@/brand/assets";
 import { siteConfig } from "@/brand/site-config";
 import { sectors, siteContent, verifiedFacts } from "@/content/site-content";
 
-/** A deliberately sparse footer with a full-width identity row and concise operational detail. */
 export function SiteFooter() {
   const fuelLicence = verifiedFacts.wholesaleFuelLicence;
 
@@ -14,7 +11,7 @@ export function SiteFooter() {
     <footer className="site-footer">
       <div className="site-container">
         <div className="site-footer__brand-row">
-          <Image alt="Mendozer Investments" height={401} src={brandAssets.logoDark} unoptimized width={1024} />
+          <Image alt="Mendozer Investments" height={313} src={brandAssets.logoDark} style={{ height: "auto" }} unoptimized width={800} />
         </div>
 
         <div className="site-footer__masthead">
@@ -27,7 +24,7 @@ export function SiteFooter() {
 
         <div className="site-footer__grid">
           <nav aria-label="Footer navigation" className="site-footer__column">
-            <p className="eyebrow">Group</p>
+            <p className="eyebrow eyebrow--light">Group</p>
             <Link href="/">Home</Link>
             <Link href="/about">About</Link>
             <Link href="/sectors">Sectors</Link>
@@ -39,16 +36,14 @@ export function SiteFooter() {
           </nav>
 
           <nav aria-label="Sector navigation" className="site-footer__column site-footer__column--sectors">
-            <p className="eyebrow">Working directions</p>
+            <p className="eyebrow eyebrow--light">Working directions</p>
             <div>
-              {sectors.map((sector) => (
-                <Link href={`/sectors/${sector.slug}`} key={sector.slug}>{sector.shortTitle}</Link>
-              ))}
+              {sectors.map((sector) => <Link href={`/sectors/${sector.slug}`} key={sector.slug}>{sector.shortTitle}</Link>)}
             </div>
           </nav>
 
           <div className="site-footer__column site-footer__column--details">
-            <p className="eyebrow">Company details</p>
+            <p className="eyebrow eyebrow--light">Company details</p>
             <span>Registration {siteContent.footer.registrationLabel}</span>
             <span>{siteContent.footer.vatLabel}</span>
             <a href={fuelLicence.sourceUrl} rel="noreferrer" target="_blank">Wholesale fuel licence W/188/2017</a>

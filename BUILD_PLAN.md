@@ -86,3 +86,23 @@ A generated master is reused across compatible placements instead of generating 
 - All icon, divider, and decorative motif assets are reusable SVG vector files, not CSS/Tailwind approximations or raster stand-ins.
 - No generated visual is presented as a real named project, staff portrait, credential, or event photograph.
 - Passes `tangison-web-audit` before deployment approval or final release reporting.
+
+## Editorial redesign and evidence-research pass: 2026-08-12
+
+### Approved outcome
+
+Refresh the complete Mendozer experience as an original editorial corporate site with a more restrained, lighter typographic voice, a simple media-led hero, a rebuilt full-screen navigation system, and consistent page-level refinement across the existing public route set. The reference study of `https://wearecollins.com/` informs only high-level principles such as direct editorial hierarchy, image-led pacing, strong navigation clarity, and careful use of motion. No Collins code, assets, copy, markup, CSS, layout reproduction, or pixel-for-pixel wireframe may be used.
+
+### Locked redesign deliverables
+
+1. **Typography and controls:** retain the verified Poppins family because it is the approved closest-match brand family, but shift the page system to lighter 400, 500, and 600 weights. Remove heavy 700 and 800 display treatment, glow effects, inflated shadows, and pervasive pill controls. Actions must become clear, compact, high-contrast, and touch-safe.
+2. **Hero:** replace the rotating sector explorer with one simple group statement, two direct actions, a supplied-photo-first motion treatment, and a static poster fallback. Any moving media must be created from or licensed for supplied Mendozer context. Do not download, embed, or repurpose an arbitrary YouTube video.
+3. **Full-screen navigation:** rebuild the off-canvas implementation from first principles as a full-viewport modal dialog with accessible Group, Sectors, and Contact tabs; structured sector disclosures; real contextual images; keyboard navigation; Escape handling; focus restoration; and inert background isolation.
+4. **Page system:** re-art-direct the existing 16 public routes and not-found state through shared original components and a coherent CSS system. Preserve the existing route map, SEO, public records, image policy, accessible form, and legal pages. Do not add speculative Team, Careers, Case Studies, location, or service routes without verified content.
+5. **Evidence research:** maintain `RESEARCH_LOG.md`, use official sources first, and publish no tender, founder, team, project, client, value, location, or outcome claim without exact identity evidence and client approval.
+6. **Asset stewardship:** use supplied real imagery before creating derivatives. A motion derivative is permitted only from supplied real photography and must be logged in `ASSET_MANIFEST.md`. The official logo remains unmodified.
+7. **Verification:** run type-check, lint, content integrity, production build, Axe, responsive interaction tests, cold-cache performance measurement, visual review at mobile and desktop, secret scan, GitHub SHA comparison, and Vercel `READY` deployment verification. Record only verified outcomes in `PROOF.md`.
+
+### Scope count and completion gate
+
+The delivery count is one coherent redesign covering 16 listed public routes plus the not-found state, one rebuilt full-screen navigation dialog, one simple motion-capable hero, and one public-research ledger. The release is not complete until every route uses the shared system without regressions, no unauthorised factual claims are introduced, and all listed verification gates pass.

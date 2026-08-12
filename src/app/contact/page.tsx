@@ -22,7 +22,7 @@ export default function ContactPage() {
         <div className="site-container contact-section__grid">
           <div className="contact-section__details">
             <SectionHeading
-              body="For a direct enquiry, email the group. The form creates a pre-addressed message without storing your information on this website."
+              body="For a direct enquiry, email the group or use the form. Secure delivery is used when it is configured, with your email application available as a fallback."
               eyebrow="Get in touch"
               title="The direct route to Mendozer."
             />

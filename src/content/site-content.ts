@@ -77,9 +77,9 @@ export const verifiedFacts = {
   wholesaleFuelLicence: {
     eyebrow: "Verified public record",
     title: "Wholesale fuel distribution licence",
-    body: "Mendozer Investments CC holds wholesale fuel distribution licence W/188/2017.",
-    sourceLabel: "Namibia Government Gazette No. 8287, 3 January 2024, p. 6",
-    sourceUrl: "https://www.lac.org.na/laws/2024/8287.pdf",
+    body: "Mendozer Investments CC is listed as a wholesale distributor under licence W/188/2017 in the Government Gazette.",
+    sourceLabel: "Namibia Government Gazette No. 8655, 4 June 2025, Annexure 1",
+    sourceUrl: "https://www.lac.org.na/laws/2025/8655.pdf",
   },
 } as const satisfies Record<string, VerifiedFact>;
 
@@ -115,7 +115,6 @@ export const siteContent = {
     supporting: "A direct route to six working directions across Namibia.",
     primaryCta: { label: "See the six directions", href: "/#sectors" },
     secondaryCta: { label: "Prepare a group enquiry", href: "/contact" },
-    // Real client-supplied photography; sector tag remains unconfirmed.
     media: {
       src: "/images/projects/construction/road-works-2.jpg",
       alt: "A site team beside active infrastructure work",
@@ -264,7 +263,7 @@ export const siteContent = {
       title: "A clear line of accountability.",
       name: "Johannes Negumbo",
       role: "Managing Director",
-      note: "Formal leadership profile pending client approval.",
+      note: "A fuller leadership profile is published only when it is approved for public use.",
     },
     fuelLicence: verifiedFacts.wholesaleFuelLicence,
   },
@@ -307,8 +306,7 @@ export const siteContent = {
   contact: {
     eyebrow: "Contact",
     title: "Start with the work in front of you.",
-    body: "Tell the group what needs attention, which sector is closest, and how to contact you. Secure delivery is used where configured, with your email app available as a fallback.",
-    // Reused real group-context photography. No abstract placeholder is required for this placement.
+    body: "Tell the group what needs attention, which sector is closest, and how to contact you. Secure delivery is used where configured, with direct email available as a fallback.",
     media: {
       src: "/images/projects/technology/IMG-20260808-WA0061.jpg",
       alt: "A communications tower above a prepared site",
@@ -325,8 +323,6 @@ export const siteContent = {
   },
 } as const;
 
-// PLACEHOLDER: replace with client-confirmed sector wording and individual service detail.
-// Generic descriptions are intentionally non-claiming while the client confirms the active sector list.
 export const sectors: Sector[] = [
   {
     slug: "construction",
@@ -611,9 +607,9 @@ export const publicUpdates: PublicUpdate[] = [
   {
     eyebrow: "Public record",
     title: "Wholesale fuel distribution licence",
-    body: "Mendozer Investments CC holds wholesale fuel distribution licence W/188/2017.",
-    sourceLabel: "Namibia Government Gazette No. 8287, 3 January 2024, p. 6",
-    sourceUrl: "https://www.lac.org.na/laws/2024/8287.pdf",
+    body: "Mendozer Investments CC is listed as a wholesale distributor under licence W/188/2017 in the Government Gazette.",
+    sourceLabel: "Namibia Government Gazette No. 8655, 4 June 2025, Annexure 1",
+    sourceUrl: "https://www.lac.org.na/laws/2025/8655.pdf",
     media: {
       src: "/images/projects/fuel-energy/plant-piping.jpg",
       alt: "Piping and infrastructure at an operational plant",

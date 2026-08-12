@@ -24,8 +24,10 @@ if (!content.includes("legalPages")) failures.push("Legal page content is missin
 // Active asset-policy enforcement: no brand-gradient photo substitute may survive in application data.
 if (content.includes('status: "placeholder"')) failures.push("Placeholder media status remains in content data");
 if (content.includes("community-sport-gradient") || content.includes("BrandArtwork")) failures.push("Retired brand-gradient visual remains in content data");
-if (!content.includes("W/188/2017") || !content.includes("Namibia Government Gazette No. 8287")) failures.push("Verified wholesale fuel licence fact/citation is missing from content data");
+if (!content.includes("W/188/2017") || !content.includes("Namibia Government Gazette No. 8655")) failures.push("Verified wholesale fuel licence fact/citation is missing from content data");
 if (!assetManifest.includes("GEN-001") || !assetManifest.includes("community-otjiwarongo-sport-context.png") || !assetManifest.includes("Exact prompt used")) failures.push("Generated asset ledger is incomplete for GEN-001");
+if (!existsSync(resolve(root, "public/media/mendozer-hero-motion.mp4")) || !existsSync(resolve(root, "public/media/mendozer-hero-motion.webm")) || !assetManifest.includes("MOT-001")) failures.push("Supplied-photo motion derivative or its asset ledger is missing");
+if (!existsSync(resolve(root, "src/components/SectorExplorer.tsx"))) failures.push("Original sector explorer component is missing");
 
 const vectorAssets = [
   "accordion-plus.svg", "arrow-right.svg", "close-two-line.svg", "connected-network.svg", "cta-accent.svg", "eyebrow-rule-blue.svg", "eyebrow-rule-navy.svg", "menu-two-line.svg", "section-orbit.svg", "sector-cooling.svg", "sector-energy.svg", "sector-landscape.svg", "sector-route.svg", "sector-signal.svg", "sector-structure.svg", "vertical-rule.svg",

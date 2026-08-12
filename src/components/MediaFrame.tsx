@@ -9,7 +9,6 @@ type MediaFrameProps = {
   sizes?: string;
 };
 
-/** Image frame that preserves generic, non-project-specific captions across all placements. */
 export function MediaFrame({
   asset,
   className = "",
@@ -29,7 +28,6 @@ export function MediaFrame({
         style={asset.focus ? { objectPosition: asset.focus } : undefined}
         unoptimized={asset.src.endsWith(".svg")}
       />
-      <span aria-hidden="true" className="media-frame__scrim" />
       {caption ? <figcaption>{asset.caption}</figcaption> : null}
     </figure>
   );

@@ -40,19 +40,23 @@ No component hardcodes a replacement brand palette. All component colors resolve
 ### Typography
 
 - **Family:** Poppins, with Avenir Next / Century Gothic / Arial as fallbacks.
-- **Display:** ExtraBold / 800, large and compactly tracked.
-- **Headings:** Bold / 700.
+- **Display:** Regular / 400, large and compactly tracked.
+- **Headings:** Medium / 500.
 - **Card labels:** SemiBold / 600.
 - **Body:** Regular / 400.
-- **Eyebrows/navigation:** Medium / 500–600, uppercase, open tracking.
+- **Eyebrows/navigation:** SemiBold / 600, uppercase, open tracking.
 
 The web build packages local `@fontsource/poppins` files instead of relying on a third-party font request. The approximate source scale is preserved: hero 48–64px+, H1 36px+, H2 28px+, H3 20px, body 16px, caption/footer 14px, label 13px.
+
+### Editorial refinement: 2026-08-12
+
+The approved interface continues to use Poppins because it is the verified closest-match family in the brand source and the supplied wordmark must not be reverse engineered or redrawn. The live implementation now uses only 400, 500, and 600 weights: 400 for the large display system, 500 for headings and navigation, and 600 for compact labels and actions. This gives the site a lighter, calmer typographic voice without changing the protected identity.
 
 ### Spacing and shape
 
 The verified 4px scale is retained as CSS variables: `4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 96 / 128`.
 
-Structural additions in `tokens.css` (`--container-max`, restrained card radii, `--radius-pill` for controls, shadow, and motion timing) are implementation-only extensions. They do not introduce an alternate palette or type pairing. Geometry remains restrained: mostly simple panels, fine borders, wide media, fully rounded action controls, and modest card radii.
+Structural additions in `tokens.css` (`--container-max`, restrained square control radii, and motion timing) are implementation-only extensions. They do not introduce an alternate palette or type pairing. Geometry remains restrained: simple panels, fine borders, wide media, compact rectangular actions, and no decorative glow.
 
 ## Logo usage
 

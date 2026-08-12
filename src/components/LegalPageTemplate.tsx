@@ -1,5 +1,3 @@
-/* Hallmark pre-emit critique: P5 H4 E5 S5 R5 V4 */
-
 import Link from "next/link";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { Reveal } from "@/components/Reveal";

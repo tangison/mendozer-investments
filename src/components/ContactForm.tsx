@@ -59,7 +59,7 @@ export function ContactForm() {
 
       if (response.ok && result.ok) {
         setSubmissionState("sent");
-        setStatusMessage("Your enquiry has been delivered to Mendozer Investments. A confirmation email is on its way.");
+        setStatusMessage("Your enquiry has been delivered to Mendozer Investments.");
         form.reset();
         return;
       }

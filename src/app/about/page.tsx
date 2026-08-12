@@ -51,7 +51,6 @@ export default function AboutPage() {
       </section>
 
       <section className="section leadership-section">
-        {/* PLACEHOLDER: replace with client-approved MD bio and professional headshot. */}
         <div className="site-container leadership-section__grid">
           <div className="leadership-section__index" aria-hidden="true" />
           <div>

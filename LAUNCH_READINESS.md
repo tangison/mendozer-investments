@@ -16,20 +16,20 @@ This register maps the implemented website against the practical items in an ind
 
 - Official supplied Mendozer and Tangison identity assets are used unchanged.
 - Locked Mendozer colour, type, spacing, radius, and motion tokens drive the interface.
-- Floating navigation includes a two-line accessible menu control, active-route treatment, scroll progress, direct enquiry CTA, and a full group off-canvas directory.
-- Homepage includes a data-driven sector slider with accessible tabs. The control is vertical on larger screens and touch-scrollable horizontally on small screens.
+- Fixed editorial navigation uses a two-line accessible menu control and a full-viewport group dialog. The dialog provides Group, Sectors, and Contact tabs, real contextual imagery, native sector disclosures, keyboard access, Escape handling, focus restoration, and inert background isolation.
+- Homepage uses one simple supplied-photo motion hero with a static poster fallback. Sector exploration moves below the hero, using accessible tabs on larger screens and native disclosures on compact screens.
 - Homepage includes an accessible FAQ accordion with enquiry guidance.
 - Footer exposes group navigation, sector navigation, direct email, registration/VAT, privacy notice, website terms, the verified licence source, and the required Tangison Studio credit.
-- Buttons are fully rounded controls. Cards retain restrained non-pill radii to preserve hierarchy.
+- Buttons are compact, rectangular, high-contrast controls. Cards and media use fine borders and restrained square geometry rather than glow effects or pervasive pills.
 
 ### Accessibility, SEO, performance, and technical quality
 
 - Semantic landmarks, one H1 per route, labelled form controls, descriptive links, alt text, visible focus states, keyboard menu access, a skip link, and reduced-motion behavior are implemented.
 - Axe WCAG 2 A/AA checks pass for Home, About, Technology, Community, Contact, Privacy, and Terms.
-- Responsive checks cover 320px, 375px, 390px, 414px, 768px, and desktop. The off-canvas navigation is specifically tested at 320px.
+- Responsive checks cover 320px, 375px, 390px, 414px, 768px, and desktop. The full-screen navigation is specifically tested at 320px.
 - Organization and FAQ JSON-LD are emitted from crawlable HTML using verified site details only.
 - Unique metadata, canonical URLs, XML sitemap, robots rules, Open Graph metadata, and social images are present.
-- Next.js image optimization, modern formats, local Poppins files, lazy loading for non-critical media, zero layout shift in the audited homepage, and Vercel CDN delivery are active.
+- Next.js image optimization, modern formats, local Poppins files, a supplied-photo WebM/MP4 motion layer with static poster fallback, lazy loading for non-critical media, and Vercel CDN delivery are active. The redesign audit recorded mobile Lighthouse Performance 93, Accessibility 100, Best Practices 100, SEO 100, LCP 2.0s, and CLS 0.053. Desktop Lighthouse recorded 100 across all four categories.
 - Security headers are configured through `vercel.json`: HSTS, content type protection, referrer policy, frame policy, and permissions policy.
 - Dependency audit reports zero known production vulnerabilities.
 
@@ -47,7 +47,7 @@ These items do not apply to the current approved static corporate build:
 
 | Area | Required action | Why it cannot be completed autonomously |
 |---|---|---|
-| Contact delivery | Configure approved Resend credentials, verified sender, durable rate limiting, spam protection, and recipient delivery testing | A server-side delivery route now exists with validation, honeypot, basic rate limit, confirmation, and mailto fallback, but no approved delivery credentials or sender domain are available. |
+| Contact delivery | Configure approved Resend credentials, verified sender, durable rate limiting, spam protection, and recipient delivery testing | A server-side delivery route now exists with validation, honeypot, basic rate limit, confirmation, and mailto fallback. Resend accepted one controlled sender and recipient test, but the required Vercel environment values and durable distributed rate limit are not yet configured. |
 | Contact details | Confirm public telephone number, physical address, operating hours, service areas, and social profiles | None were supplied as verified publishable facts. |
 | Legal review | Have Privacy Notice, Website Terms, licences, and any sector-specific disclaimer reviewed by the client or legal adviser | The pages accurately describe current technical behavior, but legal ownership and required wording belong to the client. |
 | Analytics and consent | Approve analytics platform, consent policy, conversion events, and cookie posture | The current build intentionally contains no analytics or advertising tracker. |

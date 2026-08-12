@@ -20,7 +20,7 @@
 
 | Section | Content | Status |
 |---|---|---|
-| Hero | “One group. Six directions.” / “A direct route to six working directions across Namibia.” | Working / generic, concise for mobile and formal business audiences |
+| Hero | “One group. Six directions.” / “A direct route to six working directions across Namibia.” | Working / generic, concise for mobile and formal business audiences. Uses a supplied-photo motion derivative with a static poster fallback. |
 | Group intro | “Built to move between the work that matters.” | Working / generic |
 | Sector directory | Six sector labels and short routes | Working structure pending list confirmation |
 | Connected view | “Different disciplines. A shared standard of accountability.” | Working / generic |
@@ -36,7 +36,7 @@
 | Approach | One identity / multi-sector perspective / local context | Working / generic, not proof claims |
 | Leadership | Johannes Negumbo, Managing Director | Name and role indicated by onboarding form; formal bio is **Placeholder** |
 | Registration | `CC/2009/2399`, `VAT 04948459-015` | Verified |
-| Fuel licence | Mendozer Investments CC holds wholesale fuel distribution licence `W/188/2017` | Verified public record. Plain source citation: Namibia Government Gazette No. 8287, 3 January 2024, p. 6. |
+| Fuel licence | Mendozer Investments CC is listed as a wholesale distributor under licence `W/188/2017` | Verified public record. Plain source citation: Namibia Government Gazette No. 8655, 4 June 2025, Annexure 1. |
 
 ## Sectors `/sectors`, `/sectors/[slug]`
 
@@ -48,7 +48,7 @@ The `/sectors` hub gives search and navigation users a crawlable directory of al
 | `technology` | Technology & Systems | Supplied tower / systems context, generic caption |
 | `cooling` | Cooling & Cold Chain | Supplied industrial facility context, generic caption only |
 | `logistics` | Logistics & Support Services | Supplied vehicle/container/field context, generic caption |
-| `energy` | Fuel & Energy Distribution | Supplied piping / industrial context, generic caption; verified licence fact cites Namibia Government Gazette No. 8287, 3 January 2024, p. 6 |
+| `energy` | Fuel & Energy Distribution | Supplied piping / industrial context, generic caption; verified licence fact cites Namibia Government Gazette No. 8655, 4 June 2025, Annexure 1 |
 | `tourism` | Tourism & Agriculture | Supplied landscape/rural context, generic caption |
 
 Each sector page has: hero, “What we do” service breakdown, visual “On site” context, a cross-sector link, and a contact CTA. No fabricated proof section appears; named project/certification content is intentionally absent.

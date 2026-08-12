@@ -13,25 +13,17 @@ type PageHeroProps = {
 export function PageHero({ eyebrow, title, body, media, index }: PageHeroProps) {
   return (
     <section className="page-hero">
-      <div className="page-hero__media">
-        <MediaFrame asset={media} caption={false} priority sizes="100vw" />
-      </div>
-      <div className="page-hero__overlay" />
-      <div className="page-hero__grid site-container">
+      <div className="site-container page-hero__grid">
         <div className="page-hero__copy">
-          <Reveal>
-            <p className="eyebrow eyebrow--light">{eyebrow}</p>
-          </Reveal>
-          <Reveal delay={90}>
-            <h1>{title}</h1>
-          </Reveal>
-          <Reveal delay={180}>
-            <p>{body}</p>
-          </Reveal>
+          <Reveal><p className="eyebrow eyebrow--light">{eyebrow}</p></Reveal>
+          <Reveal delay={80}><h1>{title}</h1></Reveal>
+          <Reveal delay={150}><p>{body}</p></Reveal>
+          {index ? <span aria-hidden="true" className="page-hero__index">{index}</span> : null}
         </div>
-        {index ? <span aria-hidden="true" className="page-hero__index">{index}</span> : null}
+        <Reveal delay={100} variant="right">
+          <MediaFrame asset={media} caption priority sizes="(max-width: 820px) 100vw, 47vw" />
+        </Reveal>
       </div>
-      <p className="page-hero__caption">{media.caption}</p>
     </section>
   );
 }
