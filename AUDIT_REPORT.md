@@ -360,3 +360,11 @@ A browser trace against the deployed mobile site completed root-cause investigat
 - Poppins now resolves in computed styles at 390px, and the corrected mobile screenshot shows the approved light Poppins hierarchy instead of a serif fallback.
 - The home hero retains one direct sentence, supplied-photo motion, no watermark, no external video dependency, two direct actions, the floating scrolled navigation bar, conditional utility controls, breadcrumbs, and below-label blue rules.
 - Latest local Lighthouse: mobile Performance 93, Accessibility 100, Best Practices 100, SEO 100, FCP 0.8s, LCP 1.9s, TBT 300ms, CLS 0. Desktop is 100 across all categories with CLS 0.
+
+### Live release confirmation
+
+The correction is live on `https://mendozer.com`, `https://mendozer.tangison.com`, and `https://mendozer-tangison-preview.vercel.app`.
+
+- Browser checks at 320px, 390px, and 414px confirm Poppins resolves through the token layer, the one-sentence hero remains contained, supplied-photo motion reaches ready state 4, scroll-to-top appears after scrolling, and WhatsApp remains absent without an approved number.
+- The full-screen menu opens, exposes working sector tabs, keeps the main content inert, and remains inside the viewport without horizontal overflow.
+- The About breadcrumb returns `/` for Home, and the public `www` host retains its 308 redirect to `https://mendozer.com/`.
