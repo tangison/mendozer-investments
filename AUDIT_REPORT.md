@@ -295,7 +295,6 @@ The live COLLINS website at `https://wearecollins.com/` was reviewed as a public
 
 ### Remaining external dependencies
 
-1. Configure the approved Resend variables in Vercel, then conduct a live deployed form delivery and confirmation test.
-2. Provide the short-lived Vercel and GitHub access required to set environment variables, push the redesign, and verify the deployment reaches `READY`.
-3. Confirm whether the candidate Kunene Regional Council procurement record refers to Mendozer Investments CC before any public publication.
-4. Supply approved founder, leadership, team, project, client, location, and service information before expanding those content areas.
+1. Maintain the configured Resend variables, verify the recipient inbox and visitor confirmation independently, and replace the process-local limiter with a durable distributed service before relying on the form at high volume.
+2. Confirm whether the candidate Kunene Regional Council procurement record refers to Mendozer Investments CC before any public publication.
+3. Supply approved founder, leadership, team, project, client, location, and service information before expanding those content areas.
