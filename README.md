@@ -23,7 +23,7 @@ Open `http://localhost:3000`.
 | `npm run lint` | ESLint / Next Core Web Vitals rules |
 | `npm run test:content` | Static content and architecture safety checks |
 | `npm run build` | Production build |
-| `npm run test:responsive` | Playwright responsive regression suite |
+| `npm run test:responsive` | Playwright responsive regression suite against a production build |
 | `npm run test:a11y` | Axe accessibility test suite |
 | `npm run qa` | Type-check, lint, content checks, and production build |
 

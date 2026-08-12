@@ -31,7 +31,7 @@ This register maps the implemented website against the practical items in an ind
 - Responsive checks cover 320px, 375px, 390px, 414px, 768px, and desktop. They cover post-motion overflow, first-frame menu opacity, floating navigation, breadcrumb trails, menu-route completion, scroll-to-top behavior, and utility-widget modal isolation.
 - Organization and FAQ JSON-LD are emitted from crawlable HTML using verified site details only.
 - Unique metadata, canonical URLs, XML sitemap, robots rules, Open Graph metadata, and social images are present.
-- Next.js image optimization, modern formats, preloaded local Poppins files, a supplied-photo WebM/MP4 motion layer with static poster fallback, lazy loading for non-critical media, and Vercel CDN delivery are active. The final local mobile audit recorded Lighthouse Performance 96, Accessibility 100, Best Practices 100, SEO 100, LCP 2.7s, TBT 90ms, and CLS 0. Desktop Lighthouse recorded 100 across all four categories with CLS 0.
+- Next.js image optimization, modern formats, preloaded local Poppins files, a supplied-photo WebM/MP4 motion layer with static poster fallback, lazy loading for non-critical media, and Vercel CDN delivery are active. The latest local cold mobile audit recorded Lighthouse Performance 93, Accessibility 100, Best Practices 100, SEO 100, LCP 1.9s, TBT 300ms, and CLS 0. Desktop Lighthouse recorded 100 across all four categories with CLS 0.
 - Security headers are configured through `vercel.json`: HSTS, content type protection, referrer policy, frame policy, and permissions policy.
 - Dependency audit reports zero known production vulnerabilities.
 

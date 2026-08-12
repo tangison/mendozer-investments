@@ -133,3 +133,17 @@ The menu route links themselves were traced and verified on production. Sector, 
 ### Completion gate
 
 The pass is complete only when mobile client motion introduces no horizontal overflow, the menu root is opaque from the first frame, all tested menu links and breadcrumb trails navigate correctly, the conditional WhatsApp control remains hidden without a configured number, all existing public routes remain intact, and the deployed production, staging, and preview aliases pass live verification.
+
+## Runtime font-token and verification-stability correction: 2026-08-12
+
+### Root-cause correction scope
+
+A post-deployment browser trace found that the local Poppins variable was attached to `body`, while `--font-sans` and `--font-display` resolve in the root token layer. CSS custom-property resolution therefore invalidated both font tokens at `:root`, making live mobile typography fall back to Times New Roman. A separate long-suite failure came from Playwright booting the Next development server, which was unstable under the complete route and browser workload even though the production server passed the same suite.
+
+### Locked correction deliverables
+
+1. Apply the `next/font/local` variable class to the document root so Poppins resolves through the shared token layer on every route and viewport.
+2. Add a focused failing regression proving that `--font-sans` resolves and the computed home font includes Poppins.
+3. Run browser evidence at 320px, 375px, 390px, 414px, and desktop to confirm the mobile hero, floating bar, menu tabs, sector disclosures, breadcrumbs, motion, and utility widgets remain connected.
+4. Run Playwright against a production build rather than a development server so the 48-test browser gate measures the released architecture and does not fail due to dev-server instability.
+5. Rebuild, rerun type, lint, content, accessibility, responsive, API, audit, performance, live production, GitHub, and Vercel release gates before marking the correction complete.

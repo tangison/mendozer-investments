@@ -12,6 +12,24 @@ test.describe("core routes", () => {
   }
 });
 
+test("local Poppins variable resolves through the brand token layer", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+
+  const typography = await page.evaluate(() => {
+    const styles = getComputedStyle(document.body);
+    return {
+      fontFamily: styles.fontFamily.toLowerCase(),
+      fontSans: styles.getPropertyValue("--font-sans").trim(),
+      brandNavy: styles.getPropertyValue("--color-brand-navy").trim(),
+    };
+  });
+
+  expect(typography.fontSans).not.toBe("");
+  expect(typography.fontFamily).toContain("poppins");
+  expect(typography.brandNavy).toBe("#1c4e89");
+});
+
 test("mobile and desktop home layouts do not create horizontal overflow", async ({ page }) => {
   for (const viewport of [
     { width: 320, height: 720 },

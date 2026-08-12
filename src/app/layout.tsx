@@ -80,8 +80,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   };
 
   return (
-    <html lang="en">
-      <body className={poppins.variable}>
+    <html className={poppins.variable} lang="en">
+      <body>
         <script dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} type="application/ld+json" />
         <MotionController />
         <SkipLink />

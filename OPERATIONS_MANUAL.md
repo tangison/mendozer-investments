@@ -33,7 +33,7 @@ npm run test:responsive
 npm audit --omit=dev
 ```
 
-The responsive suite covers the public route set, 320px through desktop viewport behavior, the single-sentence supplied-photo hero, compact motion, sector-explorer tabs and mobile disclosures, FAQ disclosures, floating navigation, full-screen navigation, breadcrumbs, scroll-to-top behavior, and utility-widget modal isolation. The accessibility suite runs Axe checks plus keyboard skip-link coverage.
+The responsive suite covers the public route set, 320px through desktop viewport behavior, the single-sentence supplied-photo hero, compact motion, sector-explorer tabs and mobile disclosures, FAQ disclosures, floating navigation, full-screen navigation, breadcrumbs, scroll-to-top behavior, and utility-widget modal isolation. The Playwright configuration builds and starts the production server for its default browser gate, avoiding development-server instability during the full route suite. The accessibility suite runs Axe checks plus keyboard skip-link coverage.
 
 ## Environment variables
 

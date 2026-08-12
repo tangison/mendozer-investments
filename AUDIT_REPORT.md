@@ -341,3 +341,22 @@ New regression tests were added before each corresponding fix. The pre-fix compa
 - Lighthouse local production results: mobile Performance 96, Accessibility 100, Best Practices 100, SEO 100, FCP 0.8s, LCP 2.7s, TBT 90ms, CLS 0. Desktop Performance 100, Accessibility 100, Best Practices 100, SEO 100, FCP 0.2s, LCP 0.6s, TBT 0ms, CLS 0.
 
 The only unresolved WhatsApp dependency is the public number itself. No number has been fabricated or enabled in production configuration.
+
+## Runtime font-token and test-server correction: 2026-08-12
+
+### Systematic debugging record
+
+A browser trace against the deployed mobile site completed root-cause investigation before implementation.
+
+| Symptom | Evidence | Root cause | Source-level correction |
+|---|---|---|---|
+| Typography rendered as Times New Roman on live mobile pages | `getComputedStyle(document.body).fontFamily` returned `"Times New Roman"`; `--font-sans` and `--font-display` were empty while `--font-poppins` existed only on `body`. The focused regression failed before the change. | `next/font/local` attached `--font-poppins` to `body`, but root-scoped tokens resolved their `var(--font-poppins)` reference at `:root`, where the variable did not exist. | Moved the local-font variable class to `<html>`, so the root token layer resolves Poppins before children inherit it. The focused test now passes. |
+| Full browser suite became unstable after many routes under test | The same 34 responsive tests passed against a local production server. The Next development server run lost its connection during the breadcrumb pass and caused false follow-on failures. | Development-server HMR and compiler lifetime were the failing component, not breadcrumbs, routing, or utility widgets. | Playwright now builds and starts the production server when no external test base URL is supplied. The complete 48-test suite passes through the standard test command. |
+| Intermittent 390px navigation diagnostic | Direct DOM inspection at 390px found visible, enabled Group, Sectors, and Contact tabs with correct geometry. A fresh interaction trace selected Sectors successfully. | The earlier broad diagnostic mixed a long-lived external-page sequence with an incomplete race capture. It did not reproduce as a product failure. | Retained the existing navigation regression tests and verified menu interaction, routing, inert isolation, and compact containment through the full production test suite. |
+
+### Verification after correction
+
+- Type-check, lint, content integrity, production build, dependency audit, and the full 48 Playwright tests passed.
+- Poppins now resolves in computed styles at 390px, and the corrected mobile screenshot shows the approved light Poppins hierarchy instead of a serif fallback.
+- The home hero retains one direct sentence, supplied-photo motion, no watermark, no external video dependency, two direct actions, the floating scrolled navigation bar, conditional utility controls, breadcrumbs, and below-label blue rules.
+- Latest local Lighthouse: mobile Performance 93, Accessibility 100, Best Practices 100, SEO 100, FCP 0.8s, LCP 1.9s, TBT 300ms, CLS 0. Desktop is 100 across all categories with CLS 0.
