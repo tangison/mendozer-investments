@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Reveal } from "@/components/Reveal";
 import type { LegalPage } from "@/content/site-content";
 
@@ -19,6 +20,10 @@ export function LegalPageTemplate({ page }: LegalPageTemplateProps) {
           <Reveal delay={180}><p>{page.intro}</p></Reveal>
         </div>
       </section>
+
+      <div className="breadcrumbs-wrap">
+        <div className="site-container"><Breadcrumbs items={[{ label: "Home", href: "/" }, { label: page.eyebrow }]} /></div>
+      </div>
 
       <section className="section legal-page">
         <div className="site-container legal-page__grid">

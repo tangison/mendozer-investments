@@ -106,3 +106,30 @@ Refresh the complete Mendozer experience as an original editorial corporate site
 ### Scope count and completion gate
 
 The delivery count is one coherent redesign covering 16 listed public routes plus the not-found state, one rebuilt full-screen navigation dialog, one simple motion-capable hero, and one public-research ledger. The release is not complete until every route uses the shared system without regressions, no unauthorised factual claims are introduced, and all listed verification gates pass.
+
+## Mobile robustness, utility, and navigation pass: 2026-08-12
+
+### Investigation evidence
+
+Production mobile diagnostics at 320px, 375px, 390px, and 414px found two reproducible implementation defects.
+
+1. Unrevealed `Reveal` elements using horizontal `translateX` transforms enlarge the document width after client motion initializes. This produced a 1px to 4px horizontal overflow on compact pages.
+2. The full-screen navigation applies its entrance animation to the opaque modal root. Its opacity begins below 1, briefly showing the underlying page through the menu background.
+
+The menu route links themselves were traced and verified on production. Sector, contact, group, and footer links navigate to the correct routes. The prior diagnostic that reported Home after a menu click read the URL before client navigation completed and was not a product defect.
+
+### Locked deliverables
+
+1. Correct the mobile Reveal transform rule at its source and add a post-motion compact-overflow regression test.
+2. Make the full-screen menu backdrop immediately opaque and add a first-frame opacity regression test.
+3. Refine the scrolled header into a compact floating rectangular navigation bar without glow or pill styling.
+4. Simplify the home hero to one approved main sentence, remove the secondary hero label and support line, and enable the existing supplied-photo motion loop on compact screens except for reduced-motion users.
+5. Move the decorative eyebrow rule from before text to below text across the shared system.
+6. Add reusable breadcrumb trails to the nine interior top-level routes that do not already have sector breadcrumbs.
+7. Add an accessible scroll-to-top control that appears only after meaningful scroll distance.
+8. Add a WhatsApp control that renders only when an approved `NEXT_PUBLIC_WHATSAPP_NUMBER` is configured. It must remain absent when no verified number is supplied.
+9. Add and run navigation, breadcrumb, widget, responsive, accessibility, build, performance, and deployed smoke regressions. Commit, push, wait for Vercel `READY`, and record the verified result.
+
+### Completion gate
+
+The pass is complete only when mobile client motion introduces no horizontal overflow, the menu root is opaque from the first frame, all tested menu links and breadcrumb trails navigate correctly, the conditional WhatsApp control remains hidden without a configured number, all existing public routes remain intact, and the deployed production, staging, and preview aliases pass live verification.

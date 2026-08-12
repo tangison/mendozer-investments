@@ -19,7 +19,7 @@ export default function SectorsPage() {
 
   return (
     <>
-      <PageHero body={sectorHub.body} eyebrow={sectorHub.eyebrow} media={sectorHub.hero} title={sectorHub.title} />
+      <PageHero body={sectorHub.body} breadcrumbLabel="Sectors" eyebrow={sectorHub.eyebrow} media={sectorHub.hero} title={sectorHub.title} />
       <section className="section sector-hub">
         <div className="site-container">
           <SectionHeading

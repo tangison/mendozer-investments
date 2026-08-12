@@ -20,7 +20,7 @@
 
 | Section | Content | Status |
 |---|---|---|
-| Hero | “One group. Six directions.” / “A direct route to six working directions across Namibia.” | Working / generic, concise for mobile and formal business audiences. Uses a supplied-photo motion derivative with a static poster fallback. |
+| Hero | “One group for the work ahead.” | Working / generic single-sentence main heading. No secondary hero label or supporting subheading. Uses a supplied-photo motion derivative with a static poster fallback and reduced-motion fallback. |
 | Group intro | “Built to move between the work that matters.” | Working / generic |
 | Sector directory | Six sector labels and short routes | Working structure pending list confirmation |
 | Connected view | “Different disciplines. A shared standard of accountability.” | Working / generic |

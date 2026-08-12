@@ -33,7 +33,7 @@ npm run test:responsive
 npm audit --omit=dev
 ```
 
-The responsive suite covers the public route set, 320px through desktop viewport behavior, the simple supplied-photo hero, sector-explorer tabs and mobile disclosures, FAQ disclosures, and full-screen navigation. The accessibility suite runs Axe checks plus keyboard skip-link coverage.
+The responsive suite covers the public route set, 320px through desktop viewport behavior, the single-sentence supplied-photo hero, compact motion, sector-explorer tabs and mobile disclosures, FAQ disclosures, floating navigation, full-screen navigation, breadcrumbs, scroll-to-top behavior, and utility-widget modal isolation. The accessibility suite runs Axe checks plus keyboard skip-link coverage.
 
 ## Environment variables
 
@@ -42,13 +42,21 @@ The responsive suite covers the public route set, 320px through desktop viewport
 | `NEXT_PUBLIC_SITE_URL` | Canonical URLs, sitemap, Open Graph base URL | Production: `https://mendozer.com`; preview/staging: `https://mendozer.tangison.com` |
 | `RESEND_API_KEY` | Server-side Resend credential | Required for direct server delivery. Keep secret in Vercel only. |
 | `CONTACT_FROM_EMAIL` | Verified Resend sender address | Required for direct server delivery. |
-| `CONTACT_TO_EMAIL` | Group recipient address | Defaults to `contact@mendozer.com`. |
+| `CONTACT_TO_EMAIL` | Group recipient address | Configured in Vercel only. Do not place an address in public source unless approved. |
+| `NEXT_PUBLIC_WHATSAPP_NUMBER` | Optional public WhatsApp control | Leave empty until a verified public number is approved. When empty, no WhatsApp control renders. |
 
 Never place SMTP credentials, API keys, Vercel tokens, GitHub tokens, or other secrets in `NEXT_PUBLIC_*` variables or committed files.
 
 ## Contact workflow
 
 The contact form posts to the server-side `/api/contact` route. The route validates required data, trims control characters, uses a honeypot, applies a basic in-memory rate limit, sends the group notification through Resend when configured, and attempts a visitor confirmation email. If server delivery is not configured, the form opens a prepared mailto fallback addressed to `contact@mendozer.com`.
+
+## Utility controls
+
+- The scroll-to-top control appears only after the visitor has moved beyond the configured scroll threshold. It uses smooth scrolling unless reduced motion is requested.
+- The WhatsApp control is deliberately conditional. Set `NEXT_PUBLIC_WHATSAPP_NUMBER` only after a verified public number is approved. Leave it empty to keep the control out of the rendered page.
+- Utility controls are marked inert with the rest of the background while the full-screen navigation dialog is open.
+
 
 Before a production-domain launch, configure a verified Resend sender, a durable distributed rate limiter, approved spam protection, recipient delivery testing, sender-domain authentication, lead-storage/privacy decisions, and monitoring. Update the Privacy Notice and Terms after the final workflow is approved.
 

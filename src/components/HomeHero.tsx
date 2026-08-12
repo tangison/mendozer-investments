@@ -21,12 +21,7 @@ export function HomeHero() {
 
       <div className="site-container home-hero__inner">
         <div className="home-hero__copy">
-          <p className="eyebrow eyebrow--light">{hero.eyebrow}</p>
-          <h1>
-            <span>{hero.titleLineOne}</span>
-            <span>{hero.titleLineTwo}</span>
-          </h1>
-          <p className="home-hero__supporting">{hero.supporting}</p>
+          <h1>{hero.title}</h1>
           <div className="home-hero__actions">
             <Link className="button button--light" href={hero.primaryCta.href}>{hero.primaryCta.label} <ArrowIcon /></Link>
             <Link className="text-link text-link--light" href={hero.secondaryCta.href}>{hero.secondaryCta.label} <ArrowIcon /></Link>

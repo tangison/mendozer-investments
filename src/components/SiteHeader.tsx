@@ -61,6 +61,7 @@ export function SiteHeader() {
       headerRef.current,
       document.getElementById("main-content"),
       document.querySelector("footer"),
+      document.querySelector(".utility-widgets"),
     ].filter(Boolean) as HTMLElement[];
 
     document.body.style.overflow = "hidden";

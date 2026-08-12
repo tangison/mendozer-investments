@@ -298,3 +298,46 @@ The live COLLINS website at `https://wearecollins.com/` was reviewed as a public
 1. Maintain the configured Resend variables, verify the recipient inbox and visitor confirmation independently, and replace the process-local limiter with a durable distributed service before relying on the form at high volume.
 2. Confirm whether the candidate Kunene Regional Council procurement record refers to Mendozer Investments CC before any public publication.
 3. Supply approved founder, leadership, team, project, client, location, and service information before expanding those content areas.
+
+## Systematic mobile debugging and utility pass: 2026-08-12
+
+### Phase 1: root-cause evidence
+
+Production mobile diagnostics ran at 320px, 375px, 390px, and 414px with browser console, failed-request, geometry, focus, and navigation capture.
+
+| Observed symptom | Evidence | Root cause |
+|---|---|---|
+| Compact horizontal overflow after client hydration | Production document width grew by 1px to 4px after motion initialized. The overflow trace identified below-fold `Reveal` wrappers with `data-reveal="left"` and `data-reveal="right"` outside the viewport. | Global horizontal `translateX` entrance transforms contributed to document scroll width on narrow screens. |
+| Underlying page briefly visible through opened navigation | The modal root had computed opacity below 1 immediately after opening. The production capture showed `0.26314` at the first inspected frame. | The menu applied its entrance animation to the opaque modal root instead of to an inner element. |
+| Menu links reported as disconnected by an early diagnostic | Production navigation trace used `waitForURL` and verified Group, Sectors, Contact, and footer routes. | No product defect. The earlier check read route state before Next.js navigation completed. |
+| Desktop layout shift in performance audit | Lighthouse attributed CLS 0.063 to the hero content container. | Local Poppins assets loaded after initial fallback text layout. |
+
+### Phase 2 and 3: pattern analysis and hypothesis checks
+
+- The existing `Reveal` component already supports vertical movement. The compact breakpoint now uses that working vertical pattern for left and right variants instead of adding horizontal movement.
+- A modal backdrop must be opaque from its first frame. Removing the root opacity animation keeps the full-screen menu solid while preserving the dialog interaction model.
+- `next/font/local` supplies a preloaded local-font pattern. Three tracked Poppins WOFF2 files replace the unused package import and prevent font-induced hero movement.
+
+New regression tests were added before each corresponding fix. The pre-fix compact-overflow and first-frame-opacity tests failed. They pass after the source-level fixes.
+
+### Phase 4: completed implementation
+
+| Area | Verified result |
+|---|---|
+| Motion containment | Horizontal reveal transforms convert to vertical offsets below 50rem. Post-motion 320px overflow test passes. |
+| Modal integrity | Full-screen navigation root is opaque from the first rendered frame. Underlying content no longer flashes through. |
+| Navigation | The scrolled header becomes an inset floating rectangular bar without glow or pill geometry. Menu links complete client-side routing. |
+| Hero | The home hero has one main sentence, no hero eyebrow or support paragraph, and keeps supplied-photo video motion available on compact screens unless reduced motion is requested. |
+| Decorative rules | Shared eyebrow rules now appear below labels instead of as dash-like marks before text. |
+| Breadcrumbs | Nine top-level interior routes now expose semantic breadcrumb trails back to Home. Sector breadcrumbs remain unchanged. |
+| Utility controls | Scroll-to-top appears only after meaningful scrolling. WhatsApp remains absent without a configured public number and was separately verified with a temporary test number to produce a correctly normalized `wa.me` URL. Utility controls are inert while the menu is open. |
+| Font delivery | Poppins 400, 500, and 600 are preloaded through `next/font/local`. Mobile and desktop final Lighthouse runs recorded CLS 0. |
+
+### Final verification
+
+- `npm ci`, type-check, lint, content integrity, dependency audit, and production build passed.
+- 47 combined responsive, accessibility, route, navigation, widget, and API tests passed.
+- 20 local page, feed, and motion-asset paths returned HTTP 200.
+- Lighthouse local production results: mobile Performance 96, Accessibility 100, Best Practices 100, SEO 100, FCP 0.8s, LCP 2.7s, TBT 90ms, CLS 0. Desktop Performance 100, Accessibility 100, Best Practices 100, SEO 100, FCP 0.2s, LCP 0.6s, TBT 0ms, CLS 0.
+
+The only unresolved WhatsApp dependency is the public number itself. No number has been fabricated or enabled in production configuration.

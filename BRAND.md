@@ -46,7 +46,7 @@ No component hardcodes a replacement brand palette. All component colors resolve
 - **Body:** Regular / 400.
 - **Eyebrows/navigation:** SemiBold / 600, uppercase, open tracking.
 
-The web build packages local `@fontsource/poppins` files instead of relying on a third-party font request. The approximate source scale is preserved: hero 48–64px+, H1 36px+, H2 28px+, H3 20px, body 16px, caption/footer 14px, label 13px.
+The web build tracks the required Poppins 400, 500, and 600 WOFF2 files under `src/fonts/` and preloads them through `next/font/local`. No third-party font request is required at runtime. The approximate source scale is preserved: hero 48–64px+, H1 36px+, H2 28px+, H3 20px, body 16px, caption/footer 14px, label 13px.
 
 ### Editorial refinement: 2026-08-12
 

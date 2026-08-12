@@ -20,7 +20,7 @@ export default function CompliancePage() {
 
   return (
     <>
-      <PageHero body={compliance.body} eyebrow={compliance.eyebrow} media={compliance.hero} title={compliance.title} />
+      <PageHero body={compliance.body} breadcrumbLabel="Public Records & Licences" eyebrow={compliance.eyebrow} media={compliance.hero} title={compliance.title} />
       <section className="section compliance-page">
         <div className="site-container compliance-page__grid">
           <SectionHeading

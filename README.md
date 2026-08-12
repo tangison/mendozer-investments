@@ -108,7 +108,7 @@ Do not use the reusable structure as a reason to carry Mendozer content, logo fi
 
 ## Motion and accessibility
 
-The site uses a single `IntersectionObserver` reveal controller. The homepage hero adds controlled stagger/clip reveals; other movement is intentionally minimal. `prefers-reduced-motion: reduce` disables motion and leaves content visible.
+The site uses a single `IntersectionObserver` reveal controller. On compact screens, horizontal reveal offsets convert to vertical offsets so client motion cannot create horizontal overflow. The homepage hero uses a supplied-photo motion loop with a static poster fallback; other movement is intentionally minimal. `prefers-reduced-motion: reduce` disables motion and leaves content visible.
 
 Accessibility foundations include semantic landmarks, skip link, visible focus treatments, labelled form controls, local fonts, reduced motion, image alt text, responsive layouts, and an Axe/Playwright gate.
 

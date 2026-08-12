@@ -28,6 +28,13 @@ if (!content.includes("W/188/2017") || !content.includes("Namibia Government Gaz
 if (!assetManifest.includes("GEN-001") || !assetManifest.includes("community-otjiwarongo-sport-context.png") || !assetManifest.includes("Exact prompt used")) failures.push("Generated asset ledger is incomplete for GEN-001");
 if (!existsSync(resolve(root, "public/media/mendozer-hero-motion.mp4")) || !existsSync(resolve(root, "public/media/mendozer-hero-motion.webm")) || !assetManifest.includes("MOT-001")) failures.push("Supplied-photo motion derivative or its asset ledger is missing");
 if (!existsSync(resolve(root, "src/components/SectorExplorer.tsx"))) failures.push("Original sector explorer component is missing");
+if (!existsSync(resolve(root, "src/components/UtilityWidgets.tsx"))) failures.push("Utility widget component is missing");
+if (!existsSync(resolve(root, ".env.example")) || !readFileSync(resolve(root, ".env.example"), "utf8").includes("NEXT_PUBLIC_WHATSAPP_NUMBER")) failures.push("Conditional WhatsApp configuration is missing from the environment example");
+if (!content.includes('title: "One group for the work ahead."')) failures.push("The approved single-sentence home hero title is missing");
+for (const fontFile of ["poppins-latin-400-normal.woff2", "poppins-latin-500-normal.woff2", "poppins-latin-600-normal.woff2"]) {
+  if (!existsSync(resolve(root, "src/fonts", fontFile))) failures.push(`Preloaded local Poppins font is missing: ${fontFile}`);
+}
+if (!readFileSync(resolve(root, "src/app/layout.tsx"), "utf8").includes('next/font/local')) failures.push("Preloaded local font configuration is missing");
 
 const vectorAssets = [
   "accordion-plus.svg", "arrow-right.svg", "close-two-line.svg", "connected-network.svg", "cta-accent.svg", "eyebrow-rule-blue.svg", "eyebrow-rule-navy.svg", "menu-two-line.svg", "section-orbit.svg", "sector-cooling.svg", "sector-energy.svg", "sector-landscape.svg", "sector-route.svg", "sector-signal.svg", "sector-structure.svg", "vertical-rule.svg",

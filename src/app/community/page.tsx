@@ -18,7 +18,7 @@ export default function CommunityPage() {
   const { community } = siteContent;
   return (
     <>
-      <PageHero body={community.body} eyebrow={community.eyebrow} media={community.hero} title={community.title} />
+      <PageHero body={community.body} breadcrumbLabel="Community & Sponsorship" eyebrow={community.eyebrow} media={community.hero} title={community.title} />
       <section className="section section--surface">
         <div className="site-container community-intro">
           <SectionHeading

@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import "@fontsource/poppins/400.css";
-import "@fontsource/poppins/500.css";
-import "@fontsource/poppins/600.css";
+import localFont from "next/font/local";
 import "./globals.css";
 import { brandAssets } from "@/brand/assets";
 import { siteConfig } from "@/brand/site-config";
@@ -9,6 +7,19 @@ import { MotionController } from "@/components/MotionController";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SkipLink } from "@/components/SkipLink";
+import { UtilityWidgets } from "@/components/UtilityWidgets";
+
+const poppins = localFont({
+  src: [
+    { path: "../fonts/poppins-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "../fonts/poppins-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "../fonts/poppins-latin-600-normal.woff2", weight: "600", style: "normal" },
+  ],
+  variable: "--font-poppins",
+  display: "swap",
+  preload: true,
+  fallback: ["Avenir Next", "Century Gothic", "Arial"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -70,13 +81,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
   return (
     <html lang="en">
-      <body>
+      <body className={poppins.variable}>
         <script dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} type="application/ld+json" />
         <MotionController />
         <SkipLink />
         <SiteHeader />
         <main id="main-content" tabIndex={-1}>{children}</main>
         <SiteFooter />
+        <UtilityWidgets />
       </body>
     </html>
   );

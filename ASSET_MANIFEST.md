@@ -30,6 +30,16 @@ This amendment supersedes every prior instruction that permitted a brand-gradien
 
 **Logo rule:** no Mendozer logo has been regenerated or redrawn for this build. The public copies were copied unchanged from the delivered source assets.
 
+## Local typography assets
+
+| Asset | Source and status | Use |
+|---|---|---|
+| `/src/fonts/poppins-latin-400-normal.woff2` | Local tracked Poppins 400 file, copied from the prior `@fontsource/poppins` package source before the package was removed from runtime dependencies | Hero display and body typography |
+| `/src/fonts/poppins-latin-500-normal.woff2` | Local tracked Poppins 500 file | Headings and navigation |
+| `/src/fonts/poppins-latin-600-normal.woff2` | Local tracked Poppins 600 file | Labels and controls |
+
+`next/font/local` preloads these local files from `src/app/layout.tsx`. This removes the package runtime dependency and reduces font-driven layout shift without changing the approved family.
+
 ## Existing pre-sorted real project photography
 
 | Folder | Files | Likely sector | Status |
@@ -180,7 +190,7 @@ All entries below are real, reusable SVG outputs in both `/assets/vectors/` (sou
 | Browser files | `/public/media/mendozer-hero-motion.webm` and `/public/media/mendozer-hero-motion.mp4` |
 | Purpose | A quiet home-hero motion layer created from supplied Mendozer construction context. It replaces the request for an unverified third-party video and keeps image rights within the supplied archive. |
 | Motion treatment | Ten-second, muted, looping slow push with minimal horizontal drift. The video contains no generated imagery, audio, added people, added objects, logo, text, or project claim. |
-| Size and performance | WebM: 157 KB. MP4 fallback: 286 KB. The home page uses the existing 72 KB WebP as the poster and hides motion on compact and reduced-motion layouts. |
+| Size and performance | WebM: 157 KB. MP4 fallback: 286 KB. The home page uses the existing 72 KB WebP as the poster and keeps motion available on compact layouts. `prefers-reduced-motion` hides video and preserves the poster. |
 | Page and placement | `/`, full-bleed home hero background only |
 | Visible caption | `Building work in progress` |
 | Alt treatment | Decorative background motion. The visible hero content is conveyed in text, and the poster has no duplicated alternate text. |

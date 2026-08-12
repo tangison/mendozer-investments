@@ -109,12 +109,9 @@ export const siteContent = {
     { label: "Community", href: "/community" },
   ],
   hero: {
-    eyebrow: "Mendozer Investments",
-    titleLineOne: "One group.",
-    titleLineTwo: "Six directions.",
-    supporting: "A direct route to six working directions across Namibia.",
-    primaryCta: { label: "See the six directions", href: "/#sectors" },
-    secondaryCta: { label: "Prepare a group enquiry", href: "/contact" },
+    title: "One group for the work ahead.",
+    primaryCta: { label: "Explore directions", href: "/#sectors" },
+    secondaryCta: { label: "Start an enquiry", href: "/contact" },
     media: {
       src: "/images/projects/construction/road-works-2.jpg",
       alt: "A site team beside active infrastructure work",

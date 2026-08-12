@@ -35,15 +35,16 @@ test("mobile and desktop home layouts do not create horizontal overflow", async 
   }
 });
 
-test("hero uses supplied-photo motion with a simple text hierarchy", async ({ page }) => {
+test("hero uses supplied-photo motion and one direct main sentence", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("/", { waitUntil: "domcontentloaded" });
 
-  await expect(page.locator(".home-hero h1")).toContainText("One group.");
-  await expect(page.locator(".home-hero h1")).toContainText("Six directions.");
+  await expect(page.locator(".home-hero h1")).toHaveText("One group for the work ahead.");
+  await expect(page.locator(".home-hero .eyebrow")).toHaveCount(0);
+  await expect(page.locator(".home-hero__supporting")).toHaveCount(0);
   await expect(page.locator(".home-hero video source[type='video/webm']")).toHaveAttribute("src", "/media/mendozer-hero-motion.webm");
   await expect(page.locator(".home-hero__navigator")).toHaveCount(0);
-  await expect(page.locator(".home-hero").getByRole("link", { name: /See the six directions/ })).toBeVisible();
+  await expect(page.locator(".home-hero").getByRole("link", { name: "Explore directions" })).toBeVisible();
 });
 
 test("sector directory behaves as an accessible tabbed explorer on desktop", async ({ page }) => {
@@ -132,4 +133,116 @@ test("full-screen navigation remains contained at the 320px floor", async ({ pag
   await expect(page.getByRole("dialog", { name: "Mendozer group navigation" })).toBeVisible();
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
   expect(overflow, "horizontal overflow in 320px full-screen navigation").toBeFalsy();
+});
+
+test("motion setup does not create horizontal overflow on compact viewports", async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 720 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await page.waitForFunction(() => document.documentElement.dataset.motion === "enabled");
+  await page.waitForTimeout(250);
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
+  expect(overflow, "motion transforms must not widen the 320px document").toBeFalsy();
+});
+
+test("full-screen navigation backdrop is opaque from its first rendered frame", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await page.getByRole("button", { name: "Open navigation" }).click();
+  const opacity = await page.locator(".site-menu").evaluate((element) => getComputedStyle(element).opacity);
+  expect(opacity, "modal background must not reveal page content while opening").toBe("1");
+});
+
+test("scrolled navigation becomes an inset floating bar", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await page.evaluate(() => window.scrollTo(0, 700));
+  const header = page.locator(".site-header");
+  await expect(header).toHaveClass(/site-header--scrolled/);
+  const geometry = await header.evaluate((element) => {
+    const headerRect = element.getBoundingClientRect();
+    const inner = element.querySelector<HTMLElement>(".site-header__inner");
+    const innerRect = inner?.getBoundingClientRect();
+    return {
+      headerTop: headerRect.top,
+      innerLeft: innerRect?.left ?? 0,
+      innerRight: innerRect?.right ?? 0,
+      innerBackground: inner ? getComputedStyle(inner).backgroundColor : "",
+    };
+  });
+  expect(geometry.headerTop).toBeGreaterThan(0);
+  expect(geometry.innerLeft).toBeGreaterThan(0);
+  expect(geometry.innerRight).toBeLessThan(390);
+  expect(geometry.innerBackground).not.toBe("rgba(0, 0, 0, 0)");
+});
+
+test("interior top-level routes expose a breadcrumb back to home", async ({ page }) => {
+  for (const [route, current] of [
+    ["/about", "About"],
+    ["/sectors", "Sectors"],
+    ["/work", "Work Context"],
+    ["/updates", "Updates & Public Records"],
+    ["/compliance", "Public Records & Licences"],
+    ["/community", "Community & Sponsorship"],
+    ["/contact", "Contact"],
+    ["/privacy", "Privacy notice"],
+    ["/terms", "Website terms"],
+  ] as const) {
+    await page.goto(route, { waitUntil: "domcontentloaded" });
+    const breadcrumb = page.getByRole("navigation", { name: "Breadcrumb" });
+    await expect(breadcrumb).toBeVisible();
+    await expect(breadcrumb.getByRole("link", { name: "Home" })).toHaveAttribute("href", "/");
+    await expect(breadcrumb).toContainText(current);
+  }
+});
+
+test("full-screen navigation links complete client-side routing", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await page.getByRole("button", { name: "Open navigation" }).click();
+  await page.getByRole("tab", { name: "Sectors" }).click();
+  const technology = page.locator(".site-menu__sector").filter({ hasText: "Technology & Systems" });
+  await technology.locator("summary").click();
+  await technology.getByRole("link", { name: "Explore Technology" }).click();
+  await page.waitForURL("**/sectors/technology");
+  await expect(page.locator("main h1")).toHaveText("Technology & Systems");
+
+  await page.getByRole("button", { name: "Open navigation" }).click();
+  await page.getByRole("tab", { name: "Contact" }).click();
+  await page.getByRole("link", { name: "Prepare an enquiry" }).click();
+  await page.waitForURL("**/contact");
+  await expect(page.locator("main h1")).toHaveText("Start with the work in front of you.");
+});
+
+test("compact hero keeps supplied-photo motion available when motion is allowed", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  const visible = await page.locator(".home-hero video").evaluate((element) => getComputedStyle(element).display !== "none");
+  expect(visible).toBeTruthy();
+});
+
+test("scroll-to-top appears after scrolling and restores the page origin", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await expect(page.getByRole("button", { name: "Back to top" })).toHaveCount(0);
+  await page.evaluate(() => window.scrollTo(0, 900));
+  const control = page.getByRole("button", { name: "Back to top" });
+  await expect(control).toBeVisible();
+  await control.click();
+  await page.waitForFunction(() => window.scrollY === 0);
+});
+
+test("WhatsApp remains absent until an approved public number is configured", async ({ page }) => {
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await expect(page.getByRole("link", { name: "WhatsApp" })).toHaveCount(0);
+});
+
+test("utility controls are isolated while the full-screen menu is open", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await page.evaluate(() => window.scrollTo(0, 900));
+  await expect(page.getByRole("button", { name: "Back to top" })).toBeVisible();
+  await page.getByRole("button", { name: "Open navigation" }).click();
+  expect(await page.locator(".utility-widgets").evaluate((element) => element.hasAttribute("inert"))).toBeTruthy();
+  await page.keyboard.press("Escape");
+  expect(await page.locator(".utility-widgets").evaluate((element) => element.hasAttribute("inert"))).toBeFalsy();
 });

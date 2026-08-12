@@ -19,7 +19,7 @@ export default function UpdatesPage() {
 
   return (
     <>
-      <PageHero body={updates.body} eyebrow={updates.eyebrow} media={updates.hero} title={updates.title} />
+      <PageHero body={updates.body} breadcrumbLabel="Updates & Public Records" eyebrow={updates.eyebrow} media={updates.hero} title={updates.title} />
       <section className="section updates-page">
         <div className="site-container">
           <SectionHeading

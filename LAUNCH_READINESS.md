@@ -16,20 +16,22 @@ This register maps the implemented website against the practical items in an ind
 
 - Official supplied Mendozer and Tangison identity assets are used unchanged.
 - Locked Mendozer colour, type, spacing, radius, and motion tokens drive the interface.
-- Fixed editorial navigation uses a two-line accessible menu control and a full-viewport group dialog. The dialog provides Group, Sectors, and Contact tabs, real contextual imagery, native sector disclosures, keyboard access, Escape handling, focus restoration, and inert background isolation.
-- Homepage uses one simple supplied-photo motion hero with a static poster fallback. Sector exploration moves below the hero, using accessible tabs on larger screens and native disclosures on compact screens.
+- Floating navigation uses a compact rectangular scrolled bar and a full-viewport group dialog. The dialog provides Group, Sectors, and Contact tabs, real contextual imagery, native sector disclosures, keyboard access, Escape handling, focus restoration, and inert background isolation.
+- Homepage uses one direct sentence as its only hero heading, with supplied-photo WebM/MP4 motion and a static poster fallback. Motion remains available on compact screens unless reduced motion is requested. Sector exploration moves below the hero, using accessible tabs on larger screens and native disclosures on compact screens.
 - Homepage includes an accessible FAQ accordion with enquiry guidance.
+- Interior top-level pages expose semantic breadcrumb trails back to Home.
+- A scroll-to-top control appears only after meaningful scroll distance. A WhatsApp control renders only when `NEXT_PUBLIC_WHATSAPP_NUMBER` contains an approved public number.
 - Footer exposes group navigation, sector navigation, direct email, registration/VAT, privacy notice, website terms, the verified licence source, and the required Tangison Studio credit.
 - Buttons are compact, rectangular, high-contrast controls. Cards and media use fine borders and restrained square geometry rather than glow effects or pervasive pills.
 
 ### Accessibility, SEO, performance, and technical quality
 
-- Semantic landmarks, one H1 per route, labelled form controls, descriptive links, alt text, visible focus states, keyboard menu access, a skip link, and reduced-motion behavior are implemented.
+- Semantic landmarks, one H1 per route, semantic breadcrumbs, labelled form controls, descriptive links, alt text, visible focus states, keyboard menu access, a skip link, scroll-to-top behavior, and reduced-motion behavior are implemented.
 - Axe WCAG 2 A/AA checks pass for Home, About, Technology, Community, Contact, Privacy, and Terms.
-- Responsive checks cover 320px, 375px, 390px, 414px, 768px, and desktop. The full-screen navigation is specifically tested at 320px.
+- Responsive checks cover 320px, 375px, 390px, 414px, 768px, and desktop. They cover post-motion overflow, first-frame menu opacity, floating navigation, breadcrumb trails, menu-route completion, scroll-to-top behavior, and utility-widget modal isolation.
 - Organization and FAQ JSON-LD are emitted from crawlable HTML using verified site details only.
 - Unique metadata, canonical URLs, XML sitemap, robots rules, Open Graph metadata, and social images are present.
-- Next.js image optimization, modern formats, local Poppins files, a supplied-photo WebM/MP4 motion layer with static poster fallback, lazy loading for non-critical media, and Vercel CDN delivery are active. The redesign audit recorded mobile Lighthouse Performance 93, Accessibility 100, Best Practices 100, SEO 100, LCP 2.0s, and CLS 0.053. Desktop Lighthouse recorded 100 across all four categories.
+- Next.js image optimization, modern formats, preloaded local Poppins files, a supplied-photo WebM/MP4 motion layer with static poster fallback, lazy loading for non-critical media, and Vercel CDN delivery are active. The final local mobile audit recorded Lighthouse Performance 96, Accessibility 100, Best Practices 100, SEO 100, LCP 2.7s, TBT 90ms, and CLS 0. Desktop Lighthouse recorded 100 across all four categories with CLS 0.
 - Security headers are configured through `vercel.json`: HSTS, content type protection, referrer policy, frame policy, and permissions policy.
 - Dependency audit reports zero known production vulnerabilities.
 

@@ -18,7 +18,7 @@ export default function AboutPage() {
   const { about } = siteContent;
   return (
     <>
-      <PageHero body={about.body} eyebrow={about.eyebrow} media={about.hero} title={about.title} />
+      <PageHero body={about.body} breadcrumbLabel="About" eyebrow={about.eyebrow} media={about.hero} title={about.title} />
 
       <section className="section section--surface">
         <div className="site-container about-intro">

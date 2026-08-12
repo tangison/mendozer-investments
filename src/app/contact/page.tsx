@@ -17,7 +17,7 @@ export default function ContactPage() {
   const { contact } = siteContent;
   return (
     <>
-      <PageHero body={contact.body} eyebrow={contact.eyebrow} media={contact.media} title={contact.title} />
+      <PageHero body={contact.body} breadcrumbLabel="Contact" eyebrow={contact.eyebrow} media={contact.media} title={contact.title} />
       <section className="section contact-section">
         <div className="site-container contact-section__grid">
           <div className="contact-section__details">

@@ -19,7 +19,7 @@ export default function WorkPage() {
 
   return (
     <>
-      <PageHero body={work.body} eyebrow={work.eyebrow} media={work.hero} title={work.title} />
+      <PageHero body={work.body} breadcrumbLabel="Work Context" eyebrow={work.eyebrow} media={work.hero} title={work.title} />
       <section className="section work-contexts">
         <div className="site-container">
           <SectionHeading
