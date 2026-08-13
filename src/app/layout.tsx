@@ -21,6 +21,14 @@ const poppins = localFont({
   fallback: ["Avenir Next", "Century Gothic", "Arial"],
 });
 
+const redHatDisplay = localFont({
+  src: "../fonts/red-hat-display.woff2",
+  variable: "--font-red-hat-display",
+  display: "swap",
+  preload: true,
+  fallback: ["Poppins", "Avenir Next", "Century Gothic", "Arial"],
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
@@ -80,7 +88,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   };
 
   return (
-    <html className={poppins.variable} lang="en">
+    <html className={`${poppins.variable} ${redHatDisplay.variable}`} lang="en">
       <body>
         <script dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} type="application/ld+json" />
         <MotionController />

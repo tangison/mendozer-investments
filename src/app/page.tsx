@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AccordionList } from "@/components/AccordionList";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { HeroFollowSection } from "@/components/HeroFollowSection";
 import { HomeHero } from "@/components/HomeHero";
 import { MediaFrame } from "@/components/MediaFrame";
 import { Reveal } from "@/components/Reveal";
@@ -30,6 +31,7 @@ export default function HomePage() {
     <>
       <script dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} type="application/ld+json" />
       <HomeHero />
+      <HeroFollowSection />
 
       <section className="section introduction-section">
         <div className="site-container introduction-section__grid">

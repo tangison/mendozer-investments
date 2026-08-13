@@ -60,11 +60,36 @@ Structural additions in `tokens.css` (`--container-max`, restrained square contr
 
 ## Logo usage
 
+### Primary lockups (production)
+
+The production logo set lives in `assets/logos/` (source) and `public/assets/logos/` (served). These are the **only** logos used by the live site:
+
+| File | Variant | Usage |
+|---|---|---|
+| `mendozer-logo-full.svg` | Full lockup, light theme (navy/blue text on white) | Header on light surfaces, quiet light backgrounds |
+| `mendozer-logo-dark-theme.svg` | Full lockup, dark theme (white/blue text on navy) | Header over dark hero, footer, dark panels |
+| `mendozer-logo-mono-white.svg` | Single-color white | Watermarks, dark photo overlays, print |
+| `mendozer-logo-mono-navy.svg` | Single-color navy | Stamps, light print, embossing |
+| `mendozer-icon.svg` | Icon mark only, gradient | Favicon, app icon, standalone mark |
+| `mendozer-icon-*.png` | Icon in multiple sizes (16-1024px) | Favicon set, social, PWA |
+| `tangison/tangison-logo-white.svg` | Tangison credit, white | Footer "Made by" credit only |
+
+### Logo rules
+
 - Use supplied SVG lockups as delivered; do not redraw, recolor, stretch, skew, or separate their internal icon/wordmark spacing.
 - Minimum full-lockup width: 120px. Minimum icon height: 24px.
 - Use `mendozer-logo-full.svg` on quiet light surfaces and `mendozer-logo-dark-theme.svg` on navy/dark surfaces.
 - Do not place the full-color lockup over busy photography. The site uses it only in quiet header/footer fields and social layout panels.
-- Tangison’s supplied white logo is used only in the required footer credit link.
+- Tangison's supplied white logo is used only in the required footer credit link.
+- The icon mark gradient (`#1CABF1` to `#1E4FC7`) is never flattened to a single color except in the mono-white and mono-navy variants.
+
+### Alternate logo set (2026-08, archived, not in production)
+
+An alternate set of 8 SVG variants was supplied on 2026-08-13 and archived in `reference/logos/new-set-2026-08/`. These use a different gradient (`#00c0ff` to `#4218b8`, more purple than the locked brand) and are **not** used by the live site. They are retained for reference only. If the client confirms a brand refresh to the new gradient, the swap requires updating `src/brand/tokens.css` colour values, replacing `public/assets/logos/` files, regenerating OG images, and re-running the full QA gate.
+
+### Hero video logo treatment
+
+The homepage hero video has a 0.3 opacity navy (`#0B1E3D`) overlay baked into the video file plus a CSS gradient veil. The header logo switches to `mendozer-logo-dark-theme.svg` (white text) over the hero via the `site-header--over-dark` class. No logo is placed over the video itself; the video is background texture only.
 
 ## Imagery and vector policy
 

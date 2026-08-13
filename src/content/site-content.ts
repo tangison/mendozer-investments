@@ -109,9 +109,14 @@ export const siteContent = {
     { label: "Community", href: "/community" },
   ],
   hero: {
+    eyebrow: "Mendozer Investments",
     title: "One group for the work ahead.",
+    subtext: "Multi-sector solutions, built for Namibia. Construction, technology, cooling, logistics, energy and tourism, connected by one accountable operational backbone.",
     primaryCta: { label: "Explore directions", href: "/#sectors" },
     secondaryCta: { label: "Start an enquiry", href: "/contact" },
+    followEyebrow: "The Mendozer group",
+    followTitle: "One accountable group across six working directions.",
+    followBody: "Construction, technology, cooling, logistics, energy and tourism are connected by one operational backbone. Start with the sector closest to the work in front of you, and bring the group in when the brief crosses disciplines. Every direction carries the same standard: real site context, verified records, and work delivered with care.",
     media: {
       src: "/images/projects/construction/road-works-2.jpg",
       alt: "A site team beside active infrastructure work",
