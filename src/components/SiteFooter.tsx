@@ -49,6 +49,10 @@ export function SiteFooter() {
             <a href={fuelLicence.sourceUrl} rel="noreferrer" target="_blank">Wholesale fuel licence W/188/2017</a>
             <Link href="/privacy">Privacy notice</Link>
             <Link href="/terms">Website terms</Link>
+            <div className="site-footer__social">
+              <a href={siteConfig.social.instagram} aria-label="Mendozer Investments on Instagram" rel="noreferrer" target="_blank">Instagram</a>
+              <a href={siteConfig.social.facebook} aria-label="Mendozer Investments on Facebook" rel="noreferrer" target="_blank">Facebook</a>
+            </div>
           </div>
         </div>
 

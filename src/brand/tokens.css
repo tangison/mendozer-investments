@@ -1,16 +1,22 @@
-/* Mendozer brand layer: verified values transcribed from design-tokens.md. */
+/* Mendozer brand layer: values aligned to the 2026-08 supplied logo set.
+   Gradient #00c0ff -> #4218b8 sampled from logo-02/03/04/05/06 SVG stop-color values. */
 :root {
-  --color-brand-gradient-start: #1cabf1;
-  --color-brand-gradient-end: #1e4fc7;
+  --color-brand-gradient-start: #00c0ff;
+  --color-brand-gradient-end: #4218b8;
   --brand-gradient: linear-gradient(135deg, var(--color-brand-gradient-start) 0%, var(--color-brand-gradient-end) 100%);
-  --color-brand-navy: #1c4e89;
-  --color-brand-blue: #2fa1db;
+  --color-brand-cyan: #00c0ff;
+  --color-brand-violet: #4218b8;
+  /* Retained navy and blue from previous set for body text and surfaces; they
+     still read against the new gradient and keep the site from going fully
+     purple. These are surface tokens, not logo tokens. */
+  --color-brand-navy: #0b1e3d;
+  --color-brand-blue: #00c0ff;
   --color-bg-primary: #ffffff;
   --color-bg-secondary: #f5f8fc;
-  --color-text-primary: #1c4e89;
+  --color-text-primary: #0b1e3d;
   --color-text-body: #2b2f36;
   --color-border-subtle: #e3eaf2;
-  --color-accent: #2fa1db;
+  --color-accent: #00c0ff;
   --color-bg-dark-primary: #0b1e3d;
   --color-bg-dark-secondary: #122a52;
   --color-text-dark-primary: #ffffff;

@@ -324,6 +324,9 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
 .site-footer__column a, .site-footer__column span { width: fit-content; color: var(--color-text-dark-body); font-size: 0.78rem; line-height: 1.6; }
 .site-footer__column a:hover { color: var(--color-text-dark-primary); }
 .site-footer__column--sectors > div { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-2) var(--space-6); }
+.site-footer__social { display: flex; gap: var(--space-4); margin-top: var(--space-3); padding-top: var(--space-3); border-top: 1px solid var(--color-border-dark-subtle); }
+.site-footer__social a { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--color-text-dark-body); transition: color var(--duration-fast) ease; }
+.site-footer__social a:hover { color: var(--color-brand-blue); }
 .site-footer__bottom { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; padding-top: var(--space-6); color: var(--color-text-dark-body); font-size: 0.68rem; gap: var(--space-4); }
 .site-footer__bottom > p { margin: 0; }
 .tangison-credit { display: inline-flex; align-items: center; justify-self: end; color: var(--color-text-dark-body); gap: var(--space-2); }

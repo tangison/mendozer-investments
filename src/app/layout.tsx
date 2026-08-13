@@ -81,6 +81,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     url: siteConfig.url,
     logo: new URL(brandAssets.logoLight, siteConfig.url).toString(),
     email: siteConfig.email,
+    sameAs: [
+      siteConfig.social.instagram,
+      siteConfig.social.facebook,
+    ],
     identifier: [
       { "@type": "PropertyValue", propertyID: "Registration number", value: siteConfig.registration },
       { "@type": "PropertyValue", propertyID: "VAT number", value: siteConfig.vat },

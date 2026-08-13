@@ -12,6 +12,12 @@ export const siteConfig = {
   browserTheme: {
     background: "#FFFFFF",
     dark: "#0B1E3D",
+    gradientStart: "#00C0FF",
+    gradientEnd: "#4218B8",
+  },
+  social: {
+    instagram: "https://www.instagram.com/mendozer_investments",
+    facebook: "https://www.facebook.com/61593183452392",
   },
 } as const;
 
