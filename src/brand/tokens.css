@@ -18,7 +18,7 @@
   --color-border-dark-subtle: #1e3b66;
 
   --font-sans: var(--font-poppins), "Avenir Next", "Century Gothic", Arial, sans-serif;
-  --font-display: var(--font-poppins), "Avenir Next", "Century Gothic", Arial, sans-serif;
+  --font-display: var(--font-red-hat-display), var(--font-poppins), "Avenir Next", "Century Gothic", Arial, sans-serif;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;

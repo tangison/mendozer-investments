@@ -195,3 +195,18 @@ All entries below are real, reusable SVG outputs in both `/assets/vectors/` (sou
 | Visible caption | `Building work in progress` |
 | Alt treatment | Decorative background motion. The visible hero content is conveyed in text, and the poster has no duplicated alternate text. |
 | Authenticity guard | This is a supplied-photo derivative, not a documentary video of a named project and not an AI-generated visual. |
+
+### MOT-002: Nine-clip sector loop (hero + push-in)
+
+| Field | Record |
+|---|---|
+| Builder | `scripts/build-hero-motion.mjs` (`npm run build:hero-motion`) |
+| Source clips | Nine client-supplied 7-second clips, used in fixed order: construction, technology, cooling, logistics, tourism, dunes, ocean, bird, energy flash. Dropped into `media-source/` (git-ignored, not redistributed in this repo). |
+| Browser files | `mendozer-hero-motion.webm` / `.mp4` (1920x1080) and `mendozer-hero-motion-720.webm` / `.mp4` (1280x720, mobile) under `/public/media` |
+| Loop construction | 9 x 7s = 63s. Every clip is scaled and cropped to exactly 1920x1080 at 25fps and dips in and out of solid `#0B1E3D`, so each boundary lands on an identical navy frame and clip 9 hard-cuts back to clip 1 without a visible seam. |
+| Colour treatment | Saturation and contrast are calmed, then `colorbalance` biases shadows and mids toward the brand navy. A `#0B1E3D` box at 0.3 opacity is composited over every frame for text legibility, as specified. |
+| Size and performance | Mobile builds are size-capped below 3 MB by the encoder, which re-encodes at a budget-derived bitrate if the first attempt overshoots. `preload="metadata"`, the 720p build is served under 48rem, the push-in copy is lazily mounted near the viewport, and offscreen playback is paused. |
+| Page and placement | `/`, full-bleed hero background and the push-in frame in the section directly below it |
+| Alt treatment | Decorative in both placements (`aria-hidden`, `tabIndex={-1}`, no controls). All hero meaning is carried by real text. |
+| Reduced motion | Under `prefers-reduced-motion: reduce` no video element is mounted at all; the graded poster carries the composition. |
+| Authenticity guard | Client-supplied footage, colour-graded only. No generated imagery, audio, text, logo, or project claim is introduced. |

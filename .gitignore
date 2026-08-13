@@ -21,3 +21,6 @@ _logo-intake/
 .DS_Store
 *.log
 .vercel
+
+# Raw source footage for the hero motion build (large, not redistributed)
+media-source/

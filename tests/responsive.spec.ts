@@ -65,6 +65,81 @@ test("hero uses supplied-photo motion and one direct main sentence", async ({ pa
   await expect(page.locator(".home-hero").getByRole("link", { name: "Explore directions" })).toBeVisible();
 });
 
+test("hero headline renders in Red Hat Display while body copy stays Poppins", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+
+  const heading = await page.locator(".home-hero h1").evaluate((node) => getComputedStyle(node).fontFamily.toLowerCase());
+  const body = await page.evaluate(() => getComputedStyle(document.body).fontFamily.toLowerCase());
+
+  expect(heading).toContain("red");
+  expect(body).toContain("poppins");
+});
+
+test("push-in section overlaps the hero and keeps the 60 percent video column", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+
+  const frame = page.locator(".motion-feature__media .hero-motion");
+  await expect(frame).toBeVisible();
+
+  const geometry = await page.evaluate(() => {
+    const hero = document.querySelector(".home-hero");
+    const media = document.querySelector(".motion-feature__media");
+    const shell = document.querySelector(".motion-feature__grid");
+    const frameEl = document.querySelector(".motion-feature__media .hero-motion");
+    if (!hero || !media || !shell || !frameEl) return null;
+    const heroRect = hero.getBoundingClientRect();
+    const frameRect = frameEl.getBoundingClientRect();
+    return {
+      overlap: heroRect.bottom - frameRect.top,
+      frameHeight: frameRect.height,
+      widthShare: media.getBoundingClientRect().width / shell.getBoundingClientRect().width,
+      radius: Number.parseFloat(getComputedStyle(frameEl).borderTopLeftRadius),
+      shadow: getComputedStyle(frameEl).boxShadow,
+    };
+  });
+
+  expect(geometry).not.toBeNull();
+  // The frame lifts 20% of its own height into the hero.
+  expect(geometry!.overlap / geometry!.frameHeight).toBeGreaterThan(0.15);
+  expect(geometry!.overlap / geometry!.frameHeight).toBeLessThan(0.25);
+  // Right column holds roughly the specified 60% of the two-column grid.
+  expect(geometry!.widthShare).toBeGreaterThan(0.52);
+  expect(geometry!.radius).toBe(16);
+  expect(geometry!.shadow).not.toBe("none");
+});
+
+test("motion layers expose no controls and stay muted and inline", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+
+  const heroVideo = page.locator(".home-hero video");
+  await expect(heroVideo).toHaveCount(1);
+
+  const state = await heroVideo.evaluate((node: HTMLVideoElement) => ({
+    controls: node.controls,
+    muted: node.muted,
+    loop: node.loop,
+    playsInline: node.playsInline,
+    preload: node.preload,
+  }));
+
+  expect(state.controls).toBeFalsy();
+  expect(state.muted).toBeTruthy();
+  expect(state.loop).toBeTruthy();
+  expect(state.playsInline).toBeTruthy();
+  expect(state.preload).toBe("metadata");
+});
+
+test("compact viewports receive the 720p motion build", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+
+  await expect(page.locator(".home-hero video source[type='video/webm']"))
+    .toHaveAttribute("src", "/media/mendozer-hero-motion-720.webm");
+});
+
 test("sector directory behaves as an accessible tabbed explorer on desktop", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("/", { waitUntil: "domcontentloaded" });

@@ -1,5 +1,5 @@
 import { createHash } from "node:crypto";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import { resolve } from "node:path";
 
 const root = process.cwd();
@@ -27,6 +27,24 @@ if (content.includes("community-sport-gradient") || content.includes("BrandArtwo
 if (!content.includes("W/188/2017") || !content.includes("Namibia Government Gazette No. 8655")) failures.push("Verified wholesale fuel licence fact/citation is missing from content data");
 if (!assetManifest.includes("GEN-001") || !assetManifest.includes("community-otjiwarongo-sport-context.png") || !assetManifest.includes("Exact prompt used")) failures.push("Generated asset ledger is incomplete for GEN-001");
 if (!existsSync(resolve(root, "public/media/mendozer-hero-motion.mp4")) || !existsSync(resolve(root, "public/media/mendozer-hero-motion.webm")) || !assetManifest.includes("MOT-001")) failures.push("Supplied-photo motion derivative or its asset ledger is missing");
+
+// Hero motion contract: every path referenced by the hero must exist on disk, the
+// mobile pair must stay inside the 3 MB budget, and the loop must stay documented.
+const MOBILE_BUDGET_BYTES = 3 * 1024 * 1024;
+const heroMotionPaths = [...content.matchAll(/"(\/(?:media|images)\/[^"]+\.(?:webm|mp4|webp))"/g)].map((match) => match[1]);
+for (const publicPath of new Set(heroMotionPaths)) {
+  if (!existsSync(resolve(root, "public", publicPath.replace(/^\//, "")))) failures.push(`Referenced media file is missing from /public: ${publicPath}`);
+}
+for (const mobileFile of ["mendozer-hero-motion-720.webm", "mendozer-hero-motion-720.mp4"]) {
+  const mobilePath = resolve(root, "public/media", mobileFile);
+  if (!existsSync(mobilePath)) {
+    failures.push(`Missing mobile motion build: ${mobileFile}`);
+    continue;
+  }
+  const bytes = statSync(mobilePath).size;
+  if (bytes > MOBILE_BUDGET_BYTES) failures.push(`${mobileFile} is ${(bytes / 1024 / 1024).toFixed(2)} MB, over the 3 MB mobile budget`);
+}
+if (!assetManifest.includes("MOT-002")) failures.push("Nine-clip hero loop is missing from the asset ledger");
 if (!existsSync(resolve(root, "src/components/SectorExplorer.tsx"))) failures.push("Original sector explorer component is missing");
 if (!existsSync(resolve(root, "src/components/UtilityWidgets.tsx"))) failures.push("Utility widget component is missing");
 if (!existsSync(resolve(root, ".env.example")) || !readFileSync(resolve(root, ".env.example"), "utf8").includes("NEXT_PUBLIC_WHATSAPP_NUMBER")) failures.push("Conditional WhatsApp configuration is missing from the environment example");

@@ -109,9 +109,32 @@ export const siteContent = {
     { label: "Community", href: "/community" },
   ],
   hero: {
+    eyebrow: "Mendozer Investments",
     title: "One group for the work ahead.",
+    subtext:
+      "Construction, technology, cooling, logistics, tourism and energy. Six working directions, held to one standard and one accountable group.",
     primaryCta: { label: "Explore directions", href: "/#sectors" },
     secondaryCta: { label: "Start an enquiry", href: "/contact" },
+    /** Nine 7-second sector clips, stitched into one 63s loop by scripts/build-hero-motion.mjs. */
+    motion: {
+      webm: "/media/mendozer-hero-motion.webm",
+      mp4: "/media/mendozer-hero-motion.mp4",
+      webm720: "/media/mendozer-hero-motion-720.webm",
+      mp4720: "/media/mendozer-hero-motion-720.mp4",
+      poster: "/images/projects/construction/mendozer-home-hero.webp",
+      durationSeconds: 63,
+      chapters: [
+        "Construction",
+        "Technology",
+        "Cooling",
+        "Logistics",
+        "Tourism",
+        "Dunes",
+        "Ocean",
+        "Signal",
+        "Energy",
+      ],
+    },
     media: {
       src: "/images/projects/construction/road-works-2.jpg",
       alt: "A site team beside active infrastructure work",
@@ -169,6 +192,18 @@ export const siteContent = {
     } satisfies MediaAsset,
   },
   home: {
+    /** Push-in section: sits below the hero and overlaps it by 20% of its own height. */
+    motionFeature: {
+      eyebrow: "Built across sectors",
+      title: "Depth in every direction.",
+      body: "Mendozer Investments works where Namibia builds: sites and structures, networks and systems, cold chain and controlled environments, freight and supply routes, coastline and desert tourism, and the energy that carries all of it.",
+      support: "One group, one point of accountability, and a record you can check. Every direction is delivered by people who answer for the result.",
+      stats: [
+        { value: "6", label: "Working directions" },
+        { value: "2009", label: "Registered in Namibia" },
+      ],
+      cta: { label: "Read the group context", href: "/about" },
+    },
     introduction: {
       eyebrow: "The Mendozer group",
       title: "Start with the work in front of you.",

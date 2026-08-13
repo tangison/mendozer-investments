@@ -117,18 +117,53 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
 .site-menu__footer { display: flex; flex-wrap: wrap; justify-content: space-between; padding-top: var(--space-4); padding-bottom: max(var(--space-4), env(safe-area-inset-bottom)); border-top: 1px solid var(--color-border-dark-subtle); color: var(--color-text-dark-body); font-size: 0.7rem; gap: var(--space-3); }
 .site-menu__footer a { color: var(--color-text-dark-primary); }
 
+/* Shared background motion layer: hero backdrop and push-in frame. */
+.hero-motion { position: absolute; inset: 0; overflow: hidden; background: var(--color-bg-dark-primary); }
+.hero-motion__poster { position: absolute; inset: 0; background-position: center; background-size: cover; transform: scale(1.04); }
+.hero-motion__video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 900ms var(--ease-out-expressive); }
+.hero-motion__video.is-painted { opacity: 1; }
+/* Required legibility veil, matched to the navy burned into the video grade. */
+.hero-motion__veil { position: absolute; inset: 0; background: rgb(11 30 61 / 30%); }
+
 .home-hero { position: relative; display: grid; min-height: 100svh; overflow: hidden; align-items: end; background: var(--color-bg-dark-primary); color: var(--color-text-dark-primary); }
-.home-hero__media, .home-hero__veil { position: absolute; inset: 0; }
-.home-hero__poster, .home-hero__video { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.home-hero__poster { position: absolute !important; inset: 0; }
-.home-hero__video { position: relative; z-index: 1; }
-.home-hero__veil { z-index: 2; background: rgb(4 18 43 / 66%); }
-.home-hero__signal { position: absolute; z-index: 3; top: 0; bottom: 0; left: max(1.5rem, calc((100vw - var(--container-max)) / 2)); width: 2px; background: var(--color-brand-blue); }
-.home-hero__inner { position: relative; z-index: 4; display: flex; align-items: end; justify-content: space-between; padding-top: 10rem; padding-bottom: clamp(3rem, 7vw, 6rem); gap: var(--space-8); }
-.home-hero__copy { max-width: 50rem; }
-.home-hero h1 { max-width: 11ch; color: var(--color-text-dark-primary); font-size: clamp(4rem, 9vw, 8.75rem); font-weight: 400; letter-spacing: -0.085em; line-height: 0.88; }
-.home-hero__actions { display: flex; flex-wrap: wrap; align-items: center; margin-top: var(--space-8); gap: var(--space-5, 1.25rem); }
-.home-hero__caption { margin: 0; max-width: 8rem; color: var(--color-text-dark-body); font-size: 0.62rem; letter-spacing: 0.08em; line-height: 1.4; text-align: right; text-transform: uppercase; }
+/* Depth ramp: keeps the huge type legible over any frame of the loop without
+   flattening the footage the way a single heavy scrim would. */
+.home-hero::after { position: absolute; z-index: 2; inset: 0; background: linear-gradient(180deg, rgb(11 30 61 / 62%) 0%, rgb(11 30 61 / 30%) 32%, rgb(11 30 61 / 48%) 68%, rgb(11 30 61 / 88%) 100%); content: ""; pointer-events: none; }
+/* Bottom padding reserves the strip the pushed-up frame occupies (~12.5% of
+   the container width), so hero copy and the scroll cue always clear it. */
+.home-hero__inner { position: relative; z-index: 4; display: flex; align-items: end; justify-content: space-between; padding-top: 11rem; padding-bottom: clamp(3rem, 14vw, 12rem); gap: var(--space-8); }
+.home-hero__copy { max-width: 56rem; }
+.home-hero__eyebrow { display: flex; align-items: center; margin: 0 0 clamp(1.25rem, 2.5vw, 2rem); color: var(--color-text-dark-primary); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; line-height: 1; text-transform: uppercase; gap: var(--space-3); text-shadow: 0 1px 12px rgb(4 12 28 / 45%); }
+.home-hero__eyebrow::before { width: clamp(1.75rem, 4vw, 3rem); height: 1px; background: var(--color-brand-blue); content: ""; }
+.home-hero h1 { max-width: 13ch; color: var(--color-text-dark-primary); font-size: clamp(3.4rem, 8.4vw, 8.5rem); font-weight: 500; letter-spacing: -0.055em; line-height: 0.9; text-shadow: 0 2px 30px rgb(4 12 28 / 42%); text-wrap: balance; }
+.home-hero__subtext { max-width: 44ch; margin-top: clamp(1.5rem, 2.6vw, 2.25rem); color: rgb(255 255 255 / 88%); font-size: clamp(1rem, 1.35vw, 1.2rem); font-weight: 400; line-height: 1.62; text-shadow: 0 1px 16px rgb(4 12 28 / 50%); text-wrap: pretty; }
+.home-hero__actions { display: flex; flex-wrap: wrap; align-items: center; margin-top: clamp(2rem, 3.5vw, 3rem); gap: var(--space-6); }
+.home-hero__meta { display: flex; align-items: end; padding-bottom: 0.35rem; }
+.home-hero__scroll { display: inline-flex; align-items: center; color: rgb(255 255 255 / 78%); font-size: 0.64rem; font-weight: 600; letter-spacing: 0.14em; line-height: 1; text-transform: uppercase; gap: var(--space-2); transition: color var(--duration-fast) ease; }
+.home-hero__scroll:hover { color: var(--color-text-dark-primary); }
+.home-hero__scroll .icon-arrow { width: 0.85rem; height: 0.85rem; animation: hero-scroll-nudge 2.4s var(--ease-out-expressive) infinite; }
+@keyframes hero-scroll-nudge { 0%, 100% { transform: rotate(90deg) translateX(0); } 50% { transform: rotate(90deg) translateX(0.3rem); } }
+
+/* Push-in section: right column overlaps the hero by 20% of its own height. */
+.motion-feature { position: relative; z-index: 5; padding-bottom: clamp(4.5rem, 9vw, 9rem); background: var(--color-bg-primary); }
+/* Right column carries the specified 60% video width; copy takes the rest. */
+.motion-feature__grid { display: grid; grid-template-columns: minmax(0, 40fr) minmax(0, 60fr); align-items: center; gap: clamp(2.5rem, 6vw, 6rem); }
+.motion-feature__copy { padding-top: clamp(4rem, 8vw, 8rem); }
+.motion-feature__copy h2 { max-width: 12ch; margin-top: var(--space-4); }
+.motion-feature__body { max-width: 40rem; margin-top: var(--space-6); color: var(--color-text-body); font-size: clamp(1rem, 1.45vw, 1.15rem); line-height: 1.72; text-wrap: pretty; }
+.motion-feature__support { max-width: 38rem; margin-top: var(--space-4); color: var(--color-text-body); font-size: 0.95rem; line-height: 1.7; opacity: 0.82; }
+.motion-feature__stats { display: flex; flex-wrap: wrap; margin: clamp(2rem, 3.5vw, 2.75rem) 0 0; gap: clamp(2rem, 5vw, 4rem); }
+.motion-feature__stats div { display: grid; gap: var(--space-2); }
+.motion-feature__stats dt { color: var(--color-brand-navy); font-family: var(--font-display); font-size: clamp(2.25rem, 4vw, 3.4rem); font-weight: 500; letter-spacing: -0.06em; line-height: 0.9; }
+.motion-feature__stats dd { margin: 0; color: var(--color-text-body); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; }
+.motion-feature__copy .text-link { margin-top: clamp(2rem, 3.5vw, 2.75rem); }
+/* The "push": a negative top margin lifts the frame into the hero.
+   Percentage margins resolve against this column's own width, so with a 4:5
+   frame (height = width x 1.25) a -25% margin is exactly 20% of the frame
+   height. The overlap therefore stays true at every viewport width. */
+.motion-feature__media { position: relative; width: 100%; margin-top: -25%; }
+.motion-feature__media .hero-motion { position: relative; aspect-ratio: 4 / 5; border-radius: 16px; box-shadow: 0 32px 80px -32px rgb(11 30 61 / 55%), 0 8px 24px -12px rgb(11 30 61 / 30%); }
+.motion-feature__media .hero-motion__veil { background: rgb(11 30 61 / 18%); }
 
 .introduction-section__grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(18rem, 0.75fr); align-items: center; gap: clamp(3rem, 9vw, 10rem); }
 .introduction-section__copy .text-link { margin-top: var(--space-8); }
@@ -364,12 +399,21 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
   .site-menu__panel--contact > div > p:not(.eyebrow) { margin-top: var(--space-4); }
   .site-menu__contact-details { margin-top: var(--space-8); }
   .home-hero { min-height: 100svh; }
-  .home-hero__veil { background: rgb(4 18 43 / 62%); }
-  .home-hero__signal { left: 1rem; }
-  .home-hero__inner { display: block; padding-top: 8rem; padding-bottom: var(--space-8); }
-  .home-hero h1 { max-width: 10ch; font-size: clamp(3.25rem, 14.5vw, 5.25rem); line-height: 0.91; }
+  .home-hero::after { background: linear-gradient(180deg, rgb(11 30 61 / 66%) 0%, rgb(11 30 61 / 38%) 30%, rgb(11 30 61 / 54%) 66%, rgb(11 30 61 / 90%) 100%); }
+  /* Extra bottom room so the overlapping push-in frame never covers the CTA. */
+  .home-hero__inner { display: block; padding-top: 8.5rem; padding-bottom: clamp(4.5rem, 15vw, 7rem); }
+  .home-hero h1 { max-width: 12ch; font-size: clamp(2.9rem, 12.5vw, 4.75rem); line-height: 0.94; }
+  .home-hero__subtext { max-width: 100%; font-size: 1rem; }
   .home-hero__actions { align-items: stretch; margin-top: var(--space-6); }
-  .home-hero__caption { display: none; }
+  .home-hero__meta { display: none; }
+
+  /* Stack the push-in columns; the video runs full width and keeps a
+     proportional overlap using its own 16:10 height. */
+  .motion-feature { padding-bottom: var(--space-16); }
+  .motion-feature__grid { grid-template-columns: 1fr; gap: var(--space-8); }
+  .motion-feature__copy { order: 2; padding-top: 0; }
+  .motion-feature__media { order: 1; margin-top: -12.5%; }
+  .motion-feature__media .hero-motion { aspect-ratio: 16 / 10; border-radius: 14px; }
   .utility-widgets { right: var(--space-3); bottom: max(var(--space-3), env(safe-area-inset-bottom)); }
   .introduction-section__grid, .community-feature__grid, .home-faq__grid, .page-hero__grid, .sector-verified__inner, .sector-gallery, .about-intro, .legal-section__grid, .compliance-page__grid, .contact-section__grid { grid-template-columns: 1fr; }
   .introduction-section__grid, .community-feature__grid { gap: var(--space-8); }
@@ -428,5 +472,8 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
-  .home-hero__video { display: none; }
+  /* Motion layers are not mounted at all under reduced motion; the graded
+     poster carries the same composition. */
+  .hero-motion__video { display: none; }
+  .hero-motion__poster { transform: none; }
 }

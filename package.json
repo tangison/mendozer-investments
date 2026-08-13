@@ -12,6 +12,7 @@
     "test:content": "node scripts/check-content.mjs",
     "test:responsive": "playwright test",
     "test:a11y": "playwright test tests/accessibility.spec.ts",
+    "build:hero-motion": "node scripts/build-hero-motion.mjs",
     "qa": "npm run typecheck && npm run lint && npm run test:content && npm run build"
   },
   "dependencies": {

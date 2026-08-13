@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AccordionList } from "@/components/AccordionList";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { HomeHero } from "@/components/HomeHero";
+import { HomeMotionFeature } from "@/components/HomeMotionFeature";
 import { MediaFrame } from "@/components/MediaFrame";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -30,6 +31,7 @@ export default function HomePage() {
     <>
       <script dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} type="application/ld+json" />
       <HomeHero />
+      <HomeMotionFeature />
 
       <section className="section introduction-section">
         <div className="site-container introduction-section__grid">
