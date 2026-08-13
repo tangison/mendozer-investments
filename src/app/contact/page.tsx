@@ -8,7 +8,7 @@ import { siteContent } from "@/content/site-content";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description: "Contact Mendozer Investments for a group or sector enquiry.",
+  description: "Contact Mendozer Investments to start a group or sector enquiry. Direct delivery to contact@mendozer.com with a secure form and mailto fallback.",
   alternates: { canonical: "/contact" },
   openGraph: { images: [{ url: "/og/contact.png", width: 1200, height: 630, alt: "Contact Mendozer Investments" }] },
 };

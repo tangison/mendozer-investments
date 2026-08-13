@@ -32,7 +32,7 @@ const redHatDisplay = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Mendozer Investments | Multi-Sector Solutions, Built for Namibia",
+    default: "Mendozer Investments | Built for Namibia",
     template: "%s | Mendozer Investments",
   },
   description: siteConfig.description,
