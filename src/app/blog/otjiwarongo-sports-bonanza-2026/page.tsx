@@ -7,7 +7,7 @@ import { siteConfig } from "@/brand/site-config";
 
 export const metadata: Metadata = {
   title: "Otjiwarongo Sports Bonanza 2026",
-  description: "Mendozer Investments presents the Otjiwarongo Sports Bonanza, 21 to 23 August 2026 at Mokati Stadium. Soccer, netball, and volleyball with a N$45,000 prize pool. Music by King Tee Dee.",
+  description: "Otjiwarongo Sports Bonanza 2026: 21 to 23 August at Mokati Stadium. Soccer, netball, volleyball. N$45,000 in prizes. King Tee Dee live Saturday.",
   alternates: { canonical: "/blog/otjiwarongo-sports-bonanza-2026" },
   openGraph: {
     title: "Otjiwarongo Sports Bonanza 2026 | Mendozer Investments",
@@ -107,7 +107,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
       "@type": "WebPage",
       "@id": postUrl,
     },
-    description: "Mendozer Investments presents the Otjiwarongo Sports Bonanza, 21 to 23 August 2026 at Mokati Stadium. Soccer, netball, and volleyball with a N$45,000 prize pool. Music by King Tee Dee.",
+    description: "Otjiwarongo Sports Bonanza 2026: 21 to 23 August at Mokati Stadium. Soccer, netball, volleyball. N$45,000 in prizes. King Tee Dee live Saturday.",
   };
 
   const sports = [

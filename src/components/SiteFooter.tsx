@@ -23,7 +23,7 @@ export function SiteFooter() {
       <div className="site-container site-footer__inner">
         <div className="site-footer__top">
           <Link aria-label="Mendozer Investments home" className="site-footer__wordmark" href="/">
-            <Image alt="" height={32} src={brandAssets.logoMonoWhite} style={{ height: "1.75rem", width: "auto" }} unoptimized width={160} />
+            <Image alt="Mendozer Investments" height={32} src={brandAssets.logoMonoWhite} style={{ height: "1.75rem", width: "auto" }} unoptimized width={160} />
           </Link>
           <a className="site-footer__email" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
         </div>

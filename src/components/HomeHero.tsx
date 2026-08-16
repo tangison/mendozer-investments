@@ -39,7 +39,7 @@ export function HomeHero() {
       <div aria-hidden="true" className="hero__media">
         {reduceMotion ? (
           /* Reduced-motion users get the static poster; no autoplaying video. */
-          <Image alt="" className="hero__poster" fill priority sizes="100vw" src={poster} unoptimized />
+          <Image alt="Namibian desert landscape at dawn, dunes stretching to the horizon" className="hero__poster" fill priority sizes="100vw" src={poster} unoptimized />
         ) : (
           <video
             ref={videoRef}
