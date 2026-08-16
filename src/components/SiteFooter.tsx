@@ -42,6 +42,7 @@ export function SiteFooter() {
               <Link href="/updates">Updates</Link>
               <Link href="/compliance">Public records</Link>
               <Link href="/community">Community</Link>
+              <Link href="/blog/otjiwarongo-sports-bonanza-2026">Sports Bonanza 2026</Link>
               <Link href="/contact">Contact</Link>
               <Link href="/brand">Brand</Link>
             </nav>

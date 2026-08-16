@@ -715,6 +715,7 @@ export const routes = [
   "/compliance",
   "/community",
   "/contact",
+  "/blog/otjiwarongo-sports-bonanza-2026",
   "/privacy",
   "/terms",
 ] as const;

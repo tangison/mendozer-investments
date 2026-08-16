@@ -31,7 +31,13 @@ export function UtilityWidgets() {
 
   return (
     <aside aria-label="Quick actions" className="utility-widgets">
-      {showScrollTop ? <button aria-label="Back to top" className="utility-widget" onClick={scrollToTop} type="button">Top ↑</button> : null}
+      {showScrollTop ? (
+        <button aria-label="Back to top" className="utility-widget utility-widget--icon" onClick={scrollToTop} type="button">
+          <svg aria-hidden="true" className="utility-widget__icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8 13V3M8 3L3 8M8 3L13 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="miter" />
+          </svg>
+        </button>
+      ) : null}
       {whatsappNumber ? (
         <a aria-label="WhatsApp" className="utility-widget utility-widget--whatsapp" href={`https://wa.me/${whatsappNumber}`} rel="noreferrer" target="_blank">WhatsApp</a>
       ) : null}

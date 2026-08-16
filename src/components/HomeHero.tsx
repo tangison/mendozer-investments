@@ -20,28 +20,19 @@ export function HomeHero() {
   const { hero } = siteContent;
   const videoRef = useRef<HTMLVideoElement>(null);
   const [reduceMotion, setReduceMotion] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const mqMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const mqMobile = window.matchMedia("(max-width: 768px)");
     const updateMotion = () => setReduceMotion(mqMotion.matches);
-    const updateMobile = () => setIsMobile(mqMobile.matches);
     updateMotion();
-    updateMobile();
     mqMotion.addEventListener("change", updateMotion);
-    mqMobile.addEventListener("change", updateMobile);
     return () => {
       mqMotion.removeEventListener("change", updateMotion);
-      mqMobile.removeEventListener("change", updateMobile);
     };
   }, []);
 
-  const desktopSrc = "/media/mendozer-hero-motion.mp4";
-  const desktopWebm = "/media/mendozer-hero-motion.webm";
-  const mobileSrc = "/media/mendozer-hero-motion-mobile.mp4";
-  const mobileWebm = "/media/mendozer-hero-motion-mobile.webm";
-  const poster = "/images/projects/construction/mendozer-home-hero.webp";
+  const desktopSrc = "/videos/hero/desert-loop.mp4";
+  const poster = "/videos/hero/desert-loop-poster.jpg";
 
   return (
     <section className="hero" aria-labelledby="hero-title">
@@ -60,9 +51,6 @@ export function HomeHero() {
             poster={poster}
             preload="metadata"
           >
-            <source media="(max-width: 768px)" src={isMobile ? mobileWebm : desktopWebm} type="video/webm" />
-            <source media="(max-width: 768px)" src={isMobile ? mobileSrc : desktopSrc} type="video/mp4" />
-            <source src={desktopWebm} type="video/webm" />
             <source src={desktopSrc} type="video/mp4" />
           </video>
         )}
