@@ -75,6 +75,9 @@ export function HomeHero() {
               <ArrowIcon />
             </Link>
           </div>
+          {hero.proofBadge ? (
+            <p className="hero__proof">{hero.proofBadge}</p>
+          ) : null}
         </div>
         <div aria-hidden="true" className="hero__meta">
           <span>One group</span>

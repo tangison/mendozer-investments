@@ -656,8 +656,8 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgb(11 30 61 / 0.55) 0%, rgb(11 30 61 / 0.25) 35%, rgb(11 30 61 / 0.65) 100%),
-    radial-gradient(ellipse at 30% 60%, rgb(11 30 61 / 0.35), transparent 70%);
+    linear-gradient(180deg, rgb(11 30 61 / 0.35) 0%, rgb(11 30 61 / 0.15) 40%, rgb(11 30 61 / 0.55) 100%),
+    linear-gradient(90deg, rgb(11 30 61 / 0.45) 0%, transparent 50%);
   z-index: 1;
   pointer-events: none;
 }
@@ -762,12 +762,25 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
 .hero__cta--ghost {
   background: transparent;
   color: var(--color-text-dark-primary);
-  border-color: rgb(255 255 255 / 0.35);
+  border-color: var(--color-brand-blue);
 }
 
 .hero__cta--ghost:hover {
   border-color: var(--color-text-dark-primary);
   background: rgb(255 255 255 / 0.08);
+}
+
+.hero__proof {
+  margin: var(--space-4) 0 0;
+  padding-top: var(--space-3);
+  border-top: 1px solid rgb(255 255 255 / 0.18);
+  color: var(--color-text-dark-body);
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 8px rgb(0 0 0 / 0.5);
 }
 
 .hero__meta {

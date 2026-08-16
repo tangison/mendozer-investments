@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { brandAssets } from "@/brand/assets";
 import { siteConfig } from "@/brand/site-config";
@@ -101,6 +102,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main id="main-content" tabIndex={-1}>{children}</main>
         <SiteFooter />
         <UtilityWidgets />
+        <Analytics />
       </body>
     </html>
   );

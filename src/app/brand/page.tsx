@@ -6,7 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
-  title: "Brand",
+  title: "Brand identity",
   description: "Mendozer Investments brand identity: logo variants, colour system, typography, and usage guidelines for the 2026 alternate logo set.",
   alternates: { canonical: "/brand" },
   openGraph: { images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments brand" }] },
