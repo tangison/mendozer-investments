@@ -60,7 +60,7 @@ test("hero uses supplied-photo motion and one direct main sentence", async ({ pa
   await expect(page.locator(".home-hero h1")).toHaveText("One group for the work ahead.");
   await expect(page.locator(".home-hero .eyebrow")).toHaveCount(0);
   await expect(page.locator(".home-hero__supporting")).toHaveCount(0);
-  await expect(page.locator(".home-hero video source[type='video/webm']")).toHaveAttribute("src", "/media/mendozer-hero-motion.webm");
+  await expect(page.locator(".home-hero video source[type='video/mp4']")).toHaveAttribute("src", "/videos/hero/desert-loop.mp4");
   await expect(page.locator(".home-hero__navigator")).toHaveCount(0);
   await expect(page.locator(".home-hero").getByRole("link", { name: "Explore directions" })).toBeVisible();
 });
