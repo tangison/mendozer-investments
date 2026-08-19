@@ -22,7 +22,7 @@ export default function CommunityPage() {
       <section className="section section--surface">
         <div className="site-container community-intro">
           <SectionHeading
-            body="The current archive shows Mendozer sponsorship visibility at public-facing events. Specific event photography is preserved as supplied and is not presented as an organiser credit."
+            body="The archive records Mendozer presence at public events. Miss Teen Namibia 2026 is shown as sponsorship. The Otjiwarongo Sports Bonanza is a Mendozer-presented event with its own brief."
             eyebrow="Sponsorship presence"
             title="A visible role in moments that matter locally."
           />
@@ -47,7 +47,7 @@ export default function CommunityPage() {
       <section className="section community-gallery-section">
         <div className="site-container">
           <SectionHeading
-            body="Client-supplied event photography is retained with generic event context while the broader sponsorship record is confirmed."
+            body="Client-supplied event photography from the Miss Teen Namibia 2026 sponsorship backdrop is retained here as supplied."
             eyebrow="Event archive"
             inverse
             title="Community moments, documented."

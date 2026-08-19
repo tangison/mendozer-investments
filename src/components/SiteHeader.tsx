@@ -20,11 +20,32 @@ const menuTabs: readonly { id: MenuTab; label: string }[] = [
 const primaryLinks = [
   { label: "Home", href: "/" },
   ...siteContent.navigation,
+  { label: "Bonanza 2026", href: "/blog/otjiwarongo-sports-bonanza-2026" },
+  { label: "Contact", href: "/contact" },
+] as const;
+
+const desktopLinks = [
+  { label: "About", href: "/about" },
+  { label: "Sectors", href: "/sectors" },
+  { label: "Work", href: "/work" },
+  { label: "Community", href: "/community" },
+  { label: "Bonanza", href: "/blog/otjiwarongo-sports-bonanza-2026" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
 function usesDarkHero(pathname: string) {
-  return pathname === "/" || pathname === "/about" || pathname === "/sectors" || pathname.startsWith("/sectors/") || pathname === "/work" || pathname === "/updates" || pathname === "/compliance" || pathname === "/community" || pathname === "/contact";
+  return (
+    pathname === "/" ||
+    pathname === "/about" ||
+    pathname === "/sectors" ||
+    pathname.startsWith("/sectors/") ||
+    pathname === "/work" ||
+    pathname === "/updates" ||
+    pathname === "/compliance" ||
+    pathname === "/community" ||
+    pathname === "/contact" ||
+    pathname.startsWith("/blog")
+  );
 }
 
 export function SiteHeader() {
@@ -51,7 +72,6 @@ export function SiteHeader() {
     window.addEventListener("scroll", updateScrollState, { passive: true });
     return () => window.removeEventListener("scroll", updateScrollState);
   }, []);
-
 
   useEffect(() => {
     if (!isOpen) return;
@@ -117,10 +137,6 @@ export function SiteHeader() {
     setIsOpen(false);
   }
 
-  function selectTab(tab: MenuTab) {
-    setActiveTab(tab);
-  }
-
   function handleTabKeys(event: KeyboardEvent<HTMLButtonElement>, currentTab: MenuTab) {
     if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
     event.preventDefault();
@@ -144,17 +160,27 @@ export function SiteHeader() {
           <Link aria-label="Mendozer Investments home" className="site-header__brand" href="/">
             <Image alt="Mendozer Investments" height={56} priority src={logoSrc} unoptimized width={178} />
           </Link>
-          <button
-            aria-controls="mendozer-navigation"
-            aria-expanded={isOpen}
-            aria-label="Open navigation"
-            className="site-header__menu-toggle"
-            onClick={openMenu}
-            type="button"
-          >
-            <span aria-hidden="true" className="site-header__menu-label">Menu</span>
-            <span aria-hidden="true" className="menu-icon" />
-          </button>
+          <div className="site-header__tools">
+            <nav aria-label="Primary" className="site-header__nav">
+              {desktopLinks.map((item) => (
+                <Link href={item.href} key={item.href}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <button
+              aria-controls="mendozer-navigation"
+              aria-expanded={isOpen}
+              aria-haspopup="dialog"
+              aria-label="Open navigation"
+              className="site-header__menu-toggle"
+              onClick={openMenu}
+              type="button"
+            >
+              <span aria-hidden="true" className="site-header__menu-label">Menu</span>
+              <span aria-hidden="true" className="menu-icon" />
+            </button>
+          </div>
         </div>
       </header>
 
@@ -176,7 +202,7 @@ export function SiteHeader() {
                     aria-selected={activeTab === tab.id}
                     id={`mendozer-menu-tab-${tab.id}`}
                     key={tab.id}
-                    onClick={() => selectTab(tab.id)}
+                    onClick={() => setActiveTab(tab.id)}
                     onKeyDown={(event) => handleTabKeys(event, tab.id)}
                     role="tab"
                     tabIndex={activeTab === tab.id ? 0 : -1}

@@ -110,7 +110,7 @@ export const siteContent = {
   ],
   hero: {
     eyebrow: "Mendozer Investments",
-    title: "Multi-sector infrastructure, built for Namibia.",
+    title: "One group for the work ahead.",
     subtext: "Six working directions. One accountable group. Construction, technology, cooling, logistics, energy and tourism, delivered across Namibia since 2009.",
     primaryCta: { label: "Start an enquiry", href: "/contact" },
     secondaryCta: { label: "Explore directions", href: "/#sectors" },
@@ -177,7 +177,7 @@ export const siteContent = {
   home: {
     introduction: {
       eyebrow: "The Mendozer group",
-      title: "Start with the work in front of you.",
+      title: "Six sectors. One group behind them.",
       body: "Choose the working direction closest to the need. If the brief crosses more than one area, begin with one accountable group.",
       media: {
         src: "/images/projects/technology/tower-full-view.jpg",
@@ -199,7 +199,7 @@ export const siteContent = {
     },
     faq: {
       eyebrow: "Starting point",
-      title: "Start with the work in front of you.",
+      title: "Before you send an enquiry.",
       body: "A few practical answers before you prepare a group or sector enquiry.",
       items: [
         {
@@ -266,7 +266,7 @@ export const siteContent = {
       title: "A clear line of accountability.",
       name: "Johannes Negumbo",
       role: "Managing Director",
-      note: "A fuller leadership profile is published only when it is approved for public use.",
+      note: "Johannes Negumbo is the Managing Director of Mendozer Investments CC, the accountable line for group enquiries.",
     },
     fuelLicence: verifiedFacts.wholesaleFuelLicence,
   },
@@ -294,14 +294,15 @@ export const siteContent = {
         } satisfies MediaAsset,
       },
       {
-        title: "Otjiwarongo Sports Bonanza",
-        body: "Listed in the client-supplied sponsorship record as a Mendozer sponsor acknowledgement, not an organiser credit. The visual is generated local-sport context, not event documentation.",
+        title: "Otjiwarongo Sports Bonanza 2026",
+        body: "Mendozer Investments presents the Otjiwarongo Sports Bonanza at Mokati Stadium, 21 to 23 August 2026. Soccer, netball, volleyball, and a Saturday music show. Full event detail is on the news page.",
+        href: "/blog/otjiwarongo-sports-bonanza-2026",
         media: {
-          src: "/images/generated/community-otjiwarongo-sport-context.png",
-          alt: "An empty local sport ground with a weathered football goal and low pavilion",
-          caption: "Generated local-sport context, not event documentation",
-          status: "generated",
-          focus: "50% 54%",
+          src: "/images/blog/otjiwarongo-sports-bonanza-flyer.jpg",
+          alt: "Otjiwarongo Sports Bonanza 2026 official flyer",
+          caption: "Official event flyer",
+          status: "real",
+          focus: "50% 40%",
         } satisfies MediaAsset,
       },
     ],
@@ -334,7 +335,7 @@ export const sectors: Sector[] = [
     title: "Construction & Infrastructure",
     shortTitle: "Construction",
     eyebrow: "Sector 01",
-    description: "Construction and infrastructure work starts with the conditions on the ground.",
+    description: "Civil and building work on open sites: access, structures, and the coordination of crews on the ground.",
     glyph: "structure",
     hero: {
       src: "/images/projects/construction/IMG-20260808-WA0033.jpg",
@@ -373,7 +374,7 @@ export const sectors: Sector[] = [
     title: "Technology & Systems",
     shortTitle: "Technology",
     eyebrow: "Sector 02",
-    description: "Technology and systems work where field infrastructure supports day-to-day operations.",
+    description: "Field systems and telecom infrastructure, including tower installation and the equipment that keeps teams linked.",
     glyph: "signal",
     hero: {
       src: "/images/projects/technology/IMG-20260808-WA0061.jpg",
@@ -412,7 +413,7 @@ export const sectors: Sector[] = [
     title: "Cooling & Cold Chain",
     shortTitle: "Cooling",
     eyebrow: "Sector 03",
-    description: "Cooling and cold-chain work where facility continuity depends on controlled conditions.",
+    description: "Facility work around plant rooms, piping, and the controlled conditions that keep operations continuous.",
     glyph: "cooling",
     hero: {
       src: "/images/projects/cooling/IMG-20260808-WA0047.jpg",
@@ -451,7 +452,7 @@ export const sectors: Sector[] = [
     title: "Logistics & Support Services",
     shortTitle: "Logistics",
     eyebrow: "Sector 04",
-    description: "Logistics and support work that keeps sites, crews and materials moving.",
+    description: "Moving people, materials, and support through active sites and changing work routes.",
     glyph: "route",
     hero: {
       src: "/images/projects/logistics/founder-site-visit.jpg",
@@ -490,7 +491,7 @@ export const sectors: Sector[] = [
     title: "Fuel & Energy Distribution",
     shortTitle: "Energy",
     eyebrow: "Sector 05",
-    description: "Wholesale fuel distribution and supporting infrastructure in one working direction.",
+    description: "Wholesale fuel distribution under licence W/188/2017, with supporting plant and infrastructure.",
     glyph: "energy",
     hero: {
       src: "/images/projects/fuel-energy/plant-piping.jpg",
@@ -530,7 +531,7 @@ export const sectors: Sector[] = [
     title: "Tourism & Agriculture",
     shortTitle: "Tourism & Agriculture",
     eyebrow: "Sector 06",
-    description: "Tourism and agriculture work rooted in place, land and operating context.",
+    description: "Land, access, and rural operating settings across Namibian landscape.",
     glyph: "landscape",
     hero: {
       src: "/images/projects/tourism/IMG-20260808-WA0055.jpg",
@@ -634,15 +635,17 @@ export const publicUpdates: PublicUpdate[] = [
     },
   },
   {
-    eyebrow: "Community archive",
-    title: "Otjiwarongo Sports Bonanza",
-    body: "The client-supplied record identifies Mendozer as a sponsor acknowledgement, not an organiser. The image is generated local-sport context, not event documentation.",
+    eyebrow: "This weekend",
+    title: "Otjiwarongo Sports Bonanza 2026",
+    body: "Mendozer Investments presents three days of soccer, netball, and volleyball at Mokati Stadium, 21 to 23 August 2026, with a N$45,000 prize pool.",
+    sourceLabel: "Read the event brief",
+    sourceUrl: "/blog/otjiwarongo-sports-bonanza-2026",
     media: {
-      src: "/images/generated/community-otjiwarongo-sport-context.png",
-      alt: "An empty local sport ground with a weathered football goal and low pavilion",
-      caption: "Generated local-sport context, not event documentation",
-      status: "generated",
-      focus: "50% 54%",
+      src: "/images/blog/otjiwarongo-sports-bonanza-flyer.jpg",
+      alt: "Otjiwarongo Sports Bonanza 2026 official flyer",
+      caption: "Official event flyer",
+      status: "real",
+      focus: "50% 40%",
     },
   },
 ];
@@ -664,7 +667,7 @@ export const legalPages = {
         heading: "Technical delivery",
         paragraphs: [
           "The website is hosted through Vercel to deliver pages, images, and security protections. Standard technical request information may be processed by the hosting provider as needed to operate and secure the service.",
-          "This build does not embed advertising pixels, social feeds, or a third-party analytics script.",
+          "The site uses first-party Vercel Web Analytics to understand page views. It does not embed advertising pixels or social feeds.",
         ],
       },
       {
@@ -716,6 +719,7 @@ export const routes = [
   "/compliance",
   "/community",
   "/contact",
+  "/blog",
   "/blog/otjiwarongo-sports-bonanza-2026",
   "/privacy",
   "/terms",

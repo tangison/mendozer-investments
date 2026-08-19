@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
-  keywords: ["Mendozer Investments", "Namibia", "construction", "technology", "logistics", "energy"],
+  keywords: ["Mendozer Investments", "Namibia", "construction", "technology", "cooling", "logistics", "energy", "tourism"],
   alternates: { canonical: "/" },
   icons: {
     icon: [
@@ -82,6 +82,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     url: siteConfig.url,
     logo: new URL(brandAssets.logoLight, siteConfig.url).toString(),
     email: siteConfig.email,
+    address: { "@type": "PostalAddress", addressCountry: "NA" },
     sameAs: [
       siteConfig.social.instagram,
       siteConfig.social.facebook,

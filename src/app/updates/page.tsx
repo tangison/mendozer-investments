@@ -37,7 +37,11 @@ export default function UpdatesPage() {
                     <h2>{update.title}</h2>
                     <p>{update.body}</p>
                     {update.sourceUrl && update.sourceLabel ? (
-                      <a className="text-link" href={update.sourceUrl} rel="noreferrer" target="_blank">Source: {update.sourceLabel} <ArrowIcon /></a>
+                      update.sourceUrl.startsWith("http") ? (
+                        <a className="text-link" href={update.sourceUrl} rel="noreferrer" target="_blank">{update.sourceLabel} <ArrowIcon /></a>
+                      ) : (
+                        <Link className="text-link" href={update.sourceUrl}>{update.sourceLabel} <ArrowIcon /></Link>
+                      )
                     ) : null}
                   </div>
                 </article>

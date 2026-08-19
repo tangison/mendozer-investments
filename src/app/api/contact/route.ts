@@ -41,6 +41,17 @@ function clientAddress(request: Request) {
   return request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || request.headers.get("x-real-ip") || "unknown";
 }
 
+function isBlockedOrigin(request: Request) {
+  const origin = request.headers.get("origin");
+  const host = request.headers.get("host");
+  if (!origin) return false;
+  try {
+    return Boolean(host) && new URL(origin).host !== host;
+  } catch {
+    return true;
+  }
+}
+
 function isRateLimited(key: string) {
   const now = Date.now();
   const existing = buckets.get(key);
@@ -84,6 +95,10 @@ export async function POST(request: Request) {
 
   // Honeypot submissions receive a neutral response without sending mail.
   if (website) return NextResponse.json({ ok: true });
+
+  if (isBlockedOrigin(request)) {
+    return NextResponse.json({ ok: false, code: "FORBIDDEN", message: "This enquiry could not be accepted from that origin." }, { status: 403 });
+  }
 
   if (!name || !email || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ ok: false, code: "VALIDATION_FAILED", message: "Please provide your name, a valid email address, and an enquiry message." }, { status: 400 });

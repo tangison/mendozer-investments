@@ -10,8 +10,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     return {
       url: normalized,
       lastModified: new Date(),
-      changeFrequency: route === "/" ? "weekly" : "monthly",
-      priority: route === "/" ? 1 : 0.8,
+      changeFrequency: route === "/" || route.includes("blog") ? "weekly" : "monthly",
+      priority: route === "/" ? 1 : route.startsWith("/blog") ? 0.9 : 0.8,
     };
   });
 }

@@ -4,7 +4,6 @@ export const siteConfig = {
   shortName: "Mendozer",
   description: "Mendozer Investments is a multi-sector Namibian group spanning construction, technology, cooling, logistics, energy and tourism, built for local delivery.",
   email: "contact@mendozer.com",
-  stagingUrl: "https://mendozer.tangison.com",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mendozer.tangison.com",
   locale: "en_NA",
   registration: "CC/2009/2399",

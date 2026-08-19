@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { AccordionList } from "@/components/AccordionList";
 import { ArrowIcon } from "@/components/ArrowIcon";
@@ -62,6 +63,22 @@ export default function HomePage() {
             <Link href="/updates"><span>02</span><strong>Updates</strong><span>Approved activity and public context</span><ArrowIcon /></Link>
             <Link href="/compliance"><span>03</span><strong>Public records</strong><span>Registration, VAT, and licensing record</span><ArrowIcon /></Link>
           </div>
+        </div>
+      </section>
+
+      <section className="section home-event">
+        <div className="site-container home-event__grid">
+          <Reveal>
+            <p className="eyebrow">This weekend</p>
+            <h2>Otjiwarongo Sports Bonanza 2026</h2>
+            <p>21 to 23 August at Mokati Stadium. Soccer, netball, volleyball, and a Saturday music show. N$45,000 in prizes.</p>
+            <Link className="text-link" href="/blog/otjiwarongo-sports-bonanza-2026">Read the event brief <ArrowIcon /></Link>
+          </Reveal>
+          <Reveal delay={80}>
+            <Link className="home-event__flyer" href="/blog/otjiwarongo-sports-bonanza-2026">
+              <Image alt="Otjiwarongo Sports Bonanza 2026 official flyer" height={640} src="/images/blog/otjiwarongo-sports-bonanza-flyer.jpg" unoptimized width={452} />
+            </Link>
+          </Reveal>
         </div>
       </section>
 

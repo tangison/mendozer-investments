@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Reveal } from "@/components/Reveal";
 import { siteConfig } from "@/brand/site-config";
 
@@ -179,6 +180,11 @@ export default function OtjiwarongoSportsBonanzaPage() {
             </Reveal>
           </div>
         </header>
+        <div className="breadcrumbs-wrap">
+          <div className="site-container">
+            <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "News", href: "/blog" }, { label: "Sports Bonanza 2026" }]} />
+          </div>
+        </div>
 
         <section className="blog-post__featured">
           <div className="site-container">

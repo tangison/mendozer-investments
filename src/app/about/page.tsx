@@ -28,7 +28,7 @@ export default function AboutPage() {
             title="One identity across multiple operating directions."
           />
           <Reveal delay={150}>
-            <p className="about-intro__accent">The current site presents a six-sector working structure while service detail is being confirmed with the client.</p>
+            <p className="about-intro__accent">Mendozer Investments CC has operated in Namibia since 2009. The group is led by Managing Director Johannes Negumbo.</p>
           </Reveal>
         </div>
       </section>
@@ -92,7 +92,7 @@ export default function AboutPage() {
       <section className="section section--cta">
         <div className="site-container cta-panel">
           <Reveal><p className="eyebrow">Explore the group</p><h2>See the work through each sector.</h2></Reveal>
-          <Reveal delay={110}><Link className="button button--primary" href="/#sectors">Explore sectors <ArrowIcon /></Link></Reveal>
+          <Reveal delay={110}><Link className="button button--primary" href="/sectors">Explore sectors <ArrowIcon /></Link></Reveal>
         </div>
       </section>
     </>
