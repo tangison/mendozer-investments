@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "News",
   description: "Published Mendozer Investments news and event briefs, starting with the Otjiwarongo Sports Bonanza 2026.",
   alternates: { canonical: "/blog" },
+  openGraph: {
+    title: "News | Mendozer Investments",
+    description: "Published Mendozer Investments news and event briefs, starting with the Otjiwarongo Sports Bonanza 2026.",
+    url: "/blog",
+    images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments news" }],
+  },
 };
 
 export default function BlogIndexPage() {

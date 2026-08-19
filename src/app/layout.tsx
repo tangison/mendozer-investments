@@ -50,7 +50,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: siteConfig.locale,
-    url: "/",
     siteName: siteConfig.name,
     title: "Mendozer Investments",
     description: siteConfig.description,
@@ -60,7 +59,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mendozer Investments",
     description: siteConfig.description,
-    images: ["/og/home.png"],
   },
   robots: { index: true, follow: true },
   verification: {
