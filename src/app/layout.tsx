@@ -1,11 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
-import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { brandAssets } from "@/brand/assets";
 import { siteConfig } from "@/brand/site-config";
 import { BootScreen } from "@/components/BootScreen";
-import { MotionController } from "@/components/MotionController";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SkipLink } from "@/components/SkipLink";
@@ -19,7 +17,7 @@ const poppins = localFont({
   ],
   variable: "--font-poppins",
   display: "swap",
-  preload: true,
+  preload: false,
   fallback: ["Avenir Next", "Century Gothic", "Arial"],
 });
 
@@ -94,16 +92,22 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 
   return (
     <html className={`${poppins.variable} ${redHatDisplay.variable}`} lang="en">
+      <head>
+        <link fetchPriority="high" href="/videos/hero/desert-loop-poster.jpg" rel="preload" as="image" />
+      </head>
       <body>
         <script dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} type="application/ld+json" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `document.documentElement.dataset.motion="enabled";document.querySelectorAll("[data-reveal]").forEach(function(n){n.classList.add("is-revealed")});`,
+          }}
+        />
         <BootScreen />
-        <MotionController />
         <SkipLink />
         <SiteHeader />
         <main id="main-content" tabIndex={-1}>{children}</main>
         <SiteFooter />
         <UtilityWidgets />
-        <Analytics />
       </body>
     </html>
   );

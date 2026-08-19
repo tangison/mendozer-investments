@@ -31,9 +31,6 @@ export function SiteFooter() {
     <footer className={`site-footer site-footer--${kind}`}>
       <div className="site-container site-footer__stage">
         <div className="site-footer__brand-col">
-          <Link aria-label="Mendozer Investments home" className="site-footer__giant" href="/">
-            <Image alt="Mendozer Investments" height={220} src={brandAssets.logoMonoWhite} unoptimized width={720} />
-          </Link>
           <a className="site-footer__email" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
         </div>
 

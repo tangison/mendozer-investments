@@ -227,7 +227,7 @@ export function SiteHeader() {
                     </nav>
                   </div>
                   <figure className="site-menu__feature">
-                    <Image alt={menuFeature.alt} fill priority sizes="(max-width: 760px) 100vw, 35vw" src={menuFeature.src} />
+                    <Image alt={menuFeature.alt} fill sizes="(max-width: 760px) 100vw, 35vw" src={menuFeature.src} />
                     <figcaption>{menuFeature.caption}</figcaption>
                   </figure>
                 </section>

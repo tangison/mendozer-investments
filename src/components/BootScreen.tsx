@@ -1,53 +1,34 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { brandAssets } from "@/brand/assets";
 
-const MIN_MS = 700;
-const MAX_MS = 2200;
+const BOOT_MS = 420;
 
 export function BootScreen() {
-  const [visible, setVisible] = useState(true);
-  const [progress, setProgress] = useState(8);
+  const pathname = usePathname();
+  const firstPaint = useRef(true);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const started = performance.now();
-    let frame = 0;
-    let done = false;
+    if (firstPaint.current) {
+      firstPaint.current = false;
+      return;
+    }
 
-    const tick = () => {
-      setProgress((current) => {
-        if (current >= 92) return current;
-        return Math.min(92, current + (current < 40 ? 4 : 1.6));
-      });
-      frame = window.requestAnimationFrame(tick);
-    };
-    frame = window.requestAnimationFrame(tick);
-
-    const finish = () => {
-      if (done) return;
-      const elapsed = performance.now() - started;
-      const wait = Math.max(0, MIN_MS - elapsed);
-      window.setTimeout(() => {
-        setProgress(100);
-        window.setTimeout(() => {
-          done = true;
-          setVisible(false);
-        }, 180);
-      }, wait);
-    };
-
-    if (document.readyState === "complete") finish();
-    else window.addEventListener("load", finish, { once: true });
-    const failSafe = window.setTimeout(finish, MAX_MS);
+    let hideTimer = 0;
+    const showTimer = window.setTimeout(() => {
+      setVisible(true);
+      hideTimer = window.setTimeout(() => setVisible(false), BOOT_MS);
+    }, 0);
 
     return () => {
-      window.cancelAnimationFrame(frame);
-      window.clearTimeout(failSafe);
-      window.removeEventListener("load", finish);
+      window.clearTimeout(showTimer);
+      window.clearTimeout(hideTimer);
     };
-  }, []);
+  }, [pathname]);
 
   if (!visible) return null;
 
@@ -57,7 +38,7 @@ export function BootScreen() {
         <Image alt="" height={88} src={brandAssets.icon} unoptimized width={88} />
       </div>
       <div className="boot-screen__track">
-        <span className="boot-screen__fill" style={{ width: `${progress}%` }} />
+        <span className="boot-screen__fill" />
       </div>
     </div>
   );

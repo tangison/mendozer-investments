@@ -1,60 +1,41 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { siteContent } from "@/content/site-content";
 
 /**
  * Full-bleed Namib landscape hero.
- * Desert loop is the background. Reduced-motion users get the still poster.
+ * A raw img is the LCP node so first paint does not wait on Next/Image hydration.
+ * The desert loop starts after the first scroll or pointer, not during first load.
  */
 export function HomeHero() {
   const { hero } = siteContent;
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [reduceMotion, setReduceMotion] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const update = () => setReduceMotion(media.matches);
-    update();
-    media.addEventListener("change", update);
-    return () => media.removeEventListener("change", update);
-  }, []);
-
   const desktopSrc = "/videos/hero/desert-loop.mp4";
   const poster = "/videos/hero/desert-loop-poster.jpg";
 
   return (
     <section aria-labelledby="hero-title" className="hero home-hero">
       <div aria-hidden="true" className="hero__media home-hero__media">
-        {reduceMotion ? (
-          <Image
-            alt="Namibian desert landscape, dunes and open sky"
-            className="hero__poster home-hero__poster"
-            fill
-            priority
-            sizes="100vw"
-            src={poster}
-            unoptimized
-          />
-        ) : (
-          <video
-            ref={videoRef}
-            autoPlay
-            className="hero__video home-hero__video"
-            loop
-            muted
-            playsInline
-            poster={poster}
-            preload="metadata"
-          >
-            <source src={desktopSrc} type="video/mp4" />
-          </video>
-        )}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          alt=""
+          className="hero__poster home-hero__poster"
+          decoding="async"
+          fetchPriority="high"
+          height={540}
+          src={poster}
+          width={960}
+        />
+        <video
+          className="hero__video home-hero__video"
+          loop
+          muted
+          playsInline
+          poster={poster}
+          preload="none"
+        >
+          <source src={desktopSrc} type="video/mp4" />
+        </video>
         <div aria-hidden="true" className="hero__veil home-hero__veil" />
-        <div aria-hidden="true" className="hero__grain" />
       </div>
 
       <div className="hero__inner home-hero__inner">
@@ -88,6 +69,11 @@ export function HomeHero() {
         <span>Scroll</span>
         <span className="hero__scroll-line" />
       </div>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function(){var v=document.querySelector(".home-hero video");if(!v||window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;var start=function(){v.play().then(function(){v.classList.add("is-playing")}).catch(function(){});window.removeEventListener("pointerdown",start);window.removeEventListener("scroll",start);window.removeEventListener("keydown",start)};window.addEventListener("pointerdown",start,{passive:true});window.addEventListener("scroll",start,{passive:true});window.addEventListener("keydown",start)})();`,
+        }}
+      />
     </section>
   );
 }

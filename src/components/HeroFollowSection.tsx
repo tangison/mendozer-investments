@@ -7,35 +7,26 @@ import { ArrowIcon } from "@/components/ArrowIcon";
 import { siteContent } from "@/content/site-content";
 
 /**
- * Second section. The 21 MB motion file must not download until the card is on screen.
+ * Second section. The motion file must not download until the card is on screen.
  */
 export function HeroFollowSection() {
   const frameRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [reduceMotion, setReduceMotion] = useState(false);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const mqMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const mqMobile = window.matchMedia("(max-width: 768px)");
     const updateMotion = () => setReduceMotion(mqMotion.matches);
-    const updateMobile = () => setIsMobile(mqMobile.matches);
     updateMotion();
-    updateMobile();
     mqMotion.addEventListener("change", updateMotion);
-    mqMobile.addEventListener("change", updateMobile);
-    return () => {
-      mqMotion.removeEventListener("change", updateMotion);
-      mqMobile.removeEventListener("change", updateMobile);
-    };
+    return () => mqMotion.removeEventListener("change", updateMotion);
   }, []);
 
   useEffect(() => {
     if (reduceMotion || shouldLoadVideo) return;
     const node = frameRef.current;
     if (!node || !("IntersectionObserver" in window)) {
-      setShouldLoadVideo(true);
       return;
     }
     const observer = new IntersectionObserver(
@@ -45,7 +36,7 @@ export function HeroFollowSection() {
           observer.disconnect();
         }
       },
-      { rootMargin: "200px 0px" },
+      { rootMargin: "80px 0px" },
     );
     observer.observe(node);
     return () => observer.disconnect();
@@ -58,7 +49,7 @@ export function HeroFollowSection() {
 
   const { hero } = siteContent;
   const poster = "/images/projects/construction/mendozer-home-hero.webp";
-  const videoSrc = isMobile ? "/media/mendozer-hero-motion-mobile.mp4" : "/media/mendozer-hero-motion.mp4";
+  const videoSrc = "/media/mendozer-hero-motion-mobile.mp4";
 
   return (
     <section className="hero-follow" aria-labelledby="hero-follow-title">
@@ -87,11 +78,10 @@ export function HeroFollowSection() {
         <div className="hero-follow__media">
           <figure className="hero-follow__figure" ref={frameRef}>
             {reduceMotion || !shouldLoadVideo ? (
-              <Image alt="Mendozer Investments site context" className="hero-follow__poster" fill sizes="(max-width: 900px) 100vw, 40vw" src={poster} unoptimized />
+              <Image alt="Mendozer Investments site context" className="hero-follow__poster" fill sizes="(max-width: 900px) 100vw, 40vw" src={poster} />
             ) : (
               <video
                 ref={videoRef}
-                autoPlay
                 className="hero-follow__video"
                 loop
                 muted

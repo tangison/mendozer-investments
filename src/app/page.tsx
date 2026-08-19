@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { AccordionList } from "@/components/AccordionList";
 import { ArrowIcon } from "@/components/ArrowIcon";
-import { HeroFollowSection } from "@/components/HeroFollowSection";
 import { HomeHero } from "@/components/HomeHero";
 import { MediaFrame } from "@/components/MediaFrame";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { SectorExplorer } from "@/components/SectorExplorer";
 import { siteContent } from "@/content/site-content";
+
+const HeroFollowSection = dynamic(
+  () => import("@/components/HeroFollowSection").then((module) => module.HeroFollowSection),
+);
+const SectorExplorer = dynamic(
+  () => import("@/components/SectorExplorer").then((module) => module.SectorExplorer),
+);
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -76,7 +82,7 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={80}>
             <Link className="home-event__flyer" href="/blog/otjiwarongo-sports-bonanza-2026">
-              <Image alt="Otjiwarongo Sports Bonanza 2026 official flyer" height={640} src="/images/blog/otjiwarongo-sports-bonanza-flyer.jpg" unoptimized width={452} />
+              <Image alt="Otjiwarongo Sports Bonanza 2026 official flyer" height={640} sizes="(max-width: 700px) 72vw, 280px" src="/images/blog/otjiwarongo-sports-bonanza-flyer.jpg" width={452} />
             </Link>
           </Reveal>
         </div>
