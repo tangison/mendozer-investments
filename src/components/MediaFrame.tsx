@@ -14,7 +14,7 @@ export function MediaFrame({
   className = "",
   priority = false,
   caption = true,
-  sizes = "(max-width: 760px) 100vw, 50vw",
+  sizes = "(max-width: 760px) 100vw, 640px",
 }: MediaFrameProps) {
   return (
     <figure className={`media-frame ${className}`}>

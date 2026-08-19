@@ -7,16 +7,13 @@ import { ArrowIcon } from "@/components/ArrowIcon";
 import { siteContent } from "@/content/site-content";
 
 /**
- * Second section: 2-column layout that "pushes" 20% up into the hero.
- *
- * - Right column renders the same hero loop in a 60%-width rounded 16px card with drop-shadow.
- * - Card translates -20% vertically to overlap the hero section above.
- * - Mobile: columns stack, video becomes full-width, no overlap.
- * - Honours prefers-reduced-motion.
+ * Second section. The 21 MB motion file must not download until the card is on screen.
  */
 export function HeroFollowSection() {
+  const frameRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [reduceMotion, setReduceMotion] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -34,12 +31,34 @@ export function HeroFollowSection() {
     };
   }, []);
 
+  useEffect(() => {
+    if (reduceMotion || shouldLoadVideo) return;
+    const node = frameRef.current;
+    if (!node || !("IntersectionObserver" in window)) {
+      setShouldLoadVideo(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          setShouldLoadVideo(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px 0px" },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [reduceMotion, shouldLoadVideo]);
+
+  useEffect(() => {
+    if (!shouldLoadVideo || reduceMotion) return;
+    videoRef.current?.play().catch(() => undefined);
+  }, [shouldLoadVideo, reduceMotion]);
+
   const { hero } = siteContent;
   const poster = "/images/projects/construction/mendozer-home-hero.webp";
-  const desktopSrc = "/media/mendozer-hero-motion.mp4";
-  const desktopWebm = "/media/mendozer-hero-motion.webm";
-  const mobileSrc = "/media/mendozer-hero-motion-mobile.mp4";
-  const mobileWebm = "/media/mendozer-hero-motion-mobile.webm";
+  const videoSrc = isMobile ? "/media/mendozer-hero-motion-mobile.mp4" : "/media/mendozer-hero-motion.mp4";
 
   return (
     <section className="hero-follow" aria-labelledby="hero-follow-title">
@@ -66,9 +85,9 @@ export function HeroFollowSection() {
         </div>
 
         <div className="hero-follow__media">
-          <figure className="hero-follow__figure">
-            {reduceMotion ? (
-              <Image alt="Mendozer Investments site context" className="hero-follow__poster" fill sizes="(max-width: 900px) 100vw, 60vw" src={poster} unoptimized />
+          <figure className="hero-follow__figure" ref={frameRef}>
+            {reduceMotion || !shouldLoadVideo ? (
+              <Image alt="Mendozer Investments site context" className="hero-follow__poster" fill sizes="(max-width: 900px) 100vw, 40vw" src={poster} unoptimized />
             ) : (
               <video
                 ref={videoRef}
@@ -78,12 +97,9 @@ export function HeroFollowSection() {
                 muted
                 playsInline
                 poster={poster}
-                preload="metadata"
+                preload="none"
               >
-                <source media="(max-width: 768px)" src={isMobile ? mobileWebm : desktopWebm} type="video/webm" />
-                <source media="(max-width: 768px)" src={isMobile ? mobileSrc : desktopSrc} type="video/mp4" />
-                <source src={desktopWebm} type="video/webm" />
-                <source src={desktopSrc} type="video/mp4" />
+                <source src={videoSrc} type="video/mp4" />
               </video>
             )}
             <figcaption>{hero.media.caption}</figcaption>

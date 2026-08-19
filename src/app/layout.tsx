@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { brandAssets } from "@/brand/assets";
 import { siteConfig } from "@/brand/site-config";
+import { BootScreen } from "@/components/BootScreen";
 import { MotionController } from "@/components/MotionController";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -95,6 +96,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html className={`${poppins.variable} ${redHatDisplay.variable}`} lang="en">
       <body>
         <script dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} type="application/ld+json" />
+        <BootScreen />
         <MotionController />
         <SkipLink />
         <SiteHeader />

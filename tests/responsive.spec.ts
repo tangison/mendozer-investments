@@ -249,6 +249,13 @@ test("scroll-to-top appears after scrolling and restores the page origin", async
   await page.waitForFunction(() => window.scrollY === 0);
 });
 
+test("footer uses page-type accordions and a full-width mark band", async ({ page }) => {
+  await page.goto("/", { waitUntil: "domcontentloaded" });
+  await expect(page.locator(".site-footer")).toBeVisible();
+  await expect(page.locator(".site-footer details")).toHaveCount(3);
+  await expect(page.locator(".site-footer__mark-band")).toBeVisible();
+});
+
 test("WhatsApp remains absent until an approved public number is configured", async ({ page }) => {
   await page.goto("/", { waitUntil: "domcontentloaded" });
   await expect(page.getByRole("link", { name: "WhatsApp" })).toHaveCount(0);

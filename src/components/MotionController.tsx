@@ -19,7 +19,16 @@ export function MotionController() {
       return;
     }
 
+    const nodes = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    const viewportHeight = window.innerHeight;
+
+    nodes.forEach((node) => {
+      const top = node.getBoundingClientRect().top;
+      if (top < viewportHeight * 0.92) node.classList.add("is-revealed");
+    });
+
     root.dataset.motion = "enabled";
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -29,10 +38,12 @@ export function MotionController() {
           }
         });
       },
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.08 },
+      { rootMargin: "0px 0px 15% 0px", threshold: 0.01 },
     );
 
-    document.querySelectorAll<HTMLElement>("[data-reveal]").forEach((node) => observer.observe(node));
+    nodes.forEach((node) => {
+      if (!node.classList.contains("is-revealed")) observer.observe(node);
+    });
 
     const onPreferenceChange = () => {
       if (reduceMotion.matches) {
