@@ -46,14 +46,16 @@ const artistPosters = [
 ] as const;
 
 const portraits = [
-  { src: `${ASSET}/osb-2026-portrait-king-tee-dee.webp`, name: "King Tee Dee", width: 800, height: 1200 },
-  { src: `${ASSET}/osb-2026-portrait-stakes-boy.webp`, name: "Stakes Boy", width: 864, height: 1080 },
-  { src: `${ASSET}/osb-2026-portrait-dixon.webp`, name: "Dixon", width: 1080, height: 1080 },
-  { src: `${ASSET}/osb-2026-portrait-jaliza.webp`, name: "Jaliza", width: 720, height: 1080 },
-  { src: `${ASSET}/osb-2026-portrait-kalux.webp`, name: "Kalux", width: 864, height: 1080 },
-  { src: `${ASSET}/osb-2026-portrait-agogo.webp`, name: "Agogo", width: 864, height: 1080 },
+  { src: `${ASSET}/osb-2026-portrait-pjay.webp`, name: "PJay", width: 720, height: 1080 },
+  { src: `${ASSET}/osb-2026-portrait-ravennelli.webp`, name: "Ravennelli", width: 902, height: 1080 },
   { src: `${ASSET}/osb-2026-portrait-oom-zolle.webp`, name: "Om Zolle", width: 715, height: 1073 },
-  { src: `${ASSET}/osb-2026-portrait-guest.webp`, name: "Event portrait", width: 810, height: 1080 },
+  { src: `${ASSET}/osb-2026-portrait-dixon.webp`, name: "Dixon", width: 1080, height: 1080 },
+  { src: `${ASSET}/osb-2026-portrait-agogo.webp`, name: "Agogo", width: 864, height: 1080 },
+  { src: `${ASSET}/osb-2026-portrait-jaliza.webp`, name: "Jaliza", width: 720, height: 1080 },
+  { src: `${ASSET}/osb-2026-portrait-stakes-boy.webp`, name: "Stakes Boy", width: 864, height: 1080 },
+  { src: `${ASSET}/osb-2026-portrait-kalux.webp`, name: "Kalux", width: 864, height: 1080 },
+  { src: `${ASSET}/osb-2026-portrait-kallo-on-the-beat.webp`, name: "Kallo On The Beat", width: 854, height: 1280 },
+  { src: `${ASSET}/osb-2026-portrait-ravdaz.webp`, name: "Ravdaz", width: 715, height: 1073 },
 ] as const;
 
 const kit = [
@@ -224,7 +226,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
             </Reveal>
             <Reveal delay={150}>
               <p className="blog-post__lede">
-                Soccer, netball and volleyball at Mokati Stadium, plus a Saturday music show. Friday and Sunday are free. Saturday is N$30. One tournament, countless memories.
+                Soccer, netball and volleyball at Mokati Stadium, plus a Saturday music show. Friday and Sunday are free at the gate. Saturday is N$30. One tournament, countless memories.
               </p>
             </Reveal>
             <Reveal delay={200}>
@@ -268,7 +270,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
             <Reveal>
               <h2>Come through. Bring the family.</h2>
               <p>
-                Mendozer Investments presents the Otjiwarongo Sports Bonanza at Mokati Stadium from Friday 21 August to Sunday 23 August 2026. Three sports run across the weekend. N$45,000 is on the table. Friday and Sunday cost nothing at the gate. Saturday is N$30 for the music show.
+                Mendozer Investments presents the Otjiwarongo Sports Bonanza at Mokati Stadium from Friday 21 August to Sunday 23 August 2026. Soccer, netball and volleyball run across the weekend. N$45,000 is on the table. Friday and Sunday cost nothing at the gate. Saturday is N$30 for the music show.
               </p>
               <p>
                 Gates open at 08:00 on Friday 21 August 2026. Honourable John //Khamuseb, Governor of the Otjozondjupa Region, opens the tournament at 09:00.
@@ -437,7 +439,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
             <Reveal>
               <h2>Saturday music show</h2>
               <p>
-                Saturday night is the paid music show. Entry is N$30. <ArtistTag name="King Tee Dee" /> headlines from 01:20 to 02:00 with a 40-minute close. Musical breaks are printed on the timeline so the programme can keep moving without a separate changeover block.
+                Saturday night is the paid music show. Entry is N$30. <ArtistTag name="King Tee Dee" /> closes from 01:20 to 02:00. The timed sheet includes two musical breaks so changeovers stay inside the programme.
               </p>
               <figure className="osb-inline-poster">
                 <Image
@@ -480,7 +482,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
                 </tbody>
               </table>
               <p>
-                Printed artist posters also name <ArtistTag name="Ravdaz" /> and <ArtistTag name="Kallo On The Beat" />. Those two names are not on the timed sheet.
+                <ArtistTag name="Ravdaz" /> and <ArtistTag name="Kallo On The Beat" /> are on the printed posters. They do not have a timed slot on the Saturday sheet.
               </p>
             </Reveal>
           </div>
@@ -490,7 +492,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
           <div className="site-container">
             <Reveal>
               <p className="eyebrow">Artist posters</p>
-              <h2>The printed lineup.</h2>
+              <h2>On the posters.</h2>
             </Reveal>
             <div className="osb-artists">
               {artistPosters.map((poster) => (
@@ -508,14 +510,16 @@ export default function OtjiwarongoSportsBonanzaPage() {
         <section className="section osb-portraits-section">
           <div className="site-container">
             <Reveal>
-              <p className="eyebrow">Portraits</p>
-              <h2>Faces from the supplied set.</h2>
+              <p className="eyebrow">Artists</p>
+              <h2>Who is on the bill.</h2>
             </Reveal>
             <div className="osb-portraits">
               {portraits.map((portrait) => (
                 <figure className="osb-portraits__item" key={portrait.src}>
-                  <Image alt={portrait.name === "Event portrait" ? "Unlabelled event portrait supplied with the Bonanza pack" : `${portrait.name} portrait`} height={portrait.height} sizes="(max-width: 700px) 50vw, 20vw" src={portrait.src} width={portrait.width} />
-                  <figcaption>{portrait.name === "Event portrait" ? portrait.name : <ArtistTag name={portrait.name} />}</figcaption>
+                  <Image alt={`${portrait.name} portrait`} height={portrait.height} sizes="(max-width: 700px) 50vw, 20vw" src={portrait.src} width={portrait.width} />
+                  <figcaption>
+                    <ArtistTag name={portrait.name} />
+                  </figcaption>
                 </figure>
               ))}
             </div>
@@ -526,8 +530,8 @@ export default function OtjiwarongoSportsBonanzaPage() {
           <div className="site-container">
             <Reveal>
               <p className="eyebrow">Weekend kit</p>
-              <h2>Vest and shirt marks.</h2>
-              <p>Supplied kit visuals for the Bonanza. This is not a shop listing and no price is published here.</p>
+              <h2>Marshal vest and event shirt.</h2>
+              <p>Kit for the weekend on the ground. Nothing here is for sale.</p>
             </Reveal>
             <div className="osb-kit">
               {kit.map((item) => (
@@ -544,8 +548,8 @@ export default function OtjiwarongoSportsBonanzaPage() {
           <div className="site-container blog-post__body-inner">
             <Reveal>
               <div className="blog-post__cta">
-                <h2>Register your team or get more info</h2>
-                <p>Call the sport contact that matches your side. Soccer, volleyball, and netball each have a named pair.</p>
+                <h2>Call the sport contact</h2>
+                <p>Soccer, volleyball and netball each have a named pair. Use the number that matches your side.</p>
                 <div className="blog-post__contacts">
                   {contactGroups.map((group) => (
                     <div className="osb-contact-card" key={group.role}>

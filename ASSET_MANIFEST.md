@@ -128,14 +128,17 @@ Client-supplied posters, portraits, and kit visuals. Converted to WebP, renamed,
 | `osb-2026-poster-pjay.webp` | `33e39781-e1ff-46b2-83d1-b724f4171aba.jpeg` | PJay artist poster |
 | `osb-2026-poster-ravdaz.webp` | `1787172960496.png` | Ravdaz artist poster |
 | `osb-2026-poster-kallo-on-the-beat.webp` | `watermarked_img_15778822904641402759.jpg` | Kallo On The Beat artist poster |
-| `osb-2026-portrait-king-tee-dee.webp` | `IMG-20260819-WA0041.jpg` | King Tee Dee portrait |
-| `osb-2026-portrait-stakes-boy.webp` | `IMG-20260818-WA0095.jpg` | Stakes Boy portrait |
+| `osb-2026-portrait-kallo-on-the-beat.webp` | `IMG-20260819-WA0041.jpg` | Kallo On The Beat portrait. Earlier file `osb-2026-portrait-king-tee-dee.webp` used this same source against the Kallo poster, so it is no longer shown as King Tee Dee. |
+| `osb-2026-portrait-stakes-boy.webp` | `IMG-20260818-WA0095.jpg` | Stakes Boy portrait, matched to the printed Stakes Boy poster |
 | `osb-2026-portrait-dixon.webp` | `IMG-20260818-WA0094.jpg` | Dixon portrait |
 | `osb-2026-portrait-jaliza.webp` | `IMG-20260818-WA0062.jpg` | Jaliza portrait |
 | `osb-2026-portrait-kalux.webp` | `IMG-20260818-WA0073.jpg` | Kalux portrait |
 | `osb-2026-portrait-agogo.webp` | `IMG-20260818-WA0074.jpg` | Agogo portrait |
 | `osb-2026-portrait-oom-zolle.webp` | `IMG-20260818-WA0064.jpg` | Oom Zolle portrait |
-| `osb-2026-portrait-guest.webp` | `IMG-20260819-WA0042.jpg` | Unlabelled event portrait |
+| `osb-2026-portrait-pjay.webp` | `IMG-20260819-WA0039.jpg` | PJay portrait, matched to the printed PJay poster |
+| `osb-2026-portrait-ravdaz.webp` | `IMG-20260819-WA0089.jpg` | Ravdaz portrait, matched to the printed Ravdaz poster |
+| `osb-2026-portrait-ravennelli.webp` | `IMG-20260819-WA0040.jpg` | Ravennelli portrait from the same artist stills batch as PJay |
+| `osb-2026-portrait-guest.webp` | `IMG-20260819-WA0042.jpg` | Unlabelled still. Not shown on the public portraits grid. |
 | `osb-2026-kit-safety-vest.webp` | `1787086636750.png` | Safety vest kit visual |
 | `osb-2026-kit-tshirt-front.webp` | `Generate_shirt_with_logo_202608191645.jpeg` | Shirt front kit visual |
 | `osb-2026-kit-tshirt-back.webp` | `Generate_shirt_with_logo_202608191648.jpeg` | Shirt back kit visual |
