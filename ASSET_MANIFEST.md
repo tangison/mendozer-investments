@@ -105,6 +105,43 @@ This amendment supersedes every prior instruction that permitted a brand-gradien
 
 **Rationale:** visible brand/roll-up/business-card-style reference material. Per the brief, banners and business cards are reference only and are not republished as final project imagery.
 
+## Otjiwarongo Sports Bonanza 2026 supplied pack: 2026-08-21
+
+Client-supplied posters, portraits, and kit visuals. Converted to WebP, renamed, and published under `/public/images/events/otjiwarongo-sports-bonanza-2026/`. Original filenames are recorded below. Artwork text is kept as supplied, including the printed spelling "Perfromance".
+
+| Published WebP | Source file | Use |
+|---|---|---|
+| `osb-2026-poster-prizes.webp` | `IMG-20260815-WA0027.jpg` | Prize pool poster, featured image |
+| `osb-2026-poster-today-gates.webp` | `IMG-20260818-WA0011.jpg` | Gates-open / today poster |
+| `osb-2026-poster-opening-programme.webp` | `file_00000000f31881f4a8c6281852324204.png` | Opening programme |
+| `osb-2026-poster-soccer-fixtures.webp` | `file_0000000001c081f4ba9b454b5a18a51f.png` | Soccer fixtures |
+| `osb-2026-poster-soccer-fixtures-branded.webp` | `5b073403-0328-4e5f-b47a-8dfba5749ef7.jpeg` | Alternate fixtures sheet |
+| `osb-2026-poster-artist-timeline.webp` | `file_0000000083a48243b0398aed301e7574.png` | Saturday performance timeline |
+| `osb-2026-poster-king-tee-dee-lineup.webp` | `IMG-20260819-WA0013.jpg` | King Tee Dee lineup poster |
+| `osb-2026-poster-king-tee-dee.webp` | `IMG-20260818-WA0070.jpg` | King Tee Dee artist poster |
+| `osb-2026-poster-stakes-boy.webp` | `IMG-20260819-WA0011.jpg` | Stakes Boy artist poster |
+| `osb-2026-poster-dixon.webp` | `IMG-20260819-WA0010.jpg` | Dixon artist poster |
+| `osb-2026-poster-jaliza.webp` | `IMG-20260819-WA0008.jpg` | Jaliza artist poster |
+| `osb-2026-poster-kalux.webp` | `IMG-20260818-WA0069.jpg` | Kalux artist poster |
+| `osb-2026-poster-agogo.webp` | `IMG-20260818-WA0075.jpg` | Agogo artist poster |
+| `osb-2026-poster-oom-zolle.webp` | `IMG-20260818-WA0071.jpg` | Oom Zolle artist poster |
+| `osb-2026-poster-pjay.webp` | `33e39781-e1ff-46b2-83d1-b724f4171aba.jpeg` | PJay artist poster |
+| `osb-2026-poster-ravdaz.webp` | `1787172960496.png` | Ravdaz artist poster |
+| `osb-2026-poster-kallo-on-the-beat.webp` | `watermarked_img_15778822904641402759.jpg` | Kallo On The Beat artist poster |
+| `osb-2026-portrait-king-tee-dee.webp` | `IMG-20260819-WA0041.jpg` | King Tee Dee portrait |
+| `osb-2026-portrait-stakes-boy.webp` | `IMG-20260818-WA0095.jpg` | Stakes Boy portrait |
+| `osb-2026-portrait-dixon.webp` | `IMG-20260818-WA0094.jpg` | Dixon portrait |
+| `osb-2026-portrait-jaliza.webp` | `IMG-20260818-WA0062.jpg` | Jaliza portrait |
+| `osb-2026-portrait-kalux.webp` | `IMG-20260818-WA0073.jpg` | Kalux portrait |
+| `osb-2026-portrait-agogo.webp` | `IMG-20260818-WA0074.jpg` | Agogo portrait |
+| `osb-2026-portrait-oom-zolle.webp` | `IMG-20260818-WA0064.jpg` | Oom Zolle portrait |
+| `osb-2026-portrait-guest.webp` | `IMG-20260819-WA0042.jpg` | Unlabelled event portrait |
+| `osb-2026-kit-safety-vest.webp` | `1787086636750.png` | Safety vest kit visual |
+| `osb-2026-kit-tshirt-front.webp` | `Generate_shirt_with_logo_202608191645.jpeg` | Shirt front kit visual |
+| `osb-2026-kit-tshirt-back.webp` | `Generate_shirt_with_logo_202608191648.jpeg` | Shirt back kit visual |
+
+All 28 files were resized to a 1600px long-edge cap where needed and encoded as WebP quality 80. Combined payload fell from 26.6 MB to 3.95 MB. Page placement: `/blog/otjiwarongo-sports-bonanza-2026`. Kit visuals are not a shop listing.
+
 ## Event/sponsorship records
 
 | Asset / record | Status | Use |

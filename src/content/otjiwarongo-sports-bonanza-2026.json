@@ -1,0 +1,63 @@
+{
+  "slug": "/blog/otjiwarongo-sports-bonanza-2026",
+  "meta": {
+    "title": "Otjiwarongo Sports Bonanza 2026 | Mokati Stadium, 21-23 August",
+    "description": "Mendozer Investments presents Otjiwarongo Sports Bonanza at Mokati Stadium, 21-23 August 2026. Soccer, netball, volleyball. Gates 08:00 Friday. Saturday music show N$30, headlined by King Tee Dee. One tournament, countless memories."
+  },
+  "event": {
+    "name": "Otjiwarongo Sports Bonanza",
+    "presented_by": "Mendozer Investments",
+    "dates": "21-23 August 2026",
+    "venue": "Mokati Stadium",
+    "gates_open": "08:00, Friday 21 August 2026",
+    "official_opening": {
+      "by": "Honourable John //Khamuseb, Governor of the Otjozondjupa Region",
+      "time": "09:00"
+    },
+    "entry": {
+      "friday": "Free",
+      "saturday": "N$30 (Music Show)",
+      "sunday": "Free"
+    },
+    "tagline": "One tournament, countless memories!"
+  },
+  "social_verification": {
+    "King Tee Dee": {
+      "instagram": "https://www.instagram.com/kingteedee/",
+      "facebook": "https://www.facebook.com/kingteedee/",
+      "status": "verified"
+    },
+    "Kalux": {
+      "instagram": "https://www.instagram.com/kalux_the_superstar/",
+      "status": "verified",
+      "note": "Kalux Luxie Karunga, Namibia, Otjiwarongo-based, Superstar Records."
+    },
+    "Zella Fullforce": {
+      "instagram": "https://www.instagram.com/zellafullforce/",
+      "facebook": "https://www.facebook.com/zellafullforce/",
+      "status": "verified"
+    },
+    "Agogo": {
+      "facebook": "https://www.facebook.com/AgogoSkuzaNamibia/",
+      "instagram": "[VERIFY HANDLE]",
+      "status": "facebook verified, instagram not confirmed"
+    },
+    "Stakes Boy": { "status": "[VERIFY HANDLE]", "note": "Fan page @stakesboy_officialfan_page tags @stxkes_boy_official. Not treated as official." },
+    "PJay": {
+      "instagram": "https://www.instagram.com/pjay__na/",
+      "status": "client-confirmed handle pjay__na. Instagram returned HTTP 429 to Scrapling at verification time."
+    },
+    "Ravennelli": { "status": "[VERIFY HANDLE]" },
+    "Om Zolle": { "status": "[VERIFY HANDLE]" },
+    "Lettie": { "status": "[VERIFY HANDLE]" },
+    "OC Bulan": { "status": "[VERIFY HANDLE]" },
+    "Dixon": { "status": "[VERIFY HANDLE]" },
+    "Jaliza": { "status": "[VERIFY HANDLE]" },
+    "Ravdaz": { "status": "[VERIFY HANDLE]" },
+    "Kallo On The Beat": { "status": "[VERIFY HANDLE]" }
+  },
+  "contacts": [
+    { "role": "Soccer", "name": "Richard / Jeremia", "phone": ["081 277 8696", "081 471 5216"] },
+    { "role": "Volleyball and netball", "name": "Regina / Erna", "phone": ["081 680 5242", "081 226 4992"] }
+  ]
+}

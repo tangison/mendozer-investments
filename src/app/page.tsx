@@ -82,7 +82,7 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={80}>
             <Link className="home-event__flyer" href="/blog/otjiwarongo-sports-bonanza-2026">
-              <Image alt="Otjiwarongo Sports Bonanza 2026 official flyer" height={640} sizes="(max-width: 700px) 72vw, 280px" src="/images/blog/otjiwarongo-sports-bonanza-flyer.jpg" width={452} />
+              <Image alt="Otjiwarongo Sports Bonanza 2026 official flyer" height={1600} sizes="(max-width: 700px) 72vw, 280px" src="/images/events/otjiwarongo-sports-bonanza-2026/osb-2026-poster-prizes.webp" width={1130} />
             </Link>
           </Reveal>
         </div>

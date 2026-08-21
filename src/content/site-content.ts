@@ -298,7 +298,7 @@ export const siteContent = {
         body: "Mendozer Investments presents the Otjiwarongo Sports Bonanza at Mokati Stadium, 21 to 23 August 2026. Soccer, netball, volleyball, and a Saturday music show. Full event detail is on the news page.",
         href: "/blog/otjiwarongo-sports-bonanza-2026",
         media: {
-          src: "/images/blog/otjiwarongo-sports-bonanza-flyer.jpg",
+          src: "/images/events/otjiwarongo-sports-bonanza-2026/osb-2026-poster-prizes.webp",
           alt: "Otjiwarongo Sports Bonanza 2026 official flyer",
           caption: "Official event flyer",
           status: "real",
@@ -641,7 +641,7 @@ export const publicUpdates: PublicUpdate[] = [
     sourceLabel: "Read the event brief",
     sourceUrl: "/blog/otjiwarongo-sports-bonanza-2026",
     media: {
-      src: "/images/blog/otjiwarongo-sports-bonanza-flyer.jpg",
+      src: "/images/events/otjiwarongo-sports-bonanza-2026/osb-2026-poster-prizes.webp",
       alt: "Otjiwarongo Sports Bonanza 2026 official flyer",
       caption: "Official event flyer",
       status: "real",

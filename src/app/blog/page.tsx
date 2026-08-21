@@ -9,12 +9,6 @@ export const metadata: Metadata = {
   title: "News",
   description: "Published Mendozer Investments news and event briefs, starting with the Otjiwarongo Sports Bonanza 2026.",
   alternates: { canonical: "/blog" },
-  openGraph: {
-    title: "News | Mendozer Investments",
-    description: "Published Mendozer Investments news and event briefs, starting with the Otjiwarongo Sports Bonanza 2026.",
-    url: "/blog",
-    images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments news" }],
-  },
 };
 
 export default function BlogIndexPage() {
@@ -41,11 +35,10 @@ export default function BlogIndexPage() {
               <Link className="blog-index__media" href="/blog/otjiwarongo-sports-bonanza-2026">
                 <Image
                   alt="Otjiwarongo Sports Bonanza 2026 official flyer"
-                  height={640}
+                  height={1600}
                   sizes="(max-width: 760px) 100vw, 280px"
-                  src="/images/blog/otjiwarongo-sports-bonanza-flyer.jpg"
-                  unoptimized
-                  width={452}
+                  src="/images/events/otjiwarongo-sports-bonanza-2026/osb-2026-poster-prizes.webp"
+                  width={1130}
                 />
               </Link>
               <div className="blog-index__body">
