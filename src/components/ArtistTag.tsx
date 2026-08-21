@@ -1,6 +1,7 @@
 type ArtistSocial = {
   instagram?: string;
   facebook?: string;
+  x?: string;
 };
 
 const VERIFIED: Record<string, ArtistSocial> = {
@@ -21,6 +22,20 @@ const VERIFIED: Record<string, ArtistSocial> = {
   PJay: {
     instagram: "https://www.instagram.com/pjay__na/",
   },
+  Jaliza: {
+    instagram: "https://www.instagram.com/jalizajalilie/",
+    facebook: "https://www.facebook.com/p/Jaliza-100063840305449/",
+  },
+  "Kallo On The Beat": {
+    instagram: "https://www.instagram.com/kallo_onthebeat/",
+    x: "https://x.com/iam_kallo",
+  },
+  Dixon: {
+    facebook: "https://www.facebook.com/DIXON.NAM/",
+  },
+  Lettie: {
+    facebook: "https://www.facebook.com/p/Lettie-Queen-of-MaGaisa-100063775110686/",
+  },
 };
 
 const ALIASES: Record<string, string> = {
@@ -34,10 +49,10 @@ const ALIASES: Record<string, string> = {
 };
 
 export function resolveArtistName(label: string): string | null {
-  if (VERIFIED[label] || ["Stakes Boy", "PJay", "Ravennelli", "Om Zolle", "Lettie", "OC Bulan", "Dixon", "Jaliza", "Ravdaz", "Kallo On The Beat"].includes(label)) {
-    return label;
+  if (VERIFIED[label] || ALIASES[label]) {
+    return ALIASES[label] ?? label;
   }
-  return ALIASES[label] ?? null;
+  return null;
 }
 
 export function ArtistTag({ name, className = "" }: { name: string; className?: string }) {
@@ -53,18 +68,19 @@ export function ArtistTag({ name, className = "" }: { name: string; className?: 
             <a href={social.instagram} rel="noreferrer" target="_blank">
               Instagram
             </a>
-          ) : (
-            <span className="osb-verify">[VERIFY HANDLE]</span>
-          )}
+          ) : null}
           {social.facebook ? (
             <a href={social.facebook} rel="noreferrer" target="_blank">
               Facebook
             </a>
           ) : null}
+          {social.x ? (
+            <a href={social.x} rel="noreferrer" target="_blank">
+              X
+            </a>
+          ) : null}
         </span>
-      ) : (
-        <span className="osb-verify">[VERIFY HANDLE]</span>
-      )}
+      ) : null}
     </span>
   );
 }

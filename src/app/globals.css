@@ -1713,13 +1713,6 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
   color: var(--color-brand-navy);
 }
 
-.osb-verify {
-  color: var(--color-brand-navy);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-}
-
 .osb-contact-card {
   display: flex;
   flex-direction: column;

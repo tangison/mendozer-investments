@@ -25,36 +25,49 @@
     "King Tee Dee": {
       "instagram": "https://www.instagram.com/kingteedee/",
       "facebook": "https://www.facebook.com/kingteedee/",
-      "status": "verified"
+      "status": "published"
     },
     "Kalux": {
       "instagram": "https://www.instagram.com/kalux_the_superstar/",
-      "status": "verified",
-      "note": "Kalux Luxie Karunga, Namibia, Otjiwarongo-based, Superstar Records."
+      "status": "published",
+      "note": "Kalux Luxie Karunga, Namibia. Superstar Records."
     },
     "Zella Fullforce": {
       "instagram": "https://www.instagram.com/zellafullforce/",
       "facebook": "https://www.facebook.com/zellafullforce/",
-      "status": "verified"
+      "status": "scrapling-200",
+      "note": "Facebook title Zella Fullforce. Anthony Daniel, Khorixas / Arandis."
     },
     "Agogo": {
       "facebook": "https://www.facebook.com/AgogoSkuzaNamibia/",
-      "instagram": "[VERIFY HANDLE]",
-      "status": "facebook verified, instagram not confirmed"
+      "status": "published facebook page Agogo Skuza Namibia"
     },
-    "Stakes Boy": { "status": "[VERIFY HANDLE]", "note": "Fan page @stakesboy_officialfan_page tags @stxkes_boy_official. Not treated as official." },
     "PJay": {
       "instagram": "https://www.instagram.com/pjay__na/",
-      "status": "client-confirmed handle pjay__na. Instagram returned HTTP 429 to Scrapling at verification time."
+      "status": "client-confirmed handle pjay__na"
     },
-    "Ravennelli": { "status": "[VERIFY HANDLE]" },
-    "Om Zolle": { "status": "[VERIFY HANDLE]" },
-    "Lettie": { "status": "[VERIFY HANDLE]" },
-    "OC Bulan": { "status": "[VERIFY HANDLE]" },
-    "Dixon": { "status": "[VERIFY HANDLE]" },
-    "Jaliza": { "status": "[VERIFY HANDLE]" },
-    "Ravdaz": { "status": "[VERIFY HANDLE]" },
-    "Kallo On The Beat": { "status": "[VERIFY HANDLE]" }
+    "Jaliza": {
+      "instagram": "https://www.instagram.com/jalizajalilie/",
+      "facebook": "https://www.facebook.com/p/Jaliza-100063840305449/",
+      "status": "first-party YouTube plus Scrapling Facebook 200",
+      "note": "Jaliza Utsile video Connect with Jaliza: Instagram @jalizajalilie. Facebook musician page title Jaliza, 19,812 likes."
+    },
+    "Kallo On The Beat": {
+      "instagram": "https://www.instagram.com/kallo_onthebeat/",
+      "x": "https://x.com/iam_kallo",
+      "status": "Scrapling YouTube about plus X 200",
+      "note": "YouTube @kalloonthebeat about links instagram.com/kallo_onthebeat and twitter.com/iam_kallo. X title Kallo On The Beat (@iam_kallo), Setrick Dantu, Namibia. No public Facebook page."
+    },
+    "Dixon": {
+      "facebook": "https://www.facebook.com/DIXON.NAM/",
+      "status": "Scrapling Facebook 200",
+      "note": "Official /Gui !nas video plus Facebook DIXON NA, Windhoek, 50,017 likes, YouTube dixonna. x.com/DIXON_NA is Na'Jae Dixon, not tagged."
+    },
+    "Lettie": {
+      "facebook": "https://www.facebook.com/p/Lettie-Queen-of-MaGaisa-100063775110686/",
+      "status": "Scrapling Facebook 200",
+      "note": "Lettie Nangolo, Queen of Ma/Gaisa, 8,159 likes."
+    }
   },
   "contacts": [
     { "role": "Soccer", "name": "Richard / Jeremia", "phone": ["081 277 8696", "081 471 5216"] },
