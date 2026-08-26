@@ -720,6 +720,7 @@ export const routes = [
   "/community",
   "/contact",
   "/blog",
+  "/blog/namibia-heroes-day-2026",
   "/blog/otjiwarongo-sports-bonanza-2026",
   "/blog/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize-payments",
   "/blog/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarification",

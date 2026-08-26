@@ -13,6 +13,17 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/namibia-heroes-day-2026",
+    image: "/images/blog/heroes-day-2026/heroes-day-banner-01.webp",
+    imageAlt: "Heroes' Day commemorative banner supplied by Mendozer Investments",
+    imageWidth: 588,
+    imageHeight: 294,
+    eyebrow: "Public holiday / 26 August 2026",
+    title: "Heroes' Day 2026",
+    summary: "A day for Namibia's heroes. Heroes' Day remembers the start of the struggle for independence at Omugulugwombashe in 1966, and honours those who served.",
+    cta: "Read the Heroes' Day note",
+  },
+  {
     href: "/blog/otjiwarongo-sports-bonanza-2026",
     image: "/images/events/otjiwarongo-sports-bonanza-2026/osb-2026-conclusion-poster.webp",
     imageAlt: "Otjiwarongo Sports Bonanza 2026 final result poster: Namaqua FC 2 to 1 Ama Roots FC",

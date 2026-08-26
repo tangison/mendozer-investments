@@ -2006,3 +2006,26 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
   align-items: center;
   gap: 0.4rem;
 }
+
+/* Heroes' Day post */
+.heroes-banner-wrap {
+  margin: 0;
+}
+
+.heroes-banner {
+  width: 100%;
+  max-width: 840px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid var(--color-border-subtle);
+}
+
+.heroes-credit {
+  margin-top: var(--space-8);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-subtle);
+  color: var(--color-text-body);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}

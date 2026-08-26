@@ -263,3 +263,18 @@ New client-supplied assets for the tournament conclusion and the two media relea
 Page placement: `/blog/otjiwarongo-sports-bonanza-2026` (conclusion), `/blog/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize-payments`, `/blog/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarification`, home event card, and `/blog` index.
 
 Removal note: WebP files for performers outside the approved retained list (Jaliza, Stakes Boy, Oom Zolle, Ravdaz, Kallo On The Beat, Ravennelli, and the unlabelled guest still) were deleted from the public event directory in the same pass. The approved retained bill is King Tee Dee, Kalux, Pjay, Agogo, Skuza, Zella, Full Force, Tate Buti, and Dixon.
+
+## Heroes' Day 2026 post imagery: 2026-08-26
+
+Images for `/blog/namibia-heroes-day-2026`. Two banners were supplied by the client; three photographs are freely licensed from Wikimedia Commons and are used with attribution on the page and here, per their CC BY-SA terms.
+
+| Published asset | Source | Author / credit | Licence | Use |
+|---|---|---|---|---|
+| `images/blog/heroes-day-2026/heroes-day-banner-01.webp` | Client upload `images - 2026-08-26T041117.580.jpeg` (original retained in `reference/photography/2026-08-26-heroes-day/`) | Mendozer Investments | Client-supplied | Featured banner on the Heroes' Day post and news index card |
+| `images/blog/heroes-day-2026/heroes-day-banner-02.webp` | Client upload `images - 2026-08-26T041122.498.jpeg` (original retained in `reference/photography/2026-08-26-heroes-day/`) | Mendozer Investments | Client-supplied | Inline banner in the Heroes' Acre section |
+| `images/blog/heroes-day-2026/heroes-acre-aerial.webp` | Wikimedia Commons `File:Heldenacker Namibia Vogelperspektive. 2017.jpg` | Olga Ernst & Hp.Baumeler | CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0) | Gallery and Open Graph background (`/og/heroes-day.png`) |
+| `images/blog/heroes-day-2026/heroes-acre-view.webp` | Wikimedia Commons `File:Laika ac Heroe's Acre (8407798482).jpg` | Laika ac | CC BY-SA 2.0 (https://creativecommons.org/licenses/by-sa/2.0) | Gallery |
+| `images/blog/heroes-day-2026/independence-memorial-museum.webp` | Wikimedia Commons `File:Windhuk Christuskirche & Independence Memorial Museum 1.jpg` | Zairon | CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0) | Gallery |
+| `og/heroes-day.png` | Deterministic layout derivative from the Heroes' Acre aerial + locked brand tokens | Mendozer Investments | In-house layout | Social preview for the Heroes' Day post |
+
+Attribution for the CC BY-SA photographs appears in the page image-credit line and in this ledger. All Commons files were re-encoded to WebP (quality 82, 1600px long-edge cap) and are served from `/public/images/blog/heroes-day-2026/`.

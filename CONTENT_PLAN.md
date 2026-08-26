@@ -116,3 +116,5 @@ Each sector page has: hero, “What we do” service breakdown, visual “On sit
 | `/blog/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarification` | Media release two: clarification on King Tee Dee's involvement, for immediate release, 25 August 2026, with the original PDF attached | Verified from supplied PDF `20260825132217768.pdf` |
 
 Editorial rules applied: professional Namibian English, no invented quotations, statistics, attendance numbers, prize details, sponsors, or winners, no em dashes, and the music show bill retains only King Tee Dee, Kalux, Pjay, Agogo, Skuza, Zella, Full Force, Tate Buti, and Dixon.
+
+| `/blog/namibia-heroes-day-2026` | Heroes' Day 2026 commemorative note: 26 August, the start of the armed struggle at Omugulugwombashe in 1966, independence on 21 March 1990, and the Heroes' Acre memorial near Windhoek | Historical facts verified against public references (UN recognition as Namibia Day, 26 August 1966 Omugulugwombashe clash, Heroes' Acre opened on Heroes' Day 2002, obelisk and Unknown Soldier statue details). No invented quotes, casualty figures, or current-leader claims. Wikimedia Commons photographs credited. |
