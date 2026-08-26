@@ -27,6 +27,9 @@ pages = {
     "tourism": ("Tourism &\nAgriculture", "Mendozer Investments", ROOT / "public/images/projects/tourism/IMG-20260808-WA0055.jpg"),
     "community": ("Community &\nSponsorship", "Mendozer Investments", ROOT / "public/images/projects/community/IMG-20260808-WA0077.jpg"),
     "contact": ("Start with the right\nconversation.", "Contact Mendozer Investments", ROOT / "public/images/projects/technology/IMG-20260808-WA0061.jpg"),
+    "bonanza-conclusion": ("Namaqua FC win the\nOtjiwarongo Sports Bonanza.", "Final score: Namaqua FC 2 to 1 Ama Roots FC", ROOT / "public/images/events/otjiwarongo-sports-bonanza-2026/gallery/osb-2026-gallery-09.webp"),
+    "bonanza-reconciliation": ("Reconciliation and\nprize payment requirements", "Otjiwarongo Sports Bonanza 2026", ROOT / "public/images/events/otjiwarongo-sports-bonanza-2026/gallery/osb-2026-gallery-09.webp"),
+    "bonanza-king-tee-dee": ("Clarification on King Tee Dee's\ninvolvement in the Bonanza", "Otjiwarongo Sports Bonanza 2026", ROOT / "public/images/events/otjiwarongo-sports-bonanza-2026/gallery/osb-2026-gallery-09.webp"),
 }
 
 

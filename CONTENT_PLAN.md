@@ -106,3 +106,13 @@ Each sector page has: hero, “What we do” service breakdown, visual “On sit
 - Group route list and six sector routes: working structure.
 - Registration/VAT: verified.
 - Required credit: **Made by Tangison Studio** linked to `https://studio.tangison.com` using the supplied Tangison white logo asset.
+
+## News and media releases `/blog` (updated 2026-08-26)
+
+| Route | Content | Status |
+|---|---|---|
+| `/blog/otjiwarongo-sports-bonanza-2026` | Conclusion article: Namaqua FC beat Ama Roots FC 2 to 1 in the final at Mokati Stadium, 21 to 23 August 2026. Tournament record, approved music show bill of nine, event gallery, prize structure, media release links | Result and figures verified from the supplied final-result poster and existing verified event pack. No scorers, attendance, or invented match detail published |
+| `/blog/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize-payments` | Media release one: reconciliation of outstanding balances and prize payment requirements, dated 24 August 2026, with the original PDF attached | Verified from supplied PDF `20260825124454544.pdf` |
+| `/blog/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarification` | Media release two: clarification on King Tee Dee's involvement, for immediate release, 25 August 2026, with the original PDF attached | Verified from supplied PDF `20260825132217768.pdf` |
+
+Editorial rules applied: professional Namibian English, no invented quotations, statistics, attendance numbers, prize details, sponsors, or winners, no em dashes, and the music show bill retains only King Tee Dee, Kalux, Pjay, Agogo, Skuza, Zella, Full Force, Tate Buti, and Dixon.

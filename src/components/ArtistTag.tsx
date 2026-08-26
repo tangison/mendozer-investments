@@ -22,30 +22,15 @@ const VERIFIED: Record<string, ArtistSocial> = {
   PJay: {
     instagram: "https://www.instagram.com/pjay__na/",
   },
-  Jaliza: {
-    instagram: "https://www.instagram.com/jalizajalilie/",
-    facebook: "https://www.facebook.com/p/Jaliza-100063840305449/",
-  },
-  "Kallo On The Beat": {
-    instagram: "https://www.instagram.com/kallo_onthebeat/",
-    x: "https://x.com/iam_kallo",
-  },
   Dixon: {
     facebook: "https://www.facebook.com/DIXON.NAM/",
-  },
-  Lettie: {
-    facebook: "https://www.facebook.com/p/Lettie-Queen-of-MaGaisa-100063775110686/",
   },
 };
 
 const ALIASES: Record<string, string> = {
-  "Oom Zolle": "Om Zolle",
-  "King Tee Dee - Headline Performance": "King Tee Dee",
-  "King Tee Dee – Headline Performance": "King Tee Dee",
-  "PJay - Opening Act (3 Songs)": "PJay",
-  "PJay – Opening Act (3 Songs)": "PJay",
-  "Ravennelli - Opening Act (3 Songs)": "Ravennelli",
-  "Ravennelli – Opening Act (3 Songs)": "Ravennelli",
+  Pjay: "PJay",
+  Zella: "Zella Fullforce",
+  "Full Force": "Zella Fullforce",
 };
 
 export function resolveArtistName(label: string): string | null {

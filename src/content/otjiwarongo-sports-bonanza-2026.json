@@ -1,14 +1,16 @@
 {
   "slug": "/blog/otjiwarongo-sports-bonanza-2026",
   "meta": {
-    "title": "Otjiwarongo Sports Bonanza 2026 | Mokati Stadium, 21-23 August",
-    "description": "Mendozer Investments presents Otjiwarongo Sports Bonanza at Mokati Stadium, 21-23 August 2026. Soccer, netball, volleyball. Gates 08:00 Friday. Saturday music show N$30, headlined by King Tee Dee. One tournament, countless memories."
+    "title": "Namaqua FC win the Otjiwarongo Sports Bonanza 2026 | Mendozer Investments",
+    "description": "Namaqua FC defeated Ama Roots FC 2 to 1 in the final at Mokati Stadium to win the Otjiwarongo Sports Bonanza 2026, held 21 to 23 August 2026."
   },
   "event": {
     "name": "Otjiwarongo Sports Bonanza",
     "presented_by": "Mendozer Investments",
     "dates": "21-23 August 2026",
     "venue": "Mokati Stadium",
+    "champion": "Namaqua FC",
+    "final_score": "Namaqua FC 2 to 1 Ama Roots FC",
     "gates_open": "08:00, Friday 21 August 2026",
     "official_opening": {
       "by": "Honourable John //Khamuseb, Governor of the Otjozondjupa Region",
@@ -21,6 +23,17 @@
     },
     "tagline": "One tournament, countless memories!"
   },
+  "music_show_lineup": [
+    "King Tee Dee",
+    "Kalux",
+    "Pjay",
+    "Agogo",
+    "Skuza",
+    "Zella",
+    "Full Force",
+    "Tate Buti",
+    "Dixon"
+  ],
   "social_verification": {
     "King Tee Dee": {
       "instagram": "https://www.instagram.com/kingteedee/",
@@ -46,29 +59,26 @@
       "instagram": "https://www.instagram.com/pjay__na/",
       "status": "client-confirmed handle pjay__na"
     },
-    "Jaliza": {
-      "instagram": "https://www.instagram.com/jalizajalilie/",
-      "facebook": "https://www.facebook.com/p/Jaliza-100063840305449/",
-      "status": "first-party YouTube plus Scrapling Facebook 200",
-      "note": "Jaliza Utsile video Connect with Jaliza: Instagram @jalizajalilie. Facebook musician page title Jaliza, 19,812 likes."
-    },
-    "Kallo On The Beat": {
-      "instagram": "https://www.instagram.com/kallo_onthebeat/",
-      "x": "https://x.com/iam_kallo",
-      "status": "Scrapling YouTube about plus X 200",
-      "note": "YouTube @kalloonthebeat about links instagram.com/kallo_onthebeat and twitter.com/iam_kallo. X title Kallo On The Beat (@iam_kallo), Setrick Dantu, Namibia. No public Facebook page."
-    },
     "Dixon": {
       "facebook": "https://www.facebook.com/DIXON.NAM/",
       "status": "Scrapling Facebook 200",
       "note": "Official /Gui !nas video plus Facebook DIXON NA, Windhoek, 50,017 likes, YouTube dixonna. x.com/DIXON_NA is Na'Jae Dixon, not tagged."
-    },
-    "Lettie": {
-      "facebook": "https://www.facebook.com/p/Lettie-Queen-of-MaGaisa-100063775110686/",
-      "status": "Scrapling Facebook 200",
-      "note": "Lettie Nangolo, Queen of Ma/Gaisa, 8,159 likes."
     }
   },
+  "media_releases": [
+    {
+      "title": "Reconciliation and prize payment requirements",
+      "url": "/blog/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize-payments",
+      "pdf": "/documents/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize-payments.pdf",
+      "date": "24 August 2026"
+    },
+    {
+      "title": "Clarification on King Tee Dee's involvement",
+      "url": "/blog/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarification",
+      "pdf": "/documents/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarification.pdf",
+      "date": "25 August 2026"
+    }
+  ],
   "contacts": [
     { "role": "Soccer", "name": "Richard / Jeremia", "phone": ["081 277 8696", "081 471 5216"] },
     { "role": "Volleyball and netball", "name": "Regina / Erna", "phone": ["081 680 5242", "081 226 4992"] }

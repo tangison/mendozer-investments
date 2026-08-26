@@ -235,3 +235,31 @@ All entries below are real, reusable SVG outputs in both `/assets/vectors/` (sou
 | Visible caption | `Building work in progress` |
 | Alt treatment | Decorative background motion. The visible hero content is conveyed in text, and the poster has no duplicated alternate text. |
 | Authenticity guard | This is a supplied-photo derivative, not a documentary video of a named project and not an AI-generated visual. |
+
+## Otjiwarongo Sports Bonanza conclusion pack: 2026-08-26
+
+New client-supplied assets for the tournament conclusion and the two media releases. Original files are retained byte-identical under `/reference/photography/2026-08-25-bonanza-conclusion/`. Display copies are WebP (quality 80, 1600px long-edge cap) under `/public/images/events/otjiwarongo-sports-bonanza-2026/`. The two PDFs are published byte-identical under `/public/documents/`.
+
+| Published asset | Source file | Use |
+|---|---|---|
+| `osb-2026-conclusion-poster.webp` | `file_0000000033d0820cbcd745037d00c0e9.png` (also kept as `osb-2026-conclusion-poster-original.png` in reference) | Featured final-result poster on the Bonanza conclusion article, home event card, news index |
+| `gallery/osb-2026-gallery-01.webp` | `IMG-20260823-WA0001.jpg` | Event gallery, conclusion article |
+| `gallery/osb-2026-gallery-02.webp` | `IMG-20260823-WA0002.jpg` | Event gallery, conclusion article |
+| `gallery/osb-2026-gallery-03.webp` | `IMG-20260823-WA0003.jpg` | Event gallery, conclusion article |
+| `gallery/osb-2026-gallery-04.webp` | `IMG-20260823-WA0004.jpg` | Event gallery, conclusion article |
+| `gallery/osb-2026-gallery-05.webp` | `IMG-20260824-WA0000.jpg` | Event gallery, conclusion article |
+| `gallery/osb-2026-gallery-06.webp` | `IMG-20260824-WA0007.jpg` | Event gallery, conclusion article |
+| `gallery/osb-2026-gallery-07.webp` | `IMG-20260824-WA0009.jpg` | Event gallery, conclusion article |
+| `gallery/osb-2026-gallery-08.webp` | `IMG-20260824-WA0011.jpg` | Event gallery, conclusion article |
+| `gallery/osb-2026-gallery-09.webp` | `IMG-20260824-WA0018.jpg` | Event gallery, conclusion article; Open Graph background for the three Bonanza OG images |
+| `gallery/osb-2026-gallery-10.webp` | `IMG-20260824-WA0054.jpg` | Event gallery, conclusion article |
+| `gallery/osb-2026-gallery-11.webp` | `IMG-20260824-WA0055.jpg` | Event gallery, conclusion article |
+| `documents/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize-payments.pdf` | `20260825124454544.pdf` (byte-identical) | Downloadable original PDF on the reconciliation media release page |
+| `documents/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarification.pdf` | `20260825132217768.pdf` (byte-identical) | Downloadable original PDF on the King Tee Dee clarification release page |
+| `og/bonanza-conclusion.png` | Deterministic layout derivative from gallery photo 09 + locked brand tokens | Social preview for the conclusion article |
+| `og/bonanza-reconciliation.png` | Deterministic layout derivative from gallery photo 09 + locked brand tokens | Social preview for the reconciliation release |
+| `og/bonanza-king-tee-dee.png` | Deterministic layout derivative from gallery photo 09 + locked brand tokens | Social preview for the King Tee Dee clarification release |
+
+Page placement: `/blog/otjiwarongo-sports-bonanza-2026` (conclusion), `/blog/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize-payments`, `/blog/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarification`, home event card, and `/blog` index.
+
+Removal note: WebP files for performers outside the approved retained list (Jaliza, Stakes Boy, Oom Zolle, Ravdaz, Kallo On The Beat, Ravennelli, and the unlabelled guest still) were deleted from the public event directory in the same pass. The approved retained bill is King Tee Dee, Kalux, Pjay, Agogo, Skuza, Zella, Full Force, Tate Buti, and Dixon.

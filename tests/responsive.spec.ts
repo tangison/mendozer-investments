@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-const coreRoutes = ["/", "/about", "/sectors", "/sectors/construction", "/sectors/technology", "/sectors/cooling", "/sectors/logistics", "/sectors/energy", "/sectors/tourism", "/work", "/updates", "/compliance", "/community", "/contact", "/blog", "/blog/otjiwarongo-sports-bonanza-2026", "/brand", "/privacy", "/terms"];
+const coreRoutes = ["/", "/about", "/sectors", "/sectors/construction", "/sectors/technology", "/sectors/cooling", "/sectors/logistics", "/sectors/energy", "/sectors/tourism", "/work", "/updates", "/compliance", "/community", "/contact", "/blog", "/blog/otjiwarongo-sports-bonanza-2026", "/blog/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize-payments", "/blog/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarification", "/brand", "/privacy", "/terms"];
 
 test.describe("core routes", () => {
   for (const route of coreRoutes) {

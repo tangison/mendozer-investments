@@ -1349,7 +1349,7 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
 }
 
 .blog-post__details dt {
-  color: var(--color-brand-blue);
+  color: var(--color-brand-navy);
   font-family: var(--font-sans);
   font-size: 0.7rem;
   font-weight: 600;
@@ -1417,7 +1417,7 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
 }
 
 .blog-post__prizes th {
-  color: var(--color-brand-blue);
+  color: var(--color-brand-navy);
   font-size: 0.7rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -1874,4 +1874,135 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
   .site-footer__stage {
     grid-template-columns: 1fr;
   }
+}
+
+/* Media release pages */
+.media-release__download,
+.media-release__contact {
+  margin: var(--space-8) 0;
+  padding: var(--space-6);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-secondary);
+}
+
+.media-release__download p,
+.media-release__contact p {
+  max-width: 42rem;
+  color: var(--color-text-body);
+}
+
+.media-release__download .button {
+  margin-top: var(--space-4);
+}
+
+.media-release__contact-list {
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: var(--space-3);
+}
+
+.media-release__contact-list li {
+  display: grid;
+  grid-template-columns: minmax(8rem, 12rem) 1fr;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--color-border-subtle);
+  padding-bottom: var(--space-3);
+}
+
+.media-release__contact-list li:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.media-release__contact-list span {
+  color: var(--color-brand-navy);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.media-release__contact-list strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.media-release__contact-list a {
+  color: var(--color-brand-navy);
+  text-decoration: underline;
+  text-decoration-color: var(--color-brand-blue);
+  text-underline-offset: 0.2em;
+}
+
+.media-release__back {
+  margin-top: var(--space-8);
+}
+
+@media (max-width: 50rem) {
+  .media-release__contact-list li {
+    grid-template-columns: 1fr;
+    gap: var(--space-1);
+  }
+}
+
+/* Bonanza conclusion: lineup list and media release cards */
+.osb-lineup {
+  margin: var(--space-6) 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.osb-lineup li {
+  padding: var(--space-4);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-secondary);
+  font-weight: 600;
+}
+
+@media (max-width: 50rem) {
+  .osb-lineup {
+    grid-template-columns: 1fr;
+  }
+}
+
+.media-release-card {
+  margin: var(--space-5) 0;
+  padding: var(--space-6);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-secondary);
+}
+
+.media-release-card__date {
+  margin: 0 0 var(--space-2);
+  color: var(--color-brand-navy);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.media-release-card h3 {
+  margin: 0 0 var(--space-3);
+}
+
+.media-release-card p {
+  color: var(--color-text-body);
+}
+
+.media-release-card__actions {
+  margin: var(--space-4) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+
+.media-release-card__actions .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }

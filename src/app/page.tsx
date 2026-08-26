@@ -75,14 +75,14 @@ export default function HomePage() {
       <section className="section home-event">
         <div className="site-container home-event__grid">
           <Reveal>
-            <p className="eyebrow">This weekend</p>
+            <p className="eyebrow">Event conclusion</p>
             <h2>Otjiwarongo Sports Bonanza 2026</h2>
-            <p>21 to 23 August at Mokati Stadium. Soccer, netball, volleyball, and a Saturday music show. N$45,000 in prizes.</p>
-            <Link className="text-link" href="/blog/otjiwarongo-sports-bonanza-2026">Read the event brief <ArrowIcon /></Link>
+            <p>Namaqua FC beat Ama Roots FC 2 to 1 in the final at Mokati Stadium, 21 to 23 August. Read the conclusion and the official releases.</p>
+            <Link className="text-link" href="/blog/otjiwarongo-sports-bonanza-2026">Read the event conclusion <ArrowIcon /></Link>
           </Reveal>
           <Reveal delay={80}>
             <Link className="home-event__flyer" href="/blog/otjiwarongo-sports-bonanza-2026">
-              <Image alt="Otjiwarongo Sports Bonanza 2026 official flyer" height={1600} sizes="(max-width: 700px) 72vw, 280px" src="/images/events/otjiwarongo-sports-bonanza-2026/osb-2026-poster-prizes.webp" width={1130} />
+              <Image alt="Otjiwarongo Sports Bonanza 2026 final result poster: Namaqua FC 2 to 1 Ama Roots FC" height={1402} sizes="(max-width: 700px) 72vw, 280px" src="/images/events/otjiwarongo-sports-bonanza-2026/osb-2026-conclusion-poster.webp" width={1122} />
             </Link>
           </Reveal>
         </div>
