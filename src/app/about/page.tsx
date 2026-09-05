@@ -77,6 +77,8 @@ export default function AboutPage() {
               <dl>
                 <div><dt>Registration no.</dt><dd>{siteConfig.registration}</dd></div>
                 <div><dt>VAT no.</dt><dd>{siteConfig.vat}</dd></div>
+                <div><dt>Telephone</dt><dd><a href={siteConfig.phone.href}>{siteConfig.phone.display}</a></dd></div>
+                <div><dt>Windhoek office</dt><dd>{siteConfig.office.suite}, {siteConfig.office.building}, {siteConfig.office.street}, {siteConfig.office.locality}</dd></div>
                 <div><dt>Contact</dt><dd><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></dd></div>
               </dl>
               <div className="legal-section__licence">

@@ -31,6 +31,7 @@ pages = {
     "bonanza-reconciliation": ("Reconciliation and\nprize payment requirements", "Otjiwarongo Sports Bonanza 2026", ROOT / "public/images/events/otjiwarongo-sports-bonanza-2026/gallery/osb-2026-gallery-09.webp"),
     "bonanza-king-tee-dee": ("Clarification on King Tee Dee's\ninvolvement in the Bonanza", "Otjiwarongo Sports Bonanza 2026", ROOT / "public/images/events/otjiwarongo-sports-bonanza-2026/gallery/osb-2026-gallery-09.webp"),
     "heroes-day": ("A day for Namibia's\nheroes: 26 August", "Heroes' Day 2026 | Mendozer Investments", ROOT / "public/images/blog/heroes-day-2026/heroes-acre-aerial.webp"),
+    "windhoek-office": ("Windhoek satellite\noffice at Continental Bldg", "Office 2, Judge JP Karuaihe Street | Mendozer Investments", ROOT / "public/images/projects/construction/road-works-2.jpg"),
 }
 
 

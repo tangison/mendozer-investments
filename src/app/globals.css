@@ -372,6 +372,28 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
   color: var(--color-brand-blue);
 }
 
+.site-footer__phone {
+  display: block;
+  color: var(--color-text-dark-primary);
+  font-family: var(--font-sans);
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  transition: color var(--duration-fast) ease;
+}
+
+.site-footer__phone:hover {
+  color: var(--color-brand-blue);
+}
+
+.site-footer__office {
+  margin: 0;
+  max-width: 22rem;
+  color: var(--color-text-dark-body);
+  font-size: 0.78rem;
+  line-height: 1.6;
+}
+
 .site-footer__accordions {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2028,4 +2050,202 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
   color: var(--color-text-body);
   font-size: 0.78rem;
   line-height: 1.6;
+}
+
+/* Contact channels and Windhoek office */
+.contact-channel {
+  display: inline-block;
+  max-width: 100%;
+  margin-top: var(--space-5);
+  border-bottom: 2px solid var(--color-brand-blue);
+  color: var(--color-brand-navy);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  overflow-wrap: anywhere;
+}
+
+.contact-channel--phone {
+  font-size: clamp(1.35rem, 2.6vw, 2.2rem);
+}
+
+.contact-channel--email {
+  font-size: clamp(1.1rem, 2vw, 1.7rem);
+}
+
+.contact-legal dd br {
+  display: block;
+}
+
+.contact-office-section {
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.contact-office__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(16rem, 0.7fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  margin-top: var(--space-8);
+  align-items: start;
+}
+
+.contact-office__grid > * {
+  min-width: 0;
+}
+
+.contact-office__aside {
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-primary);
+}
+
+.contact-office__aside h3 {
+  margin: var(--space-3) 0 var(--space-3);
+}
+
+.contact-office__aside address {
+  color: var(--color-text-body);
+  font-style: normal;
+  line-height: 1.7;
+}
+
+.contact-office__aside .text-link {
+  display: inline-block;
+  margin-top: var(--space-4);
+}
+
+.map-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 380px;
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-secondary);
+}
+
+.map-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 50rem) {
+  .contact-office__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Office announcement blog post */
+.blog-map {
+  margin: var(--space-6) 0;
+}
+
+.blog-post__details a {
+  color: var(--color-brand-navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--color-brand-blue);
+  text-underline-offset: 0.2em;
+}
+
+.blog-post .blog-post__body .blog-post__cta .osb-contact-card a {
+  font-weight: 600;
+}
+
+/* ============================================================
+   MOBILE UX REFINEMENTS (touch-first)
+   Applied per the mobile-ux-optimizer checklist:
+   44px tap targets, no iOS focus zoom, no double-tap delay,
+   safe-area aware viewport, comfortable single-thumb forms.
+   ============================================================ */
+
+/* iOS Safari zooms any focused field with a font under 16px.
+   Touch-primary devices and every width below the 50rem stack point
+   get a 1rem field size so focus never zooms the page. */
+@media (pointer: coarse), (max-width: 50rem) {
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form select {
+    font-size: 1rem;
+  }
+}
+
+/* Kill double-tap zoom delay on interactive controls for touch users. */
+@media (pointer: coarse) {
+  .button,
+  .text-link,
+  .contact-channel,
+  .utility-widget,
+  .site-menu a,
+  .site-footer a,
+  .site-header a,
+  .osb-contact-card a,
+  summary {
+    touch-action: manipulation;
+  }
+}
+
+/* Expand the tap area of underline links and phone/email channels
+   without changing their visual line. The ::after inset grows the
+   hit target toward the 44px guideline on touch screens only. */
+@media (pointer: coarse) {
+  .text-link,
+  .contact-channel,
+  .blog-post__details a,
+  .osb-contact-card a,
+  .media-release-card__actions .text-link {
+    position: relative;
+  }
+  .text-link::after,
+  .contact-channel::after,
+  .blog-post__details a::after,
+  .osb-contact-card a::after,
+  .media-release-card__actions .text-link::after {
+    content: "";
+    position: absolute;
+    inset: -0.8rem -0.35rem;
+  }
+}
+
+/* Single-column comfort for the contact form and its data rows
+   below the 50rem stack point, matching the rest of the page. */
+@media (max-width: 50rem) {
+  .contact-section__grid {
+    gap: var(--space-8);
+  }
+  .contact-form__grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-form__bottom {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--space-4);
+  }
+  .contact-form__bottom .button {
+    width: 100%;
+  }
+  .contact-legal div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-1);
+  }
+  .contact-legal dd {
+    font-size: 0.9rem;
+  }
+  .map-embed {
+    min-height: 320px;
+  }
+}
+
+/* Keep the printed fixtures tables inside very narrow screens:
+   trim cell padding and let long team names wrap mid-word so the
+   table never forces page-level horizontal scroll. */
+@media (max-width: 30rem) {
+  .osb-fixtures th,
+  .osb-fixtures td {
+    padding: var(--space-2) var(--space-1);
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+  }
 }

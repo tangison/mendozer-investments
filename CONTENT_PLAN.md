@@ -118,3 +118,16 @@ Each sector page has: hero, “What we do” service breakdown, visual “On sit
 Editorial rules applied: professional Namibian English, no invented quotations, statistics, attendance numbers, prize details, sponsors, or winners, no em dashes, and the music show bill retains only King Tee Dee, Kalux, Pjay, Agogo, Skuza, Zella, Full Force, Tate Buti, and Dixon.
 
 | `/blog/namibia-heroes-day-2026` | Heroes' Day 2026 commemorative note: 26 August, the start of the armed struggle at Omugulugwombashe in 1966, independence on 21 March 1990, and the Heroes' Acre memorial near Windhoek | Historical facts verified against public references (UN recognition as Namibia Day, 26 August 1966 Omugulugwombashe clash, Heroes' Acre opened on Heroes' Day 2002, obelisk and Unknown Soldier statue details). No invented quotes, casualty figures, or current-leader claims. Wikimedia Commons photographs credited. |
+
+## Contact and office update: 2026-09-03
+
+| Element | Content | Status |
+|---|---|---|
+| Telephone | `+264 85 777 7077` (new main business number) | Client-confirmed and matching the Google Business listing |
+| Satellite office | Office 2, Continental Building, Judge JP Karuaihe Street (formerly Lüderitz Street), Windhoek | Client-confirmed. The street was renamed from Lüderitz Street by the City of Windhoek in 2019 |
+| Postal | P.O. Box 22205, Windhoek, Namibia | Matches the letterhead in the supplied media-release PDFs |
+| Map embed | Google Maps iframe on `/contact` and the office announcement post, with directions and listing links | Live embed via the no-key `maps.google.com/maps?q=...&output=embed` URL |
+
+| Route | Content | Status |
+|---|---|---|
+| `/blog/mendozer-windhoek-satellite-office` | Office announcement: Office 2, Continental Building, Judge JP Karuaihe Street (formerly Lüderitz Street), Windhoek; new main number +264 85 777 7077; Google Maps embed; work continues on sites across the country | Facts verified from the client brief and the Google Business listing |

@@ -32,6 +32,10 @@ export function SiteFooter() {
       <div className="site-container site-footer__stage">
         <div className="site-footer__brand-col">
           <a className="site-footer__email" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+          <a className="site-footer__phone" href={siteConfig.phone.href}>{siteConfig.phone.display}</a>
+          <p className="site-footer__office">
+            {siteConfig.office.suite}, {siteConfig.office.building}, {siteConfig.office.street}, {siteConfig.office.locality}
+          </p>
         </div>
 
         <div className="site-footer__menus">
@@ -169,7 +173,7 @@ export function SiteFooter() {
 
       <div className="site-footer__legal-row">
         <div className="site-container site-footer__legal-inner">
-          <p>© {year} Mendozer Investments</p>
+          <p>© {year} Mendozer Investments CC. All rights reserved.</p>
           <div className="site-footer__social">
             <a href={siteConfig.social.instagram} aria-label="Mendozer Investments on Instagram" rel="noreferrer" target="_blank">Instagram</a>
             <a href={siteConfig.social.facebook} aria-label="Mendozer Investments on Facebook" rel="noreferrer" target="_blank">Facebook</a>

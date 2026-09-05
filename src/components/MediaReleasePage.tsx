@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Reveal } from "@/components/Reveal";
+import { siteConfig } from "@/brand/site-config";
 
 export type MediaReleasePoster = {
   src: string;
@@ -129,7 +130,7 @@ export function MediaReleasePage({
                 </li>
                 <li>
                   <span>Telephone</span>
-                  <a href="tel:+264817777077">+264 81 777 7077</a>
+                  <a href={siteConfig.phone.href}>{siteConfig.phone.display}</a>
                 </li>
                 <li>
                   <span>Email</span>

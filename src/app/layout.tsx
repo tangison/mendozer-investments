@@ -69,6 +69,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: siteConfig.browserTheme.dark,
   colorScheme: "light",
+  viewportFit: "cover",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -79,7 +80,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     url: siteConfig.url,
     logo: new URL(brandAssets.logoLight, siteConfig.url).toString(),
     email: siteConfig.email,
-    address: { "@type": "PostalAddress", addressCountry: "NA" },
+    telephone: siteConfig.phone.display,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: `Office 2, Continental Building, ${siteConfig.office.street}`,
+      addressLocality: siteConfig.office.locality,
+      addressCountry: "NA",
+    },
     sameAs: [
       siteConfig.social.instagram,
       siteConfig.social.facebook,

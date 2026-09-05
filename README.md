@@ -42,7 +42,13 @@ Open `http://localhost:3000`.
 - `/updates`: approved community context and public records
 - `/compliance`: registration, VAT, and verified public licence record
 - `/community`: sponsorship presence
-- `/contact`: direct enquiry
+- `/contact`: direct enquiry, satellite office address, and Google Maps embed
+- `/blog`: published news and event reports
+- `/blog/mendozer-windhoek-satellite-office`: Windhoek satellite office announcement
+- `/blog/namibia-heroes-day-2026`: Heroes' Day commemorative note
+- `/blog/otjiwarongo-sports-bonanza-2026`: tournament conclusion
+- `/blog/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize-payments`: media release with PDF
+- `/blog/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarification`: media release with PDF
 - `/privacy`: factual privacy notice for the secure delivery workflow and mailto fallback
 - `/terms`: website-use terms for current introductory group information
 
@@ -125,6 +131,13 @@ CONTACT_TO_EMAIL=contact@mendozer.com
 ```
 
 `CONTACT_FROM_EMAIL` must be a sender verified by the approved provider. Never place SMTP, Resend, or other delivery secrets in `NEXT_PUBLIC_*` variables. The in-memory limiter is a basic fallback only; use a durable rate-limit service before a production-domain launch.
+
+### Published business contact details
+
+- Telephone: `+264 85 777 7077` (new main business number; served from `src/brand/site-config.ts`)
+- Satellite office: Office 2, Continental Building, Judge JP Karuaihe Street (formerly Lüderitz Street), Windhoek
+- Postal: P.O. Box 22205, Windhoek, Namibia
+- The phone, office address, postal box, and Google Maps embed are all driven from `siteConfig.phone`, `siteConfig.office`, `siteConfig.postalBox`, and `siteConfig.maps` in `src/brand/site-config.ts` so a contact change stays single-source.
 
 ## Deployment
 

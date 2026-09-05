@@ -13,6 +13,17 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/mendozer-windhoek-satellite-office",
+    image: "/images/projects/construction/road-works-2.jpg",
+    imageAlt: "Mendozer Investments construction work in progress on a site in Namibia",
+    imageWidth: 810,
+    imageHeight: 1080,
+    eyebrow: "Group news / 3 September 2026",
+    title: "A Windhoek satellite office at the Continental Building",
+    summary: "Mendozer Investments now meets clients and partners in the capital from Office 2, Continental Building on Judge JP Karuaihe Street. The main number is +264 85 777 7077.",
+    cta: "Read the office announcement",
+  },
+  {
     href: "/blog/namibia-heroes-day-2026",
     image: "/images/blog/heroes-day-2026/heroes-day-banner-01.webp",
     imageAlt: "Heroes' Day commemorative banner supplied by Mendozer Investments",
