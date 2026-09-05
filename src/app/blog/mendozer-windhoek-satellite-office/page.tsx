@@ -13,7 +13,7 @@ const OG_IMAGE = "/og/windhoek-office.png";
 export const metadata: Metadata = {
   title: "Mendozer Investments opens a Windhoek satellite office at the Continental Building",
   description:
-    "Mendozer Investments has opened a satellite office at Office 2, Continental Building, Judge JP Karuaihe Street in Windhoek. The main business number is now +264 85 777 7077.",
+    "Mendozer Investments has opened a satellite office at Office 2, Continental Building, Judge JP Karuaihe Street, Windhoek. New main number +264 85 777 7077.",
   alternates: { canonical: SLUG },
   openGraph: {
     title: "Mendozer Investments opens a Windhoek satellite office",
@@ -52,7 +52,7 @@ export default function WindhoekSatelliteOfficePage() {
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
     description:
-      "Mendozer Investments has opened a satellite office at Office 2, Continental Building, Judge JP Karuaihe Street in Windhoek. The main business number is now +264 85 777 7077.",
+      "Mendozer Investments has opened a satellite office at Office 2, Continental Building, Judge JP Karuaihe Street, Windhoek. New main number +264 85 777 7077.",
   };
 
   return (

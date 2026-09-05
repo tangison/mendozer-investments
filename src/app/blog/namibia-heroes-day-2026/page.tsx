@@ -13,7 +13,7 @@ const OG_IMAGE = "/og/heroes-day.png";
 export const metadata: Metadata = {
   title: "Heroes' Day 2026: Namibia remembers the struggle for independence",
   description:
-    "Heroes' Day falls on 26 August each year in Namibia. It remembers the start of the struggle for independence at Omugulugwombashe in 1966, and honours those who served.",
+    "Heroes' Day falls on 26 August each year in Namibia, marking the start of the independence struggle at Omugulugwombashe in 1966.",
   alternates: { canonical: SLUG },
   openGraph: {
     title: "Heroes' Day 2026: Namibia remembers the struggle for independence",
@@ -74,7 +74,7 @@ export default function HeroesDayPage() {
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
     description:
-      "Heroes' Day falls on 26 August each year in Namibia. It remembers the start of the struggle for independence at Omugulugwombashe in 1966, and honours those who served.",
+      "Heroes' Day falls on 26 August each year in Namibia, marking the start of the independence struggle at Omugulugwombashe in 1966.",
   };
 
   return (

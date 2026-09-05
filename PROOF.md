@@ -374,3 +374,11 @@ This is the material-action record for the implementation and release gate. No a
 | Verification | Ran full quality gate and browser suite | Codebase and all routes | typecheck, lint, content check, build, Playwright | All passed; 28 static routes; 69 Playwright tests passed. A one-off 64-test sweep found zero horizontal overflow on 16 routes at 320/360/390/414 | Terminal record | 2026-09-03 08:12 UTC | Complete |
 | Vercel release | Deployed the mobile-optimised build to production | `mendozer.com` | Vercel CLI `deploy --prod` | Build ready and aliased to `https://mendozer.com` in 26 s (deployment `mendozer-tangison-preview-8473v2in1`). GitHub sync of local commit `a134396` still blocked by the auto-revoked token | `https://mendozer.com/contact` | 2026-09-03 08:15 UTC | Complete (live) |
 | Live verification | Verified the deployed mobile behaviour | `https://mendozer.com` | Playwright against production | No horizontal overflow on `/contact` at 390 px; form fields 16 px; viewport meta includes `viewport-fit=cover` | `https://mendozer.com/contact` | 2026-09-03 08:16 UTC | Complete |
+
+## Webmaster-checklist SEO description pass: 2026-09-03 (later pass)
+
+| Phase | Action | Target | Command or method | Result | Evidence | Timestamp | Status |
+|---|---|---|---|---|---|---|---|
+| Audit | Ran the standing webmaster checklist and quality-audit evidence pass against the live site | `mendozer.com` | robots/sitemap/canonical/OG/Twitter/JSON-LD/favicon/header checks, em-dash and AI-phrase source scans, Axe via Playwright | No em dashes or AI-slop phrases; credit and current-year copyright on every page; robots, sitemap (22 URLs), canonicals, OG/Twitter, favicons, security headers and valid Organization/FAQ/BlogPosting JSON-LD confirmed | live curl + source scans | 2026-09-03 08:30 UTC | Complete |
+| SEO fix | Trimmed four search meta descriptions that exceeded the ~160 char display limit | 2 Bonanza release pages, office post, Heroes' Day post | Description rewrite (facts preserved) | Descriptions now 143, 150, 155, 133 chars respectively, unique per page | `src/app/blog/*/page.tsx` | 2026-09-03 08:32 UTC | Complete |
+| Verification | Rebuilt and confirmed the descriptions locally before release | All 4 routes | Production build + render check | Build clean; lengths 143/150/155/133 | local server | 2026-09-03 08:33 UTC | Complete |

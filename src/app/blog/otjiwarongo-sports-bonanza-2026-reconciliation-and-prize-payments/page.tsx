@@ -9,12 +9,12 @@ const OG_IMAGE = "/og/bonanza-reconciliation.png";
 export const metadata: Metadata = {
   title: "Reconciliation and prize payment requirements for the Otjiwarongo Sports Bonanza",
   description:
-    "Mendozer Investments CC sets out the reconciliation requirements and the documentation needed for prize monies to be paid directly to the teams that competed in the Otjiwarongo Sports Bonanza 2026.",
+    "Mendozer Investments CC sets out the reconciliation requirements teams must meet before prize monies are paid directly into team bank accounts.",
   alternates: { canonical: SLUG },
   openGraph: {
     title: "Reconciliation and prize payment requirements for the Otjiwarongo Sports Bonanza | Mendozer Investments",
     description:
-      "Mendozer Investments CC sets out the reconciliation requirements and the documentation needed for prize monies to be paid directly to the teams that competed in the Otjiwarongo Sports Bonanza 2026.",
+      "Mendozer Investments CC sets out the reconciliation requirements teams must meet before prize monies are paid directly into team bank accounts.",
     type: "article",
     url: SLUG,
     images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Otjiwarongo Sports Bonanza 2026 reconciliation and prize payment notice" }],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Reconciliation and prize payment requirements for the Otjiwarongo Sports Bonanza | Mendozer Investments",
     description:
-      "Mendozer Investments CC sets out the reconciliation requirements and the documentation needed for prize monies to be paid directly to the teams that competed in the Otjiwarongo Sports Bonanza 2026.",
+      "Mendozer Investments CC sets out the reconciliation requirements teams must meet before prize monies are paid directly into team bank accounts.",
     images: [OG_IMAGE],
   },
 };

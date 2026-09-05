@@ -9,12 +9,12 @@ const OG_IMAGE = "/og/bonanza-king-tee-dee.png";
 export const metadata: Metadata = {
   title: "Clarification on King Tee Dee's involvement in the Otjiwarongo Sports Bonanza",
   description:
-    "Mendozer Investments CC confirms that Namibian artist King Tee Dee performed at the Otjiwarongo Sports Bonanza 2026 as the headline act and had no role in the event's financial administration.",
+    "Mendozer Investments CC confirms that King Tee Dee performed at the Otjiwarongo Sports Bonanza 2026 as the headline act, with no role in its finances.",
   alternates: { canonical: SLUG },
   openGraph: {
     title: "Clarification on King Tee Dee's involvement in the Otjiwarongo Sports Bonanza | Mendozer Investments",
     description:
-      "Mendozer Investments CC confirms that Namibian artist King Tee Dee performed at the Otjiwarongo Sports Bonanza 2026 as the headline act and had no role in the event's financial administration.",
+      "Mendozer Investments CC confirms that King Tee Dee performed at the Otjiwarongo Sports Bonanza 2026 as the headline act, with no role in its finances.",
     type: "article",
     url: SLUG,
     images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Otjiwarongo Sports Bonanza 2026 clarification notice on King Tee Dee" }],
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Clarification on King Tee Dee's involvement in the Otjiwarongo Sports Bonanza | Mendozer Investments",
     description:
-      "Mendozer Investments CC confirms that Namibian artist King Tee Dee performed at the Otjiwarongo Sports Bonanza 2026 as the headline act and had no role in the event's financial administration.",
+      "Mendozer Investments CC confirms that King Tee Dee performed at the Otjiwarongo Sports Bonanza 2026 as the headline act, with no role in its finances.",
     images: [OG_IMAGE],
   },
 };
