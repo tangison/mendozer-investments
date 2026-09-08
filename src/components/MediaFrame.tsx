@@ -28,7 +28,7 @@ export function MediaFrame({
         style={asset.focus ? { objectPosition: asset.focus } : undefined}
         unoptimized={asset.src.endsWith(".svg")}
       />
-      {caption ? <figcaption>{asset.caption}</figcaption> : null}
+      {caption && asset.caption ? <figcaption>{asset.caption}</figcaption> : null}
     </figure>
   );
 }

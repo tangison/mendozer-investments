@@ -10,7 +10,7 @@ import { specialistServices } from "@/content/site-services";
 const HERO = {
   src: "/images/projects/services/electric-fencing/front-778.webp",
   alt: "Electric fencing installed on a precast boundary wall",
-  caption: "Electric fencing on a precast boundary wall",
+  caption: "",
   status: "real" as const,
   focus: "50% 55%",
 };

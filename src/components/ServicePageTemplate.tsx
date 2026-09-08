@@ -3,14 +3,19 @@ import Image from "next/image";
 import { absoluteUrl } from "@/brand/site-config";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ImageSlider } from "@/components/ImageSlider";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { specialistServices, type SpecialistService } from "@/content/site-services";
+import { specialistServices, type GalleryImage, type SpecialistService } from "@/content/site-services";
 
 type ServicePageTemplateProps = {
   service: SpecialistService;
 };
+
+function toSlides(images: readonly GalleryImage[]) {
+  return images.map((image) => ({ src: image.src, width: image.width, height: image.height, alt: image.alt }));
+}
 
 export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
   const index = specialistServices.findIndex((item) => item.slug === service.slug);
@@ -35,7 +40,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         media={{
           src: service.hero.src,
           alt: service.hero.alt,
-          caption: service.hero.caption,
+          caption: "",
           status: service.hero.status,
           focus: service.hero.focus,
         }}
@@ -52,7 +57,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         <div className="site-container service-intro">
           <div>
             <SectionHeading
-              body="Real client-supplied photographs of this service are shown on this page. Captions stay generic and no installation is presented as a named project."
+              body="Real client-supplied photographs of this service are shown on this page. The images are unlabelled and the sites are not named."
               eyebrow="Service overview"
               title="What this specialist service involves."
             />
@@ -63,86 +68,76 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         </div>
       </section>
 
-      {service.sections.map((section) => (
-        <section className={`section svc-section ${section.promo ? "svc-section--surface" : ""}`} key={section.title}>
-          <div className="site-container">
-            <SectionHeading body={section.body} eyebrow={section.eyebrow} title={section.title} />
+      {service.sections.map((section, sectionIndex) => {
+        const sliderId = `service-${service.slug}-${sectionIndex}`;
+        const gallerySlides = section.gallery ? toSlides(section.gallery) : [];
+        const detailSlides = section.detail ? toSlides(section.detail) : [];
+        return (
+          <section className={`section svc-section ${section.promo ? "svc-section--surface" : ""}`} key={section.title}>
+            <div className="site-container">
+              <SectionHeading body={section.body} eyebrow={section.eyebrow} title={section.title} />
 
-            {section.scope && section.scope.length ? (
-              <div className="service-list">
-                {section.scope.map((scopeItem, i) => (
-                  <Reveal delay={i * 80} key={scopeItem.title}>
-                    <article className="service-item">
-                      <span className="service-item__number">0{i + 1}</span>
-                      <div>
-                        <h2>{scopeItem.title}</h2>
-                        <p>{scopeItem.description}</p>
-                      </div>
-                    </article>
-                  </Reveal>
-                ))}
-              </div>
-            ) : null}
-
-            {section.detail && section.detail.length ? (
-              <div className="svc-detail-grid">
-                {section.detail.map((image) => (
-                  <figure className="svc-photo" key={image.src}>
-                    <Image
-                      alt={image.alt}
-                      className="svc-photo__img"
-                      height={image.height}
-                      sizes="(max-width: 760px) 100vw, 48vw"
-                      src={image.src}
-                      width={image.width}
-                    />
-                    <figcaption>{image.caption}</figcaption>
-                  </figure>
-                ))}
-              </div>
-            ) : null}
-
-            {section.promo ? (
-              <div className="svc-promo">
-                <figure className="svc-promo__art">
-                  <Image
-                    alt={section.promo.alt}
-                    className="svc-promo__img"
-                    height={section.promo.height}
-                    sizes="(max-width: 900px) 100vw, 520px"
-                    src={section.promo.src}
-                    width={section.promo.width}
-                  />
-                  <figcaption>{section.promo.caption}</figcaption>
-                </figure>
-                <div className="svc-promo__note">
-                  <p className="eyebrow">Promotional graphic</p>
-                  <p>{section.promo.note}</p>
-                  <p className="svc-promo__contact">Phone and email details on the graphic are preserved exactly as supplied by Mendozer Investments.</p>
+              {section.scope && section.scope.length ? (
+                <div className="service-list">
+                  {section.scope.map((scopeItem, i) => (
+                    <Reveal delay={i * 80} key={scopeItem.title}>
+                      <article className="service-item">
+                        <span className="service-item__number">0{i + 1}</span>
+                        <div>
+                          <h2>{scopeItem.title}</h2>
+                          <p>{scopeItem.description}</p>
+                        </div>
+                      </article>
+                    </Reveal>
+                  ))}
                 </div>
-              </div>
-            ) : null}
+              ) : null}
 
-            {section.gallery && section.gallery.length ? (
-              <div className="svc-gallery">
-                {section.gallery.map((image) => (
-                  <figure className="svc-photo" key={image.src}>
+              {section.promo ? (
+                <div className="svc-promo">
+                  <div className="svc-promo__art">
                     <Image
-                      alt={image.alt}
-                      className="svc-photo__img"
-                      height={image.height}
-                      sizes="(max-width: 900px) 100vw, 32vw"
-                      src={image.src}
-                      width={image.width}
+                      alt={section.promo.alt}
+                      className="svc-promo__img"
+                      height={section.promo.height}
+                      sizes="(max-width: 900px) 100vw, 480px"
+                      src={section.promo.src}
+                      width={section.promo.width}
                     />
-                    <figcaption>{image.caption}</figcaption>
-                  </figure>
-                ))}
-              </div>
-            ) : null}
-          </div>
-        </section>
-      ))}
+                  </div>
+                  <div className="svc-promo__note">
+                    <p className="eyebrow">Promotional graphic</p>
+                    <p>{section.promo.note}</p>
+                    <p className="svc-promo__contact">Phone and email details on the graphic are preserved exactly as supplied by Mendozer Investments.</p>
+                  </div>
+                </div>
+              ) : null}
+
+              {detailSlides.length ? (
+                <div className="svc-slider-wrap">
+                  <ImageSlider
+                    aspect="4 / 3"
+                    idPrefix={sliderId}
+                    label={`${service.shortTitle}, ${section.title}`}
+                    slides={detailSlides}
+                  />
+                </div>
+              ) : null}
+
+              {gallerySlides.length ? (
+                <div className="svc-slider-wrap">
+                  <ImageSlider
+                    aspect="4 / 3"
+                    idPrefix={`${sliderId}-gallery`}
+                    label={`${service.shortTitle}, ${section.title}`}
+                    slides={gallerySlides}
+                  />
+                </div>
+              ) : null}
+            </div>
+          </section>
+        );
+      })}
 
       <section className="sector-crossover">
         <div className="site-container sector-crossover__inner">
