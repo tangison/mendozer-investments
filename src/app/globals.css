@@ -2474,3 +2474,125 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
     max-width: 26rem;
   }
 }
+
+/* Sliding image carousel (unlabelled imagery) */
+.svc-slider-wrap {
+  max-width: 60rem;
+  margin: var(--space-8) 0;
+}
+
+.image-slider__viewport {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-secondary);
+}
+
+.image-slider__track {
+  display: flex;
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.image-slider__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 0;
+}
+
+.image-slider__frame {
+  position: relative;
+  width: 100%;
+}
+
+.image-slider__image {
+  object-fit: contain;
+}
+
+.image-slider__btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--color-border-subtle);
+  background: color-mix(in srgb, var(--color-bg-primary) 88%, transparent);
+  color: var(--color-brand-navy);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.image-slider__btn:hover {
+  border-color: var(--color-brand-blue);
+  background: var(--color-bg-primary);
+  color: var(--color-brand-blue);
+}
+
+.image-slider__btn--prev {
+  left: var(--space-3);
+}
+
+.image-slider__btn--next {
+  right: var(--space-3);
+}
+
+.image-slider__footer {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+}
+
+.image-slider__count {
+  color: var(--color-text-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  min-width: 3.5rem;
+}
+
+.image-slider__spacer {
+  flex: 1 1 auto;
+}
+
+.image-slider__dots {
+  display: inline-flex;
+  gap: var(--space-2);
+}
+
+.image-slider__dot {
+  width: 0.6rem;
+  height: 0.6rem;
+  padding: 0;
+  border: 1px solid var(--color-brand-blue);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transition: background-color var(--duration-fast) ease;
+}
+
+.image-slider__dot:hover {
+  background: color-mix(in srgb, var(--color-brand-blue) 40%, transparent);
+}
+
+.image-slider__dot--active {
+  background: var(--color-brand-blue);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image-slider__track {
+    transition: none;
+  }
+}
+
+@media (pointer: coarse) {
+  .image-slider__btn {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+}
