@@ -2249,3 +2249,228 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
     overflow-wrap: anywhere;
   }
 }
+
+/* ============================================================
+   SPECIALIST SERVICES (media package 2026-09-08)
+   ============================================================ */
+
+.service-intro {
+  max-width: 52rem;
+}
+
+.service-intro__lead {
+  margin-top: var(--space-6);
+  color: var(--color-text-body);
+  font-size: clamp(1rem, 1.7vw, 1.15rem);
+  line-height: 1.7;
+}
+
+.svc-section {
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.svc-section .section-heading {
+  margin-bottom: var(--space-8);
+}
+
+.svc-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.svc-gallery--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.svc-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+.svc-photo {
+  margin: 0;
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-secondary);
+}
+
+.svc-photo__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.svc-photo figcaption {
+  padding: var(--space-3);
+  color: var(--color-text-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* Promotional graphic band (marketing assets kept out of galleries) */
+.svc-promo {
+  display: grid;
+  grid-template-columns: minmax(0, 22rem) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+  margin-top: var(--space-8);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-secondary);
+}
+
+.svc-promo__art {
+  margin: 0;
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-primary);
+}
+
+.svc-promo__img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.svc-promo__art figcaption {
+  padding: var(--space-3);
+  color: var(--color-text-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.svc-promo__note p {
+  max-width: 38rem;
+  color: var(--color-text-body);
+  line-height: 1.7;
+}
+
+.svc-promo__contact {
+  margin-top: var(--space-4);
+  color: var(--color-brand-navy);
+  font-weight: 600;
+}
+
+/* Services hub */
+.services-hub__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+.service-card {
+  display: block;
+  height: 100%;
+  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-secondary);
+  transition: border-color var(--duration-fast) ease, transform var(--duration-fast) ease;
+}
+
+.service-card:hover {
+  border-color: var(--color-brand-blue);
+  transform: translateY(-2px);
+}
+
+.service-card__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.service-card__body {
+  padding: var(--space-5);
+}
+
+.service-card__body h2 {
+  margin: var(--space-3) 0;
+}
+
+.service-card__body > p {
+  color: var(--color-text-body);
+  line-height: 1.65;
+}
+
+.service-card__body .text-link {
+  margin-top: var(--space-4);
+}
+
+.services-note {
+  max-width: 52rem;
+}
+
+.services-note .text-link {
+  margin-top: var(--space-5);
+}
+
+.sector-crossover__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+}
+
+/* Community campaign report */
+.community-report-section {
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.community-report {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.community-report__index {
+  color: var(--color-brand-navy);
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 4.6rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+  max-width: 5ch;
+}
+
+.community-report h2 {
+  margin: var(--space-4) 0;
+  max-width: 18ch;
+}
+
+.community-report > * > p {
+  color: var(--color-text-body);
+  line-height: 1.7;
+}
+
+.community-report__meta {
+  margin-top: var(--space-4);
+  color: var(--color-brand-navy);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.community-report .button {
+  margin-top: var(--space-5);
+}
+
+@media (max-width: 50rem) {
+  .svc-gallery,
+  .svc-gallery--four,
+  .services-hub__grid,
+  .community-report {
+    grid-template-columns: 1fr;
+  }
+  .svc-detail-grid {
+    grid-template-columns: 1fr;
+  }
+  .svc-promo {
+    grid-template-columns: 1fr;
+  }
+  .svc-promo__art {
+    max-width: 26rem;
+  }
+}

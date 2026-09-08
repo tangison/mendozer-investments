@@ -38,6 +38,11 @@ Open `http://localhost:3000`.
 - `/sectors/logistics`
 - `/sectors/energy`
 - `/sectors/tourism`
+- `/services`: specialist construction services hub
+- `/services/electric-fencing`: boundary electric fencing, hardware detail and installed work
+- `/services/walls-precast`: precast boundary walling and installed work
+- `/services/gate-automation`: sliding/swing gates and automation
+- `/services/general-construction`: general building and civil works
 - `/work`: real work-context archive with disciplined publication boundaries
 - `/updates`: approved community context and public records
 - `/compliance`: registration, VAT, and verified public licence record

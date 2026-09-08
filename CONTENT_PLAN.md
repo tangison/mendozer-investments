@@ -131,3 +131,15 @@ Editorial rules applied: professional Namibian English, no invented quotations, 
 | Route | Content | Status |
 |---|---|---|
 | `/blog/mendozer-windhoek-satellite-office` | Office announcement: Office 2, Continental Building, Judge JP Karuaihe Street (formerly Lüderitz Street), Windhoek; new main number +264 85 777 7077; Google Maps embed; work continues on sites across the country | Facts verified from the client brief and the Google Business listing |
+
+## Specialist construction services (added 2026-09-08)
+
+| Route | Content | Status |
+|---|---|---|
+| `/services` | Hub for four specialist construction services with supplied real photography | New; client-supplied media per the 2026-09-08 manifest |
+| `/services/electric-fencing` | Boundary electric fencing: scope list, Nemtek hardware detail close-ups, install process (conduit trench), installed-work gallery | New; captions generic |
+| `/services/walls-precast` | Precast boundary walling: scope list and finished-work gallery | New; captions generic |
+| `/services/gate-automation` | Sliding/swing gates and automation: scope list, labelled promotional graphic, real-install photo | New; ad shown as promotional graphic only |
+| `/services/general-construction` | General building and civil works: scope list, labelled promotional graphic, real detail photo | New; ad shown as promotional graphic only |
+| `/about` (team gallery) | Four crew photographs in branded site wear | New; three casual selfies excluded pending consent |
+| `/community` (campaign report) | Otjiwarongo Sports Bonanza 2026 PR, marketing and media impact report, downloadable PDF with teaser | New; full report not reproduced |

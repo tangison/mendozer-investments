@@ -1,7 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-for (const route of ["/", "/about", "/sectors/technology", "/work", "/updates", "/compliance", "/community", "/contact", "/privacy", "/terms", "/blog", "/blog/mendozer-windhoek-satellite-office",
+for (const route of ["/", "/about", "/sectors/technology", "/work", "/updates", "/compliance", "/community", "/contact", "/services", "/services/electric-fencing", "/services/walls-precast", "/services/gate-automation", "/services/general-construction", "/privacy", "/terms", "/blog", "/blog/mendozer-windhoek-satellite-office",
   "/blog/namibia-heroes-day-2026", "/blog/otjiwarongo-sports-bonanza-2026", "/blog/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize-payments", "/blog/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarification"]) {
   test(`accessibility baseline: ${route}`, async ({ page }) => {
     await page.emulateMedia({ reducedMotion: "reduce" });

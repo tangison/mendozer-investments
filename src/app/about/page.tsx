@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { PageHero } from "@/components/PageHero";
@@ -6,6 +7,7 @@ import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { siteConfig } from "@/brand/site-config";
 import { siteContent } from "@/content/site-content";
+import { teamGallery } from "@/content/site-services";
 
 export const metadata: Metadata = {
   title: "About the Group",
@@ -63,6 +65,26 @@ export default function AboutPage() {
                 <p>{about.leadership.note}</p>
               </div>
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      <section className="section section--surface about-team-section">
+        <div className="site-container">
+          <SectionHeading
+            body="Client-supplied photographs of the crew in branded site wear. These are published as team context, not as individual profiles."
+            eyebrow="The crew"
+            title="People on the ground."
+          />
+          <div className="svc-gallery svc-gallery--four">
+            {teamGallery.map((image, index) => (
+              <Reveal delay={index * 80} key={image.src}>
+                <figure className="svc-photo">
+                  <Image alt={image.alt} className="svc-photo__img" height={image.height} sizes="(max-width: 900px) 100vw, 24vw" src={image.src} width={image.width} />
+                  <figcaption>{image.caption}</figcaption>
+                </figure>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
