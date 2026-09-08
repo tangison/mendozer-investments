@@ -102,6 +102,7 @@ export type Sector = {
 export const siteContent = {
   navigation: [
     { label: "About", href: "/about" },
+    { label: "Services", href: "/services" },
     { label: "Sectors", href: "/sectors" },
     { label: "Work", href: "/work" },
     { label: "Updates", href: "/updates" },
@@ -714,6 +715,11 @@ export const routes = [
   "/about",
   "/sectors",
   ...sectors.map((sector) => `/sectors/${sector.slug}`),
+  "/services",
+  "/services/electric-fencing",
+  "/services/walls-precast",
+  "/services/gate-automation",
+  "/services/general-construction",
   "/work",
   "/updates",
   "/compliance",

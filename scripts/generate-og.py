@@ -32,6 +32,11 @@ pages = {
     "bonanza-king-tee-dee": ("Clarification on King Tee Dee's\ninvolvement in the Bonanza", "Otjiwarongo Sports Bonanza 2026", ROOT / "public/images/events/otjiwarongo-sports-bonanza-2026/gallery/osb-2026-gallery-09.webp"),
     "heroes-day": ("A day for Namibia's\nheroes: 26 August", "Heroes' Day 2026 | Mendozer Investments", ROOT / "public/images/blog/heroes-day-2026/heroes-acre-aerial.webp"),
     "windhoek-office": ("Windhoek satellite\noffice at Continental Bldg", "Office 2, Judge JP Karuaihe Street | Mendozer Investments", ROOT / "public/images/projects/construction/road-works-2.jpg"),
+    "services": ("Security walls, gates\nand general building", "Mendozer construction services", ROOT / "public/images/projects/services/electric-fencing/front-778.webp"),
+    "services-electric-fencing": ("Electric Fencing\ninstalled to last", "Real installed boundary work | Mendozer", ROOT / "public/images/projects/services/electric-fencing/front-778.webp"),
+    "services-walls-precast": ("Walls & Precast\nboundary panels", "Finished precast walls | Mendozer", ROOT / "public/images/projects/services/walls-precast/boundary-01.webp"),
+    "services-gate-automation": ("Gate Automation\nsliding & swing gates", "Automated entrances | Mendozer", ROOT / "public/images/projects/services/gate-automation/sliding-automated-yellow.webp"),
+    "services-general-construction": ("General Construction\n& building", "Plumbing, groundwork & building | Mendozer", ROOT / "public/images/projects/services/general-construction/downpipe-plumbing.webp"),
 }
 
 

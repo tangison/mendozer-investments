@@ -6,6 +6,7 @@ import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { siteContent } from "@/content/site-content";
+import { bonanzaPressReport } from "@/content/site-services";
 
 export const metadata: Metadata = {
   title: "Community & Sponsorship",
@@ -61,6 +62,26 @@ export default function CommunityPage() {
           </div>
         </div>
       </section>
+      <section className="section community-report-section">
+        <div className="site-container community-report">
+          <Reveal variant="left">
+            <div className="community-report__index" aria-hidden="true">Report</div>
+            <div>
+              <p className="eyebrow">{bonanzaPressReport.eyebrow}</p>
+              <h2>{bonanzaPressReport.title}</h2>
+            </div>
+          </Reveal>
+          <Reveal delay={130} variant="right">
+            <p>{bonanzaPressReport.teaser}</p>
+            <p className="community-report__meta">{bonanzaPressReport.meta}</p>
+            <a className="button button--primary" download href={bonanzaPressReport.file}>
+              <span>{bonanzaPressReport.label}</span>
+              <ArrowIcon />
+            </a>
+          </Reveal>
+        </div>
+      </section>
+
       <section className="section section--cta">
         <div className="site-container cta-panel">
           <Reveal><p className="eyebrow">Connect with the group</p><h2>Start the conversation with Mendozer.</h2></Reveal>

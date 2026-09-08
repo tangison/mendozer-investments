@@ -382,3 +382,16 @@ This is the material-action record for the implementation and release gate. No a
 | Audit | Ran the standing webmaster checklist and quality-audit evidence pass against the live site | `mendozer.com` | robots/sitemap/canonical/OG/Twitter/JSON-LD/favicon/header checks, em-dash and AI-phrase source scans, Axe via Playwright | No em dashes or AI-slop phrases; credit and current-year copyright on every page; robots, sitemap (22 URLs), canonicals, OG/Twitter, favicons, security headers and valid Organization/FAQ/BlogPosting JSON-LD confirmed | live curl + source scans | 2026-09-03 08:30 UTC | Complete |
 | SEO fix | Trimmed four search meta descriptions that exceeded the ~160 char display limit | 2 Bonanza release pages, office post, Heroes' Day post | Description rewrite (facts preserved) | Descriptions now 143, 150, 155, 133 chars respectively, unique per page | `src/app/blog/*/page.tsx` | 2026-09-03 08:32 UTC | Complete |
 | Verification | Rebuilt and confirmed the descriptions locally before release | All 4 routes | Production build + render check | Build clean; lengths 143/150/155/133 | local server | 2026-09-03 08:33 UTC | Complete |
+
+## Specialist construction services media placement: 2026-09-08
+
+| Phase | Action | Target | Result | Evidence | Status |
+|---|---|---|---|---|---|
+| Intake | Downloaded and extracted Filebin `b6d5eik3ifypd86a` | `mendozer-website-assets.zip` | 24 media files plus `agent-instructions.json`; manifest read first | `/home/user/assets_intake/` | Complete |
+| Optimisation | WebP encode, max 1600 px, <300 KB | 20 browser images | All under 300 KB at q84; ads not cropped or altered | `public/images/` | Complete |
+| Placement | Created service pages and content | `/services` + 4 detail pages | Specialist services layer in the repo per client approval; generic captions, no named projects | `src/app/services/`, `src/content/site-services.ts` | Complete |
+| Team | Added crew gallery to About | `/about` | Four approved images; three casual selfies excluded (`flag_for_confirmation`) | `src/app/about/page.tsx` | Complete |
+| Press report | Added downloadable report to Community | `/community` | PDF linked with a teaser from the Executive Summary/Conclusion; full text not reproduced | `public/documents/` | Complete |
+| Marketing | Ads used only as labelled promotional graphics | Gate Automation and General Construction pages | Real-work galleries contain no marketing graphics | `public/images/marketing/` | Complete |
+| QA | typecheck, lint, content, build, Playwright | Codebase | All passed; 33 static pages; 79 Playwright tests (responsive + Axe on the new routes, no mobile overflow) | Terminal record | Complete |
+| Branch/PR | `add-mendozer-media-assets` opened against `main` | GitHub | PR awaiting review; no self-merge | PR link below | Complete |

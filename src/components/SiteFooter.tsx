@@ -47,6 +47,7 @@ export function SiteFooter() {
                 <Link href="/contact">Send an enquiry</Link>
               </FooterAccordion>
               <FooterAccordion title="Directions">
+                <Link href="/services">All services</Link>
                 {sectors.map((item) => (
                   <Link href={`/sectors/${item.slug}`} key={item.slug}>{item.shortTitle}</Link>
                 ))}
@@ -89,6 +90,7 @@ export function SiteFooter() {
               </FooterAccordion>
               <FooterAccordion title="Group">
                 <Link href="/about">About</Link>
+                <Link href="/services">Services</Link>
                 <Link href="/sectors">Sectors</Link>
                 <Link href="/contact">Contact</Link>
               </FooterAccordion>
@@ -99,6 +101,7 @@ export function SiteFooter() {
             <>
               <FooterAccordion title="Direct" defaultOpen>
                 <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
+                <Link href="/services">Services</Link>
                 <Link href="/compliance">Public records</Link>
                 <Link href="/privacy">Privacy</Link>
               </FooterAccordion>
@@ -142,6 +145,7 @@ export function SiteFooter() {
               <FooterAccordion title="Group" defaultOpen>
                 <Link href="/">Home</Link>
                 <Link href="/about">About</Link>
+                <Link href="/services">Services</Link>
                 <Link href="/work">Work</Link>
                 <Link href="/updates">Updates</Link>
                 <Link href="/community">Community</Link>
@@ -155,6 +159,7 @@ export function SiteFooter() {
               <FooterAccordion title="Company">
                 <span>Registration {siteContent.footer.registrationLabel}</span>
                 <span>{siteContent.footer.vatLabel}</span>
+                <Link href="/services">Services</Link>
                 <Link href="/privacy">Privacy</Link>
                 <Link href="/terms">Terms</Link>
               </FooterAccordion>

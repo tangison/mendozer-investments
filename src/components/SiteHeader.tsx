@@ -26,6 +26,7 @@ const primaryLinks = [
 
 const desktopLinks = [
   { label: "About", href: "/about" },
+  { label: "Services", href: "/services" },
   { label: "Sectors", href: "/sectors" },
   { label: "Work", href: "/work" },
   { label: "Community", href: "/community" },
@@ -37,6 +38,8 @@ function usesDarkHero(pathname: string) {
   return (
     pathname === "/" ||
     pathname === "/about" ||
+    pathname === "/services" ||
+    pathname.startsWith("/services") ||
     pathname === "/sectors" ||
     pathname.startsWith("/sectors/") ||
     pathname === "/work" ||

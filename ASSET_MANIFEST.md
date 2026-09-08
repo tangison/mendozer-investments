@@ -287,3 +287,45 @@ Attribution for the CC BY-SA photographs appears in the page image-credit line a
 | `/images/projects/construction/road-works-2.jpg` | News index card image and featured image on the office announcement post | Existing real supplied Mendozer-context photograph, reused; generic caption, not an office photograph |
 
 No new photographic claim is made: the Continental Building office is presented through text, the Google Maps embed, and the listing links rather than a fabricated building photo.
+
+## Specialist construction services media package: 2026-09-08
+
+Source: Filebin `b6d5eik3ifypd86a` (`mendozer-website-assets.zip`, 24 media files + `agent-instructions.json`). All browser images are WebP, max 1600 px wide, under 300 KB, quality 84, text overlays preserved (ads not cropped or altered). Captions are generic; no named-project claims.
+
+### Published to service pages (`/public/images/projects/services/<category>/`)
+
+| Category | Files (source -> served) | Page(s) |
+|---|---|---|
+| Electric fencing | `front-778.webp`, `front-778-alt.webp` (from `mendozer-wall-electric-fence-front-778.jpg` / `-alt.jpg`), `access-door.webp`, `corner-post.webp`, `wire-line.webp`, `nemtek-bracket-01.webp`, `nemtek-bracket-02.webp`, `conduit-trench.webp` | `/services/electric-fencing` (hero, technical detail, install process, gallery) |
+| Walls / precast | `boundary-01.webp`, `boundary-02.webp` | `/services/walls-precast` (hero + gallery) |
+| Gate automation | `sliding-automated-yellow.webp` | `/services/gate-automation` (hero + real-install gallery) |
+| General construction | `downpipe-plumbing.webp` | `/services/general-construction` (hero + real-work gallery) |
+
+### Team (`/public/images/team/`)
+
+| Served | Source | Page | Note |
+|---|---|---|---|
+| `crew-branded.webp` | `mendozer-team-photo-branded.png` | `/about` (team gallery) | Branded/watermarked, safe to publish as-is per manifest |
+| `crew-vests-01/02/03.webp` | `mendozer-team-vests-site-01/02/03.jpg` | `/about` (team gallery) | On-site branded site wear |
+| `team-selfie-*` (source `mendozer-team-selfie-branded-polo-01/02/03.jpg`) | NOT published | Excluded | `flag_for_confirmation: true` in manifest; casual selfies, pending the people's consent to appear publicly |
+
+### Marketing graphics (`/public/images/marketing/`)
+
+| Served | Source | Page | Status |
+|---|---|---|---|
+| `ad-sliding-gate-systems.webp` | `mendozer-ad-sliding-gate-systems.jpeg` | `/services/gate-automation` | Published as clearly labelled promotional graphic, full contact block preserved |
+| `ad-building-your-project.webp` | `mendozer-ad-building-your-project.jpeg` | `/services/general-construction` | Published as clearly labelled promotional graphic, full contact block preserved |
+| `branding-hardhat-mockup.webp` | `mendozer-branding-hardhat-mockup.jpg` | None | Stored, folder only; never shown in real-work galleries |
+| `banner-construction-in-progress.webp` | `mendozer-banner-construction-in-progress.jpg` | None | Stored, folder only; never shown in real-work galleries |
+
+Manifest rule honoured: marketing-graphic assets are kept out of the real-project/completed-work galleries. The two ads appear only on their own service pages as labelled promotional graphics.
+
+### Press / media report
+
+| Served | Source | Page | Note |
+|---|---|---|---|
+| `/documents/otjiwarongo-sports-bonanza-2026-pr-media-impact-report.pdf` | `mendozer-otjiwarongo-bonanza-2026-pr-report.pdf` | `/community` (campaign report band) | Downloadable link only, with a 2-3 sentence teaser drawn from the report Executive Summary and Conclusion. Full report text is not reproduced on the page |
+
+### Open Graph images
+
+`/og/services.png`, `/og/services-electric-fencing.png`, `/og/services-walls-precast.png`, `/og/services-gate-automation.png`, `/og/services-general-construction.png` generated deterministically from the supplied real photos plus locked brand tokens.
