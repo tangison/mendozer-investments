@@ -4,11 +4,11 @@ import { siteConfig } from "@/brand/site-config";
 import { routes } from "@/content/site-content";
 
 /**
- * Pages that ship a `robots: { index: false }` meta must not appear in the
+ * Routes that ship a `robots: { index: false }` meta must not appear in the
  * sitemap. Submitting them causes Search Console "Submitted URL marked
- * noindex" conflicts.
+ * noindex" conflicts. The brand page is the only deliberate noindex route.
  */
-const noindexRoutes = new Set<string>(["/privacy", "/terms"]);
+const noindexRoutes = new Set<string>(["/brand"]);
 
 /**
  * Last meaningful content change per route (fallback when git history is not
@@ -36,6 +36,8 @@ const fallbackLastmod: Record<string, string> = {
   "/contact": "2026-09-12",
   "/blog": "2026-09-12",
   "/blog/mendozer-windhoek-satellite-office": "2026-09-12",
+  "/privacy": "2026-09-12",
+  "/terms": "2026-09-12",
   "/blog/namibia-heroes-day-2026": "2026-09-12",
   "/blog/otjiwarongo-sports-bonanza-2026": "2026-09-12",
   "/blog/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize-payments": "2026-09-12",

@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   title: "Privacy Notice",
   description: "The privacy notice explains what the Mendozer Investments website collects, how contact enquiries are handled, and the choices available to website visitors.",
   alternates: { canonical: "/privacy" },
-  robots: { index: false, follow: true },
   openGraph: {
     title: "Privacy Notice | Mendozer Investments",
     description: "The privacy notice explains what the Mendozer Investments website collects, how contact enquiries are handled, and the choices available to website visitors.",
