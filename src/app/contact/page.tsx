@@ -11,7 +11,10 @@ export const metadata: Metadata = {
   description:
     "Contact Mendozer Investments: +264 85 777 7077 or contact@mendozer.com. Windhoek satellite office at Office 2, Continental Building, Judge JP Karuaihe Street.",
   alternates: { canonical: "/contact" },
-  openGraph: { images: [{ url: "/og/contact.png", width: 1200, height: 630, alt: "Contact Mendozer Investments" }] },
+  openGraph: {
+    url: "/contact",
+    images: [{ url: "/og/contact.png", width: 1200, height: 630, alt: "Contact Mendozer Investments" }],
+  },
 };
 
 export default function ContactPage() {

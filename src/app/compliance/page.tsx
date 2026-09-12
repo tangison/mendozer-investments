@@ -11,7 +11,10 @@ export const metadata: Metadata = {
   title: "Public Records & Licences",
   description: "Verified Mendozer Investments registration details and public wholesale fuel distribution licence record.",
   alternates: { canonical: "/compliance" },
-  openGraph: { images: [{ url: "/og/energy.png", width: 1200, height: 630, alt: "Mendozer Investments public records and licences" }] },
+  openGraph: {
+    url: "/compliance",
+    images: [{ url: "/og/energy.png", width: 1200, height: 630, alt: "Mendozer Investments public records and licences" }],
+  },
 };
 
 export default function CompliancePage() {

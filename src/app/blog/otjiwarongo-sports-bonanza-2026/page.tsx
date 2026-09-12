@@ -12,7 +12,7 @@ const CONCLUSION_POSTER = `${ASSET}/osb-2026-conclusion-poster.webp`;
 const OG_IMAGE = "/og/bonanza-conclusion.png";
 
 export const metadata: Metadata = {
-  title: "Namaqua FC win the Otjiwarongo Sports Bonanza 2026",
+  title: "Namaqua FC win Otjiwarongo Bonanza 2026",
   description:
     "Namaqua FC defeated Ama Roots FC 2 to 1 in the final at Mokati Stadium to win the Otjiwarongo Sports Bonanza 2026, held 21 to 23 August 2026.",
   alternates: { canonical: "/blog/otjiwarongo-sports-bonanza-2026" },

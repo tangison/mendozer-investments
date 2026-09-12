@@ -368,3 +368,44 @@ The correction is live on `https://mendozer.com`, `https://mendozer.tangison.com
 - Browser checks at 320px, 390px, and 414px confirm Poppins resolves through the token layer, the one-sentence hero remains contained, supplied-photo motion reaches ready state 4, scroll-to-top appears after scrolling, and WhatsApp remains absent without an approved number.
 - The full-screen menu opens, exposes working sector tabs, keeps the main content inert, and remains inside the viewport without horizontal overflow.
 - The About breadcrumb returns `/` for Home, and the public `www` host retains its 308 redirect to `https://mendozer.com/`.
+
+---
+
+## Follow-Up Audit Round: 2026-09-12 (live domain crawl + fixes pushed)
+
+**Scope:** Full crawl of the live `mendozer.com` domain (30 URLs from sitemap plus checklist extras), 90 unique image URLs, plus source review and local production-build verification. This round implements fixes rather than only reporting.
+
+**Verification method:** Live crawl of every sitemap URL with per-page checks (title, description, canonical, OG tags, Twitter tags, JSON-LD validity, H1, image status and alt attributes), a repo-wide static-asset integrity check (`scripts/check-images.mjs`), the existing QA suite (`npm run qa`), and a local production build re-crawled with the same audit script until zero findings.
+
+### Verified healthy
+
+- All 30 audited URLs return 200; 404 page and 308 redirects (trailing slash, uppercase) behave correctly on the live domain.
+- Canonical link present on every page; unique meta titles and descriptions site-wide.
+- JSON-LD valid on every page that ships it (Organization site-wide, FAQPage on home).
+- 90 unique image URLs return 200; every image carries an alt attribute (the hero video poster is decorative and correctly `alt=""`).
+- All favicon and OG image assets exist on disk and on the live domain.
+- Security headers, caching TTLs, footer credit, copyright year, zero em dashes, content integrity suite all pass.
+
+### Issues found and fixed in this round
+
+1. **[P1] og:url missing on 19 pages.** Next.js only emits `og:url` when `openGraph.url` is set per page. Added it to every page metadata block, including a full Open Graph block for the blog index.
+2. **[P1] Root `/favicon.ico` returned 404.** Browsers request it by default. Added `public/favicon.ico` (copy of the supplied brand ICO).
+3. **[P1] Sitemap listed `/privacy` and `/terms` while both ship `robots: { index: false }`.** This produces Search Console "Submitted URL marked noindex" conflicts. Both routes are now excluded in `src/app/sitemap.ts`.
+4. **[P1] Staging and preview hosts were fully indexable.** Middleware now serves `X-Robots-Tag: noindex, nofollow` on every host except the production host (overridable via `NEXT_PUBLIC_PRODUCTION_HOST`, default `mendozer.com`).
+5. **[P1] `/privacy` and `/terms` Open Graph blocks had no images** (child Open Graph objects do not inherit parent images). Added the brand OG image to both.
+6. **[P2] Five blog titles rendered 73 to 105 characters in the title tag** and were truncated in search results. `<title>` values shortened to display-safe lengths; on-page H1s and `og:title` keep the full headlines.
+7. **[P2] Favicon set incomplete in the document head.** 16, 48, 192, and 512 px PNG icons now declared alongside the ICO, 32 px, and apple-touch icon.
+8. **[P2] No custom error page.** Added `src/app/error.tsx`, a branded route-level error boundary with a retry action, matching the 404 page's design language.
+9. **[P2] Footer credit wording updated to "Made by Tangison Studio"** per the standing webmaster checklist.
+
+### Post-fix verification
+
+- `npm run qa` (typecheck, lint with zero warnings, content integrity, production build): pass.
+- Local production build re-crawled with the same audit script: 28 pages, 90 images, 0 issues.
+- Host guard verified: `mendozer.com` and `www.mendozer.com` serve indexable responses; staging and preview hosts receive `X-Robots-Tag: noindex, nofollow`.
+- New asset integrity script `scripts/check-images.mjs`: every asset referenced in source exists in `public/`.
+
+### Still recommended (requires external access, not code)
+
+- Re-submit `/sitemap.xml` in Google Search Console after this deploy so the two noindex URLs drop out of the submitted set.
+- Measure cold-cache Core Web Vitals on the production domain (the earlier P2 about first-visit LCP remains an operational measurement task).

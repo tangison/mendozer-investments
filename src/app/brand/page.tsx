@@ -11,7 +11,10 @@ export const metadata: Metadata = {
   title: "Brand identity",
   description: "Mendozer Investments brand identity: production logos, colour system, typography, and usage rules.",
   alternates: { canonical: "/brand" },
-  openGraph: { images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments brand" }] },
+  openGraph: {
+    url: "/brand",
+    images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments brand" }],
+  },
   robots: { index: false, follow: true },
 };
 

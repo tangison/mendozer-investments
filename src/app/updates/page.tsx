@@ -11,7 +11,10 @@ export const metadata: Metadata = {
   title: "Updates & Public Records",
   description: "Approved Mendozer Investments community context and publicly verifiable records.",
   alternates: { canonical: "/updates" },
-  openGraph: { images: [{ url: "/og/community.png", width: 1200, height: 630, alt: "Mendozer Investments updates and public records" }] },
+  openGraph: {
+    url: "/updates",
+    images: [{ url: "/og/community.png", width: 1200, height: 630, alt: "Mendozer Investments updates and public records" }],
+  },
 };
 
 export default function UpdatesPage() {

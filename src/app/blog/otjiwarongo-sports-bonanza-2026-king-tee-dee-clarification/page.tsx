@@ -7,7 +7,7 @@ const PDF = "/documents/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarificati
 const OG_IMAGE = "/og/bonanza-king-tee-dee.png";
 
 export const metadata: Metadata = {
-  title: "Clarification on King Tee Dee's involvement in the Otjiwarongo Sports Bonanza",
+  title: "King Tee Dee: Otjiwarongo clarification",
   description:
     "Mendozer Investments CC confirms that King Tee Dee performed at the Otjiwarongo Sports Bonanza 2026 as the headline act, with no role in its finances.",
   alternates: { canonical: SLUG },

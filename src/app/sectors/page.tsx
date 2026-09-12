@@ -11,7 +11,10 @@ export const metadata: Metadata = {
   title: "Sectors",
   description: "Explore Mendozer Investments working directions across construction, technology, cooling, logistics, energy, tourism, and agriculture in Namibia.",
   alternates: { canonical: "/sectors" },
-  openGraph: { images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments sectors" }] },
+  openGraph: {
+    url: "/sectors",
+    images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments sectors" }],
+  },
 };
 
 export default function SectorsPage() {

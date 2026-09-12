@@ -11,7 +11,10 @@ export const metadata: Metadata = {
   title: "Work Context",
   description: "Explore approved Mendozer Investments site, field, and facility context without unverified project claims.",
   alternates: { canonical: "/work" },
-  openGraph: { images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments work context" }] },
+  openGraph: {
+    url: "/work",
+    images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments work context" }],
+  },
 };
 
 export default function WorkPage() {

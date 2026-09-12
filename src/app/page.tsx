@@ -19,7 +19,10 @@ const SectorExplorer = dynamic(
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
-  openGraph: { images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments" }] },
+  openGraph: {
+    url: "/",
+    images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments" }],
+  },
 };
 
 export default function HomePage() {

@@ -11,7 +11,7 @@ const ASSET = "/images/blog/heroes-day-2026";
 const OG_IMAGE = "/og/heroes-day.png";
 
 export const metadata: Metadata = {
-  title: "Heroes' Day 2026: Namibia remembers the struggle for independence",
+  title: "Heroes' Day 2026: Namibia remembers",
   description:
     "Heroes' Day falls on 26 August each year in Namibia, marking the start of the independence struggle at Omugulugwombashe in 1966.",
   alternates: { canonical: SLUG },

@@ -12,7 +12,10 @@ export const metadata: Metadata = {
   title: "Community & Sponsorship",
   description: "Mendozer Investments community sponsorship presence: local events, sports, and initiatives supported across Namibia.",
   alternates: { canonical: "/community" },
-  openGraph: { images: [{ url: "/og/community.png", width: 1200, height: 630, alt: "Mendozer Investments community sponsorship" }] },
+  openGraph: {
+    url: "/community",
+    images: [{ url: "/og/community.png", width: 1200, height: 630, alt: "Mendozer Investments community sponsorship" }],
+  },
 };
 
 export default function CommunityPage() {

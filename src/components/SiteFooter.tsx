@@ -182,7 +182,7 @@ export function SiteFooter() {
           <div className="site-footer__social">
             <a href={siteConfig.social.instagram} aria-label="Mendozer Investments on Instagram" rel="noreferrer" target="_blank">Instagram</a>
             <a href={siteConfig.social.facebook} aria-label="Mendozer Investments on Facebook" rel="noreferrer" target="_blank">Facebook</a>
-            <a className="tangison-credit" href="https://studio.tangison.com" rel="noreferrer" target="_blank">Site by Tangison</a>
+            <a className="tangison-credit" href="https://studio.tangison.com" rel="noreferrer" target="_blank">Made by Tangison Studio</a>
           </div>
         </div>
       </div>

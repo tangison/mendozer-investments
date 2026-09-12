@@ -11,7 +11,7 @@ const ASSET = "/images/projects/construction";
 const OG_IMAGE = "/og/windhoek-office.png";
 
 export const metadata: Metadata = {
-  title: "Mendozer Investments opens a Windhoek satellite office at the Continental Building",
+  title: "Mendozer opens a Windhoek office",
   description:
     "Mendozer Investments has opened a satellite office at Office 2, Continental Building, Judge JP Karuaihe Street, Windhoek. New main number +264 85 777 7077.",
   alternates: { canonical: SLUG },

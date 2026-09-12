@@ -13,7 +13,10 @@ export const metadata: Metadata = {
   title: "About the Group",
   description: "Learn about Mendozer Investments, a multi-sector group built for Namibia.",
   alternates: { canonical: "/about" },
-  openGraph: { images: [{ url: "/og/about.png", width: 1200, height: 630, alt: "About Mendozer Investments" }] },
+  openGraph: {
+    url: "/about",
+    images: [{ url: "/og/about.png", width: 1200, height: 630, alt: "About Mendozer Investments" }],
+  },
 };
 
 export default function AboutPage() {

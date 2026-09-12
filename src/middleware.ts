@@ -12,6 +12,22 @@ const passthroughPrefixes = [
   "/favicon",
 ];
 
+/**
+ * Host that search engines are allowed to index. Every other host
+ * (staging, Vercel previews, team sandboxes) is served with a noindex
+ * header so it cannot leak into search results.
+ */
+const productionHost = (process.env.NEXT_PUBLIC_PRODUCTION_HOST ?? "mendozer.com")
+  .replace(/^https?:\/\//, "")
+  .replace(/\/$/, "")
+  .toLowerCase();
+
+function isProductionHost(request: NextRequest): boolean {
+  const host = (request.headers.get("host") ?? "").toLowerCase().split(":")[0];
+  const normalized = host.replace(/^www\./, "");
+  return normalized === productionHost.replace(/^www\./, "");
+}
+
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
@@ -32,7 +48,11 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 308);
   }
 
-  return NextResponse.next();
+  const response = NextResponse.next();
+  if (!isProductionHost(request)) {
+    response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  }
+  return response;
 }
 
 export const config = {

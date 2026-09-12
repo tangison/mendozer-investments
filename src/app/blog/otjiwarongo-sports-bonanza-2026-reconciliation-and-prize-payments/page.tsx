@@ -7,7 +7,7 @@ const PDF = "/documents/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize
 const OG_IMAGE = "/og/bonanza-reconciliation.png";
 
 export const metadata: Metadata = {
-  title: "Reconciliation and prize payment requirements for the Otjiwarongo Sports Bonanza",
+  title: "Bonanza 2026: reconciliation and prizes",
   description:
     "Mendozer Investments CC sets out the reconciliation requirements teams must meet before prize monies are paid directly into team bank accounts.",
   alternates: { canonical: SLUG },
