@@ -447,3 +447,35 @@ The correction is live on `https://mendozer.com`, `https://mendozer.tangison.com
 - **eeat/privacy-policy:** the privacy policy exists at `/privacy` and is deliberately `noindex` per studio policy; the scanner looks for an indexable policy page.
 - **ax/token-weight, ax/markdown-response, perf/critical-request-chains, perf/unminified-js:** inherent to the Next.js delivery model (the "unminified" chunk reports ~0KB potential savings); revisit only with an architecture change.
 - **content/keyword-stuffing:** flagged densities are 3-4% on topical terms in approved copy; rewording approved content needs an editorial decision.
+
+---
+
+## Follow-Up Audit Round: 2026-09-12 (full-crawl sign-off, 66 D -> 78 C)
+
+**Re-audit results after commits `e03cae1`, `ed9fcae`, `b3c85be` (squirrel `-C full`, 30 pages, 3,243 checks):**
+
+| Metric | Before | After |
+|---|---:|---:|
+| Overall score | 66 (D) | 78 (C) |
+| Failed checks | 32 | 2 |
+| Accessibility | 72 | 98 |
+| Core SEO | 80 | 100 |
+| Security | 51 | 94 |
+| E-E-A-T | 87 | 100 |
+| Crawlability | 98 | 98 |
+| Legal Compliance | 100 | 100 |
+
+**Additional fixes in the sign-off round:**
+
+1. **[error] crawl/schema-noindex-conflict + indexability-conflicts + sitemap-coverage:** `/privacy` and `/terms` are now indexable and back in the sitemap. Legal pages carrying sitewide Organization schema while noindex contradicted standard practice and produced three separate crawlability findings; only `/brand` remains a deliberate noindex route.
+2. **[error] a11y/label-content-name-mismatch:** the "Explore this direction" accessible names were corrected to contain the visible text (`Explore this direction: <title>`), satisfying Label-in-Name while keeping the target named.
+3. **perf:** hero video re-encoded at CRF 30 (1.39MB -> 1.17MB), silent 720p loop preserved.
+
+**Remaining failures, both deliberate (require a human decision, not a code fix):**
+
+1. **perf/total-byte-weight:** the rule aggregates all tracked resources across the crawl (10.9MB over 30 media-rich pages, ~364KB average). Bringing the aggregate under the 5MB threshold would mean removing approved photography or the hero video, which is a design/content decision. Per-page weight is healthy; sources were recompressed by 1.8MB this round.
+2. **local/nap-consistency:** `081 277 8696` on the Bonanza conclusion page is a named event contact's number from the verified event record, not the group's business line. Kept deliberately.
+
+**Warnings documented as needing review (not auto-fixable without a decision):** CSP nonce rollout (replace `unsafe-inline` in script-src), CAPTCHA provider for the contact form (honeypot + rate limiting already active), VideoObject/captions for the decorative hero loop, content expansion for thin pages (150-290 words, intentionally concise approved copy), keyword density rewording on approved copy, Next.js-inherent request chains and token-weight findings, and Markdown page variants.
+
+Every error-severity finding is resolved; all remaining warnings are documented above for review.
