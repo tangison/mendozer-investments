@@ -91,6 +91,8 @@ export type Sector = {
   shortTitle: string;
   eyebrow: string;
   description: string;
+  /** Longer, search-facing description used in metadata when present. */
+  metaDescription?: string;
   glyph: GlyphName;
   hero: MediaAsset;
   gallery: [MediaAsset, MediaAsset];
@@ -337,6 +339,8 @@ export const sectors: Sector[] = [
     shortTitle: "Construction",
     eyebrow: "Sector 01",
     description: "Civil and building work on open sites: access, structures, and the coordination of crews on the ground.",
+    metaDescription:
+      "Civil and building work on open sites: access, structures, and the coordination of crews on the ground, delivered by Mendozer Investments across Namibia.",
     glyph: "structure",
     hero: {
       src: "/images/projects/construction/IMG-20260808-WA0033.jpg",
@@ -376,6 +380,8 @@ export const sectors: Sector[] = [
     shortTitle: "Technology",
     eyebrow: "Sector 02",
     description: "Field systems and telecom infrastructure, including tower installation and the equipment that keeps teams linked.",
+    metaDescription:
+      "Field systems and telecom infrastructure, including tower installation and the equipment that keeps teams linked, under the Mendozer technology direction.",
     glyph: "signal",
     hero: {
       src: "/images/projects/technology/IMG-20260808-WA0061.jpg",
@@ -415,6 +421,8 @@ export const sectors: Sector[] = [
     shortTitle: "Cooling",
     eyebrow: "Sector 03",
     description: "Facility work around plant rooms, piping, and the controlled conditions that keep operations continuous.",
+    metaDescription:
+      "Facility work around plant rooms, piping, and the controlled conditions that keep operations continuous, from the Mendozer cooling and cold chain direction.",
     glyph: "cooling",
     hero: {
       src: "/images/projects/cooling/IMG-20260808-WA0047.jpg",
@@ -454,6 +462,8 @@ export const sectors: Sector[] = [
     shortTitle: "Logistics",
     eyebrow: "Sector 04",
     description: "Moving people, materials, and support through active sites and changing work routes.",
+    metaDescription:
+      "Moving people, materials, and support through active sites and changing work routes, keeping Mendozer projects and crews supplied across Namibia.",
     glyph: "route",
     hero: {
       src: "/images/projects/logistics/founder-site-visit.jpg",
@@ -493,6 +503,8 @@ export const sectors: Sector[] = [
     shortTitle: "Energy",
     eyebrow: "Sector 05",
     description: "Wholesale fuel distribution under licence W/188/2017, with supporting plant and infrastructure.",
+    metaDescription:
+      "Wholesale fuel distribution under licence W/188/2017, with supporting plant and infrastructure, delivered by the Mendozer fuel and energy direction.",
     glyph: "energy",
     hero: {
       src: "/images/projects/fuel-energy/plant-piping.jpg",
@@ -533,6 +545,8 @@ export const sectors: Sector[] = [
     shortTitle: "Tourism & Agriculture",
     eyebrow: "Sector 06",
     description: "Land, access, and rural operating settings across Namibian landscape.",
+    metaDescription:
+      "Land, access, and rural operating settings across the Namibian landscape, handled with the practical care Mendozer brings to every working direction.",
     glyph: "landscape",
     hero: {
       src: "/images/projects/tourism/IMG-20260808-WA0055.jpg",
@@ -669,6 +683,13 @@ export const legalPages = {
         paragraphs: [
           "The website is hosted through Vercel to deliver pages, images, and security protections. Standard technical request information may be processed by the hosting provider as needed to operate and secure the service.",
           "The site uses first-party Vercel Web Analytics to understand page views. It does not embed advertising pixels or social feeds.",
+        ],
+      },
+      {
+        heading: "Service providers and sub-processors",
+        paragraphs: [
+          "Website hosting and page delivery are provided by Vercel Inc., which processes technical request data on the group's behalf. The contact page embeds a Google Maps map so visitors can find the Windhoek office; Google may process technical data when that map loads.",
+          "When direct enquiry delivery is configured, enquiry content is processed by the approved email delivery provider so the enquiry reaches contact@mendozer.com. Enquiries are not stored in a public database on this website.",
         ],
       },
       {

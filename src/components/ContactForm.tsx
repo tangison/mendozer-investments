@@ -81,7 +81,7 @@ export function ContactForm() {
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
-      <div className="contact-form__honeypot" aria-hidden="true">
+      <div className="contact-form__honeypot">
         <label>
           <span>Website</span>
           <input autoComplete="off" name="website" tabIndex={-1} type="text" />
@@ -90,19 +90,19 @@ export function ContactForm() {
       <div className="contact-form__grid">
         <label>
           <span>Name <b aria-hidden="true">*</b></span>
-          <input autoComplete="name" name="name" required type="text" />
+          <input autoComplete="name" enterKeyHint="next" name="name" required type="text" />
         </label>
         <label>
           <span>Organisation</span>
-          <input autoComplete="organization" name="organisation" type="text" />
+          <input autoComplete="organization" enterKeyHint="next" name="organisation" type="text" />
         </label>
         <label>
           <span>Email <b aria-hidden="true">*</b></span>
-          <input autoComplete="email" name="email" required type="email" />
+          <input autoComplete="email" enterKeyHint="next" name="email" required type="email" />
         </label>
         <label>
           <span>Phone</span>
-          <input autoComplete="tel" name="phone" type="tel" />
+          <input autoComplete="tel" enterKeyHint="done" name="phone" type="tel" />
         </label>
       </div>
       <label>

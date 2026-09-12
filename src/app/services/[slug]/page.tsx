@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const pathname = `/services/${service.slug}`;
   return {
     title: service.title,
-    description: service.description,
+    description: service.metaDescription ?? service.description,
     alternates: { canonical: pathname },
     openGraph: {
       title: `${service.title} | Mendozer Investments`,

@@ -386,6 +386,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
                     </div>
                   </div>
                   <table className="blog-post__prizes">
+                    <caption className="sr-only">{sport.name} prize placements and amounts</caption>
                     <thead>
                       <tr>
                         <th>Placement</th>
@@ -454,6 +455,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
               </figure>
               <h4>Friday 21 August</h4>
               <table className="blog-post__prizes osb-fixtures">
+                <caption className="sr-only">Soccer fixtures, Friday 21 August 2026</caption>
                 <thead>
                   <tr>
                     <th>Game</th>
@@ -475,6 +477,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
               </table>
               <h4>Saturday 22 August</h4>
               <table className="blog-post__prizes osb-fixtures">
+                <caption className="sr-only">Soccer fixtures, Saturday 22 August 2026</caption>
                 <thead>
                   <tr>
                     <th>Game</th>
@@ -546,7 +549,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
             <div className="osb-kit">
               {kit.map((item) => (
                 <figure className="osb-kit__item" key={item.src}>
-                  <Image alt={item.caption} height={item.height} sizes="(max-width: 700px) 100vw, 30vw" src={item.src} width={item.width} />
+                  <Image alt="" height={item.height} sizes="(max-width: 700px) 100vw, 30vw" src={item.src} width={item.width} />
                   <figcaption>{item.caption}</figcaption>
                 </figure>
               ))}
@@ -571,7 +574,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
                     <Link className="text-link" href={release.href}>
                       Read the release <ArrowIcon />
                     </Link>
-                    <a className="text-link" download href={release.pdf}>
+                    <a aria-label={`Download PDF: ${release.title}`} className="text-link" download href={release.pdf}>
                       Download PDF <ArrowIcon />
                     </a>
                   </p>

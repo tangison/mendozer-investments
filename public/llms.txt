@@ -1,0 +1,29 @@
+# Mendozer Investments
+
+> Multi-sector Namibian group working since 2009 across construction, technology, cooling, logistics, energy, and tourism. Registered close corporation CC/2009/2399, Windhoek, Namibia.
+
+Mendozer Investments CC operates six working directions from Namibia. This site publishes verified group information, sector overviews, specialist construction services, and public records. It presents no unverified project claims and no fabricated metrics.
+
+## Key pages
+
+- [Home](https://mendozer.com/): group overview, sector explorer, and frequently asked questions
+- [About](https://mendozer.com/about): the group, its leadership, and how it is introduced
+- [Sectors](https://mendozer.com/sectors): the six working directions, each with its own page
+- [Services](https://mendozer.com/services): specialist construction services, including electric fencing, walls and precast, gate automation, and general construction
+- [Compliance](https://mendozer.com/compliance): registration details and the public wholesale fuel distribution licence record
+- [News](https://mendozer.com/blog): published news and event reports
+- [Contact](https://mendozer.com/contact): phone +264 85 777 7077, email contact@mendozer.com, Windhoek satellite office
+
+## Facts
+
+- Legal name: Mendozer Investments CC, registration CC/2009/2399
+- Operating since 2009; led by Managing Director Johannes Negumbo
+- Wholesale fuel distribution under licence W/188/2017
+- Office 2, Continental Building, Judge JP Karuaihe Street, Windhoek, Namibia
+- Main number: +264 85 777 7077; email: contact@mendozer.com
+
+## Content notes
+
+- Pages are static and updated after verified changes only; see each sitemap entry's lastmod date
+- Media release PDFs are linked from the relevant news pages under /blog
+- The privacy notice is at /privacy; website terms at /terms

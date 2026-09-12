@@ -39,7 +39,7 @@ export function UtilityWidgets() {
         </button>
       ) : null}
       {whatsappNumber ? (
-        <a aria-label="WhatsApp" className="utility-widget utility-widget--whatsapp" href={`https://wa.me/${whatsappNumber}`} rel="noreferrer" target="_blank">WhatsApp</a>
+        <a aria-label="WhatsApp" className="utility-widget utility-widget--whatsapp" href={`https://wa.me/${whatsappNumber}`} rel="noopener noreferrer" target="_blank">WhatsApp</a>
       ) : null}
     </aside>
   );

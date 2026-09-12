@@ -9,7 +9,7 @@ import { siteContent, workContexts } from "@/content/site-content";
 
 export const metadata: Metadata = {
   title: "Work Context",
-  description: "Explore approved Mendozer Investments site, field, and facility context without unverified project claims.",
+  description: "Explore approved Mendozer Investments site, field, and facility context from real work across Namibia, presented without unverified project claims.",
   alternates: { canonical: "/work" },
   openGraph: {
     url: "/work",
@@ -39,7 +39,7 @@ export default function WorkPage() {
                     <p className="eyebrow">{context.sector}</p>
                     <h2>{context.title}</h2>
                     <p>{context.body}</p>
-                    <Link className="text-link" href={context.href}>Explore this direction <ArrowIcon /></Link>
+                    <Link aria-label={`Explore ${context.title}`} className="text-link" href={context.href}>Explore this direction <ArrowIcon /></Link>
                   </div>
                 </article>
               </Reveal>

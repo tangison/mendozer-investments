@@ -4,12 +4,12 @@ import { legalPages } from "@/content/site-content";
 
 export const metadata: Metadata = {
   title: "Privacy Notice",
-  description: "Privacy notice for the Mendozer Investments website and contact workflow.",
+  description: "The privacy notice explains what the Mendozer Investments website collects, how contact enquiries are handled, and the choices available to website visitors.",
   alternates: { canonical: "/privacy" },
   robots: { index: false, follow: true },
   openGraph: {
     title: "Privacy Notice | Mendozer Investments",
-    description: "Privacy notice for the Mendozer Investments website and contact workflow.",
+    description: "The privacy notice explains what the Mendozer Investments website collects, how contact enquiries are handled, and the choices available to website visitors.",
     url: "/privacy",
     images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments" }],
   },

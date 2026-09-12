@@ -172,7 +172,6 @@ export function SiteHeader() {
               ))}
             </nav>
             <button
-              aria-controls="mendozer-navigation"
               aria-expanded={isOpen}
               aria-haspopup="dialog"
               aria-label="Open navigation"

@@ -50,17 +50,17 @@ export function ArtistTag({ name, className = "" }: { name: string; className?: 
       {social ? (
         <span className="osb-artist-tag__links">
           {social.instagram ? (
-            <a href={social.instagram} rel="noreferrer" target="_blank">
+            <a aria-label={`View ${name} on Instagram`} href={social.instagram} rel="noopener noreferrer" target="_blank">
               Instagram
             </a>
           ) : null}
           {social.facebook ? (
-            <a href={social.facebook} rel="noreferrer" target="_blank">
+            <a aria-label={`View ${name} on Facebook`} href={social.facebook} rel="noopener noreferrer" target="_blank">
               Facebook
             </a>
           ) : null}
           {social.x ? (
-            <a href={social.x} rel="noreferrer" target="_blank">
+            <a aria-label={`View ${name} on X`} href={social.x} rel="noopener noreferrer" target="_blank">
               X
             </a>
           ) : null}

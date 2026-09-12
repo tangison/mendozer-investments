@@ -92,10 +92,10 @@ export default function ContactPage() {
                   Windhoek, Namibia
                 </address>
                 <p>
-                  <a className="text-link" href={siteConfig.maps.directionsUrl} rel="noreferrer" target="_blank">Get directions</a>
+                  <a className="text-link" href={siteConfig.maps.directionsUrl} rel="noopener noreferrer" target="_blank">Get directions</a>
                 </p>
                 <p>
-                  <a className="text-link" href={siteConfig.maps.listingUrl} rel="noreferrer" target="_blank">View the Google listing</a>
+                  <a className="text-link" href={siteConfig.maps.listingUrl} rel="noopener noreferrer" target="_blank">View the Google listing</a>
                 </p>
               </div>
             </Reveal>

@@ -6,11 +6,11 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "News",
+  title: "News and Event Reports",
   description: "Published Mendozer Investments news and event reports, including the Otjiwarongo Sports Bonanza 2026 conclusion and official releases.",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "News | Mendozer Investments",
+    title: "News and Event Reports | Mendozer Investments",
     description: "Published Mendozer Investments news and event reports, including the Otjiwarongo Sports Bonanza 2026 conclusion and official releases.",
     url: "/blog",
     images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments news" }],
@@ -94,13 +94,14 @@ export default function BlogIndexPage() {
       </div>
       <section className="section">
         <div className="site-container blog-index">
-          {posts.map((post) => (
+          {posts.map((post, index) => (
             <Reveal key={post.href}>
               <article className="blog-index__card">
                 <Link className="blog-index__media" href={post.href}>
                   <Image
                     alt={post.imageAlt}
                     height={post.imageHeight}
+                    priority={index === 0}
                     sizes="(max-width: 760px) 100vw, 280px"
                     src={post.image}
                     width={post.imageWidth}

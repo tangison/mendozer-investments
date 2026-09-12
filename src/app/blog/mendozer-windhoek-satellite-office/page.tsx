@@ -63,7 +63,7 @@ export default function WindhoekSatelliteOfficePage() {
         <header className="blog-post__header">
           <div className="site-container">
             <Reveal>
-              <p className="eyebrow">News / 3 September 2026</p>
+              <p className="eyebrow">News</p>
             </Reveal>
             <Reveal delay={80}>
               <h1>A Windhoek satellite office at the Continental Building.</h1>
@@ -76,6 +76,8 @@ export default function WindhoekSatelliteOfficePage() {
             </Reveal>
             <Reveal delay={200}>
               <div className="blog-post__meta">
+                <span>3 September 2026</span>
+                <span aria-hidden="true"> / </span>
                 <span>Windhoek, Namibia</span>
                 <span aria-hidden="true"> / </span>
                 <span>Group news</span>
@@ -175,10 +177,10 @@ export default function WindhoekSatelliteOfficePage() {
                 </div>
               </div>
               <p>
-                <a className="text-link" href={siteConfig.maps.directionsUrl} rel="noreferrer" target="_blank">Get directions to the office</a>
+                <a className="text-link" href={siteConfig.maps.directionsUrl} rel="noopener noreferrer" target="_blank">Get directions to the office</a>
               </p>
               <p>
-                <a className="text-link" href={siteConfig.maps.listingUrl} rel="noreferrer" target="_blank">Open the Google listing</a>
+                <a className="text-link" href={siteConfig.maps.listingUrl} rel="noopener noreferrer" target="_blank">Open the Google listing</a>
               </p>
             </Reveal>
 

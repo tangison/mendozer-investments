@@ -9,7 +9,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 
 export const metadata: Metadata = {
   title: "Brand identity",
-  description: "Mendozer Investments brand identity: production logos, colour system, typography, and usage rules.",
+  description: "Mendozer Investments brand identity: production logos, the verified colour system, Poppins typography, and the usage rules that keep applications consistent.",
   alternates: { canonical: "/brand" },
   openGraph: {
     url: "/brand",

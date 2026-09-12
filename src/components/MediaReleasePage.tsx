@@ -108,7 +108,7 @@ export function MediaReleasePage({
             <div className="media-release__download">
               <h2>Download the release</h2>
               <p>{pdfNote}</p>
-              <a aria-label={`Download ${pdfLabel} (PDF)`} className="button button--primary" download href={pdfHref}>
+              <a aria-label={`Download PDF: ${pdfLabel}`} className="button button--primary" download href={pdfHref}>
                 <span>Download PDF</span>
                 <ArrowIcon />
               </a>

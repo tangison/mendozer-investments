@@ -11,7 +11,7 @@ import { teamGallery } from "@/content/site-services";
 
 export const metadata: Metadata = {
   title: "About the Group",
-  description: "Learn about Mendozer Investments, a multi-sector group built for Namibia.",
+  description: "Learn about Mendozer Investments CC, a multi-sector Namibian group working since 2009 across construction, technology, cooling, logistics, energy, and tourism.",
   alternates: { canonical: "/about" },
   openGraph: {
     url: "/about",
@@ -109,7 +109,7 @@ export default function AboutPage() {
               <div className="legal-section__licence">
                 <p className="eyebrow eyebrow--light">{about.fuelLicence.eyebrow}</p>
                 <p>{about.fuelLicence.body}</p>
-                <a href={about.fuelLicence.sourceUrl} rel="noreferrer" target="_blank">Source: {about.fuelLicence.sourceLabel}</a>
+                <a href={about.fuelLicence.sourceUrl} rel="noopener noreferrer" target="_blank">Source: {about.fuelLicence.sourceLabel}</a>
               </div>
             </div>
           </Reveal>
@@ -118,7 +118,12 @@ export default function AboutPage() {
 
       <section className="section section--cta">
         <div className="site-container cta-panel">
-          <Reveal><p className="eyebrow">Explore the group</p><h2>See the work through each sector.</h2></Reveal>
+          <Reveal><p className="eyebrow">Explore the group</p><h2>See the work through each sector.</h2>
+            <p className="cta-panel__links">
+              <Link className="text-link" href="/services">Specialist construction services <ArrowIcon /></Link>
+              <Link className="text-link" href="/blog">News and event reports <ArrowIcon /></Link>
+            </p>
+          </Reveal>
           <Reveal delay={110}><Link className="button button--primary" href="/sectors">Explore sectors <ArrowIcon /></Link></Reveal>
         </div>
       </section>

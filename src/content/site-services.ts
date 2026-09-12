@@ -61,6 +61,8 @@ export type SpecialistService = {
   shortTitle: string;
   eyebrow: string;
   description: string;
+  /** Longer, search-facing description used in metadata when present. */
+  metaDescription?: string;
   hero: GalleryImage;
   sections: readonly ServiceSection[];
 };
@@ -250,6 +252,8 @@ export const specialistServices: readonly SpecialistService[] = [
     eyebrow: "Specialist service 03",
     description:
       "Sliding and swing gates with automated drives, fitted to real installations and wired for everyday use.",
+    metaDescription:
+      "Sliding and swing gates with automated drives, fitted to real installations and wired for remotes, intercom, and access control across Namibia.",
     hero: {
       src: `${ASSET}/gate-automation/sliding-automated-yellow.webp`,
       width: 810,
@@ -310,6 +314,8 @@ export const specialistServices: readonly SpecialistService[] = [
     eyebrow: "Specialist service 04",
     description:
       "General building and civil works: plumbing, downpipes, groundwork and build-in-progress jobs handled to a clean finish.",
+    metaDescription:
+      "General building and civil works: plumbing, downpipes, groundwork and build-in-progress jobs, coordinated with the project plan from start to handover.",
     hero: {
       src: `${ASSET}/general-construction/downpipe-plumbing.webp`,
       width: 810,

@@ -131,7 +131,7 @@ export function SiteFooter() {
               <FooterAccordion title="Legal" defaultOpen>
                 <Link href="/privacy">Privacy notice</Link>
                 <Link href="/terms">Website terms</Link>
-                <a href={fuelLicence.sourceUrl} rel="noreferrer" target="_blank">Fuel licence W/188/2017</a>
+                <a href={fuelLicence.sourceUrl} rel="noopener noreferrer" target="_blank">Fuel licence W/188/2017</a>
               </FooterAccordion>
               <FooterAccordion title="Group">
                 <Link href="/about">About</Link>
@@ -180,9 +180,9 @@ export function SiteFooter() {
         <div className="site-container site-footer__legal-inner">
           <p>© {year} Mendozer Investments CC. All rights reserved.</p>
           <div className="site-footer__social">
-            <a href={siteConfig.social.instagram} aria-label="Mendozer Investments on Instagram" rel="noreferrer" target="_blank">Instagram</a>
-            <a href={siteConfig.social.facebook} aria-label="Mendozer Investments on Facebook" rel="noreferrer" target="_blank">Facebook</a>
-            <a className="tangison-credit" href="https://studio.tangison.com" rel="noreferrer" target="_blank">Made by Tangison Studio</a>
+            <a href={siteConfig.social.instagram} aria-label="Mendozer Investments on Instagram" rel="noopener noreferrer" target="_blank">Instagram</a>
+            <a href={siteConfig.social.facebook} aria-label="Mendozer Investments on Facebook" rel="noopener noreferrer" target="_blank">Facebook</a>
+            <a className="tangison-credit" href="https://studio.tangison.com" rel="noopener noreferrer" target="_blank">Made by Tangison Studio</a>
           </div>
         </div>
       </div>

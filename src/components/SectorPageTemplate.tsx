@@ -85,7 +85,7 @@ export function SectorPageTemplate({ sector }: SectorPageTemplateProps) {
             </Reveal>
             <Reveal delay={120} variant="right">
               <p>{sector.verifiedFact.body}</p>
-              <a className="text-link" href={sector.verifiedFact.sourceUrl} rel="noreferrer" target="_blank">
+              <a className="text-link" href={sector.verifiedFact.sourceUrl} rel="noopener noreferrer" target="_blank">
                 <span>Source: {sector.verifiedFact.sourceLabel}</span><ArrowIcon />
               </a>
             </Reveal>

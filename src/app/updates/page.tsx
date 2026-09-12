@@ -9,7 +9,7 @@ import { publicUpdates, siteContent } from "@/content/site-content";
 
 export const metadata: Metadata = {
   title: "Updates & Public Records",
-  description: "Approved Mendozer Investments community context and publicly verifiable records.",
+  description: "Approved Mendozer Investments community context and publicly verifiable records, including event outcomes, media releases, and links to official sources.",
   alternates: { canonical: "/updates" },
   openGraph: {
     url: "/updates",
@@ -41,7 +41,7 @@ export default function UpdatesPage() {
                     <p>{update.body}</p>
                     {update.sourceUrl && update.sourceLabel ? (
                       update.sourceUrl.startsWith("http") ? (
-                        <a className="text-link" href={update.sourceUrl} rel="noreferrer" target="_blank">{update.sourceLabel} <ArrowIcon /></a>
+                        <a className="text-link" href={update.sourceUrl} rel="noopener noreferrer" target="_blank">{update.sourceLabel} <ArrowIcon /></a>
                       ) : (
                         <Link className="text-link" href={update.sourceUrl}>{update.sourceLabel} <ArrowIcon /></Link>
                       )

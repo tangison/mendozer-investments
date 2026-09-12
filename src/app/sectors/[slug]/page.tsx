@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: SectorPageProps): Promise<Met
   const pathname = `/sectors/${sector.slug}`;
   return {
     title: sector.title,
-    description: sector.description,
+    description: sector.metaDescription ?? sector.description,
     alternates: { canonical: pathname },
     openGraph: {
       url: pathname,

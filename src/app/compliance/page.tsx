@@ -9,7 +9,7 @@ import { siteContent, verifiedFacts } from "@/content/site-content";
 
 export const metadata: Metadata = {
   title: "Public Records & Licences",
-  description: "Verified Mendozer Investments registration details and public wholesale fuel distribution licence record.",
+  description: "Verified Mendozer Investments registration details, including registration CC/2009/2399, and the public record of the wholesale fuel distribution licence.",
   alternates: { canonical: "/compliance" },
   openGraph: {
     url: "/compliance",
@@ -36,7 +36,7 @@ export default function CompliancePage() {
               <div><dt>Registration no.</dt><dd>{siteConfig.registration}</dd></div>
               <div><dt>VAT no.</dt><dd>{siteConfig.vat}</dd></div>
               <div><dt>{fuelLicence.title}</dt><dd>{fuelLicence.body}</dd></div>
-              <div><dt>Public source</dt><dd><a href={fuelLicence.sourceUrl} rel="noreferrer" target="_blank">{fuelLicence.sourceLabel}</a></dd></div>
+              <div><dt>Public source</dt><dd><a href={fuelLicence.sourceUrl} rel="noopener noreferrer" target="_blank">{fuelLicence.sourceLabel}</a></dd></div>
             </dl>
           </Reveal>
         </div>

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Heroes' Day 2026: Namibia remembers the struggle for independence",
     description:
-      "26 August is Namibia's Heroes' Day, the national holiday that marks the start of the armed struggle for independence in 1966. A day for the heroes and heroines of the motherland.",
+      "26 August is Namibia's Heroes' Day, the national holiday that marks the start of the armed struggle for independence in 1966. A day for the heroes of Namibia.",
     type: "article",
     url: SLUG,
     images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "Aerial view of the Heroes' Acre memorial near Windhoek" }],
@@ -109,7 +109,7 @@ export default function HeroesDayPage() {
         </header>
         <div className="breadcrumbs-wrap">
           <div className="site-container">
-            <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "News", href: "/blog" }, { label: "Heroes&apos; Day 2026" }]} />
+            <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "News", href: "/blog" }, { label: "Heroes' Day 2026" }]} />
           </div>
         </div>
 

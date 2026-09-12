@@ -18,7 +18,7 @@ const HERO = {
 export const metadata: Metadata = {
   title: "Construction Services",
   description:
-    "Mendozer Investments specialist construction services: electric fencing, walls and precast, gate automation, and general construction and building across Namibia.",
+    "Mendozer Investments specialist construction services: electric fencing, walls and precast, gate automation, and general construction across Namibia.",
   alternates: { canonical: "/services" },
   openGraph: {
     title: "Construction Services | Mendozer Investments",
