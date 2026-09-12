@@ -479,3 +479,20 @@ The correction is live on `https://mendozer.com`, `https://mendozer.tangison.com
 **Warnings documented as needing review (not auto-fixable without a decision):** CSP nonce rollout (replace `unsafe-inline` in script-src), CAPTCHA provider for the contact form (honeypot + rate limiting already active), VideoObject/captions for the decorative hero loop, content expansion for thin pages (150-290 words, intentionally concise approved copy), keyword density rewording on approved copy, Next.js-inherent request chains and token-weight findings, and Markdown page variants.
 
 Every error-severity finding is resolved; all remaining warnings are documented above for review.
+
+## Full Website SEO Audit Round: 2026-09-13
+
+A full-process SEO audit (render check, robots and sitemap verification, 27-page crawl with security headers, content, on-page, schema, performance, images, AI search readiness, and local NAP categories) ran against production. Inline implementation, since the referenced plugin scripts are not available in this environment. Weighted categories: Technical 22, Content 23, On-Page 20, Schema 10, Performance 10, AI Readiness 10, Images 5.
+
+**Baseline: 97.1/100. Ten real findings. Final after fixes: 100/100, all categories at 100.**
+
+Findings and fixes (commit 84e7b6d):
+
+1. **[High] local/whatsapp:** the verified WhatsApp line 085 777 7077 had no click-to-chat surface. Added `wa.me/264857777077` to site-config, the contact page, the global footer, llms.txt, and schema `sameAs`. The business line remains +264 85 777 7077 from the single config source; the 081 numbers on the Bonanza pages stay as named event contacts.
+2. **[Medium] local/schema:** added a GeneralContractor (LocalBusiness subtype) JSON-LD on the homepage with the full NAP, GeoCoordinates for the Windhoek office (-22.5659, 17.0822), areaServed Namibia, and foundingDate 2009.
+3. **[Medium] schema/newsarticle x2:** both media-release pages lacked Article structured data. The shared MediaReleasePage component now emits NewsArticle (headline, description, dates, Organization author and publisher, mainEntityOfPage, image); release pages pass slug, publishedISO, and OG image props.
+4. **[Medium] onpage/orphans x2:** the satellite-office announcement and the Heroes' Day post each had one internal inlink. Added contextual links: "Read the office announcement" on /contact and a "Related reading" line on /community.
+5. **[Medium] images/oversized:** the heroes-day aerial shipped a 364KB 1600w variant while rendering at ~32vw. Source resized to 1280x833 (covers 2x DPR) and re-encoded; gallery dimensions updated.
+6. **[Low] performance/preconnect x2:** added `preconnect` to maps.google.com on /contact and the satellite-office post ahead of the map embeds.
+
+Verification: post-deploy production re-audit with the same crawler reported zero findings and a weighted health score of 100/100 (Technical 100, Content 100, On-Page 100, Schema 100, Performance 100, AI Readiness 100, Images 100). Audit artifacts (full report, action plan, per-category findings, envelope JSON, screenshots) are archived outside the repo under download/mendozer.com-audit/.
