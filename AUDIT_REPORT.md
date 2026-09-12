@@ -409,3 +409,41 @@ The correction is live on `https://mendozer.com`, `https://mendozer.tangison.com
 
 - Re-submit `/sitemap.xml` in Google Search Console after this deploy so the two noindex URLs drop out of the submitted set.
 - Measure cold-cache Core Web Vitals on the production domain (the earlier P2 about first-visit LCP remains an operational measurement task).
+
+---
+
+## Follow-Up Audit Round: 2026-09-12 (squirrelscan CLI, score 66 D -> fixes pushed)
+
+**Scope:** `squirrel audit https://mendozer.com --format llm` (quick pass, 25 pages, 3,230 checks: 2,960 passed, 238 warnings, 32 failed). Overall score 66 (D). All error-severity findings and the high-rank warnings were fixed in commit `e03cae1`; re-audit sign-off follows after deploy with a `-C full` crawl.
+
+### Fixed
+
+1. **[error] a11y/duplicate-id-aria:** removed `aria-controls="mendozer-navigation"` from the menu toggle; the referenced dialog is conditionally rendered so the ID is absent at page load.
+2. **[error] a11y/aria-hidden-focus:** removed `aria-hidden` from the visually hidden honeypot wrapper (CSS clip hides it; `tabIndex={-1}` kept).
+3. **[error] a11y/label-content-name-mismatch:** PDF download links now carry `Download PDF: <document title>` accessible names (Label-in-Name satisfied, unique per document).
+4. **content/unrendered-markup:** `&apos;` string-literal bug in the Heroes' Day breadcrumb rendered literal markup; fixed, and a visible publish date was added to the Windhoek office article (date-agreement finding).
+5. **core/meta-title:** blog index title 27 -> 46 characters (band 30-75); blog titles from the previous round sit at 57-63.
+6. **core/meta-description:** descriptions rewritten into the 120-160 band site-wide; sectors and services gained a `metaDescription` override so visible copy stays as approved.
+7. **security/new-tab:** `rel="noopener noreferrer"` on all 16 external links.
+8. **crawl/sitemap-lastmod-churn:** lastmod now derives from git history per route (static fallback for shallow CI clones) instead of collapsing onto the build date.
+9. **perf/bad-caching:** HTML routes now serve `max-age=0, must-revalidate, s-maxage=86400, stale-while-revalidate=604800` via vercel.json.
+10. **images/image-file-size:** 24 source images over 200KB recompressed in place, 1.8MB saved at source.
+11. **perf/lazy-above-fold + lcp-hints:** blog index first card priority-loaded (PageHero already preloads its media).
+12. **a11y/identical-links-same-purpose:** unique accessible names for sector CTAs, artist social links, and PDF links.
+13. **a11y/image-redundant-alt:** kit figures use `alt=""` beside their visible captions.
+14. **a11y/input-types:** `enterkeyhint` added to contact form inputs.
+15. **a11y/table-duplicate-name:** `sr-only` captions on the five Bonanza tables.
+16. **ax/llms-txt:** `public/llms.txt` published with verified facts and key pages.
+17. **legal/subprocessor-disclosure:** privacy notice gains a "Service providers and sub-processors" section (Vercel hosting, Google Maps embed, approved email delivery provider).
+18. **links/no-contextual-inbound:** contextual in-body links to /services and /blog added on the About page.
+
+### Documented judgment calls (intentional, not fixed)
+
+- **local/nap-consistency:** `081 277 8696` on the Bonanza page is a named event contact's number (verified event data), not the group's business line. Kept.
+- **video/video-schema, video/video-accessible, schema/video:** the hero loop is a decorative background video with no informational content; captions/VideoObject do not apply.
+- **security/csp:** `'unsafe-inline'` removal requires a nonce-based CSP rollout across Next.js internals; needs a staged preview deployment and is deferred for a dedicated change.
+- **security/form-captcha:** the form already ships a honeypot, server-side rate limiting, origin checks, and validation. A CAPTCHA provider is a client decision (account + keys).
+- **images/dimensions:** MediaFrame uses the Next.js `fill` pattern inside fixed `min-height` containers; no layout shift is possible. Refactoring to intrinsic dimensions would change the visual system for no measurable gain.
+- **eeat/privacy-policy:** the privacy policy exists at `/privacy` and is deliberately `noindex` per studio policy; the scanner looks for an indexable policy page.
+- **ax/token-weight, ax/markdown-response, perf/critical-request-chains, perf/unminified-js:** inherent to the Next.js delivery model (the "unminified" chunk reports ~0KB potential savings); revisit only with an architecture change.
+- **content/keyword-stuffing:** flagged densities are 3-4% on topical terms in approved copy; rewording approved content needs an editorial decision.
