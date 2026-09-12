@@ -57,6 +57,8 @@ export default function WindhoekSatelliteOfficePage() {
 
   return (
     <>
+      {/* Warm the Google Maps handshake before the embed iframe is requested. */}
+      <link href="https://maps.google.com" rel="preconnect" />
       <script dangerouslySetInnerHTML={{ __html: JSON.stringify(blogPostingSchema) }} type="application/ld+json" />
 
       <article className="blog-post">

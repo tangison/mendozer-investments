@@ -39,10 +39,13 @@ export default function ReconciliationAndPrizePaymentsPage() {
       dateLabel="24 August 2026"
       eyebrow="Media release"
       headline="Reconciliation and prize payment requirements for the Otjiwarongo Sports Bonanza."
+      ogImage={{ url: OG_IMAGE, width: 1200, height: 630, alt: "Otjiwarongo Sports Bonanza 2026 reconciliation and prize payment notice" }}
       pdfHref={PDF}
       pdfLabel="Reconciliation and prize payment requirements"
       pdfNote="The original release is available as a PDF download. PDF, 648 KB."
+      publishedISO="2026-08-24T00:00:00.000Z"
       releaseLabel="Mendozer Investments CC"
+      slug={SLUG}
       standfirst="Mendozer Investments CC has written to the Otjiwarongo Sports Bonanza event organisers to confirm the reconciliation requirements for outstanding balances and the documentation each team must submit before prize monies are paid directly into its bank account."
       body={
         <>

@@ -28,6 +28,10 @@ type MediaReleasePageProps = {
   poster?: MediaReleasePoster;
   backHref: string;
   backLabel: string;
+  /** NewsArticle schema inputs: canonical path, ISO publish date, and the OG image. */
+  slug: string;
+  publishedISO: string;
+  ogImage: { url: string; width: number; height: number; alt: string };
 };
 
 export function MediaReleasePage({
@@ -44,9 +48,31 @@ export function MediaReleasePage({
   poster,
   backHref,
   backLabel,
+  slug,
+  publishedISO,
+  ogImage,
 }: MediaReleasePageProps) {
+  const newsArticleSchema = {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    headline: headline.replace(/\.$/, ""),
+    description: standfirst,
+    datePublished: publishedISO,
+    dateModified: publishedISO,
+    author: { "@type": "Organization", name: siteConfig.name },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: { "@type": "ImageObject", url: new URL("/assets/favicon/favicon-512.png", siteConfig.url).toString() },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": new URL(slug, siteConfig.url).toString() },
+    image: { "@type": "ImageObject", url: new URL(ogImage.url, siteConfig.url).toString(), width: ogImage.width, height: ogImage.height },
+    isAccessibleForFree: true,
+  };
+
   return (
     <article className="blog-post media-release">
+      <script dangerouslySetInnerHTML={{ __html: JSON.stringify(newsArticleSchema) }} type="application/ld+json" />
       <header className="blog-post__header">
         <div className="site-container">
           <Reveal>

@@ -92,6 +92,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       addressCountry: "NA",
     },
     sameAs: [
+      siteConfig.phone.whatsapp,
       siteConfig.social.instagram,
       siteConfig.social.facebook,
     ],

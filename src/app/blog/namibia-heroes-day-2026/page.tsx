@@ -36,8 +36,8 @@ export const metadata: Metadata = {
 const gallery = [
   {
     src: `${ASSET}/heroes-acre-aerial.webp`,
-    width: 1600,
-    height: 1041,
+    width: 1280,
+    height: 833,
     alt: "Aerial view of the Heroes' Acre memorial complex in the Auas mountains near Windhoek",
     caption: "Heroes' Acre, viewed from above",
   },

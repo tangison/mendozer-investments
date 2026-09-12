@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
@@ -23,17 +24,29 @@ export default function ContactPage() {
 
   return (
     <>
+      {/* Warm the Google Maps handshake before the embed iframe is requested. */}
+      <link href="https://maps.google.com" rel="preconnect" />
       <PageHero body={contact.body} breadcrumbLabel="Contact" eyebrow={contact.eyebrow} media={contact.media} title={contact.title} />
       <section className="section contact-section">
         <div className="site-container contact-section__grid">
           <div className="contact-section__details">
             <SectionHeading
-              body="Call, email, or visit the Windhoek satellite office. Secure delivery is used when it is configured, with your email application available as a fallback."
+              body="Call, message on WhatsApp, email, or visit the Windhoek satellite office. Secure delivery is used when it is configured, with your email application available as a fallback."
               eyebrow="Get in touch"
               title="The direct route to Mendozer."
             />
             <Reveal delay={140}>
               <a className="contact-channel contact-channel--phone" href={siteConfig.phone.href}>{siteConfig.phone.display}</a>
+            </Reveal>
+            <Reveal delay={155}>
+              <a
+                className="contact-channel contact-channel--whatsapp"
+                href={siteConfig.phone.whatsapp}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                WhatsApp: {siteConfig.phone.whatsappDisplay}
+              </a>
             </Reveal>
             <Reveal delay={170}>
               <a className="contact-channel contact-channel--email" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
@@ -96,6 +109,9 @@ export default function ContactPage() {
                 </p>
                 <p>
                   <a className="text-link" href={siteConfig.maps.listingUrl} rel="noopener noreferrer" target="_blank">View the Google listing</a>
+                </p>
+                <p>
+                  <Link className="text-link" href="/blog/mendozer-windhoek-satellite-office">Read the office announcement</Link>
                 </p>
               </div>
             </Reveal>

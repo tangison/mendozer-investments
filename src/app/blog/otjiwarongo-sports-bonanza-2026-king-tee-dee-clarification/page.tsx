@@ -39,10 +39,13 @@ export default function KingTeeDeeClarificationPage() {
       dateLabel="25 August 2026"
       eyebrow="For immediate release"
       headline="Clarification on King Tee Dee's involvement in the Otjiwarongo Sports Bonanza."
+      ogImage={{ url: OG_IMAGE, width: 1200, height: 630, alt: "Clarification notice on King Tee Dee's involvement in the Otjiwarongo Sports Bonanza 2026" }}
       pdfHref={PDF}
       pdfLabel="Clarification on King Tee Dee's involvement"
       pdfNote="The original release is available as a PDF download. PDF, 624 KB."
+      publishedISO="2026-08-25T00:00:00.000Z"
       releaseLabel="Otjiwarongo, Namibia"
+      slug={SLUG}
       standfirst="Mendozer Investments CC confirms that Namibian artist King Tee Dee performed at the Otjiwarongo Sports Bonanza 2026 as the headline act for the music show, and had no involvement in the event's financial administration."
       body={
         <>

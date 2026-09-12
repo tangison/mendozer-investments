@@ -267,6 +267,7 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
 .initiative-card__body > p:last-child { margin-top: var(--space-4); color: var(--color-text-body); font-size: 0.9rem; line-height: 1.7; }
 .community-gallery-section { background: var(--color-bg-dark-primary); }
 .community-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
+.community-gallery__related { margin-top: var(--space-5); color: var(--color-text-light-body, inherit); font-size: 0.92rem; }
 .community-gallery__item { position: relative; min-height: 19rem; overflow: hidden; }
 .community-gallery__item img { object-fit: cover; }
 
@@ -385,6 +386,21 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
 }
 
 .site-footer__phone:hover {
+  color: var(--color-brand-blue);
+}
+
+/* WhatsApp channel sits under the phone line in the brand column. */
+.site-footer__whatsapp {
+  display: block;
+  color: var(--color-text-dark-primary);
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: color var(--duration-fast) ease;
+}
+
+.site-footer__whatsapp:hover {
   color: var(--color-brand-blue);
 }
 
@@ -2072,6 +2088,12 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
 
 .contact-channel--email {
   font-size: clamp(1.1rem, 2vw, 1.7rem);
+}
+
+/* Sits between the phone and email channels, so it takes the email scale. */
+.contact-channel--whatsapp {
+  font-size: clamp(1.1rem, 2vw, 1.7rem);
+  border-bottom-color: var(--color-brand-green, #1faa53);
 }
 
 .contact-legal dd br {

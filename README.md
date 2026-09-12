@@ -139,7 +139,7 @@ CONTACT_TO_EMAIL=contact@mendozer.com
 
 ### Published business contact details
 
-- Telephone: `+264 85 777 7077` (new main business number; served from `src/brand/site-config.ts`)
+- Telephone / WhatsApp: `+264 85 777 7077` (`085 777 7077` national; main business line and WhatsApp line; served from `src/brand/site-config.ts`, WhatsApp click-to-chat via `https://wa.me/264857777077`)
 - Satellite office: Office 2, Continental Building, Judge JP Karuaihe Street (formerly Lüderitz Street), Windhoek
 - Postal: P.O. Box 22205, Windhoek, Namibia
 - The phone, office address, postal box, and Google Maps embed are all driven from `siteConfig.phone`, `siteConfig.office`, `siteConfig.postalBox`, and `siteConfig.maps` in `src/brand/site-config.ts` so a contact change stays single-source.

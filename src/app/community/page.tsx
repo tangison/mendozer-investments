@@ -63,6 +63,11 @@ export default function CommunityPage() {
               </Reveal>
             ))}
           </div>
+          <Reveal delay={200}>
+            <p className="community-gallery__related">
+              Related reading: <Link className="text-link" href="/blog/namibia-heroes-day-2026">Heroes&apos; Day 2026: Namibia remembers</Link>
+            </p>
+          </Reveal>
         </div>
       </section>
       <section className="section community-report-section">

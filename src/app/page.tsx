@@ -9,6 +9,7 @@ import { MediaFrame } from "@/components/MediaFrame";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
 import { siteContent } from "@/content/site-content";
+import { siteConfig } from "@/brand/site-config";
 
 const HeroFollowSection = dynamic(
   () => import("@/components/HeroFollowSection").then((module) => module.HeroFollowSection),
@@ -36,10 +37,30 @@ export default function HomePage() {
       acceptedAnswer: { "@type": "Answer", text: item.answer },
     })),
   };
+  /** LocalBusiness subtype carrying the NAP and geo signals the Organization object does not. */
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "GeneralContractor",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    telephone: siteConfig.phone.display,
+    email: siteConfig.email,
+    foundingDate: "2009",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: `Office 2, Continental Building, ${siteConfig.office.street}`,
+      addressLocality: siteConfig.office.locality,
+      addressCountry: "NA",
+    },
+    geo: { "@type": "GeoCoordinates", latitude: -22.5659, longitude: 17.0822 },
+    areaServed: { "@type": "Country", name: "Namibia" },
+    sameAs: [siteConfig.phone.whatsapp, siteConfig.social.instagram, siteConfig.social.facebook],
+  };
 
   return (
     <>
       <script dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} type="application/ld+json" />
+      <script dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} type="application/ld+json" />
       <HomeHero />
       <HeroFollowSection />
 

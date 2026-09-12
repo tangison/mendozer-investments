@@ -33,6 +33,14 @@ export function SiteFooter() {
         <div className="site-footer__brand-col">
           <a className="site-footer__email" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
           <a className="site-footer__phone" href={siteConfig.phone.href}>{siteConfig.phone.display}</a>
+          <a
+            className="site-footer__whatsapp"
+            href={siteConfig.phone.whatsapp}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            WhatsApp: {siteConfig.phone.whatsappDisplay}
+          </a>
           <p className="site-footer__office">
             {siteConfig.office.suite}, {siteConfig.office.building}, {siteConfig.office.street}, {siteConfig.office.locality}
           </p>

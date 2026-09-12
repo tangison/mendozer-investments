@@ -12,6 +12,9 @@ export const siteConfig = {
     display: "+264 85 777 7077",
     nationalDisplay: "085 777 7077",
     href: "tel:+264857777077",
+    /** WhatsApp click-to-chat. wa.me requires the international format without a plus sign. */
+    whatsapp: "https://wa.me/264857777077",
+    whatsappDisplay: "085 777 7077",
   },
   postalBox: "P.O. Box 22205, Windhoek, Namibia",
   office: {
