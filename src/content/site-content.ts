@@ -117,7 +117,7 @@ export const siteContent = {
     subtext: "Construction, technology, cooling, logistics, energy and tourism, delivered across Namibia since 2009, with one accountable team behind every brief.",
     primaryCta: { label: "Start an enquiry", href: "/contact" },
     secondaryCta: { label: "Explore the sectors", href: "/#sectors" },
-    proofBadge: "CC/2009/2399 / Since 2009 / Registered in Namibia",
+    proofBadge: "Since 2009",
     followEyebrow: "The Mendozer group",
     followTitle: "One accountable team behind the value, from first brief to delivered work.",
     followBody: "Construction, technology, cooling, logistics, energy and tourism sit under one accountable team, so the value agreed in the brief is the value delivered on site. Start with the sector closest to the work in front of you, and bring the wider team in when the brief crosses disciplines. Every engagement carries the same standard: real site context, verified records, and work delivered with care.",

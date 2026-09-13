@@ -503,7 +503,7 @@ Client instruction: drop the "one group / six directions" counting device from t
 
 Headline and label surfaces updated:
 
-1. **Home hero:** title is now the approved tagline; subtext keeps the factual sector list, "since 2009", and "one accountable team behind every brief"; proof badge now reads CC/2009/2399 / Since 2009 / Registered in Namibia; decorative hero meta reads One team / Every sector / Namibia; secondary CTA "Explore directions" became "Explore the sectors".
+1. **Home hero:** title is now the approved tagline; subtext keeps the factual sector list, "since 2009", and "one accountable team behind every brief"; proof badge is the client-approved minimal "Since 2009" (the registration number remains in the footer, menu, /compliance, and schema); decorative hero meta reads One team / Every sector / Namibia; secondary CTA "Explore directions" became "Explore the sectors".
 2. **Hero follow section:** "One accountable group across six working directions." became "One accountable team behind the value, from first brief to delivered work." with the supporting body reworded around delivered value; "See the six directions" became "See the sectors".
 3. **Menu overlay:** "Six working directions" eyebrow became "Our sectors"; menu footer tagline now emits the new tagline.
 4. **Footer:** statement is now the tagline; "Directions" accordion groups renamed "Sectors"; per-sector links "Enquire on this direction"/"All directions"/"Other directions" use sector language.
