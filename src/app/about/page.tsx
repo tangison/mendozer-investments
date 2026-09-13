@@ -30,7 +30,7 @@ export default function AboutPage() {
           <SectionHeading
             body="A broad group view means each sector can be understood in relation to the people, systems, sites, and logistics around it."
             eyebrow="The Mendozer approach"
-            title="One identity across multiple operating directions."
+            title="One identity across every sector we work."
           />
           <Reveal delay={150}>
             <p className="about-intro__accent">Mendozer Investments CC has operated in Namibia since 2009. The group is led by Managing Director Johannes Negumbo.</p>

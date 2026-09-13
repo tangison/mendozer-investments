@@ -54,16 +54,16 @@ test("mobile and desktop home layouts do not create horizontal overflow", async 
   }
 });
 
-test("hero uses supplied-photo motion and one direct main sentence", async ({ page }) => {
+test("hero uses supplied-photo motion and the approved tagline", async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 1000 });
   await page.goto("/", { waitUntil: "domcontentloaded" });
 
-  await expect(page.locator(".home-hero h1")).toHaveText("One group for the work ahead.");
+  await expect(page.locator(".home-hero h1")).toHaveText("Building Value. Delivering Excellence.");
   await expect(page.locator(".home-hero .eyebrow")).toHaveCount(0);
   await expect(page.locator(".home-hero__supporting")).toHaveCount(0);
   await expect(page.locator(".home-hero video source[type='video/mp4']")).toHaveAttribute("src", "/videos/hero/desert-loop.mp4");
   await expect(page.locator(".home-hero__navigator")).toHaveCount(0);
-  await expect(page.locator(".home-hero").getByRole("link", { name: "Explore directions" })).toBeVisible();
+  await expect(page.locator(".home-hero").getByRole("link", { name: "Explore the sectors" })).toBeVisible();
 });
 
 test("sector directory behaves as an accessible tabbed explorer on desktop", async ({ page }) => {
@@ -257,9 +257,13 @@ test("footer uses page-type accordions and a full-width mark band", async ({ pag
   await expect(page.locator(".site-footer__mark-band")).toBeVisible();
 });
 
-test("WhatsApp remains absent until an approved public number is configured", async ({ page }) => {
+test("WhatsApp uses the approved public line from site config", async ({ page }) => {
   await page.goto("/", { waitUntil: "domcontentloaded" });
-  await expect(page.getByRole("link", { name: "WhatsApp" })).toHaveCount(0);
+  const whatsapp = page.locator(".site-footer__whatsapp");
+  await expect(whatsapp).toBeVisible();
+  await expect(whatsapp).toHaveAttribute("href", "https://wa.me/264857777077");
+  // The floating utility WhatsApp control stays env-gated and absent without NEXT_PUBLIC_WHATSAPP_NUMBER.
+  await expect(page.locator(".utility-widget--whatsapp")).toHaveCount(0);
 });
 
 test("utility controls are isolated while the full-screen menu is open", async ({ page }) => {

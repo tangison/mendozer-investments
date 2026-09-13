@@ -50,16 +50,16 @@ export function HomeHero() {
               <ArrowIcon />
             </Link>
             <Link className="hero__cta hero__cta--ghost" href={hero.secondaryCta.href}>
-              <span>Explore directions</span>
+              <span>Explore the sectors</span>
               <ArrowIcon />
             </Link>
           </div>
           {hero.proofBadge ? <p className="hero__proof">{hero.proofBadge}</p> : null}
         </div>
         <div aria-hidden="true" className="hero__meta">
-          <span>One group</span>
+          <span>One team</span>
           <span className="hero__meta-dot" />
-          <span>Six directions</span>
+          <span>Every sector</span>
           <span className="hero__meta-dot" />
           <span>Namibia</span>
         </div>

@@ -267,7 +267,9 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
 .initiative-card__body > p:last-child { margin-top: var(--space-4); color: var(--color-text-body); font-size: 0.9rem; line-height: 1.7; }
 .community-gallery-section { background: var(--color-bg-dark-primary); }
 .community-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-4); }
-.community-gallery__related { margin-top: var(--space-5); color: var(--color-text-light-body, inherit); font-size: 0.92rem; }
+.community-gallery__related { margin-top: var(--space-5); color: var(--color-text-dark-body); font-size: 0.92rem; }
+.community-gallery__related .text-link { color: var(--color-text-dark-primary); }
+.community-gallery__related .text-link:hover { border-color: var(--color-brand-blue); color: var(--color-text-dark-primary); }
 .community-gallery__item { position: relative; min-height: 19rem; overflow: hidden; }
 .community-gallery__item img { object-fit: cover; }
 

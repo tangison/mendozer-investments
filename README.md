@@ -31,7 +31,7 @@ Open `http://localhost:3000`.
 
 - `/`: group homepage
 - `/about`: group overview, working leadership card, verified registration details
-- `/sectors`: crawlable directory of the six working directions
+- `/sectors`: crawlable directory of the Mendozer sectors
 - `/sectors/construction`
 - `/sectors/technology`
 - `/sectors/cooling`

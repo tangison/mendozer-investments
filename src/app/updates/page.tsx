@@ -55,7 +55,7 @@ export default function UpdatesPage() {
       </section>
       <section className="section section--cta">
         <div className="site-container cta-panel">
-          <Reveal><p className="eyebrow">Group context</p><h2>Explore the directions behind the work.</h2></Reveal>
+          <Reveal><p className="eyebrow">Group context</p><h2>Explore the sectors behind the work.</h2></Reveal>
           <Reveal delay={110}><Link className="button button--primary" href="/sectors">See the sectors <ArrowIcon /></Link></Reveal>
         </div>
       </section>

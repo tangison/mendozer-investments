@@ -39,7 +39,7 @@ export default function WorkPage() {
                     <p className="eyebrow">{context.sector}</p>
                     <h2>{context.title}</h2>
                     <p>{context.body}</p>
-                    <Link aria-label={`Explore this direction: ${context.title}`} className="text-link" href={context.href}>Explore this direction <ArrowIcon /></Link>
+                    <Link aria-label={`Explore this sector: ${context.title}`} className="text-link" href={context.href}>Explore this sector <ArrowIcon /></Link>
                   </div>
                 </article>
               </Reveal>

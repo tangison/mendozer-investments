@@ -83,10 +83,10 @@ export default function ServicesPage() {
           <SectionHeading
             body="These specialist services work alongside the group sectors. A boundary or building brief can be scoped together with the wider project."
             eyebrow="Part of the wider group"
-            title="One group, several ways to build."
+            title="One standard, several ways to build."
           />
           <Reveal delay={120}>
-            <Link className="text-link" href="/sectors"><span>Explore the six sectors</span><ArrowIcon /></Link>
+            <Link className="text-link" href="/sectors"><span>Explore the sectors</span><ArrowIcon /></Link>
           </Reveal>
         </div>
       </section>

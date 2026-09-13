@@ -194,7 +194,7 @@ export default function WindhoekSatelliteOfficePage() {
               </p>
               <p>
                 The Windhoek satellite office is one part of a wider footprint. Mendozer Investments works across Namibia, with active projects and teams on
-                sites through the country, supported by the group&apos;s construction, technology, cooling, logistics, energy and tourism directions.
+                sites through the country, supported by the group&apos;s construction, technology, cooling, logistics, energy and tourism sectors.
               </p>
             </Reveal>
           </div>

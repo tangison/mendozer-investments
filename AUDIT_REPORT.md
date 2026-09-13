@@ -496,3 +496,18 @@ Findings and fixes (commit 84e7b6d):
 6. **[Low] performance/preconnect x2:** added `preconnect` to maps.google.com on /contact and the satellite-office post ahead of the map embeds.
 
 Verification: post-deploy production re-audit with the same crawler reported zero findings and a weighted health score of 100/100 (Technical 100, Content 100, On-Page 100, Schema 100, Performance 100, AI Readiness 100, Images 100). Audit artifacts (full report, action plan, per-category findings, envelope JSON, screenshots) are archived outside the repo under download/mendozer.com-audit/.
+
+## Brand Copy Round: 2026-09-14
+
+Client instruction: drop the "one group / six directions" counting device from the tagline and lead with **"Building Value. Delivering Excellence."** Copy across the site was re-aligned to the value/excellence message per the Tangison copywriting standard (customer language over company language, benefits over features, no fabricated proof).
+
+Headline and label surfaces updated:
+
+1. **Home hero:** title is now the approved tagline; subtext keeps the factual sector list, "since 2009", and "one accountable team behind every brief"; proof badge now reads CC/2009/2399 / Since 2009 / Registered in Namibia; decorative hero meta reads One team / Every sector / Namibia; secondary CTA "Explore directions" became "Explore the sectors".
+2. **Hero follow section:** "One accountable group across six working directions." became "One accountable team behind the value, from first brief to delivered work." with the supporting body reworded around delivered value; "See the six directions" became "See the sectors".
+3. **Menu overlay:** "Six working directions" eyebrow became "Our sectors"; menu footer tagline now emits the new tagline.
+4. **Footer:** statement is now the tagline; "Directions" accordion groups renamed "Sectors"; per-sector links "Enquire on this direction"/"All directions"/"Other directions" use sector language.
+5. **Interior pages:** sectors hub eyebrow and metadata ("Mendozer sectors"), services note ("One standard, several ways to build."), updates CTA ("Explore the sectors behind the work."), work links ("Explore this sector"), about approach heading ("One identity across every sector we work."), brand page display specimen (tagline), and the satellite-office post body all aligned.
+6. **AI/search surfaces:** llms.txt intro rewritten without the counting device; home OG image regenerated with the new tagline (generate-og.py updated; other OG composites left byte-identical).
+
+Guardrails updated with the copy: scripts/check-content.mjs now asserts the approved tagline string, and tests/responsive.spec.ts asserts the new hero title plus the "Explore the sectors" CTA. No registration, licence, contact, or sitemap facts changed in this round.

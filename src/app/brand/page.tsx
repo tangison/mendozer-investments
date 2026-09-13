@@ -179,7 +179,7 @@ export default function BrandPage() {
           <div className="brand-type">
             <div className="brand-type__card">
               <p className="brand-type__label">Display</p>
-              <p className="brand-type__specimen brand-type__specimen--display">One group for the work ahead.</p>
+              <p className="brand-type__specimen brand-type__specimen--display">Building Value. Delivering Excellence.</p>
               <p className="brand-type__meta">Red Hat Display · 400 / 500</p>
             </div>
             <div className="brand-type__card">

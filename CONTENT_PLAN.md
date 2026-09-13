@@ -102,7 +102,7 @@ Each sector page has: hero, “What we do” service breakdown, visual “On sit
 
 ## Footer
 
-- Brand statement: “Multi-sector solutions, built for Namibia.”: working/proposed tagline.
+- Brand statement: **“Building Value. Delivering Excellence.”** — client-approved tagline (2026-09-14), replacing the earlier “Multi-sector solutions, built for Namibia.” working proposal. All headline copy now leads with the value/excellence message instead of the group/sector counting device.
 - Group route list and six sector routes: working structure.
 - Registration/VAT: verified.
 - Required credit: **Made by Tangison Studio** linked to `https://studio.tangison.com` using the supplied Tangison white logo asset.

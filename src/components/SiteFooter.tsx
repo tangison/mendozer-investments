@@ -54,7 +54,7 @@ export function SiteFooter() {
                 <Link href="/community">Community</Link>
                 <Link href="/contact">Send an enquiry</Link>
               </FooterAccordion>
-              <FooterAccordion title="Directions">
+              <FooterAccordion title="Sectors">
                 <Link href="/services">All services</Link>
                 {sectors.map((item) => (
                   <Link href={`/sectors/${item.slug}`} key={item.slug}>{item.shortTitle}</Link>
@@ -71,12 +71,12 @@ export function SiteFooter() {
 
           {kind === "sector" ? (
             <>
-              <FooterAccordion title={sector?.shortTitle ?? "This direction"} defaultOpen>
-                <Link href="/contact">Enquire on this direction</Link>
+              <FooterAccordion title={sector?.shortTitle ?? "This sector"} defaultOpen>
+                <Link href="/contact">Enquire on this sector</Link>
                 <Link href="/work">Work context</Link>
-                <Link href="/sectors">All directions</Link>
+                <Link href="/sectors">All sectors</Link>
               </FooterAccordion>
-              <FooterAccordion title="Other directions">
+              <FooterAccordion title="Other sectors">
                 {sectors.filter((item) => item.slug !== sector?.slug).map((item) => (
                   <Link href={`/sectors/${item.slug}`} key={item.slug}>{item.shortTitle}</Link>
                 ))}
@@ -113,7 +113,7 @@ export function SiteFooter() {
                 <Link href="/compliance">Public records</Link>
                 <Link href="/privacy">Privacy</Link>
               </FooterAccordion>
-              <FooterAccordion title="Directions">
+              <FooterAccordion title="Sectors">
                 {sectors.map((item) => (
                   <Link href={`/sectors/${item.slug}`} key={item.slug}>{item.shortTitle}</Link>
                 ))}
@@ -159,7 +159,7 @@ export function SiteFooter() {
                 <Link href="/community">Community</Link>
                 <Link href="/contact">Contact</Link>
               </FooterAccordion>
-              <FooterAccordion title="Directions">
+              <FooterAccordion title="Sectors">
                 {sectors.map((item) => (
                   <Link href={`/sectors/${item.slug}`} key={item.slug}>{item.shortTitle}</Link>
                 ))}

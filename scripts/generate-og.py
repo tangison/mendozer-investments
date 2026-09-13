@@ -17,7 +17,7 @@ FONT_REGULAR = "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"
 LOGO = ROOT / "assets" / "logos" / "mendozer-logo-full-1024w.png"
 
 pages = {
-    "home": ("One group.\nSix directions.", "Multi-sector solutions, built for Namibia.", ROOT / "public/images/projects/construction/road-works-2.jpg"),
+    "home": ("Building Value.\nDelivering Excellence.", "Multi-sector solutions, delivered across Namibia.", ROOT / "public/images/projects/construction/road-works-2.jpg"),
     "about": ("A group built for\nthe whole picture.", "About Mendozer Investments", ROOT / "public/images/projects/logistics/crew-roadside.jpg"),
     "construction": ("Construction &\nInfrastructure", "Mendozer Investments", ROOT / "public/images/projects/construction/IMG-20260808-WA0033.jpg"),
     "technology": ("Technology &\nSystems", "Mendozer Investments", ROOT / "public/images/projects/technology/IMG-20260808-WA0061.jpg"),

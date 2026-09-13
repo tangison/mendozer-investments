@@ -30,7 +30,7 @@ if (!existsSync(resolve(root, "public/media/mendozer-hero-motion.mp4")) || !exis
 if (!existsSync(resolve(root, "src/components/SectorExplorer.tsx"))) failures.push("Original sector explorer component is missing");
 if (!existsSync(resolve(root, "src/components/UtilityWidgets.tsx"))) failures.push("Utility widget component is missing");
 if (!existsSync(resolve(root, ".env.example")) || !readFileSync(resolve(root, ".env.example"), "utf8").includes("NEXT_PUBLIC_WHATSAPP_NUMBER")) failures.push("Conditional WhatsApp configuration is missing from the environment example");
-if (!content.includes('title: "One group for the work ahead."')) failures.push("The approved single-sentence home hero title is missing");
+if (!content.includes('title: "Building Value. Delivering Excellence."')) failures.push("The approved home tagline is missing");
 for (const fontFile of ["poppins-latin-400-normal.woff2", "poppins-latin-500-normal.woff2", "poppins-latin-600-normal.woff2"]) {
   if (!existsSync(resolve(root, "src/fonts", fontFile))) failures.push(`Preloaded local Poppins font is missing: ${fontFile}`);
 }

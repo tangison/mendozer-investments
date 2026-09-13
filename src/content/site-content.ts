@@ -113,14 +113,14 @@ export const siteContent = {
   ],
   hero: {
     eyebrow: "Mendozer Investments",
-    title: "One group for the work ahead.",
-    subtext: "Six working directions. One accountable group. Construction, technology, cooling, logistics, energy and tourism, delivered across Namibia since 2009.",
+    title: "Building Value. Delivering Excellence.",
+    subtext: "Construction, technology, cooling, logistics, energy and tourism, delivered across Namibia since 2009, with one accountable team behind every brief.",
     primaryCta: { label: "Start an enquiry", href: "/contact" },
-    secondaryCta: { label: "Explore directions", href: "/#sectors" },
-    proofBadge: "CC/2009/2399 / Since 2009 / Six sectors",
+    secondaryCta: { label: "Explore the sectors", href: "/#sectors" },
+    proofBadge: "CC/2009/2399 / Since 2009 / Registered in Namibia",
     followEyebrow: "The Mendozer group",
-    followTitle: "One accountable group across six working directions.",
-    followBody: "Construction, technology, cooling, logistics, energy and tourism are connected by one operational backbone. Start with the sector closest to the work in front of you, and bring the group in when the brief crosses disciplines. Every direction carries the same standard: real site context, verified records, and work delivered with care.",
+    followTitle: "One accountable team behind the value, from first brief to delivered work.",
+    followBody: "Construction, technology, cooling, logistics, energy and tourism sit under one accountable team, so the value agreed in the brief is the value delivered on site. Start with the sector closest to the work in front of you, and bring the wider team in when the brief crosses disciplines. Every engagement carries the same standard: real site context, verified records, and work delivered with care.",
     media: {
       src: "/images/projects/construction/road-works-2.jpg",
       alt: "A site team beside active infrastructure work",
@@ -131,7 +131,7 @@ export const siteContent = {
   },
   sectorHub: {
     eyebrow: "Mendozer sectors",
-    title: "Choose the right working direction.",
+    title: "Choose the right sector.",
     body: "Start with the sector closest to the work in front of you. If the scope crosses disciplines, use the group contact route.",
     hero: {
       src: "/images/projects/construction/road-works-2.jpg",
@@ -180,8 +180,8 @@ export const siteContent = {
   home: {
     introduction: {
       eyebrow: "The Mendozer group",
-      title: "Six sectors. One group behind them.",
-      body: "Choose the working direction closest to the need. If the brief crosses more than one area, begin with one accountable group.",
+      title: "The sectors that build the value.",
+      body: "Choose the sector closest to the need. If the brief crosses more than one area, begin with one accountable group.",
       media: {
         src: "/images/projects/technology/tower-full-view.jpg",
         alt: "A communications tower above a work site",
@@ -193,12 +193,12 @@ export const siteContent = {
     sectorIntro: {
       eyebrow: "Our sectors",
       title: "Find the right starting point.",
-      body: "Six working directions, one clear route to the group.",
+      body: "Each sector leads to the same accountable team and the same standard.",
     },
     connective: {
       eyebrow: "A connected view",
       title: "One group keeps the whole brief in view.",
-      body: "A site, system, facility and supply route can be connected. Start with the need, then bring the right direction into the conversation.",
+      body: "A site, system, facility and supply route can be connected. Start with the need, then bring the right sector into the conversation.",
     },
     faq: {
       eyebrow: "Starting point",
@@ -207,7 +207,7 @@ export const siteContent = {
       items: [
         {
           question: "Which sector should I choose?",
-          answer: "Choose the working direction closest to the enquiry. If the work crosses more than one area, select Group enquiry in the contact form.",
+          answer: "Choose the sector closest to the enquiry. If the work crosses more than one area, select Group enquiry in the contact form.",
         },
         {
           question: "What should I include in an enquiry?",
@@ -239,7 +239,7 @@ export const siteContent = {
   about: {
     eyebrow: "About the group",
     title: "One group for work that crosses disciplines.",
-    body: "Mendozer Investments brings six working directions into one group conversation for partners, institutions and commercial enquiries.",
+    body: "Mendozer Investments builds and delivers across construction, technology, cooling, logistics, energy and tourism for partners, institutions and commercial enquiries.",
     hero: {
       src: "/images/projects/logistics/crew-roadside.jpg",
       alt: "A work crew gathered beside a road",
@@ -324,7 +324,7 @@ export const siteContent = {
     email: "contact@mendozer.com",
   },
   footer: {
-    statement: "Multi-sector direction, one group.",
+    statement: "Building Value. Delivering Excellence.",
     registrationLabel: "CC/2009/2399",
     vatLabel: "VAT 04948459-015",
   },
@@ -546,7 +546,7 @@ export const sectors: Sector[] = [
     eyebrow: "Sector 06",
     description: "Land, access, and rural operating settings across Namibian landscape.",
     metaDescription:
-      "Land, access, and rural operating settings across the Namibian landscape, handled with the practical care Mendozer brings to every working direction.",
+      "Land, access, and rural operating settings across the Namibian landscape, handled with the practical care Mendozer brings to every sector.",
     glyph: "landscape",
     hero: {
       src: "/images/projects/tourism/IMG-20260808-WA0055.jpg",
@@ -709,7 +709,7 @@ export const legalPages = {
       {
         heading: "Information on this website",
         paragraphs: [
-          "Content is provided to help visitors identify a relevant Mendozer working direction and begin an enquiry. Service, project, and availability detail should be confirmed directly with the group.",
+          "Content is provided to help visitors identify a relevant Mendozer sector and begin an enquiry. Service, project, and availability detail should be confirmed directly with the group.",
           "Mendozer may update website information as approved material becomes available.",
         ],
       },

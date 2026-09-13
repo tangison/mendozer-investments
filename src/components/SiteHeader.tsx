@@ -238,7 +238,7 @@ export function SiteHeader() {
               {activeTab === "sectors" ? (
                 <section aria-labelledby="mendozer-menu-tab-sectors" className="site-menu__panel site-menu__panel--sectors" id="mendozer-menu-panel-sectors" role="tabpanel">
                   <div className="site-menu__sectors-heading">
-                    <p className="eyebrow eyebrow--light">Six working directions</p>
+                    <p className="eyebrow eyebrow--light">Our sectors</p>
                     <p>Start with the closest fit. Use the group contact route when the work crosses disciplines.</p>
                   </div>
                   <div className="site-menu__sector-list">
@@ -269,7 +269,7 @@ export function SiteHeader() {
                   <div>
                     <p className="eyebrow eyebrow--light">Start a conversation</p>
                     <h2>Bring the right work into focus.</h2>
-                    <p>Tell the group what needs attention and choose the closest sector. The contact route can carry a group enquiry when more than one direction is involved.</p>
+                    <p>Tell the group what needs attention and choose the closest sector. The contact route can carry a group enquiry when more than one sector is involved.</p>
                     <Link className="button button--light" href="/contact" onClick={closeMenu}>Prepare an enquiry</Link>
                   </div>
                   <dl className="site-menu__contact-details">
@@ -283,7 +283,7 @@ export function SiteHeader() {
             </div>
 
             <div className="site-container site-menu__footer">
-              <span>One group. Six directions.</span>
+              <span>Building Value. Delivering Excellence.</span>
               <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
             </div>
           </div>

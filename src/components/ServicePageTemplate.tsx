@@ -155,7 +155,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
           </Reveal>
           <div className="sector-crossover__links">
             <Link className="text-link text-link--light" href="/sectors">
-              <span>See the six sectors</span>
+              <span>See the sectors</span>
               <ArrowIcon />
             </Link>
             <Link className="text-link text-link--light" href={`/services/${next.slug}`}>

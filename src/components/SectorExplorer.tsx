@@ -12,7 +12,7 @@ type SectorExplorerProps = {
   label?: string;
 };
 
-export function SectorExplorer({ idPrefix, label = "Mendozer working directions" }: SectorExplorerProps) {
+export function SectorExplorer({ idPrefix, label = "Mendozer sectors" }: SectorExplorerProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const activeSector = sectors[activeIndex];
 
@@ -65,7 +65,7 @@ export function SectorExplorer({ idPrefix, label = "Mendozer working directions"
             <p className="eyebrow">{activeSector.eyebrow}</p>
             <h3>{activeSector.title}</h3>
             <p>{activeSector.description}</p>
-            <Link aria-label={`Explore this direction: ${activeSector.title}`} className="text-link" href={`/sectors/${activeSector.slug}`}>Explore this direction <ArrowIcon /></Link>
+            <Link aria-label={`Explore this sector: ${activeSector.title}`} className="text-link" href={`/sectors/${activeSector.slug}`}>Explore this sector <ArrowIcon /></Link>
           </div>
         </div>
       </div>
@@ -84,7 +84,7 @@ export function SectorExplorer({ idPrefix, label = "Mendozer working directions"
                 <figcaption>{sector.hero.caption}</figcaption>
               </figure>
               <p>{sector.description}</p>
-              <Link aria-label={`Explore this direction: ${sector.title}`} className="text-link" href={`/sectors/${sector.slug}`}>Explore this direction <ArrowIcon /></Link>
+              <Link aria-label={`Explore this sector: ${sector.title}`} className="text-link" href={`/sectors/${sector.slug}`}>Explore this sector <ArrowIcon /></Link>
             </div>
           </details>
         ))}
