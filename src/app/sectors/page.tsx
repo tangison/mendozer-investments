@@ -9,7 +9,7 @@ import { siteContent } from "@/content/site-content";
 
 export const metadata: Metadata = {
   title: "Sectors",
-  description: "Explore Mendozer Investments sectors across construction, technology, cooling, logistics, energy, tourism, and agriculture in Namibia.",
+  description: "Mendozer Investments sectors across Namibia: construction, technology, cooling, logistics, energy, tourism and agriculture.",
   alternates: { canonical: "/sectors" },
   openGraph: {
     url: "/sectors",
@@ -30,13 +30,13 @@ export default function SectorsPage() {
             eyebrow="Mendozer sectors"
             title="Find the closest fit."
           />
-          <Reveal delay={100}><SectorExplorer idPrefix="sector-directory" label="Mendozer sector directory" /></Reveal>
+          <Reveal><SectorExplorer idPrefix="sector-directory" label="Mendozer sector directory" /></Reveal>
         </div>
       </section>
       <section className="section section--cta">
         <div className="site-container cta-panel">
           <Reveal><p className="eyebrow">Cross-sector enquiry</p><h2>Bring the full scope into one conversation.</h2></Reveal>
-          <Reveal delay={100}><Link className="button button--primary" href="/contact">Prepare an enquiry <ArrowIcon /></Link></Reveal>
+          <Reveal><Link className="button button--primary" href="/contact">Prepare an enquiry <ArrowIcon /></Link></Reveal>
         </div>
       </section>
     </>

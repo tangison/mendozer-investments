@@ -44,7 +44,7 @@ export function SectorPageTemplate({ sector }: SectorPageTemplateProps) {
 
       <section className="section section--surface">
         <div className="site-container sector-intro">
-          <Reveal variant="left">
+          <Reveal>
             <div className="sector-intro__icon"><SectorGlyph name={sector.glyph} /></div>
           </Reveal>
           <div>
@@ -61,7 +61,7 @@ export function SectorPageTemplate({ sector }: SectorPageTemplateProps) {
         <div className="site-container">
           <div className="service-list">
             {sector.services.map((service, index) => (
-              <Reveal delay={index * 90} key={service.title}>
+              <Reveal key={service.title}>
                 <article className="service-item">
                   <span className="service-item__number">0{index + 1}</span>
                   <div>
@@ -79,11 +79,11 @@ export function SectorPageTemplate({ sector }: SectorPageTemplateProps) {
       {sector.verifiedFact ? (
         <section className="section sector-verified">
           <div className="site-container sector-verified__inner">
-            <Reveal variant="left">
+            <Reveal>
               <p className="eyebrow">{sector.verifiedFact.eyebrow}</p>
               <h2>{sector.verifiedFact.title}</h2>
             </Reveal>
-            <Reveal delay={120} variant="right">
+            <Reveal>
               <p>{sector.verifiedFact.body}</p>
               <a className="text-link" href={sector.verifiedFact.sourceUrl} rel="noopener noreferrer" target="_blank">
                 <span>Source: {sector.verifiedFact.sourceLabel}</span><ArrowIcon />
@@ -102,7 +102,7 @@ export function SectorPageTemplate({ sector }: SectorPageTemplateProps) {
               title="The work is visible in the details."
             />
           </div>
-          <Reveal delay={80} variant="up">
+          <Reveal>
             <MasonryGallery items={sector.gallery} label={`${sector.title} gallery`} />
           </Reveal>
         </div>
@@ -126,7 +126,7 @@ export function SectorPageTemplate({ sector }: SectorPageTemplateProps) {
             <p className="eyebrow">Let’s talk</p>
             <h2>Bring the right sector into the conversation.</h2>
           </Reveal>
-          <Reveal delay={110}>
+          <Reveal>
             <Link className="button button--primary" href="/contact">Contact Mendozer <ArrowIcon /></Link>
           </Reveal>
         </div>

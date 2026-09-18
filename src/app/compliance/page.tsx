@@ -31,7 +31,7 @@ export default function CompliancePage() {
             eyebrow="Verified for publication"
             title="The public record, without overstatement."
           />
-          <Reveal delay={110} variant="right">
+          <Reveal>
             <dl className="compliance-page__records">
               <div><dt>Registration no.</dt><dd>{siteConfig.registration}</dd></div>
               <div><dt>VAT no.</dt><dd>{siteConfig.vat}</dd></div>
@@ -44,7 +44,7 @@ export default function CompliancePage() {
       <section className="section section--surface compliance-page__note">
         <div className="site-container">
           <Reveal><p className="eyebrow">A clear boundary</p><h2>Only records that can be verified belong here.</h2><p>For sector-specific licences, certifications, or project documentation, contact the group directly and request the relevant approved information.</p></Reveal>
-          <Reveal delay={110}><Link className="text-link" href="/contact">Prepare an enquiry <ArrowIcon /></Link></Reveal>
+          <Reveal><Link className="text-link" href="/contact">Prepare an enquiry <ArrowIcon /></Link></Reveal>
         </div>
       </section>
     </>

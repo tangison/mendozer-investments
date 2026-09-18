@@ -74,11 +74,11 @@ export default function HomePage() {
         <div className="site-container introduction-section__grid">
           <div className="introduction-section__copy">
             <SectionHeading body={home.introduction.body} eyebrow={home.introduction.eyebrow} title={home.introduction.title} />
-            <Reveal delay={160}>
-              <Link className="text-link" href="/about">Read the group context <ArrowIcon /></Link>
+            <Reveal>
+              <Link className="text-link" href="/about">More about the group <ArrowIcon /></Link>
             </Reveal>
           </div>
-          <Reveal delay={100} variant="right">
+          <Reveal>
             <MediaFrame asset={home.introduction.media} className="media-frame--tall media-frame--rounded" sizes="(max-width: 900px) 100vw, 43vw" />
           </Reveal>
         </div>
@@ -89,7 +89,7 @@ export default function HomePage() {
       <section className="section section--surface home-directions" id="sectors">
         <div className="site-container">
           <SectionHeading body={home.sectorIntro.body} eyebrow={home.sectorIntro.eyebrow} title={home.sectorIntro.title} />
-          <Reveal delay={100} variant="up"><SectorExplorer idPrefix="home-directions" /></Reveal>
+          <Reveal><SectorExplorer idPrefix="home-directions" /></Reveal>
         </div>
       </section>
 
@@ -97,9 +97,9 @@ export default function HomePage() {
         <div className="site-container">
           <SectionHeading body={home.connective.body} eyebrow={home.connective.eyebrow} title={home.connective.title} />
           <div className="home-pathways__list">
-            <Link href="/work"><span>01</span><strong>Work context</strong><span>Real archive imagery, published carefully</span><ArrowIcon /></Link>
-            <Link href="/updates"><span>02</span><strong>Updates</strong><span>Approved activity and public context</span><ArrowIcon /></Link>
-            <Link href="/compliance"><span>03</span><strong>Public records</strong><span>Registration, VAT, and licensing record</span><ArrowIcon /></Link>
+            <Link href="/work"><span>01</span><strong>Past work</strong><span>Real archive imagery</span><ArrowIcon /></Link>
+            <Link href="/updates"><span>02</span><strong>Updates</strong><span>Approved activity and public records</span><ArrowIcon /></Link>
+            <Link href="/compliance"><span>03</span><strong>Public records</strong><span>Registration, VAT and licensing</span><ArrowIcon /></Link>
           </div>
         </div>
       </section>
@@ -107,8 +107,8 @@ export default function HomePage() {
       <section className="section section--surface home-gallery">
         <div className="site-container">
           <SectionHeading body={home.gallery.body} eyebrow={home.gallery.eyebrow} title={home.gallery.title} />
-          <Reveal delay={100} variant="up">
-            <GalleryCarousel items={homeGallery} label="Site, field and facility context" />
+          <Reveal>
+            <GalleryCarousel items={homeGallery} label="Site, field and facility photography" />
           </Reveal>
         </div>
       </section>
@@ -124,7 +124,7 @@ export default function HomePage() {
             </p>
             <Link className="text-link" href="/blog/otjiwarongo-sports-bonanza-2026">Read the event record <ArrowIcon /></Link>
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal>
             <Link className="home-event__flyer home-event__flyer--rounded" href="/blog/otjiwarongo-sports-bonanza-2026">
               <Image alt="Otjiwarongo Sports Bonanza 2026 final result poster: Namaqua FC 2 to 1 Ama Roots FC" height={1402} sizes="(max-width: 700px) 72vw, 280px" src="/images/events/otjiwarongo-sports-bonanza-2026/osb-2026-conclusion-poster.webp" width={1122} />
             </Link>
@@ -134,10 +134,10 @@ export default function HomePage() {
 
       <section className="section community-feature">
         <div className="site-container community-feature__grid">
-          <Reveal variant="left"><MediaFrame asset={home.community.media} className="media-frame--feature" sizes="(max-width: 900px) 100vw, 54vw" /></Reveal>
+          <Reveal><MediaFrame asset={home.community.media} className="media-frame--feature" sizes="(max-width: 900px) 100vw, 54vw" /></Reveal>
           <div className="community-feature__copy">
             <SectionHeading body={home.community.body} eyebrow={home.community.eyebrow} title={home.community.title} />
-            <Reveal delay={160}><Link className="text-link" href="/community">View community context <ArrowIcon /></Link></Reveal>
+            <Reveal><Link className="text-link" href="/community">See the community work <ArrowIcon /></Link></Reveal>
           </div>
         </div>
       </section>
@@ -145,14 +145,14 @@ export default function HomePage() {
       <section className="section section--dark home-faq">
         <div className="site-container home-faq__grid">
           <SectionHeading body={home.faq.body} eyebrow={home.faq.eyebrow} inverse title={home.faq.title} />
-          <Reveal delay={90} variant="right"><AccordionList items={home.faq.items} /></Reveal>
+          <Reveal><AccordionList items={home.faq.items} /></Reveal>
         </div>
       </section>
 
       <section className="section section--cta">
         <div className="site-container cta-panel">
-          <Reveal><p className="eyebrow">Start a conversation</p><h2>Bring the right work into focus.</h2></Reveal>
-          <Reveal delay={100}><Link className="button button--primary" href="/contact">Contact Mendozer <ArrowIcon /></Link></Reveal>
+          <Reveal><p className="eyebrow">Get in touch</p><h2>Tell us what you are building.</h2></Reveal>
+          <Reveal><Link className="button button--primary" href="/contact">Start your enquiry <ArrowIcon /></Link></Reveal>
         </div>
       </section>
     </>

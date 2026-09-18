@@ -81,8 +81,8 @@ export default function BlogIndexPage() {
       <section className="page-hero page-hero--text-only">
         <div className="site-container page-hero__copy">
           <Reveal><p className="eyebrow eyebrow--light">News</p></Reveal>
-          <Reveal delay={80}><h1>What Mendozer is putting in public.</h1></Reveal>
-          <Reveal delay={150}>
+          <Reveal><h1>What Mendozer is putting in public.</h1></Reveal>
+          <Reveal>
             <p>Event reports and published notes only. This index lists the material currently approved for the site.</p>
           </Reveal>
         </div>

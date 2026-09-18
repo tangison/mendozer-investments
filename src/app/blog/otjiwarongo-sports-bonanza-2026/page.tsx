@@ -215,16 +215,16 @@ export default function OtjiwarongoSportsBonanzaPage() {
             <Reveal>
               <p className="eyebrow">Mendozer Investments presents</p>
             </Reveal>
-            <Reveal delay={80}>
+            <Reveal>
               <h1>Namaqua FC win the Otjiwarongo Sports Bonanza.</h1>
             </Reveal>
-            <Reveal delay={150}>
+            <Reveal>
               <p className="blog-post__lede">
                 Namaqua FC defeated Ama Roots FC 2 to 1 in the final at Mokati Stadium to close the 21 to 23 August 2026 tournament as champions. One
                 tournament, countless memories.
               </p>
             </Reveal>
-            <Reveal delay={200}>
+            <Reveal>
               <div className="blog-post__meta">
                 <span>21 to 23 August 2026</span>
                 <span aria-hidden="true"> / </span>
@@ -243,7 +243,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
 
         <section className="blog-post__featured">
           <div className="site-container">
-            <Reveal variant="up">
+            <Reveal>
               <figure className="blog-post__figure">
                 <Image
                   alt="Otjiwarongo Sports Bonanza 2026 final result poster: Namaqua FC 2 to 1 Ama Roots FC"

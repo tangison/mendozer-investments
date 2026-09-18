@@ -55,7 +55,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
               eyebrow="Service overview"
               title="What this specialist service involves."
             />
-            <Reveal delay={120}>
+            <Reveal>
               <p className="service-intro__lead">{service.description}</p>
             </Reveal>
           </div>
@@ -70,7 +70,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
             {section.scope && section.scope.length ? (
               <div className="service-list">
                 {section.scope.map((scopeItem, i) => (
-                  <Reveal delay={i * 80} key={scopeItem.title}>
+                  <Reveal key={scopeItem.title}>
                     <article className="service-item">
                       <span className="service-item__number">0{i + 1}</span>
                       <div>
@@ -168,7 +168,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
             <p className="eyebrow">Start with a site visit</p>
             <h2>Bring the boundary or build into a conversation.</h2>
           </Reveal>
-          <Reveal delay={110}>
+          <Reveal>
             <Link className="button button--primary" href="/contact">Contact Mendozer <ArrowIcon /></Link>
           </Reveal>
         </div>

@@ -7,7 +7,7 @@ type ClientLogosProps = {
   body: string;
 };
 
-/** Trusted-by band: a single accessible marquee row of partner marks. */
+/** Trusted-by band: one accessible marquee row of partner marks, free-floating. */
 export function ClientLogos({ eyebrow, title, body }: ClientLogosProps) {
   return (
     <section className="section section--surface clients-section">
@@ -22,17 +22,12 @@ export function ClientLogos({ eyebrow, title, body }: ClientLogosProps) {
         <ul className="logo-marquee__track">
           {clientLogos.map((logo) => (
             <li className="logo-marquee__item" key={logo.src}>
-              <span className="logo-marquee__chip">
-                <Image alt={logo.name} height={64} sizes="160px" src={logo.src} width={160} />
-              </span>
-              <span className="sr-only">{logo.name}</span>
+              <Image alt={logo.name} height={64} sizes="160px" src={logo.src} width={160} />
             </li>
           ))}
           {clientLogos.map((logo) => (
             <li aria-hidden="true" className="logo-marquee__item" key={`${logo.src}-dup`}>
-              <span className="logo-marquee__chip">
-                <Image alt="" height={64} sizes="160px" src={logo.src} width={160} />
-              </span>
+              <Image alt="" height={64} sizes="160px" src={logo.src} width={160} />
             </li>
           ))}
         </ul>

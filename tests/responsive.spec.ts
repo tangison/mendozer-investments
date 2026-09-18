@@ -154,13 +154,12 @@ test("full-screen navigation remains contained at the 320px floor", async ({ pag
   expect(overflow, "horizontal overflow in 320px full-screen navigation").toBeFalsy();
 });
 
-test("motion setup does not create horizontal overflow on compact viewports", async ({ page }) => {
+test("compact viewports have no horizontal overflow once the page settles", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 720 });
   await page.goto("/", { waitUntil: "domcontentloaded" });
-  await page.waitForFunction(() => document.documentElement.dataset.motion === "enabled");
   await page.waitForTimeout(250);
   const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
-  expect(overflow, "motion transforms must not widen the 320px document").toBeFalsy();
+  expect(overflow, "nothing may widen the 320px document").toBeFalsy();
 });
 
 test("full-screen navigation backdrop is opaque from its first rendered frame", async ({ page }) => {
@@ -198,7 +197,7 @@ test("interior top-level routes expose a breadcrumb back to home", async ({ page
   for (const [route, current] of [
     ["/about", "About"],
     ["/sectors", "Sectors"],
-    ["/work", "Work Context"],
+    ["/work", "Past Work"],
     ["/updates", "Updates & Public Records"],
     ["/compliance", "Public Records & Licences"],
     ["/community", "Community & Sponsorship"],

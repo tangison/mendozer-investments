@@ -3,7 +3,6 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { brandAssets } from "@/brand/assets";
 import { siteConfig } from "@/brand/site-config";
-import { BootScreen } from "@/components/BootScreen";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SkipLink } from "@/components/SkipLink";
@@ -109,12 +108,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body>
         <script dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} type="application/ld+json" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `document.documentElement.dataset.motion="enabled";document.querySelectorAll("[data-reveal]").forEach(function(n){n.classList.add("is-revealed")});`,
-          }}
-        />
-        <BootScreen />
         <SkipLink />
         <SiteHeader />
         <main id="main-content" tabIndex={-1}>{children}</main>

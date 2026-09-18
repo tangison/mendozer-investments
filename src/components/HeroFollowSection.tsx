@@ -57,7 +57,7 @@ export function HeroFollowSection() {
         <div className="hero-follow__copy">
           <p className="eyebrow">{hero.followEyebrow ?? "The Mendozer group"}</p>
           <h2 id="hero-follow-title" className="hero-follow__title">
-            {hero.followTitle ?? "One accountable team behind the value, from first brief to delivered work."}
+            {hero.followTitle ?? "One team from the first brief to the delivered work."}
           </h2>
           <p className="hero-follow__body">
             {hero.followBody ??

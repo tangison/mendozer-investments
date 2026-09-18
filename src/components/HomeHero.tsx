@@ -13,12 +13,12 @@ export function HomeHero() {
   const poster = "/videos/hero/desert-loop-poster.webp";
 
   return (
-    <section aria-labelledby="hero-title" className="hero home-hero">
-      <div aria-hidden="true" className="hero__media home-hero__media">
+    <section aria-labelledby="hero-title" className="home-hero">
+      <div aria-hidden="true" className="home-hero__media">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           alt=""
-          className="hero__poster home-hero__poster"
+          className="home-hero__poster"
           decoding="async"
           fetchPriority="high"
           height={540}
@@ -26,7 +26,7 @@ export function HomeHero() {
           width={960}
         />
         <video
-          className="hero__video home-hero__video"
+          className="home-hero__video"
           loop
           muted
           playsInline
@@ -35,39 +35,39 @@ export function HomeHero() {
         >
           <source src={desktopSrc} type="video/mp4" />
         </video>
-        <div aria-hidden="true" className="hero__veil home-hero__veil" />
+        <div aria-hidden="true" className="home-hero__veil" />
       </div>
 
-      <div className="hero__inner home-hero__inner">
-        <div className="hero__copy home-hero__copy">
-          <h1 className="hero__title" id="hero-title">
+      <div className="home-hero__inner">
+        <div className="home-hero__copy">
+          <h1 id="hero-title">
             {hero.title}
           </h1>
-          <p className="hero__subtext">{hero.subtext}</p>
-          <div className="hero__actions home-hero__actions">
-            <Link className="hero__cta" href={hero.primaryCta.href}>
+          <p className="home-hero__subtext">{hero.subtext}</p>
+          <div className="home-hero__actions">
+            <Link className="home-hero__cta" href={hero.primaryCta.href}>
               <span>{hero.primaryCta.label}</span>
               <ArrowIcon />
             </Link>
-            <Link className="hero__cta hero__cta--ghost" href={hero.secondaryCta.href}>
-              <span>Explore the sectors</span>
+            <Link className="home-hero__cta home-hero__cta--ghost" href={hero.secondaryCta.href}>
+              <span>{hero.secondaryCta.label}</span>
               <ArrowIcon />
             </Link>
           </div>
-          {hero.proofBadge ? <p className="hero__proof">{hero.proofBadge}</p> : null}
+          {hero.proofBadge ? <p className="home-hero__proof">{hero.proofBadge}</p> : null}
         </div>
-        <div aria-hidden="true" className="hero__meta">
+        <div aria-hidden="true" className="home-hero__meta">
           <span>One team</span>
-          <span className="hero__meta-dot" />
+          <span className="home-hero__meta-dot" />
           <span>Every sector</span>
-          <span className="hero__meta-dot" />
+          <span className="home-hero__meta-dot" />
           <span>Namibia</span>
         </div>
       </div>
 
-      <div aria-hidden="true" className="hero__scroll">
+      <div aria-hidden="true" className="home-hero__scroll">
         <span>Scroll</span>
-        <span className="hero__scroll-line" />
+        <span className="home-hero__scroll-line" />
       </div>
       <script
         dangerouslySetInnerHTML={{

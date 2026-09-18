@@ -39,7 +39,6 @@ function usesDarkHero(pathname: string) {
   return (
     pathname === "/" ||
     pathname === "/about" ||
-    pathname === "/services" ||
     pathname.startsWith("/services") ||
     pathname === "/sectors" ||
     pathname.startsWith("/sectors/") ||

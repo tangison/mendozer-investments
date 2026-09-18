@@ -39,8 +39,8 @@ export default function CommunityPage() {
       </section>
       <section className="section initiatives-section">
         <div className="site-container initiatives-grid">
-          {community.initiatives.map((initiative, index) => (
-            <Reveal delay={index * 120} key={initiative.title} variant={index === 0 ? "left" : "right"}>
+          {community.initiatives.map((initiative) => (
+            <Reveal key={initiative.title}>
               <article className="initiative-card">
                 <MediaFrame asset={initiative.media} className="media-frame--initiative media-frame--rounded" sizes="(max-width: 900px) 100vw, 50vw" />
                 <div className="initiative-card__body">
@@ -62,7 +62,7 @@ export default function CommunityPage() {
             title="Community moments, documented."
           />
           <GalleryCarousel items={communityGallery} label="Community event photography" />
-          <Reveal delay={200}>
+          <Reveal>
             <p className="community-gallery__related">
               Related reading: <Link className="text-link" href="/blog/namibia-heroes-day-2026">Heroes&apos; Day 2026: Namibia remembers</Link>
             </p>
@@ -71,14 +71,14 @@ export default function CommunityPage() {
       </section>
       <section className="section community-report-section">
         <div className="site-container community-report">
-          <Reveal variant="left">
+          <Reveal>
             <div className="community-report__index" aria-hidden="true">Report</div>
             <div>
               <p className="eyebrow">{bonanzaPressReport.eyebrow}</p>
               <h2>{bonanzaPressReport.title}</h2>
             </div>
           </Reveal>
-          <Reveal delay={130} variant="right">
+          <Reveal>
             <p>{bonanzaPressReport.teaser}</p>
             <p className="community-report__meta">{bonanzaPressReport.meta}</p>
             <a className="button button--primary" download href={bonanzaPressReport.file}>
@@ -92,7 +92,7 @@ export default function CommunityPage() {
       <section className="section section--cta">
         <div className="site-container cta-panel">
           <Reveal><p className="eyebrow">Connect with the group</p><h2>Start the conversation with Mendozer.</h2></Reveal>
-          <Reveal delay={110}><Link className="button button--primary" href="/contact">Contact Mendozer <ArrowIcon /></Link></Reveal>
+          <Reveal><Link className="button button--primary" href="/contact">Contact Mendozer <ArrowIcon /></Link></Reveal>
         </div>
       </section>
     </>

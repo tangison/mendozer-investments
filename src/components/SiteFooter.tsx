@@ -75,7 +75,7 @@ export function SiteFooter() {
             <>
               <FooterAccordion title={sector?.shortTitle ?? "This sector"} defaultOpen>
                 <Link href="/contact">Enquire on this sector</Link>
-                <Link href="/work">Work context</Link>
+                <Link href="/work">Past work</Link>
                 <Link href="/sectors">All sectors</Link>
               </FooterAccordion>
               <FooterAccordion title="Other sectors">

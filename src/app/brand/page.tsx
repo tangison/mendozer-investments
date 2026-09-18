@@ -108,8 +108,8 @@ export default function BrandPage() {
       <section className="page-hero page-hero--text-only">
         <div className="site-container page-hero__copy">
           <Reveal><p className="eyebrow">Brand identity</p></Reveal>
-          <Reveal delay={80}><h1>The marks the site actually uses.</h1></Reveal>
-          <Reveal delay={150}>
+          <Reveal><h1>The marks the site actually uses.</h1></Reveal>
+          <Reveal>
             <p>Production lockups, colour tokens, and type first. The 2026 alternate set sits below as a held option, not as live chrome.</p>
           </Reveal>
         </div>

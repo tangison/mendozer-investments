@@ -35,10 +35,10 @@ export default function ContactPage() {
               eyebrow="Get in touch"
               title="The direct route to Mendozer."
             />
-            <Reveal delay={140}>
+            <Reveal>
               <a className="contact-channel contact-channel--phone" href={siteConfig.phone.href}>{siteConfig.phone.display}</a>
             </Reveal>
-            <Reveal delay={155}>
+            <Reveal>
               <a
                 className="contact-channel contact-channel--whatsapp"
                 href={siteConfig.phone.whatsapp}
@@ -48,10 +48,10 @@ export default function ContactPage() {
                 WhatsApp: {siteConfig.phone.whatsappDisplay}
               </a>
             </Reveal>
-            <Reveal delay={170}>
+            <Reveal>
               <a className="contact-channel contact-channel--email" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
             </Reveal>
-            <Reveal delay={230}>
+            <Reveal>
               <dl className="contact-legal">
                 <div>
                   <dt>Windhoek office</dt>
@@ -72,7 +72,7 @@ export default function ContactPage() {
               </dl>
             </Reveal>
           </div>
-          <Reveal delay={120} variant="right"><ContactForm /></Reveal>
+          <Reveal><ContactForm /></Reveal>
         </div>
       </section>
 
@@ -84,7 +84,7 @@ export default function ContactPage() {
             title="The Windhoek satellite office."
           />
           <div className="contact-office__grid">
-            <Reveal delay={120}>
+            <Reveal>
               <div className="map-embed">
                 <iframe
                   allowFullScreen
@@ -95,7 +95,7 @@ export default function ContactPage() {
                 />
               </div>
             </Reveal>
-            <Reveal delay={200}>
+            <Reveal>
               <div className="contact-office__aside">
                 <p className="eyebrow">Mendozer Investments</p>
                 <h3>Office 2, Continental Building.</h3>

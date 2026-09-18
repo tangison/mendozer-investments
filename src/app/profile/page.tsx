@@ -62,17 +62,17 @@ const framework = [
   {
     number: "01",
     title: "Start in one place",
-    body: "One direct route for enquiries that need more than one capability. Bring the full scope of the work into a single conversation with the group.",
+    body: "One enquiry covers every capability the job needs, so the full scope lands with the people who can deliver it.",
   },
   {
     number: "02",
     title: "Choose the closest fit",
-    body: "Begin with the sector that matches the immediate work, then widen the conversation where needed. Choose Group enquiry when the scope crosses disciplines.",
+    body: "Begin where the work is. Choose Group enquiry when the scope crosses disciplines and other sectors join from there.",
   },
   {
     number: "03",
     title: "Built for Namibia",
-    body: "The group is introduced through local working context, not a generic imported template: real site context, verified records, and work delivered with care.",
+    body: "Real crews on real Namibian sites since 2009; the archive on this site is the group's own.",
   },
 ];
 
@@ -82,7 +82,7 @@ export default function ProfilePage() {
   return (
     <>
       <PageHero
-        body="Mendozer Investments CC has operated in Namibia since 2009, registered under CC/2009/2399. The group brings six working directions into one accountable line for partners, institutions and commercial enquiries."
+        body="Mendozer Investments CC has operated in Namibia since 2009, registered under CC/2009/2399. Six sectors, one line of accountability: construction, technology, cooling, logistics, energy and tourism."
         breadcrumbLabel="Company Profile"
         eyebrow="Company profile"
         media={{
@@ -97,14 +97,14 @@ export default function ProfilePage() {
       <section className="section section--surface">
         <div className="site-container about-intro">
           <SectionHeading
-            body="Construction, technology, cooling, logistics, energy and tourism are connected by one operational backbone. Start with the sector closest to the work in front of you, and bring the group in when the brief crosses disciplines. Every direction carries the same standard: real site context, verified records, and work delivered with care."
+            body="Construction, technology, cooling, logistics, energy and tourism run on one operating backbone. Start with the sector closest to the job; the rest of the group joins when the brief crosses disciplines."
             eyebrow="01 · The group"
             title="One group for the work ahead."
           />
-          <Reveal delay={150}>
+          <Reveal>
             <dl className="profile-stats">
               <div><dt>Founded</dt><dd>2009</dd></div>
-              <div><dt>Working directions</dt><dd>6</dd></div>
+              <div><dt>Sectors</dt><dd>6</dd></div>
               <div><dt>Registration</dt><dd>CC/2009/2399</dd></div>
             </dl>
           </Reveal>
@@ -116,20 +116,20 @@ export default function ProfilePage() {
           <div className="leadership-section__index" aria-hidden="true" />
           <div>
             <SectionHeading eyebrow="02 · Leadership" title="A clear line of accountability." />
-            <Reveal delay={150}>
+            <Reveal>
               <div className="leadership-card">
                 <p className="eyebrow">Group leadership</p>
                 <h2>Johannes Negumbo</h2>
                 <p className="leadership-card__role">Managing Director</p>
                 <p>
-                  Johannes Negumbo is the Managing Director of Mendozer Investments CC, the accountable line for group
-                  enquiries across all six working directions. A broad group view means each sector can be understood in
-                  relation to the people, systems, sites, and logistics around it.
+                  Johannes Negumbo, Managing Director of Mendozer Investments CC, is the point of accountability for group
+                  enquiries across all six sectors. Every sector is planned around the people, systems, sites and logistics
+                  that surround it.
                 </p>
               </div>
             </Reveal>
           </div>
-          <Reveal delay={100} variant="right">
+          <Reveal>
             <MediaFrame
               asset={{
                 src: "/images/projects/logistics/crew-roadside.webp",
@@ -147,13 +147,13 @@ export default function ProfilePage() {
       <section className="section section--surface">
         <div className="site-container">
           <SectionHeading
-            body="Six working directions, one accountable group. Start with the sector closest to the work."
-            eyebrow="03 · Working directions"
+            body="Six sectors, one group. Start with the one closest to the work."
+            eyebrow="03 · Sectors"
             title="Six directions. One standard."
           />
           <div className="profile-directions">
-            {directions.map((direction, index) => (
-              <Reveal delay={index * 80} key={direction.number}>
+            {directions.map((direction) => (
+              <Reveal key={direction.number}>
                 <Link className="profile-direction" href={direction.href}>
                   <span className="profile-direction__number">{direction.number}</span>
                   <span className="profile-direction__title">{direction.title}</span>
@@ -169,13 +169,13 @@ export default function ProfilePage() {
       <section className="section">
         <div className="site-container">
           <SectionHeading
-            body="A broad group view means each sector can be understood in relation to the people, systems, sites, and logistics around it."
+            body="Every sector is planned around the people, systems, sites and logistics that surround it."
             eyebrow="04 · How the group works"
-            title="A clear framework for a wider portfolio."
+            title="How the group works."
           />
           <div className="commitments-grid">
-            {framework.map((item, index) => (
-              <Reveal delay={index * 100} key={item.number}>
+            {framework.map((item) => (
+              <Reveal key={item.number}>
                 <article className="commitment-card">
                   <span>{item.number}</span>
                   <h2>{item.title}</h2>
@@ -184,14 +184,14 @@ export default function ProfilePage() {
               </Reveal>
             ))}
           </div>
-          <Reveal delay={140}>
+          <Reveal>
             <div className="profile-enquiry">
               <p className="eyebrow">What to include in an enquiry</p>
               <ul>
-                <li>A short description of the work or opportunity.</li>
+                <li>A short description of the work.</li>
                 <li>The relevant sector, or Group enquiry if it crosses more than one.</li>
-                <li>Any useful site or operating context.</li>
-                <li>The best person to contact.</li>
+                <li>Any useful site or operating detail.</li>
+                <li>Who to reach.</li>
               </ul>
               <Link className="text-link" href="/contact">Prepare a group enquiry <ArrowIcon /></Link>
             </div>
@@ -203,18 +203,18 @@ export default function ProfilePage() {
         <div className="site-container legal-section__grid">
           <div>
             <SectionHeading
-              body="Mendozer publishes registration detail and public licensing records that can be verified. Additional compliance material is added only when it is approved for publication."
+              body="Registration, VAT and licensing details you can check yourself. Anything further is published only when it is approved."
               eyebrow="05 · Verified records"
               inverse
-              title="Verified details, stated plainly."
+              title="The records behind the name."
             />
-            <Reveal delay={150}>
+            <Reveal>
               <a className="button button--light profile-download" download href="/documents/mendozer-company-profile.pdf">
                 <span>Download the company profile (PDF)</span><ArrowIcon />
               </a>
             </Reveal>
           </div>
-          <Reveal delay={140}>
+          <Reveal>
             <div>
               <dl>
                 <div><dt>Registration no.</dt><dd>CC/2009/2399</dd></div>
@@ -238,28 +238,28 @@ export default function ProfilePage() {
 
       <section className="section section--surface">
         <div className="site-container community-report">
-          <Reveal variant="left">
+          <Reveal>
             <div className="community-report__index" aria-hidden="true">2026</div>
             <div>
               <p className="eyebrow">06 · Community & sponsorship</p>
               <h2>Sponsorship visible where people gather.</h2>
             </div>
           </Reveal>
-          <Reveal delay={130} variant="right">
+          <Reveal>
             <p>
               Mendozer presented the Otjiwarongo Sports Bonanza 2026 at Mokati Stadium, 21 to 23 August, where Namaqua FC
               beat Ama Roots FC 2 to 1 for the title and a N$45,000 prize pool across three codes. The group also recorded
               sponsorship visibility at Miss Teen Namibia 2026.
             </p>
-            <Link className="text-link" href="/community">View community context <ArrowIcon /></Link>
+            <Link className="text-link" href="/community">See the community work <ArrowIcon /></Link>
           </Reveal>
         </div>
       </section>
 
       <section className="section section--cta">
         <div className="site-container cta-panel">
-          <Reveal><p className="eyebrow">Start a conversation</p><h2>Bring the right work into focus.</h2></Reveal>
-          <Reveal delay={100}><Link className="button button--primary" href="/contact">Contact Mendozer <ArrowIcon /></Link></Reveal>
+          <Reveal><p className="eyebrow">Get in touch</p><h2>Tell us what you are building.</h2></Reveal>
+          <Reveal><Link className="button button--primary" href="/contact">Start your enquiry <ArrowIcon /></Link></Reveal>
         </div>
       </section>
     </>

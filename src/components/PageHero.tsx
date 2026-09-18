@@ -19,11 +19,11 @@ export function PageHero({ eyebrow, title, body, media, breadcrumbLabel, index }
         <div className="site-container page-hero__grid">
           <div className="page-hero__copy">
             <Reveal><p className="eyebrow eyebrow--light">{eyebrow}</p></Reveal>
-            <Reveal delay={80}><h1>{title}</h1></Reveal>
-            <Reveal delay={150}><p>{body}</p></Reveal>
+            <Reveal><h1>{title}</h1></Reveal>
+            <Reveal><p>{body}</p></Reveal>
             {index ? <span aria-hidden="true" className="page-hero__index">{index}</span> : null}
           </div>
-          <Reveal delay={100} variant="right">
+          <Reveal>
             <MediaFrame asset={media} priority sizes="(max-width: 820px) 100vw, 47vw" />
           </Reveal>
         </div>

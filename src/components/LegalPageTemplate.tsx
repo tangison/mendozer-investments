@@ -16,8 +16,8 @@ export function LegalPageTemplate({ page }: LegalPageTemplateProps) {
         <div aria-hidden="true" className="legal-hero__accent" />
         <div className="site-container legal-hero__inner">
           <Reveal><p className="eyebrow">{page.eyebrow}</p></Reveal>
-          <Reveal delay={90}><h1>{page.title}</h1></Reveal>
-          <Reveal delay={180}><p>{page.intro}</p></Reveal>
+          <Reveal><h1>{page.title}</h1></Reveal>
+          <Reveal><p>{page.intro}</p></Reveal>
         </div>
       </section>
 
@@ -33,7 +33,7 @@ export function LegalPageTemplate({ page }: LegalPageTemplateProps) {
           </aside>
           <div className="legal-page__sections">
             {page.sections.map((section, index) => (
-              <Reveal delay={index * 90} key={section.heading}>
+              <Reveal key={section.heading}>
                 <section>
                   <span>0{index + 1}</span>
                   <h2>{section.heading}</h2>
@@ -48,7 +48,7 @@ export function LegalPageTemplate({ page }: LegalPageTemplateProps) {
       <section className="section section--cta">
         <div className="site-container cta-panel">
           <Reveal><p className="eyebrow">Direct contact</p><h2>Start with a clear group enquiry.</h2></Reveal>
-          <Reveal delay={110}><Link className="button button--primary" href="/contact">Prepare an enquiry <ArrowIcon /></Link></Reveal>
+          <Reveal><Link className="button button--primary" href="/contact">Prepare an enquiry <ArrowIcon /></Link></Reveal>
         </div>
       </section>
     </>

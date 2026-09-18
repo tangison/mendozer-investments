@@ -338,13 +338,13 @@ export const siteContent = {
   hero: {
     eyebrow: "Mendozer Investments",
     title: "Building Value. Delivering Excellence.",
-    subtext: "Construction, technology, cooling, logistics, energy and tourism, delivered across Namibia since 2009, with one accountable team behind every brief.",
-    primaryCta: { label: "Start an enquiry", href: "/contact" },
+    subtext: "Construction, technology, cooling, logistics, energy and tourism: six sectors delivered by one team across Namibia since 2009.",
+    primaryCta: { label: "Start your enquiry", href: "/contact" },
     secondaryCta: { label: "Explore the sectors", href: "/#sectors" },
     proofBadge: "Since 2009",
     followEyebrow: "The Mendozer group",
-    followTitle: "One accountable team behind the value, from first brief to delivered work.",
-    followBody: "Construction, technology, cooling, logistics, energy and tourism sit under one accountable team, so the value agreed in the brief is the value delivered on site. Start with the sector closest to the work in front of you, and bring the wider team in when the brief crosses disciplines. Every engagement carries the same standard: real site context, verified records, and work delivered with care.",
+    followTitle: "One team from the first brief to the delivered work.",
+    followBody: "Start with the sector closest to the job, and bring the wider team in when the brief crosses disciplines. One point of contact, one standard, and decisions made close to the work. That is what a group structure is for.",
     media: {
       src: "/images/projects/construction/road-works-2.webp",
       alt: "A site team beside active infrastructure work",
@@ -354,8 +354,8 @@ export const siteContent = {
   },
   sectorHub: {
     eyebrow: "Mendozer sectors",
-    title: "Choose the right sector.",
-    body: "Start with the sector closest to the work in front of you. If the scope crosses disciplines, use the group contact route.",
+    title: "Start with the right sector.",
+    body: "Pick the sector closest to the job. If the scope crosses disciplines, one enquiry covers it.",
     hero: {
       src: "/images/projects/construction/road-works-2.webp",
       alt: "Site team beside active infrastructure work",
@@ -364,9 +364,9 @@ export const siteContent = {
     } satisfies MediaAsset,
   },
   work: {
-    eyebrow: "Work context",
-    title: "Published carefully, grounded in the work.",
-    body: "These client-supplied images show site, field and facility context from the Mendozer archive. Project names and client details are published only when approval is in place.",
+    eyebrow: "Previous work",
+    title: "Past work, shown straight.",
+    body: "Images from the group archive: sites, field work and facilities. Project names appear only once a client approves publication.",
     hero: {
       src: "/images/projects/work/IMG-20260808-WA0034.webp",
       alt: "A broad view across a building work site",
@@ -376,8 +376,8 @@ export const siteContent = {
   },
   updates: {
     eyebrow: "Updates & public records",
-    title: "Activity, recorded with care.",
-    body: "This page brings together approved community context and publicly verifiable records. It does not turn unapproved site images into project claims.",
+    title: "What the group has been up to.",
+    body: "Approved community moments and publicly verifiable records, in one place. Unapproved site imagery never becomes a project claim here.",
     hero: {
       src: "/images/projects/community/IMG-20260808-WA0077.webp",
       alt: "Attendees in front of a Mendozer-branded community event backdrop",
@@ -387,8 +387,8 @@ export const siteContent = {
   },
   compliance: {
     eyebrow: "Public records & licences",
-    title: "Verified details, stated plainly.",
-    body: "Mendozer publishes registration detail and public licensing records that can be verified. Additional compliance material is added only when it is approved for publication.",
+    title: "The records behind the name.",
+    body: "Registration, VAT and licensing details you can check yourself. Anything further is published only when it is approved.",
     hero: {
       src: "/images/projects/fuel-energy/plant-piping.webp",
       alt: "Piping and infrastructure at an operational plant",
@@ -399,8 +399,8 @@ export const siteContent = {
   home: {
     introduction: {
       eyebrow: "The Mendozer group",
-      title: "The sectors that build the value.",
-      body: "Choose the sector closest to the need. If the brief crosses more than one area, begin with one accountable group.",
+      title: "Six sectors. One standard.",
+      body: "Construction, technology, cooling, logistics, energy, tourism. Pick the one closest to the job; the group handles the rest.",
       media: {
         src: "/images/projects/technology/tower-full-view.webp",
         alt: "A communications tower above a work site",
@@ -410,51 +410,51 @@ export const siteContent = {
     },
     sectorIntro: {
       eyebrow: "Our sectors",
-      title: "Find the right starting point.",
-      body: "Each sector leads to the same accountable team and the same standard.",
+      title: "Where do you start?",
+      body: "Every sector route ends at the same team and the same standard.",
     },
     clients: {
       eyebrow: "Trusted by",
       title: "Working alongside Namibian institutions and partners.",
-      body: "Partners, councils and institutions the group has worked alongside across the country.",
+      body: "Councils, utilities and national institutions the group has worked with across Namibia.",
     },
     connective: {
       eyebrow: "A connected view",
-      title: "One group keeps the whole brief in view.",
-      body: "A site, system, facility and supply route can be connected. Start with the need, then bring the right sector into the conversation.",
+      title: "One brief should not need three contractors.",
+      body: "A single job can span a site, a system, a facility and a supply route. Start with the need; the right sector picks it up.",
     },
     gallery: {
       eyebrow: "On site",
       title: "The work, in frame.",
-      body: "A rotating view of recent site, field and facility context from across the six working directions.",
+      body: "Recent site, field and facility photography from all six sectors, on rotation.",
     },
     faq: {
       eyebrow: "Starting point",
       title: "Before you send an enquiry.",
-      body: "A few practical answers before you prepare a group or sector enquiry.",
+      body: "Short answers to the questions most enquiries start with.",
       items: [
         {
           question: "Which sector should I choose?",
-          answer: "Choose the sector closest to the enquiry. If the work crosses more than one area, select Group enquiry in the contact form.",
+          answer: "Pick the one closest to the job. If the work crosses disciplines, choose Group enquiry in the form and it reaches the whole team.",
         },
         {
           question: "What should I include in an enquiry?",
-          answer: "Include a short description of the work or opportunity, the relevant sector, any useful site or operating context, and the best person to contact.",
+          answer: "A short description of the work, the sector it fits, any site or operating detail that helps, and who to reach.",
         },
         {
           question: "Can I contact the group directly?",
-          answer: "Yes. The contact route lets you prepare a message to info@mendozer.com without storing the enquiry on this website.",
+          answer: "Yes. Use the form or email info@mendozer.com directly.",
         },
         {
           question: "Where can I find published project detail?",
-          answer: "Project and service detail is added only when it has been approved for publication. The site does not use unverified project claims as proof.",
+          answer: "Project detail is published only once a client approves it. The site never uses unverified claims as proof.",
         },
       ] satisfies FaqItem[],
     },
     community: {
       eyebrow: "In the community",
-      title: "Visible support for local moments.",
-      body: "Explore the sponsorship context currently approved for publication.",
+      title: "Where you will see us.",
+      body: "Sponsorships and events currently approved for publication.",
       media: {
         src: "/images/projects/community/missteen-2026-titleholders-01.webp",
         alt: "Miss Teen Namibia 2026 titleholders in front of a Mendozer-branded backdrop",
@@ -477,17 +477,17 @@ export const siteContent = {
       {
         number: "01",
         title: "Start in one place",
-        body: "One direct route for enquiries that need more than one capability.",
+        body: "One enquiry covers every capability the job needs.",
       },
       {
         number: "02",
         title: "Choose the closest fit",
-        body: "Begin with the sector that matches the immediate work, then widen the conversation where needed.",
+        body: "Begin where the work is. Other sectors join when the scope asks for it.",
       },
       {
         number: "03",
         title: "Built for Namibia",
-        body: "The group is introduced through local working context, not a generic imported template.",
+        body: "Real crews on real Namibian sites since 2009; the archive on this site is the group's own.",
       },
     ],
     leadership: {
@@ -495,14 +495,14 @@ export const siteContent = {
       title: "A clear line of accountability.",
       name: "Johannes Negumbo",
       role: "Managing Director",
-      note: "Johannes Negumbo is the Managing Director of Mendozer Investments CC, the accountable line for group enquiries.",
+      note: "Johannes Negumbo, Managing Director of Mendozer Investments CC, is the point of accountability for group enquiries.",
     },
     fuelLicence: verifiedFacts.wholesaleFuelLicence,
   },
   community: {
     eyebrow: "Community & sponsorship",
     title: "Sponsorship visible where people gather.",
-    body: "Mendozer’s approved event archive records sponsorship visibility at community-facing occasions.",
+    body: "Approved event photography showing Mendozer sponsorship at community occasions.",
     hero: {
       src: "/images/projects/community/missteen-2026-titleholders-02.webp",
       alt: "Miss Teen Namibia 2026 titleholders with a guest at the event backdrop",
@@ -512,7 +512,7 @@ export const siteContent = {
     initiatives: [
       {
         title: "Miss Teen Namibia 2026",
-        body: "Client-supplied event imagery records Mendozer sponsorship visibility at the event.",
+        body: "Event imagery records the sponsorship; publication approved by the client.",
         media: {
           src: "/images/projects/community/missteen-2026-titleholders-01.webp",
           alt: "Miss Teen Namibia 2026 titleholders in front of a Mendozer-branded backdrop",
@@ -522,7 +522,7 @@ export const siteContent = {
       },
       {
         title: "Otjiwarongo Sports Bonanza 2026",
-        body: "Namaqua FC defeated Ama Roots FC 2 to 1 in the final at Mokati Stadium to win the Otjiwarongo Sports Bonanza 2026, 21 to 23 August 2026. Full detail is on the news page.",
+        body: "Namaqua FC beat Ama Roots FC 2 to 1 in the final at Mokati Stadium to take the 2026 title, 21 to 23 August 2026. Full record on the news page.",
         href: "/blog/otjiwarongo-sports-bonanza-2026",
         media: {
           src: "/images/events/otjiwarongo-sports-bonanza-2026/osb-2026-conclusion-poster.webp",
@@ -536,7 +536,7 @@ export const siteContent = {
   contact: {
     eyebrow: "Contact",
     title: "Start with the work in front of you.",
-    body: "Tell the group what needs attention, which sector is closest, and how to contact you. Secure delivery is used where configured, with direct email available as a fallback.",
+    body: "Tell us what needs doing, which sector fits best, and how to reach you. Prefer email? info@mendozer.com works just as well.",
     media: {
       src: "/images/projects/technology/IMG-20260808-WA0061.webp",
       alt: "A communications tower above a prepared site",
@@ -600,9 +600,9 @@ export const sectors: Sector[] = [
       },
     ],
     services: [
-      { title: "Site preparation", description: "Plan practical work around access, ground conditions and the active site." },
-      { title: "Built structures", description: "Bring structural and supporting work into one clear scope." },
-      { title: "Site coordination", description: "Keep people, materials and workfronts aligned." },
+      { title: "Site preparation", description: "Access, ground conditions and services worked out before crews move in." },
+      { title: "Built structures", description: "Structural and supporting work brought into one scope and built to the agreed spec." },
+      { title: "Site coordination", description: "People, materials and workfronts kept moving in step." },
     ],
     crossover: "Construction often meets logistics, technology and energy on the same brief.",
   },
@@ -653,9 +653,9 @@ export const sectors: Sector[] = [
       },
     ],
     services: [
-      { title: "Systems direction", description: "Define the operational need before choosing the system response." },
-      { title: "Telecom infrastructure", description: "Support the tower, equipment and site context that keep teams linked." },
-      { title: "Field coordination", description: "Coordinate work around active operating environments." },
+      { title: "Systems direction", description: "The operational need defined first; the system chosen to fit it." },
+      { title: "Telecom infrastructure", description: "Towers, equipment and site work that keep teams connected." },
+      { title: "Field coordination", description: "Installations planned around live operating environments." },
     ],
     crossover: "Technology must work with the physical infrastructure that carries it.",
   },
@@ -706,9 +706,9 @@ export const sectors: Sector[] = [
       },
     ],
     services: [
-      { title: "Cold-chain planning", description: "Plan the route from controlled environment to delivery point." },
-      { title: "Cooling facilities", description: "Focus facility work on the systems that protect continuity." },
-      { title: "Operational coordination", description: "Align site work with the requirements of active facilities." },
+      { title: "Cold-chain planning", description: "The route from controlled environment to delivery point, planned end to end." },
+      { title: "Cooling facilities", description: "Plant rooms and pipework kept ready for continuous operation." },
+      { title: "Operational coordination", description: "Facility work scheduled around production, never against it." },
     ],
     crossover: "Cold-chain continuity can involve cooling, logistics and site support.",
   },
@@ -759,11 +759,11 @@ export const sectors: Sector[] = [
       },
     ],
     services: [
-      { title: "Site logistics", description: "Support the movement of people and materials through the workday." },
-      { title: "Crew and material support", description: "Keep operational sites prepared for the next task." },
-      { title: "Field coordination", description: "Keep practical detail in view across a changing workfront." },
+      { title: "Site logistics", description: "People and materials moved on schedule through the working day." },
+      { title: "Crew and material support", description: "Sites kept supplied and ready for the next task." },
+      { title: "Field coordination", description: "Practical detail kept in view across changing workfronts." },
     ],
-    crossover: "Logistics connects sites, people, materials and related group directions.",
+    crossover: "Logistics is the connective tissue between sites, people and materials.",
   },
   {
     slug: "energy",
@@ -812,9 +812,9 @@ export const sectors: Sector[] = [
       },
     ],
     services: [
-      { title: "Wholesale distribution", description: "Bring the verified distribution direction into the group conversation." },
-      { title: "Infrastructure context", description: "Work with the visible infrastructure behind essential services." },
-      { title: "Operational alignment", description: "Coordinate the related group directions around energy work." },
+      { title: "Wholesale distribution", description: "Wholesale fuel supply under licence W/188/2017." },
+      { title: "Infrastructure context", description: "Plant and infrastructure work that keeps distribution running." },
+      { title: "Operational alignment", description: "Logistics, construction and systems pulled in when energy work needs them." },
     ],
     verifiedFact: verifiedFacts.wholesaleFuelLicence,
     crossover: "Energy distribution depends on the infrastructure, logistics and systems around it.",
@@ -826,7 +826,7 @@ export const sectors: Sector[] = [
     title: "Tourism & Agriculture",
     shortTitle: "Tourism & Agriculture",
     eyebrow: "Sector 06",
-    description: "Land, access, and rural operating settings across Namibian landscape.",
+    description: "Land, access and rural operations across the Namibian landscape.",
     metaDescription:
       "Land, access, and rural operating settings across the Namibian landscape, handled with the practical care Mendozer brings to every sector.",
     glyph: "landscape",
@@ -851,19 +851,19 @@ export const sectors: Sector[] = [
       },
     ],
     services: [
-      { title: "Land and access context", description: "Start with land, access and the operating setting." },
-      { title: "Rural operating context", description: "Consider practical needs beyond urban work environments." },
-      { title: "Long-term planning", description: "Keep durability and local context in the conversation." },
+      { title: "Land and access context", description: "Land and access worked out before anything else." },
+      { title: "Rural operating context", description: "Work planned for rural conditions, not just city sites." },
+      { title: "Long-term planning", description: "Plans built to last in local conditions." },
     ],
-    crossover: "Tourism and agriculture bring land, access and long-term operations into the wider group conversation.",
+    crossover: "Tourism and agriculture bring land, access and long-term operations into the wider group.",
   },
 ];
 
 export const workContexts: WorkContext[] = [
   {
     sector: "Construction & Infrastructure",
-    title: "Building work context",
-    body: "Client-supplied building and site context, shown without a named project claim.",
+    title: "Building work",
+    body: "Building and site work from the group archive.",
     href: "/sectors/construction",
     media: {
       src: "/images/projects/work/IMG-20260808-WA0032.webp",
@@ -874,8 +874,8 @@ export const workContexts: WorkContext[] = [
   },
   {
     sector: "Technology & Systems",
-    title: "Field systems context",
-    body: "Tower and field-installation context from the supplied Mendozer archive.",
+    title: "Field systems work",
+    body: "Tower and field installation work from the archive.",
     href: "/sectors/technology",
     media: {
       src: "/images/projects/work/IMG-20260808-WA0063.webp",
@@ -886,8 +886,8 @@ export const workContexts: WorkContext[] = [
   },
   {
     sector: "Logistics & Support Services",
-    title: "Site support context",
-    body: "Container and site-support context, shown without an unverified location or client name.",
+    title: "Site support work",
+    body: "Container and site support work from the archive.",
     href: "/sectors/logistics",
     media: {
       src: "/images/projects/work/IMG-20260808-WA0049.webp",
@@ -915,7 +915,7 @@ export const publicUpdates: PublicUpdate[] = [
   {
     eyebrow: "Community archive",
     title: "Miss Teen Namibia 2026",
-    body: "Client-supplied event imagery records Mendozer sponsorship visibility at the event.",
+    body: "Event imagery records the sponsorship; publication approved by the client.",
     media: {
       src: "/images/projects/community/missteen-2026-titleholders-02.webp",
       alt: "Miss Teen Namibia 2026 titleholders with a guest at the event backdrop",

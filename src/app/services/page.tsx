@@ -53,8 +53,8 @@ export default function ServicesPage() {
             title="Choose the work closest to the brief."
           />
           <div className="services-hub__grid">
-            {specialistServices.map((service, index) => (
-              <Reveal delay={index * 90} key={service.slug}>
+            {specialistServices.map((service) => (
+              <Reveal key={service.slug}>
                 <Link className="service-card" href={`/services/${service.slug}`}>
                   <div className="service-card__media">
                     <Image
@@ -85,7 +85,7 @@ export default function ServicesPage() {
             eyebrow="Part of the wider group"
             title="One standard, several ways to build."
           />
-          <Reveal delay={120}>
+          <Reveal>
             <Link className="text-link" href="/sectors"><span>Explore the sectors</span><ArrowIcon /></Link>
           </Reveal>
         </div>
@@ -94,7 +94,7 @@ export default function ServicesPage() {
       <section className="section section--cta">
         <div className="site-container cta-panel">
           <Reveal><p className="eyebrow">Ready to scope a job</p><h2>Start with a site visit and a clear quote.</h2></Reveal>
-          <Reveal delay={110}><Link className="button button--primary" href="/contact">Contact Mendozer <ArrowIcon /></Link></Reveal>
+          <Reveal><Link className="button button--primary" href="/contact">Contact Mendozer <ArrowIcon /></Link></Reveal>
         </div>
       </section>
     </>

@@ -2,29 +2,15 @@ import type { CSSProperties, HTMLAttributes, ReactNode } from "react";
 
 type RevealProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
-  delay?: number;
-  variant?: "up" | "left" | "right" | "scale";
 };
 
 /**
- * Server-rendered motion hook. MotionController is the single browser-side engine
- * that observes these markers, preserving a visible no-JS baseline.
+ * Plain layout wrapper. The site runs a deliberate motion-cut stance, so
+ * this carries no animation state: it only groups children for spacing hooks.
  */
-export function Reveal({
-  children,
-  className = "",
-  delay = 0,
-  variant = "up",
-  style,
-  ...props
-}: RevealProps) {
+export function Reveal({ children, className = "", style }: RevealProps & { style?: CSSProperties }) {
   return (
-    <div
-      className={className}
-      data-reveal={variant}
-      style={{ "--reveal-delay": `${delay}ms`, ...style } as CSSProperties}
-      {...props}
-    >
+    <div className={className} style={style}>
       {children}
     </div>
   );

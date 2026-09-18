@@ -87,16 +87,16 @@ export default function HeroesDayPage() {
             <Reveal>
               <p className="eyebrow">26 August 2026</p>
             </Reveal>
-            <Reveal delay={80}>
+            <Reveal>
               <h1>A day for Namibia&apos;s heroes.</h1>
             </Reveal>
-            <Reveal delay={150}>
+            <Reveal>
               <p className="blog-post__lede">
                 Heroes&apos; Day is Namibia&apos;s national day of remembrance for the men and women who fought for independence. It falls on 26 August, the day the
                 armed struggle began at Omugulugwombashe in 1966.
               </p>
             </Reveal>
-            <Reveal delay={200}>
+            <Reveal>
               <div className="blog-post__meta">
                 <span>Heroes&apos; Day</span>
                 <span aria-hidden="true"> / </span>
@@ -115,7 +115,7 @@ export default function HeroesDayPage() {
 
         <section className="blog-post__featured">
           <div className="site-container">
-            <Reveal variant="up">
+            <Reveal>
               <figure className="heroes-banner-wrap">
                 <Image
                   alt="Heroes' Day commemorative banner supplied by Mendozer Investments"

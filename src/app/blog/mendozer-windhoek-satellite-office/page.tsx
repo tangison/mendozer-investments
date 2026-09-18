@@ -67,16 +67,16 @@ export default function WindhoekSatelliteOfficePage() {
             <Reveal>
               <p className="eyebrow">News</p>
             </Reveal>
-            <Reveal delay={80}>
+            <Reveal>
               <h1>A Windhoek satellite office at the Continental Building.</h1>
             </Reveal>
-            <Reveal delay={150}>
+            <Reveal>
               <p className="blog-post__lede">
                 Mendozer Investments now meets clients and partners in the capital from Office 2, Continental Building on Judge JP Karuaihe Street. The main
                 business number has changed to +264 85 777 7077.
               </p>
             </Reveal>
-            <Reveal delay={200}>
+            <Reveal>
               <div className="blog-post__meta">
                 <span>3 September 2026</span>
                 <span aria-hidden="true"> / </span>
@@ -97,7 +97,7 @@ export default function WindhoekSatelliteOfficePage() {
 
         <section className="blog-post__featured">
           <div className="site-container">
-            <Reveal variant="up">
+            <Reveal>
               <figure className="blog-post__figure">
                 <Image
                   alt="Mendozer Investments construction work in progress on a site in Namibia"

@@ -78,13 +78,13 @@ export function MediaReleasePage({
           <Reveal>
             <p className="eyebrow">{eyebrow}</p>
           </Reveal>
-          <Reveal delay={80}>
+          <Reveal>
             <h1>{headline}</h1>
           </Reveal>
-          <Reveal delay={150}>
+          <Reveal>
             <p className="blog-post__lede">{standfirst}</p>
           </Reveal>
-          <Reveal delay={200}>
+          <Reveal>
             <div className="blog-post__meta">
               <span>{releaseLabel}</span>
               <span aria-hidden="true"> / </span>
@@ -108,7 +108,7 @@ export function MediaReleasePage({
       {poster ? (
         <section className="blog-post__featured">
           <div className="site-container">
-            <Reveal variant="up">
+            <Reveal>
               <figure className="blog-post__figure">
                 <Image
                   alt={poster.alt}

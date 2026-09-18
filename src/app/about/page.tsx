@@ -11,7 +11,7 @@ import { teamGallery } from "@/content/site-services";
 
 export const metadata: Metadata = {
   title: "About the Group",
-  description: "Learn about Mendozer Investments CC, a multi-sector Namibian group working since 2009 across construction, technology, cooling, logistics, energy, and tourism.",
+  description: "Mendozer Investments CC: a Namibian group delivering construction, technology, cooling, logistics, energy and tourism since 2009.",
   alternates: { canonical: "/about" },
   openGraph: {
     url: "/about",
@@ -28,11 +28,11 @@ export default function AboutPage() {
       <section className="section section--surface">
         <div className="site-container about-intro">
           <SectionHeading
-            body="A broad group view means each sector can be understood in relation to the people, systems, sites, and logistics around it."
+            body="Every sector is planned around the people, systems, sites and logistics that surround it."
             eyebrow="The Mendozer approach"
             title="One identity across every sector we work."
           />
-          <Reveal delay={150}>
+          <Reveal>
             <p className="about-intro__accent">Mendozer Investments CC has operated in Namibia since 2009. The group is led by Managing Director Johannes Negumbo.</p>
           </Reveal>
         </div>
@@ -40,10 +40,10 @@ export default function AboutPage() {
 
       <section className="section commitments-section">
         <div className="site-container">
-          <SectionHeading eyebrow="How the group is introduced" title="A clear framework for a wider portfolio." />
+          <SectionHeading eyebrow="How the group works" title="How an enquiry runs." />
           <div className="commitments-grid">
-            {about.commitments.map((commitment, index) => (
-              <Reveal delay={index * 100} key={commitment.number}>
+            {about.commitments.map((commitment) => (
+              <Reveal key={commitment.number}>
                 <article className="commitment-card">
                   <span>{commitment.number}</span>
                   <h2>{commitment.title}</h2>
@@ -60,7 +60,7 @@ export default function AboutPage() {
           <div className="leadership-section__index" aria-hidden="true" />
           <div>
             <SectionHeading eyebrow={about.leadership.eyebrow} title={about.leadership.title} />
-            <Reveal delay={150}>
+            <Reveal>
               <div className="leadership-card">
                 <p className="eyebrow">Group leadership</p>
                 <h2>{about.leadership.name}</h2>
@@ -75,13 +75,13 @@ export default function AboutPage() {
       <section className="section section--surface about-team-section">
         <div className="site-container">
           <SectionHeading
-            body="Client-supplied photographs of the crew in branded site wear. These are published as team context, not as individual profiles."
+            body="Photographs of the crew in branded site wear, published with approval. Team photography stays group-level; no individual profiles."
             eyebrow="The crew"
             title="People on the ground."
           />
           <div className="svc-gallery svc-gallery--four">
-            {teamGallery.map((image, index) => (
-              <Reveal delay={index * 80} key={image.src}>
+            {teamGallery.map((image) => (
+              <Reveal key={image.src}>
                 <figure className="svc-photo">
                   <Image alt={image.alt} className="svc-photo__img" height={image.height} sizes="(max-width: 900px) 100vw, 24vw" src={image.src} width={image.width} />
                 </figure>
@@ -96,7 +96,7 @@ export default function AboutPage() {
           <div>
             <SectionHeading inverse eyebrow="Company details" title="Verified registration details." />
           </div>
-          <Reveal delay={140}>
+          <Reveal>
             <div>
               <dl>
                 <div><dt>Registration no.</dt><dd>{siteConfig.registration}</dd></div>
@@ -123,7 +123,7 @@ export default function AboutPage() {
               <Link className="text-link" href="/blog">News and event reports <ArrowIcon /></Link>
             </p>
           </Reveal>
-          <Reveal delay={110}><Link className="button button--primary" href="/sectors">Explore sectors <ArrowIcon /></Link></Reveal>
+          <Reveal><Link className="button button--primary" href="/sectors">Explore sectors <ArrowIcon /></Link></Reveal>
         </div>
       </section>
     </>
