@@ -10,7 +10,7 @@ import { siteContent } from "@/content/site-content";
 export function HomeHero() {
   const { hero } = siteContent;
   const desktopSrc = "/videos/hero/desert-loop.mp4";
-  const poster = "/videos/hero/desert-loop-poster.jpg";
+  const poster = "/videos/hero/desert-loop-poster.webp";
 
   return (
     <section aria-labelledby="hero-title" className="hero home-hero">

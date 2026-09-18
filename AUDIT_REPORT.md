@@ -511,3 +511,31 @@ Headline and label surfaces updated:
 6. **AI/search surfaces:** llms.txt intro rewritten without the counting device; home OG image regenerated with the new tagline (generate-og.py updated; other OG composites left byte-identical).
 
 Guardrails updated with the copy: scripts/check-content.mjs now asserts the approved tagline string, and tests/responsive.spec.ts asserts the new hero title plus the "Explore the sectors" CTA. No registration, licence, contact, or sitemap facts changed in this round.
+
+---
+
+## Hallmark design audit round — 2026-09-18
+
+**Auditor:** Hallmark skill (audit verb), followed by a scoped fix pass under the redesign safety rail (visual layer only; no routes, components, or pages deleted). Design bar referenced by the client: Caterpillar's site — rounded media demanded the same radius voice on controls.
+
+### Findings and resolution
+
+| # | Severity | Finding | Resolution |
+|---|---|---|---|
+| 1 | Critical | Windhoek satellite-office post requested `/images/projects/construction/road-works-2.jpg`; only the `.webp` exists on disk. Confirmed HTTP 404 in production. | Reference corrected to `road-works-2.webp`. |
+| 2 | Critical | Split radius language: media containers rounded at `--radius-media` (1.25rem) while `.button`, `.utility-widget`, header/menu toggles, contact inputs, `.hero__cta`, `.carousel__button`, `.masonry__close` all rendered square. | Added `--radius-control: 9999px` and `--radius-input: 0.75rem` to `src/brand/tokens.css`; applied across every interactive control. Buttons and icon controls are now pill-shaped (circular at square aspect), inputs soft-rounded. |
+| 3 | Major | Two visible photo captions remained, against the standing "alt text only, no captions" directive. | Removed the figcaption in the Windhoek office post and the Heroes' Day gallery. Screen-reader-only artist attribution wrappers (which carry verified social links) were kept deliberately: they are links, not display captions. |
+| 4 | Major | Eight dead figcaption CSS rules styled elements that no longer exist. | Deleted: `.media-frame figcaption`, `.site-menu__feature/sector-explorer figcaption`, `.hero-follow__figure figcaption`, `.blog-post__figure figcaption`, `.osb-*-item figcaption`, `.osb-inline-poster figcaption`, `.svc-photo figcaption`, `.svc-promo__art figcaption`. |
+| 5 | Major | `.hero-follow__figure` and its video/poster hardcoded `16px` against the `--radius-media` token. | Unified onto `var(--radius-media)`. |
+| 6 | Major | No logo watermark presence on the page canvas; mono marks only appeared in header/footer. | Added the `watermark-band` motif in CSS: the icon mark as an oversized masked silhouette (5% opacity on light sections, 8% on dark) behind `page-hero` (all inner pages), `blog-post__header`, `hero-follow`, `home-faq`, `section--cta`, and `sector-crossover`. Uses `design-tokens.md` §3's sanctioned mono-variant watermark treatment; aria-exempt pseudo-element, no pointer events, clipped by the host, static. |
+| 7 | Major | Hero LCP poster was the last non-WebP raster (`desert-loop-poster.jpg`, preloaded). | Converted to WebP at quality 78 (34.4 KB → 30.8 KB, 10% smaller after a quality-ladder search; q82 tested larger than the source and was rejected). `HomeHero.tsx` and the `layout.tsx` preload updated; superseded JPG removed. |
+| 8 | Minor | No Hallmark stamp or project memory. | `globals.css` now carries the Hallmark stamp; `.hallmark/log.json` created. |
+
+### Explicit non-changes
+
+- Homepage news block stays factually accurate ("A month on from tournament weekend", Namaqua FC 2–1 Ama Roots FC, 21–23 August): the tournament genuinely ran a month ago, so the earlier "this weekend" phrasing would now be fabrication.
+- `/brand` page figcaptions are identity-variant documentation cards (logo usage notes), not photo captions; retained.
+- OG images remain PNG by platform requirement; they are not site imagery.
+- Palette, fonts, spacing scale, copy, and information architecture untouched (brand-locked).
+
+**Result: 2 critical · 5 major · 1 minor — all resolved.** QA evidence: `tsc --noEmit` clean, `eslint --max-warnings=0` clean, content integrity passed (6 sectors, 75 mapped assets), production build succeeded (34/34 routes), Playwright responsive suite 79/79 (including horizontal-overflow checks at the 320px floor), Playwright axe suite 22/22 across all routes. Gate sweep notes: `overflow-x: clip` extended to `body` (gate 34), marquee pause extended to `:focus-within` (gate 18), `:active` states added to re-voiced controls (gate 26), form inputs equalised to the 3rem control height (gate 39), `--space-5: 1.25rem` formalised in the token scale (gate 24). Visual verification screenshots confirmed pill controls, circular icon buttons, soft-rounded inputs, and watermark placement on About, Services, FAQ, CTA, and mobile surfaces.

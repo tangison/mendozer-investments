@@ -105,7 +105,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html className={`${poppins.variable} ${redHatDisplay.variable}`} lang="en">
       <head>
-        <link fetchPriority="high" href="/videos/hero/desert-loop-poster.jpg" rel="preload" as="image" />
+        <link fetchPriority="high" href="/videos/hero/desert-loop-poster.webp" rel="preload" as="image" />
       </head>
       <body>
         <script dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} type="application/ld+json" />

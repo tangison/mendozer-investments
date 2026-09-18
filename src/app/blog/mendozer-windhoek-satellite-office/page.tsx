@@ -105,10 +105,9 @@ export default function WindhoekSatelliteOfficePage() {
                   height={1080}
                   priority
                   sizes="(max-width: 768px) 100vw, 640px"
-                  src={`${ASSET}/road-works-2.jpg`}
+                  src={`${ASSET}/road-works-2.webp`}
                   width={810}
                 />
-                <figcaption>Work on the ground continues across the country from the new Windhoek base.</figcaption>
               </figure>
             </Reveal>
           </div>

@@ -201,7 +201,6 @@ export default function HeroesDayPage() {
               {gallery.map((photo) => (
                 <figure className="osb-gallery__item" key={photo.src}>
                   <Image alt={photo.alt} height={photo.height} sizes="(max-width: 700px) 100vw, 32vw" src={photo.src} width={photo.width} />
-                  <figcaption>{photo.caption}</figcaption>
                 </figure>
               ))}
             </div>
