@@ -5,7 +5,6 @@ type MediaFrameProps = {
   asset: MediaAsset;
   className?: string;
   priority?: boolean;
-  caption?: boolean;
   sizes?: string;
 };
 
@@ -13,7 +12,6 @@ export function MediaFrame({
   asset,
   className = "",
   priority = false,
-  caption = true,
   sizes = "(max-width: 760px) 100vw, 640px",
 }: MediaFrameProps) {
   return (
@@ -28,7 +26,6 @@ export function MediaFrame({
         style={asset.focus ? { objectPosition: asset.focus } : undefined}
         unoptimized={asset.src.endsWith(".svg")}
       />
-      {caption ? <figcaption>{asset.caption}</figcaption> : null}
     </figure>
   );
 }

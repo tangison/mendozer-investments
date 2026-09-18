@@ -8,9 +8,15 @@ import { HomeHero } from "@/components/HomeHero";
 import { MediaFrame } from "@/components/MediaFrame";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { siteContent } from "@/content/site-content";
+import { homeGallery, siteContent } from "@/content/site-content";
 import { siteConfig } from "@/brand/site-config";
 
+const ClientLogos = dynamic(
+  () => import("@/components/ClientLogos").then((module) => module.ClientLogos),
+);
+const GalleryCarousel = dynamic(
+  () => import("@/components/GalleryCarousel").then((module) => module.GalleryCarousel),
+);
 const HeroFollowSection = dynamic(
   () => import("@/components/HeroFollowSection").then((module) => module.HeroFollowSection),
 );
@@ -73,10 +79,12 @@ export default function HomePage() {
             </Reveal>
           </div>
           <Reveal delay={100} variant="right">
-            <MediaFrame asset={home.introduction.media} className="media-frame--tall" sizes="(max-width: 900px) 100vw, 43vw" />
+            <MediaFrame asset={home.introduction.media} className="media-frame--tall media-frame--rounded" sizes="(max-width: 900px) 100vw, 43vw" />
           </Reveal>
         </div>
       </section>
+
+      <ClientLogos body={home.clients.body} eyebrow={home.clients.eyebrow} title={home.clients.title} />
 
       <section className="section section--surface home-directions" id="sectors">
         <div className="site-container">
@@ -96,16 +104,28 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="section section--surface home-gallery">
+        <div className="site-container">
+          <SectionHeading body={home.gallery.body} eyebrow={home.gallery.eyebrow} title={home.gallery.title} />
+          <Reveal delay={100} variant="up">
+            <GalleryCarousel items={homeGallery} label="Site, field and facility context" />
+          </Reveal>
+        </div>
+      </section>
+
       <section className="section home-event">
         <div className="site-container home-event__grid">
           <Reveal>
-            <p className="eyebrow">Event conclusion</p>
+            <p className="eyebrow">News</p>
             <h2>Otjiwarongo Sports Bonanza 2026</h2>
-            <p>Namaqua FC beat Ama Roots FC 2 to 1 in the final at Mokati Stadium, 21 to 23 August. Read the conclusion and the official releases.</p>
-            <Link className="text-link" href="/blog/otjiwarongo-sports-bonanza-2026">Read the event conclusion <ArrowIcon /></Link>
+            <p>
+              A month on from tournament weekend, the record stands: Namaqua FC beat Ama Roots FC 2 to 1 in the final at
+              Mokati Stadium, 21 to 23 August. Prize payments are proceeding through the published reconciliation process.
+            </p>
+            <Link className="text-link" href="/blog/otjiwarongo-sports-bonanza-2026">Read the event record <ArrowIcon /></Link>
           </Reveal>
           <Reveal delay={80}>
-            <Link className="home-event__flyer" href="/blog/otjiwarongo-sports-bonanza-2026">
+            <Link className="home-event__flyer home-event__flyer--rounded" href="/blog/otjiwarongo-sports-bonanza-2026">
               <Image alt="Otjiwarongo Sports Bonanza 2026 final result poster: Namaqua FC 2 to 1 Ama Roots FC" height={1402} sizes="(max-width: 700px) 72vw, 280px" src="/images/events/otjiwarongo-sports-bonanza-2026/osb-2026-conclusion-poster.webp" width={1122} />
             </Link>
           </Reveal>

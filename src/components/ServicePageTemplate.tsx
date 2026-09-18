@@ -35,7 +35,6 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         media={{
           src: service.hero.src,
           alt: service.hero.alt,
-          caption: service.hero.caption,
           status: service.hero.status,
           focus: service.hero.focus,
         }}
@@ -52,7 +51,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         <div className="site-container service-intro">
           <div>
             <SectionHeading
-              body="Real client-supplied photographs of this service are shown on this page. Captions stay generic and no installation is presented as a named project."
+              body="Real client-supplied photographs of this service are shown on this page. No installation is presented as a named project."
               eyebrow="Service overview"
               title="What this specialist service involves."
             />
@@ -96,7 +95,6 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                       src={image.src}
                       width={image.width}
                     />
-                    <figcaption>{image.caption}</figcaption>
                   </figure>
                 ))}
               </div>
@@ -113,7 +111,6 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                     src={section.promo.src}
                     width={section.promo.width}
                   />
-                  <figcaption>{section.promo.caption}</figcaption>
                 </figure>
                 <div className="svc-promo__note">
                   <p className="eyebrow">Promotional graphic</p>
@@ -135,7 +132,6 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                       src={image.src}
                       width={image.width}
                     />
-                    <figcaption>{image.caption}</figcaption>
                   </figure>
                 ))}
               </div>

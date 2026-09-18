@@ -119,7 +119,6 @@ export function MediaReleasePage({
                   src={poster.src}
                   width={poster.width}
                 />
-                {poster.caption ? <figcaption>{poster.caption}</figcaption> : null}
               </figure>
             </Reveal>
           </div>

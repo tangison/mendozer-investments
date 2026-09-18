@@ -26,6 +26,7 @@ const primaryLinks = [
 
 const desktopLinks = [
   { label: "About", href: "/about" },
+  { label: "Profile", href: "/profile" },
   { label: "Services", href: "/services" },
   { label: "Sectors", href: "/sectors" },
   { label: "Work", href: "/work" },
@@ -43,6 +44,7 @@ function usesDarkHero(pathname: string) {
     pathname === "/sectors" ||
     pathname.startsWith("/sectors/") ||
     pathname === "/work" ||
+    pathname === "/profile" ||
     pathname === "/updates" ||
     pathname === "/compliance" ||
     pathname === "/community" ||
@@ -230,7 +232,6 @@ export function SiteHeader() {
                   </div>
                   <figure className="site-menu__feature">
                     <Image alt={menuFeature.alt} fill sizes="(max-width: 760px) 100vw, 35vw" src={menuFeature.src} />
-                    <figcaption>{menuFeature.caption}</figcaption>
                   </figure>
                 </section>
               ) : null}

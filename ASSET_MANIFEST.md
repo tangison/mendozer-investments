@@ -329,3 +329,45 @@ Manifest rule honoured: marketing-graphic assets are kept out of the real-projec
 ### Open Graph images
 
 `/og/services.png`, `/og/services-electric-fencing.png`, `/og/services-walls-precast.png`, `/og/services-gate-automation.png`, `/og/services-general-construction.png` generated deterministically from the supplied real photos plus locked brand tokens.
+
+## Intake record: 2026-09-18 content refresh
+
+- **2026-09-18:** Downloaded `https://filebin.net/fel7ld960egamowj` (49 files, 110 MB) supplied by the client.
+- Expanded `Mendozer_Partner_Logos_Transparent.zip` (12 transparent partner logos) and processed all usable photos.
+- `IMG_4952.png` (a WhatsApp UI screenshot) was excluded from publication.
+- Four tower/field photos carried an in-camera "CAMON 40 Pro" watermark strip; the strip was cropped before publication.
+- All new photos were EXIF-transposed, resized to a 1600px long edge and encoded as WebP (q80, later q70 above 200 KB). 29 legacy `.jpg` presentation copies were converted to WebP the same way and their `.jpg` originals removed; every content reference was updated.
+- Partner logos were trimmed, capped at 240px height and stored as lossless alpha WebP under `/public/images/clients/`.
+- The company profile PDF was added verbatim as `/documents/mendozer-company-profile.pdf`.
+
+### Supplied photo ledger (2026-09-18 batch)
+
+| Served | Source | Placement | Status |
+|---|---|---|---|
+| `/images/projects/community/missteen-2026-*.webp` (4) | Filebin `941b87e2`, `a01358f4`, `ea494aab`, `ddafb3c4` | `/community`, `/updates`, home community feature | Real, client-supplied |
+| `/images/projects/community/roadside-cleanup-*.webp` (3) | Filebin `IMG_1369`, `9e816214`, `b261970b` | `/work` masonry | Real, client-supplied |
+| `/images/projects/construction/brickwork-*.webp`, `site-structure-01`, `site-works-wide-01`, `building-context-0[1-3]`, `road-works-context-01` (10) | Filebin brickwork/site set + `IMG_2692`, `IMG_1276-78`, `ff828f4c` | `/sectors/construction`, `/work`, `/profile`, home carousel | Real, client-supplied |
+| `/images/projects/technology/tower-mast-01`, `tower-detail-0[1-2]`, `tower-crew-01`, `field-crew-01`, `cable-trench-01` (6) | Filebin tower set + `IMG_1663` | `/sectors/technology`, `/work`, home carousel | Real, client-supplied, watermarks cropped |
+| `/images/projects/cooling/plant-pipes-01`, `facility-visit-0[1-4]` (5) | Filebin facility set | `/sectors/cooling`, `/work` | Real, client-supplied |
+| `/images/projects/logistics/truck-fleet-0[1-5]`, `container-site-0[1-2]` (7) | Filebin truck/container set + `IMG_4357/58`, `IMG_4478/80` | `/sectors/logistics`, `/work`, home carousel | Real, client-supplied |
+| `/images/projects/energy/tank-facility-01`, `tank-works-0[1-2]` (3) | Filebin `6051f160`, `IMG_5270`, `IMG_5275` | `/sectors/energy`, `/work` | Real, client-supplied |
+| `/images/team/crew-group-0[1-6].webp` (6) | Filebin `IMG_1351-53`, `IMG_1597-99` | `/about` team grid | Real, client-supplied |
+
+### Client logo ledger (2026-09-18 batch)
+
+| Served | Mark |
+|---|---|
+| `/images/clients/roads-authority.webp` | Roads Authority |
+| `/images/clients/nampower.webp` | NamPower |
+| `/images/clients/nampost.webp` | NamPost |
+| `/images/clients/mtc.webp` | MTC |
+| `/images/clients/powercom.webp` | PowerCom (Pty) Ltd |
+| `/images/clients/office-of-the-judiciary.webp` | Office of the Judiciary, Republic of Namibia |
+| `/images/clients/omusati-regional-council.webp` | Omusati Regional Council |
+| `/images/clients/kunene-regional-council.webp` | Kunene Regional Council |
+| `/images/clients/tsandi-constituency.webp` | Tsandi Constituency Office |
+| `/images/clients/bergrivier-municipality.webp` | Bergrivier Municipality |
+| `/images/clients/jman.webp` | JMAN |
+| `/images/clients/coat-of-arms-namibia.webp` | Coat of Arms of the Republic of Namibia |
+
+Client marks are shown in the home "Trusted by" band, exactly as supplied by the group.

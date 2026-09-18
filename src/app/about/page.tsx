@@ -84,7 +84,6 @@ export default function AboutPage() {
               <Reveal delay={index * 80} key={image.src}>
                 <figure className="svc-photo">
                   <Image alt={image.alt} className="svc-photo__img" height={image.height} sizes="(max-width: 900px) 100vw, 24vw" src={image.src} width={image.width} />
-                  <figcaption>{image.caption}</figcaption>
                 </figure>
               </Reveal>
             ))}

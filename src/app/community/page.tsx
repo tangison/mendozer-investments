@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { MediaFrame } from "@/components/MediaFrame";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { siteContent } from "@/content/site-content";
+import { communityGallery, siteContent } from "@/content/site-content";
 import { bonanzaPressReport } from "@/content/site-services";
+
+const GalleryCarousel = dynamic(
+  () => import("@/components/GalleryCarousel").then((module) => module.GalleryCarousel),
+);
 
 export const metadata: Metadata = {
   title: "Community & Sponsorship",
@@ -37,7 +42,7 @@ export default function CommunityPage() {
           {community.initiatives.map((initiative, index) => (
             <Reveal delay={index * 120} key={initiative.title} variant={index === 0 ? "left" : "right"}>
               <article className="initiative-card">
-                <MediaFrame asset={initiative.media} className="media-frame--initiative" sizes="(max-width: 900px) 100vw, 50vw" />
+                <MediaFrame asset={initiative.media} className="media-frame--initiative media-frame--rounded" sizes="(max-width: 900px) 100vw, 50vw" />
                 <div className="initiative-card__body">
                   <p className="eyebrow">Sponsorship</p>
                   <h2>{initiative.title}</h2>
@@ -56,13 +61,7 @@ export default function CommunityPage() {
             inverse
             title="Community moments, documented."
           />
-          <div className="community-gallery">
-            {[community.hero, community.initiatives[0].media, siteContent.home.community.media].map((asset, index) => (
-              <Reveal delay={index * 90} key={asset.src}>
-                <MediaFrame asset={asset} className={`community-gallery__item community-gallery__item--${index + 1}`} sizes="(max-width: 760px) 100vw, 33vw" />
-              </Reveal>
-            ))}
-          </div>
+          <GalleryCarousel items={communityGallery} label="Community event photography" />
           <Reveal delay={200}>
             <p className="community-gallery__related">
               Related reading: <Link className="text-link" href="/blog/namibia-heroes-day-2026">Heroes&apos; Day 2026: Namibia remembers</Link>

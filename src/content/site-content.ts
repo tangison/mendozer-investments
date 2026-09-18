@@ -3,7 +3,7 @@
  *
  * This is the only source of brand copy, IA labels, and asset-to-sector assignments.
  * Components consume these objects and remain reusable for future Tangison corporate builds.
- * All visual sector matches are unconfirmed client-supplied context photographs; captions stay generic.
+ * All visual sector matches are client-supplied context photographs; captions are not used, alt text only.
  */
 
 export type SectorSlug =
@@ -25,9 +25,15 @@ export type GlyphName =
 export type MediaAsset = {
   src: string;
   alt: string;
-  caption: string;
   status: "real" | "generated";
   focus?: string;
+};
+
+export type GalleryItem = MediaAsset & { width: number; height: number };
+
+export type ClientLogo = {
+  name: string;
+  src: string;
 };
 
 export type Service = {
@@ -95,15 +101,233 @@ export type Sector = {
   metaDescription?: string;
   glyph: GlyphName;
   hero: MediaAsset;
-  gallery: [MediaAsset, MediaAsset];
+  gallery: MediaAsset[];
   services: Service[];
   crossover: string;
   verifiedFact?: VerifiedFact;
 };
 
+/** Partner and client marks shown in the Trusted by band, exactly as supplied by the group. */
+export const clientLogos: ClientLogo[] = [
+  { name: "Roads Authority", src: "/images/clients/roads-authority.webp" },
+  { name: "NamPower", src: "/images/clients/nampower.webp" },
+  { name: "NamPost", src: "/images/clients/nampost.webp" },
+  { name: "MTC", src: "/images/clients/mtc.webp" },
+  { name: "PowerCom", src: "/images/clients/powercom.webp" },
+  { name: "Office of the Judiciary, Republic of Namibia", src: "/images/clients/office-of-the-judiciary.webp" },
+  { name: "Omusati Regional Council", src: "/images/clients/omusati-regional-council.webp" },
+  { name: "Kunene Regional Council", src: "/images/clients/kunene-regional-council.webp" },
+  { name: "Tsandi Constituency Office", src: "/images/clients/tsandi-constituency.webp" },
+  { name: "Bergrivier Municipality", src: "/images/clients/bergrivier-municipality.webp" },
+  { name: "JMAN", src: "/images/clients/jman.webp" },
+  { name: "Coat of Arms of the Republic of Namibia", src: "/images/clients/coat-of-arms-namibia.webp" },
+];
+
+/** Homepage image carousel, ordered as a working-day arc from crew to community. */
+export const homeGallery: GalleryItem[] = [
+  {
+    src: "/images/team/crew-group-01.webp",
+    alt: "Mendozer crew in blue helmets and branded high-visibility wear beside a site vehicle",
+    status: "real",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/images/projects/construction/brickwork-03.webp",
+    alt: "Bricklaying team building a wall on an active site",
+    status: "real",
+    width: 1280,
+    height: 963,
+  },
+  {
+    src: "/images/projects/technology/tower-detail-01.webp",
+    alt: "Communications tower equipment against a clear sky",
+    status: "real",
+    width: 762,
+    height: 1032,
+  },
+  {
+    src: "/images/projects/logistics/truck-fleet-04.webp",
+    alt: "Truck fleet lined up at a depot before dispatch",
+    status: "real",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: "/images/projects/cooling/facility-visit-01.webp",
+    alt: "Team walking through an operational facility",
+    status: "real",
+    width: 810,
+    height: 1080,
+  },
+  {
+    src: "/images/projects/energy/tank-works-01.webp",
+    alt: "Work on tank and plant infrastructure at height",
+    status: "real",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: "/images/projects/construction/site-works-wide-01.webp",
+    alt: "Broad view across a building work site with structures under construction",
+    status: "real",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/images/projects/community/missteen-2026-titleholders-01.webp",
+    alt: "Miss Teen Namibia 2026 titleholders in front of a Mendozer-branded backdrop",
+    status: "real",
+    width: 1200,
+    height: 1600,
+  },
+];
+
+/** Previous-work masonry shown on the Work page, drawn from the supplied site archive. */
+export const workMasonry: GalleryItem[] = [
+  {
+    src: "/images/projects/construction/site-works-wide-01.webp",
+    alt: "Broad view across a building work site with structures under construction",
+    status: "real",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/images/projects/technology/tower-mast-01.webp",
+    alt: "Red and white communications mast above a prepared site",
+    status: "real",
+    width: 720,
+    height: 1280,
+  },
+  {
+    src: "/images/projects/construction/brickwork-03.webp",
+    alt: "Bricklaying team building a wall on an active site",
+    status: "real",
+    width: 1280,
+    height: 963,
+  },
+  {
+    src: "/images/projects/logistics/truck-fleet-02.webp",
+    alt: "Heavy trucks parked at a depot in a line",
+    status: "real",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: "/images/projects/cooling/plant-pipes-01.webp",
+    alt: "Piped plant infrastructure beside a facility building",
+    status: "real",
+    width: 810,
+    height: 1080,
+  },
+  {
+    src: "/images/projects/technology/cable-trench-01.webp",
+    alt: "Cable and trenching work beside a service vehicle",
+    status: "real",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: "/images/projects/energy/tank-works-01.webp",
+    alt: "Work on tank and plant infrastructure at height",
+    status: "real",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: "/images/projects/community/roadside-cleanup-01.webp",
+    alt: "Crew clearing a roadside during community cleanup work",
+    status: "real",
+    width: 1600,
+    height: 1200,
+  },
+  {
+    src: "/images/projects/construction/building-context-01.webp",
+    alt: "Building exterior beside a sandy work site",
+    status: "real",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: "/images/projects/logistics/container-site-01.webp",
+    alt: "Crew beside a red shipping container at a work site",
+    status: "real",
+    width: 810,
+    height: 1080,
+  },
+  {
+    src: "/images/projects/cooling/facility-visit-02.webp",
+    alt: "Team walking between facility buildings",
+    status: "real",
+    width: 810,
+    height: 1080,
+  },
+  {
+    src: "/images/projects/technology/field-crew-01.webp",
+    alt: "Field crew preparing equipment beside a vehicle",
+    status: "real",
+    width: 762,
+    height: 1032,
+  },
+  {
+    src: "/images/projects/construction/road-works-context-01.webp",
+    alt: "Road worker patching a surface beside a trailer",
+    status: "real",
+    width: 1280,
+    height: 960,
+  },
+  {
+    src: "/images/projects/energy/tank-facility-01.webp",
+    alt: "Team walking across a tank storage facility",
+    status: "real",
+    width: 810,
+    height: 1080,
+  },
+];
+
+/** Community event archive used by the community page carousel. */
+export const communityGallery: GalleryItem[] = [
+  {
+    src: "/images/projects/community/missteen-2026-titleholders-01.webp",
+    alt: "Miss Teen Namibia 2026 titleholders in front of a Mendozer-branded backdrop",
+    status: "real",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: "/images/projects/community/missteen-2026-titleholders-02.webp",
+    alt: "Miss Teen Namibia 2026 titleholders with a guest at the event backdrop",
+    status: "real",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: "/images/projects/community/missteen-2026-guests-01.webp",
+    alt: "Guests in formal wear at a Mendozer-branded event backdrop",
+    status: "real",
+    width: 810,
+    height: 1080,
+  },
+  {
+    src: "/images/projects/community/missteen-2026-guests-02.webp",
+    alt: "Guests posing together at a Mendozer-branded event backdrop",
+    status: "real",
+    width: 1200,
+    height: 1600,
+  },
+  {
+    src: "/images/projects/community/IMG-20260808-WA0077.webp",
+    alt: "Attendees in front of a Mendozer-branded community event backdrop",
+    status: "real",
+    width: 1600,
+    height: 1200,
+  },
+];
+
 export const siteContent = {
   navigation: [
     { label: "About", href: "/about" },
+    { label: "Profile", href: "/profile" },
     { label: "Services", href: "/services" },
     { label: "Sectors", href: "/sectors" },
     { label: "Work", href: "/work" },
@@ -122,9 +346,8 @@ export const siteContent = {
     followTitle: "One accountable team behind the value, from first brief to delivered work.",
     followBody: "Construction, technology, cooling, logistics, energy and tourism sit under one accountable team, so the value agreed in the brief is the value delivered on site. Start with the sector closest to the work in front of you, and bring the wider team in when the brief crosses disciplines. Every engagement carries the same standard: real site context, verified records, and work delivered with care.",
     media: {
-      src: "/images/projects/construction/road-works-2.jpg",
+      src: "/images/projects/construction/road-works-2.webp",
       alt: "A site team beside active infrastructure work",
-      caption: "Construction work in progress",
       status: "real",
       focus: "50% 55%",
     } satisfies MediaAsset,
@@ -134,9 +357,8 @@ export const siteContent = {
     title: "Choose the right sector.",
     body: "Start with the sector closest to the work in front of you. If the scope crosses disciplines, use the group contact route.",
     hero: {
-      src: "/images/projects/construction/road-works-2.jpg",
+      src: "/images/projects/construction/road-works-2.webp",
       alt: "Site team beside active infrastructure work",
-      caption: "Construction work in progress",
       status: "real",
       focus: "50% 55%",
     } satisfies MediaAsset,
@@ -146,9 +368,8 @@ export const siteContent = {
     title: "Published carefully, grounded in the work.",
     body: "These client-supplied images show site, field and facility context from the Mendozer archive. Project names and client details are published only when approval is in place.",
     hero: {
-      src: "/images/projects/work/IMG-20260808-WA0034.jpg",
+      src: "/images/projects/work/IMG-20260808-WA0034.webp",
       alt: "A broad view across a building work site",
-      caption: "Construction work in progress",
       status: "real",
       focus: "50% 52%",
     } satisfies MediaAsset,
@@ -158,9 +379,8 @@ export const siteContent = {
     title: "Activity, recorded with care.",
     body: "This page brings together approved community context and publicly verifiable records. It does not turn unapproved site images into project claims.",
     hero: {
-      src: "/images/projects/community/IMG-20260808-WA0077.jpg",
+      src: "/images/projects/community/IMG-20260808-WA0077.webp",
       alt: "Attendees in front of a Mendozer-branded community event backdrop",
-      caption: "Community sponsorship event",
       status: "real",
       focus: "50% 38%",
     } satisfies MediaAsset,
@@ -170,9 +390,8 @@ export const siteContent = {
     title: "Verified details, stated plainly.",
     body: "Mendozer publishes registration detail and public licensing records that can be verified. Additional compliance material is added only when it is approved for publication.",
     hero: {
-      src: "/images/projects/fuel-energy/plant-piping.jpg",
+      src: "/images/projects/fuel-energy/plant-piping.webp",
       alt: "Piping and infrastructure at an operational plant",
-      caption: "Energy infrastructure work in progress",
       status: "real",
       focus: "54% 52%",
     } satisfies MediaAsset,
@@ -183,9 +402,8 @@ export const siteContent = {
       title: "The sectors that build the value.",
       body: "Choose the sector closest to the need. If the brief crosses more than one area, begin with one accountable group.",
       media: {
-        src: "/images/projects/technology/tower-full-view.jpg",
+        src: "/images/projects/technology/tower-full-view.webp",
         alt: "A communications tower above a work site",
-        caption: "Field systems work in progress",
         status: "real",
         focus: "52% 42%",
       } satisfies MediaAsset,
@@ -195,10 +413,20 @@ export const siteContent = {
       title: "Find the right starting point.",
       body: "Each sector leads to the same accountable team and the same standard.",
     },
+    clients: {
+      eyebrow: "Trusted by",
+      title: "Working alongside Namibian institutions and partners.",
+      body: "Partners, councils and institutions the group has worked alongside across the country.",
+    },
     connective: {
       eyebrow: "A connected view",
       title: "One group keeps the whole brief in view.",
       body: "A site, system, facility and supply route can be connected. Start with the need, then bring the right sector into the conversation.",
+    },
+    gallery: {
+      eyebrow: "On site",
+      title: "The work, in frame.",
+      body: "A rotating view of recent site, field and facility context from across the six working directions.",
     },
     faq: {
       eyebrow: "Starting point",
@@ -215,7 +443,7 @@ export const siteContent = {
         },
         {
           question: "Can I contact the group directly?",
-          answer: "Yes. The contact route lets you prepare a message to contact@mendozer.com without storing the enquiry on this website.",
+          answer: "Yes. The contact route lets you prepare a message to info@mendozer.com without storing the enquiry on this website.",
         },
         {
           question: "Where can I find published project detail?",
@@ -228,11 +456,10 @@ export const siteContent = {
       title: "Visible support for local moments.",
       body: "Explore the sponsorship context currently approved for publication.",
       media: {
-        src: "/images/projects/community/IMG-20260808-WA0076.jpg",
-        alt: "Guests at a Mendozer-branded community event backdrop",
-        caption: "Community sponsorship event",
+        src: "/images/projects/community/missteen-2026-titleholders-01.webp",
+        alt: "Miss Teen Namibia 2026 titleholders in front of a Mendozer-branded backdrop",
         status: "real",
-        focus: "50% 42%",
+        focus: "50% 35%",
       } satisfies MediaAsset,
     },
   },
@@ -241,9 +468,8 @@ export const siteContent = {
     title: "One group for work that crosses disciplines.",
     body: "Mendozer Investments builds and delivers across construction, technology, cooling, logistics, energy and tourism for partners, institutions and commercial enquiries.",
     hero: {
-      src: "/images/projects/logistics/crew-roadside.jpg",
+      src: "/images/projects/logistics/crew-roadside.webp",
       alt: "A work crew gathered beside a road",
-      caption: "Site support work in progress",
       status: "real",
       focus: "50% 30%",
     } satisfies MediaAsset,
@@ -278,22 +504,20 @@ export const siteContent = {
     title: "Sponsorship visible where people gather.",
     body: "Mendozer’s approved event archive records sponsorship visibility at community-facing occasions.",
     hero: {
-      src: "/images/projects/community/IMG-20260808-WA0077.jpg",
-      alt: "Attendees in front of a Mendozer-branded event backdrop",
-      caption: "Community sponsorship event",
+      src: "/images/projects/community/missteen-2026-titleholders-02.webp",
+      alt: "Miss Teen Namibia 2026 titleholders with a guest at the event backdrop",
       status: "real",
-      focus: "50% 38%",
+      focus: "50% 30%",
     } satisfies MediaAsset,
     initiatives: [
       {
         title: "Miss Teen Namibia 2026",
         body: "Client-supplied event imagery records Mendozer sponsorship visibility at the event.",
         media: {
-          src: "/images/projects/community/IMG-20260808-WA0078.jpg",
-          alt: "Guests at a Mendozer-branded event backdrop",
-          caption: "Community sponsorship event",
+          src: "/images/projects/community/missteen-2026-titleholders-01.webp",
+          alt: "Miss Teen Namibia 2026 titleholders in front of a Mendozer-branded backdrop",
           status: "real",
-          focus: "50% 35%",
+          focus: "50% 30%",
         } satisfies MediaAsset,
       },
       {
@@ -303,7 +527,6 @@ export const siteContent = {
         media: {
           src: "/images/events/otjiwarongo-sports-bonanza-2026/osb-2026-conclusion-poster.webp",
           alt: "Otjiwarongo Sports Bonanza 2026 final result poster: Namaqua FC 2 to 1 Ama Roots FC",
-          caption: "Final result poster",
           status: "real",
           focus: "50% 40%",
         } satisfies MediaAsset,
@@ -315,13 +538,12 @@ export const siteContent = {
     title: "Start with the work in front of you.",
     body: "Tell the group what needs attention, which sector is closest, and how to contact you. Secure delivery is used where configured, with direct email available as a fallback.",
     media: {
-      src: "/images/projects/technology/IMG-20260808-WA0061.jpg",
+      src: "/images/projects/technology/IMG-20260808-WA0061.webp",
       alt: "A communications tower above a prepared site",
-      caption: "Tower and systems work in progress",
       status: "real",
       focus: "50% 53%",
     } satisfies MediaAsset,
-    email: "contact@mendozer.com",
+    email: "info@mendozer.com",
   },
   footer: {
     statement: "Building Value. Delivering Excellence.",
@@ -343,24 +565,36 @@ export const sectors: Sector[] = [
       "Civil and building work on open sites: access, structures, and the coordination of crews on the ground, delivered by Mendozer Investments across Namibia.",
     glyph: "structure",
     hero: {
-      src: "/images/projects/construction/IMG-20260808-WA0033.jpg",
+      src: "/images/projects/construction/IMG-20260808-WA0033.webp",
       alt: "A building under construction on an open site",
-      caption: "Building work in progress",
       status: "real",
       focus: "50% 55%",
     },
     gallery: [
       {
-        src: "/images/projects/construction/road-works-1.jpg",
+        src: "/images/projects/construction/brickwork-03.webp",
+        alt: "Bricklaying team building a wall on an active site",
+        status: "real",
+      },
+      {
+        src: "/images/projects/construction/site-works-wide-01.webp",
+        alt: "Broad view across a building work site with structures under construction",
+        status: "real",
+      },
+      {
+        src: "/images/projects/construction/road-works-1.webp",
         alt: "A crew beside roadside infrastructure work",
-        caption: "Road and site work in progress",
         status: "real",
         focus: "52% 50%",
       },
       {
-        src: "/images/projects/construction/IMG-20260808-WA0035.jpg",
+        src: "/images/projects/construction/brickwork-05.webp",
+        alt: "Timber and brickwork structure taking shape on site",
+        status: "real",
+      },
+      {
+        src: "/images/projects/construction/IMG-20260808-WA0035.webp",
         alt: "A broad view of a building work site",
-        caption: "Building work in progress",
         status: "real",
         focus: "50% 50%",
       },
@@ -384,24 +618,36 @@ export const sectors: Sector[] = [
       "Field systems and telecom infrastructure, including tower installation and the equipment that keeps teams linked, under the Mendozer technology direction.",
     glyph: "signal",
     hero: {
-      src: "/images/projects/technology/IMG-20260808-WA0061.jpg",
+      src: "/images/projects/technology/IMG-20260808-WA0061.webp",
       alt: "A communications tower on a prepared site",
-      caption: "Tower and systems work in progress",
       status: "real",
       focus: "50% 55%",
     },
     gallery: [
       {
-        src: "/images/projects/technology/IMG-20260808-WA0056.jpg",
+        src: "/images/projects/technology/IMG-20260808-WA0056.webp",
         alt: "Communications equipment mounted on a tower",
-        caption: "Tower equipment work in progress",
         status: "real",
         focus: "50% 45%",
       },
       {
-        src: "/images/projects/technology/IMG-20260808-WA0060.jpg",
+        src: "/images/projects/technology/tower-mast-01.webp",
+        alt: "Red and white communications mast above a prepared site",
+        status: "real",
+      },
+      {
+        src: "/images/projects/technology/tower-crew-01.webp",
+        alt: "Technician working at a tower base behind a security fence",
+        status: "real",
+      },
+      {
+        src: "/images/projects/technology/cable-trench-01.webp",
+        alt: "Cable and trenching work beside a service vehicle",
+        status: "real",
+      },
+      {
+        src: "/images/projects/technology/IMG-20260808-WA0060.webp",
         alt: "Structural base work at a communications installation",
-        caption: "Tower base work in progress",
         status: "real",
         focus: "50% 48%",
       },
@@ -425,24 +671,36 @@ export const sectors: Sector[] = [
       "Facility work around plant rooms, piping, and the controlled conditions that keep operations continuous, from the Mendozer cooling and cold chain direction.",
     glyph: "cooling",
     hero: {
-      src: "/images/projects/cooling/IMG-20260808-WA0047.jpg",
+      src: "/images/projects/cooling/IMG-20260808-WA0047.webp",
       alt: "Industrial piping beside a facility building",
-      caption: "Facility infrastructure work in progress",
       status: "real",
       focus: "52% 54%",
     },
     gallery: [
       {
-        src: "/images/projects/cooling/IMG-20260808-WA0046.jpg",
+        src: "/images/projects/cooling/plant-pipes-01.webp",
+        alt: "Piped plant infrastructure beside a facility building",
+        status: "real",
+      },
+      {
+        src: "/images/projects/cooling/facility-visit-01.webp",
+        alt: "Team walking through an operational facility",
+        status: "real",
+      },
+      {
+        src: "/images/projects/cooling/IMG-20260808-WA0046.webp",
         alt: "A team walking beside industrial service equipment",
-        caption: "Facility support work in progress",
         status: "real",
         focus: "52% 52%",
       },
       {
-        src: "/images/projects/cooling/IMG-20260808-WA0044.jpg",
+        src: "/images/projects/cooling/facility-visit-03.webp",
+        alt: "Crew walking between facility buildings on a clear day",
+        status: "real",
+      },
+      {
+        src: "/images/projects/cooling/IMG-20260808-WA0044.webp",
         alt: "A team walking through an operational facility area",
-        caption: "Operational facility work in progress",
         status: "real",
         focus: "50% 50%",
       },
@@ -466,24 +724,36 @@ export const sectors: Sector[] = [
       "Moving people, materials, and support through active sites and changing work routes, keeping Mendozer projects and crews supplied across Namibia.",
     glyph: "route",
     hero: {
-      src: "/images/projects/logistics/founder-site-visit.jpg",
+      src: "/images/projects/logistics/founder-site-visit.webp",
       alt: "Vehicles and people gathered beside an unpaved work route",
-      caption: "Logistics support work in progress",
       status: "real",
       focus: "50% 53%",
     },
     gallery: [
       {
-        src: "/images/projects/logistics/IMG-20260808-WA0048.jpg",
+        src: "/images/projects/logistics/truck-fleet-04.webp",
+        alt: "Truck fleet lined up at a depot before dispatch",
+        status: "real",
+      },
+      {
+        src: "/images/projects/logistics/container-site-01.webp",
+        alt: "Crew beside a red shipping container at a work site",
+        status: "real",
+      },
+      {
+        src: "/images/projects/logistics/IMG-20260808-WA0048.webp",
         alt: "People beside a container at a work site",
-        caption: "Container support work in progress",
         status: "real",
         focus: "50% 50%",
       },
       {
-        src: "/images/projects/logistics/IMG-20260808-WA0043.jpg",
+        src: "/images/projects/logistics/truck-fleet-01.webp",
+        alt: "Heavy truck front view at a depot yard",
+        status: "real",
+      },
+      {
+        src: "/images/projects/logistics/IMG-20260808-WA0043.webp",
         alt: "A group walking through a work environment",
-        caption: "Field support work in progress",
         status: "real",
         focus: "55% 50%",
       },
@@ -507,24 +777,36 @@ export const sectors: Sector[] = [
       "Wholesale fuel distribution under licence W/188/2017, with supporting plant and infrastructure, delivered by the Mendozer fuel and energy direction.",
     glyph: "energy",
     hero: {
-      src: "/images/projects/fuel-energy/plant-piping.jpg",
+      src: "/images/projects/fuel-energy/plant-piping.webp",
       alt: "Piping and infrastructure at an operational plant",
-      caption: "Energy infrastructure work in progress",
       status: "real",
       focus: "54% 52%",
     },
     gallery: [
       {
-        src: "/images/projects/energy/IMG-20260808-WA0045.jpg",
+        src: "/images/projects/energy/tank-facility-01.webp",
+        alt: "Team walking across a tank storage facility",
+        status: "real",
+      },
+      {
+        src: "/images/projects/energy/tank-works-01.webp",
+        alt: "Work on tank and plant infrastructure at height",
+        status: "real",
+      },
+      {
+        src: "/images/projects/energy/IMG-20260808-WA0045.webp",
         alt: "People walking beside industrial storage infrastructure",
-        caption: "Energy facility context",
         status: "real",
         focus: "50% 50%",
       },
       {
-        src: "/images/projects/energy/IMG-20260808-WA0052.jpg",
+        src: "/images/projects/energy/tank-works-02.webp",
+        alt: "Piping and fittings on a tank installation",
+        status: "real",
+      },
+      {
+        src: "/images/projects/energy/IMG-20260808-WA0052.webp",
         alt: "A close view of industrial structural hardware",
-        caption: "Structural systems work in progress",
         status: "real",
         focus: "50% 52%",
       },
@@ -549,24 +831,21 @@ export const sectors: Sector[] = [
       "Land, access, and rural operating settings across the Namibian landscape, handled with the practical care Mendozer brings to every sector.",
     glyph: "landscape",
     hero: {
-      src: "/images/projects/tourism/IMG-20260808-WA0055.jpg",
+      src: "/images/projects/tourism/IMG-20260808-WA0055.webp",
       alt: "A view across a green Namibian landscape",
-      caption: "Landscape in view",
       status: "real",
       focus: "50% 50%",
     },
     gallery: [
       {
-        src: "/images/projects/tourism/IMG-20260808-WA0066.jpg",
+        src: "/images/projects/tourism/IMG-20260808-WA0066.webp",
         alt: "Outdoor work equipment beneath a tree",
-        caption: "Rural operating context",
         status: "real",
         focus: "50% 50%",
       },
       {
-        src: "/images/projects/tourism/IMG-20260808-WA0067.jpg",
+        src: "/images/projects/tourism/IMG-20260808-WA0067.webp",
         alt: "A broad dry landscape with mature trees",
-        caption: "Landscape in view",
         status: "real",
         focus: "50% 50%",
       },
@@ -587,9 +866,8 @@ export const workContexts: WorkContext[] = [
     body: "Client-supplied building and site context, shown without a named project claim.",
     href: "/sectors/construction",
     media: {
-      src: "/images/projects/work/IMG-20260808-WA0032.jpg",
+      src: "/images/projects/work/IMG-20260808-WA0032.webp",
       alt: "A building under construction beside an open site",
-      caption: "Construction work in progress",
       status: "real",
       focus: "50% 52%",
     },
@@ -600,9 +878,8 @@ export const workContexts: WorkContext[] = [
     body: "Tower and field-installation context from the supplied Mendozer archive.",
     href: "/sectors/technology",
     media: {
-      src: "/images/projects/work/IMG-20260808-WA0063.jpg",
+      src: "/images/projects/work/IMG-20260808-WA0063.webp",
       alt: "A communications antenna structure against the sky",
-      caption: "Field systems work in progress",
       status: "real",
       focus: "50% 50%",
     },
@@ -613,9 +890,8 @@ export const workContexts: WorkContext[] = [
     body: "Container and site-support context, shown without an unverified location or client name.",
     href: "/sectors/logistics",
     media: {
-      src: "/images/projects/work/IMG-20260808-WA0049.jpg",
+      src: "/images/projects/work/IMG-20260808-WA0049.webp",
       alt: "A team beside a container at a work site",
-      caption: "Logistics support work in progress",
       status: "real",
       focus: "50% 50%",
     },
@@ -630,9 +906,8 @@ export const publicUpdates: PublicUpdate[] = [
     sourceLabel: "Namibia Government Gazette No. 8655, 4 June 2025, Annexure 1",
     sourceUrl: "https://www.lac.org.na/laws/2025/8655.pdf",
     media: {
-      src: "/images/projects/fuel-energy/plant-piping.jpg",
+      src: "/images/projects/fuel-energy/plant-piping.webp",
       alt: "Piping and infrastructure at an operational plant",
-      caption: "Energy infrastructure work in progress",
       status: "real",
       focus: "54% 52%",
     },
@@ -642,23 +917,21 @@ export const publicUpdates: PublicUpdate[] = [
     title: "Miss Teen Namibia 2026",
     body: "Client-supplied event imagery records Mendozer sponsorship visibility at the event.",
     media: {
-      src: "/images/projects/community/IMG-20260808-WA0078.jpg",
-      alt: "Guests at a Mendozer-branded community event backdrop",
-      caption: "Community sponsorship event",
+      src: "/images/projects/community/missteen-2026-titleholders-02.webp",
+      alt: "Miss Teen Namibia 2026 titleholders with a guest at the event backdrop",
       status: "real",
-      focus: "50% 35%",
+      focus: "50% 30%",
     },
   },
   {
-    eyebrow: "Event conclusion",
+    eyebrow: "Event record",
     title: "Otjiwarongo Sports Bonanza 2026",
-    body: "Namaqua FC defeated Ama Roots FC 2 to 1 in the final at Mokati Stadium, 21 to 23 August 2026, with a N$45,000 prize pool.",
-    sourceLabel: "Read the event conclusion",
+    body: "A month on from tournament weekend: Namaqua FC defeated Ama Roots FC 2 to 1 in the final at Mokati Stadium, 21 to 23 August 2026, with a N$45,000 prize pool. Prize payments are proceeding through the published reconciliation process.",
+    sourceLabel: "Read the event record",
     sourceUrl: "/blog/otjiwarongo-sports-bonanza-2026",
     media: {
       src: "/images/events/otjiwarongo-sports-bonanza-2026/osb-2026-conclusion-poster.webp",
       alt: "Otjiwarongo Sports Bonanza 2026 final result poster: Namaqua FC 2 to 1 Ama Roots FC",
-      caption: "Final result poster",
       status: "real",
       focus: "50% 40%",
     },
@@ -674,8 +947,8 @@ export const legalPages = {
       {
         heading: "When you prepare an enquiry",
         paragraphs: [
-          "When secure delivery is configured, the contact form validates the enquiry and sends it to contact@mendozer.com through the approved server-side delivery provider. The form may also send a confirmation email to the address you provide.",
-          "If secure delivery is unavailable, the website opens a prepared email in your own mail application, addressed to contact@mendozer.com. Include only information that is relevant to the enquiry.",
+          "When secure delivery is configured, the contact form validates the enquiry and sends it to info@mendozer.com through the approved server-side delivery provider. The form may also send a confirmation email to the address you provide.",
+          "If secure delivery is unavailable, the website opens a prepared email in your own mail application, addressed to info@mendozer.com. Include only information that is relevant to the enquiry.",
         ],
       },
       {
@@ -689,13 +962,13 @@ export const legalPages = {
         heading: "Service providers and sub-processors",
         paragraphs: [
           "Website hosting and page delivery are provided by Vercel Inc., which processes technical request data on the group's behalf. The contact page embeds a Google Maps map so visitors can find the Windhoek office; Google may process technical data when that map loads.",
-          "When direct enquiry delivery is configured, enquiry content is processed by the approved email delivery provider so the enquiry reaches contact@mendozer.com. Enquiries are not stored in a public database on this website.",
+          "When direct enquiry delivery is configured, enquiry content is processed by the approved email delivery provider so the enquiry reaches info@mendozer.com. Enquiries are not stored in a public database on this website.",
         ],
       },
       {
         heading: "Questions about this notice",
         paragraphs: [
-          "For a privacy-related website enquiry, use contact@mendozer.com and state the nature of the request clearly.",
+          "For a privacy-related website enquiry, use info@mendozer.com and state the nature of the request clearly.",
           "This notice should be reviewed when the contact workflow, analytics, or any client-facing service changes.",
         ],
       },
@@ -716,7 +989,7 @@ export const legalPages = {
       {
         heading: "Images and public records",
         paragraphs: [
-          "Supplied project-context photography is captioned generically unless a specific project is approved for publication. Generated contextual imagery is labelled and is not presented as documentary project or event evidence.",
+          "Supplied project-context photography is presented without captions or named-project claims unless a specific project is approved for publication. Generated contextual imagery is labelled and is not presented as documentary project or event evidence.",
           "The website also links to a public Namibia Government Gazette record for wholesale fuel distribution licence W/188/2017. The linked record is cited as a source, not as a broader performance claim.",
         ],
       },
@@ -724,7 +997,7 @@ export const legalPages = {
         heading: "Using the site",
         paragraphs: [
           "Do not rely on website information as a substitute for a written agreement or direct confirmation from Mendozer Investments.",
-          "For a group or sector enquiry, contact contact@mendozer.com.",
+          "For a group or sector enquiry, contact info@mendozer.com.",
         ],
       },
     ],
@@ -734,6 +1007,7 @@ export const legalPages = {
 export const routes = [
   "/",
   "/about",
+  "/profile",
   "/sectors",
   ...sectors.map((sector) => `/sectors/${sector.slug}`),
   "/services",
@@ -759,3 +1033,4 @@ export const routes = [
 export function getSector(slug: string): Sector | undefined {
   return sectors.find((sector) => sector.slug === slug);
 }
+

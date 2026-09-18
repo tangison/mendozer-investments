@@ -10,7 +10,7 @@
  *   as clearly labelled promotional graphics on their service pages)
  * - the three team selfies are withheld until the people approve publication
  * - ad contact blocks are preserved exactly (images not cropped or altered)
- * - images are optimized for web; captions stay generic (no named projects)
+ * - images are optimized for web; alt text only, no captions
  */
 
 export type SpecialistServiceSlug =
@@ -24,7 +24,6 @@ export type GalleryImage = {
   width: number;
   height: number;
   alt: string;
-  caption: string;
   status: "real";
   focus?: string;
 };
@@ -34,7 +33,6 @@ export type PromoGraphic = {
   width: number;
   height: number;
   alt: string;
-  caption: string;
   note: string;
 };
 
@@ -84,7 +82,6 @@ export const specialistServices: readonly SpecialistService[] = [
       width: 1280,
       height: 960,
       alt: "Electric fencing installed on a precast boundary wall",
-      caption: "Electric fencing on a precast boundary wall",
       status: "real",
       focus: "50% 55%",
     },
@@ -111,7 +108,6 @@ export const specialistServices: readonly SpecialistService[] = [
             width: 960,
             height: 1280,
             alt: "Close view of a Nemtek bracket carrying electric fence wiring",
-            caption: "Bracket and wiring detail",
             status: "real",
           },
           {
@@ -119,7 +115,6 @@ export const specialistServices: readonly SpecialistService[] = [
             width: 960,
             height: 1280,
             alt: "Close view of an insulator and electric fence wire",
-            caption: "Insulator and wire detail",
             status: "real",
           },
         ],
@@ -134,7 +129,6 @@ export const specialistServices: readonly SpecialistService[] = [
             width: 960,
             height: 1280,
             alt: "Conduit trench prepared during an electric fence installation",
-            caption: "Conduit trench prepared during installation",
             status: "real",
           },
         ],
@@ -149,7 +143,6 @@ export const specialistServices: readonly SpecialistService[] = [
             width: 1280,
             height: 960,
             alt: "Electric fencing on a precast boundary wall, wide view",
-            caption: "Electric fencing on a precast boundary wall",
             status: "real",
           },
           {
@@ -157,7 +150,6 @@ export const specialistServices: readonly SpecialistService[] = [
             width: 1280,
             height: 960,
             alt: "Electric fencing on a precast boundary wall, alternate view",
-            caption: "Same wall line from another angle",
             status: "real",
           },
           {
@@ -165,7 +157,6 @@ export const specialistServices: readonly SpecialistService[] = [
             width: 960,
             height: 1280,
             alt: "Access door built into a fenced boundary wall",
-            caption: "Access door within the wall",
             status: "real",
           },
           {
@@ -173,7 +164,6 @@ export const specialistServices: readonly SpecialistService[] = [
             width: 960,
             height: 1280,
             alt: "Corner post with electric fence brackets and wiring",
-            caption: "Corner post detail",
             status: "real",
           },
           {
@@ -181,7 +171,6 @@ export const specialistServices: readonly SpecialistService[] = [
             width: 960,
             height: 1280,
             alt: "Long run of electric fence wire along a boundary wall",
-            caption: "Wire run along the boundary",
             status: "real",
           },
         ],
@@ -202,7 +191,6 @@ export const specialistServices: readonly SpecialistService[] = [
       width: 1280,
       height: 960,
       alt: "Finished precast concrete boundary wall",
-      caption: "Finished precast boundary wall",
       status: "real",
       focus: "50% 55%",
     },
@@ -228,7 +216,6 @@ export const specialistServices: readonly SpecialistService[] = [
             width: 1280,
             height: 960,
             alt: "Finished precast concrete boundary wall, first view",
-            caption: "Finished precast boundary wall",
             status: "real",
           },
           {
@@ -236,7 +223,6 @@ export const specialistServices: readonly SpecialistService[] = [
             width: 1280,
             height: 960,
             alt: "Finished precast concrete boundary wall, second view",
-            caption: "Finished precast boundary wall, second view",
             status: "real",
           },
         ],
@@ -259,7 +245,6 @@ export const specialistServices: readonly SpecialistService[] = [
       width: 810,
       height: 1080,
       alt: "Automated sliding gate at an installed property",
-      caption: "Automated sliding gate, installed example",
       status: "real",
       focus: "50% 40%",
     },
@@ -284,7 +269,6 @@ export const specialistServices: readonly SpecialistService[] = [
           width: 1600,
           height: 2134,
           alt: "Promotional graphic for Mendozer sliding gate systems with the Mendozer contact block",
-          caption: "Promotional graphic supplied by Mendozer Investments",
           note: "Designed advertisement shown for reference. Contact details preserved as supplied.",
         },
       },
@@ -298,7 +282,6 @@ export const specialistServices: readonly SpecialistService[] = [
             width: 810,
             height: 1080,
             alt: "Automated sliding gate at an installed property",
-            caption: "Automated sliding gate, installed example",
             status: "real",
           },
         ],
@@ -321,7 +304,6 @@ export const specialistServices: readonly SpecialistService[] = [
       width: 810,
       height: 1080,
       alt: "Downpipe and plumbing detail on a house exterior",
-      caption: "Downpipe and plumbing work on a house exterior",
       status: "real",
       focus: "50% 40%",
     },
@@ -346,7 +328,6 @@ export const specialistServices: readonly SpecialistService[] = [
           width: 1600,
           height: 1999,
           alt: "Promotional graphic for building your project with Mendozer, including the Mendozer contact block",
-          caption: "Promotional graphic supplied by Mendozer Investments",
           note: "Designed advertisement shown for reference. Contact details preserved as supplied.",
         },
       },
@@ -360,7 +341,6 @@ export const specialistServices: readonly SpecialistService[] = [
             width: 810,
             height: 1080,
             alt: "Downpipe and plumbing detail on a house exterior",
-            caption: "Downpipe and plumbing work on a house exterior",
             status: "real",
           },
         ],
@@ -380,7 +360,6 @@ export const teamGallery: readonly GalleryImage[] = [
     width: 1023,
     height: 1537,
     alt: "Mendozer team in a branded group photograph",
-    caption: "The Mendozer crew",
     status: "real",
   },
   {
@@ -388,7 +367,6 @@ export const teamGallery: readonly GalleryImage[] = [
     width: 960,
     height: 1280,
     alt: "Mendozer crew members in branded high-visibility site wear",
-    caption: "Crew in branded site wear, on site",
     status: "real",
   },
   {
@@ -396,7 +374,6 @@ export const teamGallery: readonly GalleryImage[] = [
     width: 960,
     height: 1280,
     alt: "Mendozer crew members in branded high-visibility site wear, second view",
-    caption: "Crew in branded site wear, on site",
     status: "real",
   },
   {
@@ -404,7 +381,48 @@ export const teamGallery: readonly GalleryImage[] = [
     width: 960,
     height: 1280,
     alt: "Mendozer crew members in branded high-visibility site wear, third view",
-    caption: "Crew in branded site wear, on site",
+    status: "real",
+  },
+  {
+    src: "/images/team/crew-group-01.webp",
+    width: 1600,
+    height: 1200,
+    alt: "Mendozer crew in blue helmets and branded wear beside a site vehicle",
+    status: "real",
+  },
+  {
+    src: "/images/team/crew-group-02.webp",
+    width: 1600,
+    height: 900,
+    alt: "Mendozer crew lined up beside a site vehicle on a dirt work site",
+    status: "real",
+  },
+  {
+    src: "/images/team/crew-group-03.webp",
+    width: 1600,
+    height: 1200,
+    alt: "Mendozer crew giving a thumbs up beside a site vehicle",
+    status: "real",
+  },
+  {
+    src: "/images/team/crew-group-04.webp",
+    width: 1200,
+    height: 1600,
+    alt: "Mendozer crew posing with tools at a rural work site",
+    status: "real",
+  },
+  {
+    src: "/images/team/crew-group-05.webp",
+    width: 1200,
+    height: 1600,
+    alt: "Mendozer crew members in branded wear beside a work building",
+    status: "real",
+  },
+  {
+    src: "/images/team/crew-group-06.webp",
+    width: 1200,
+    height: 1600,
+    alt: "Mendozer crew standing together on a rural work site",
     status: "real",
   },
 ];

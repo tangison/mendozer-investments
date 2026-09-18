@@ -2500,3 +2500,162 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
     max-width: 26rem;
   }
 }
+
+/* ============================================================================
+   IMAGE WIDGETS: carousel, masonry + lightbox, client marquee, profile blocks
+   ========================================================================== */
+
+.media-frame--rounded { border-radius: var(--radius-media); }
+.home-event__flyer--rounded img { border-radius: var(--radius-media); }
+
+/* ---- Carousel ---- */
+.home-gallery .section-heading { margin-bottom: var(--space-8); }
+.carousel { width: 100%; }
+.carousel__track {
+  display: flex;
+  column-gap: var(--space-4);
+  overflow-x: auto;
+  padding: var(--space-2) var(--space-2) var(--space-6);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  list-style: none;
+}
+.carousel__track::-webkit-scrollbar { display: none; }
+.carousel__slide { flex: 0 0 auto; scroll-snap-align: center; }
+.carousel__frame {
+  position: relative;
+  height: clamp(20rem, 42vw, 30rem);
+  overflow: hidden;
+  border-radius: var(--radius-media);
+  background: var(--color-bg-dark-secondary);
+}
+.carousel__image {
+  height: 100% !important;
+  width: auto !important;
+  object-fit: cover;
+}
+.carousel__controls { display: flex; align-items: center; gap: var(--space-3); }
+.carousel__button {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 3rem; height: 3rem; padding: 0;
+  border: 1px solid var(--color-border-subtle); border-radius: 0;
+  background: var(--color-bg-primary); color: var(--color-brand-navy);
+  transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+.carousel__button:hover:not(:disabled) { background: var(--color-brand-navy); border-color: var(--color-brand-navy); color: var(--color-text-dark-primary); }
+.carousel__button:disabled { opacity: 0.35; cursor: not-allowed; }
+.carousel__button svg { width: 1rem; height: 1rem; }
+.carousel__dots { display: inline-flex; align-items: center; gap: 0.4rem; margin-left: var(--space-2); }
+.carousel__dot { width: 0.4rem; height: 0.4rem; background: var(--color-border-subtle); }
+.carousel__dot.is-active { background: var(--color-brand-blue); }
+.carousel__count { margin-left: auto; color: var(--color-text-body); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.08em; }
+
+/* ---- Masonry + lightbox ---- */
+.masonry__grid { columns: 1; column-gap: var(--space-4); list-style: none; }
+.masonry__item { margin-bottom: var(--space-4); break-inside: avoid; }
+.masonry__trigger { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.masonry__image {
+  width: 100%; height: auto;
+  border-radius: var(--radius-media);
+  transition: transform var(--duration-base) var(--ease-out-expressive), opacity var(--duration-fast) ease;
+}
+.masonry__trigger:hover .masonry__image { transform: scale(1.015); opacity: 0.92; }
+.masonry__lightbox {
+  max-width: min(94vw, 1080px); max-height: 92vh;
+  padding: 0; border: 0; border-radius: var(--radius-media);
+  background: transparent; overflow: visible;
+}
+.masonry__lightbox::backdrop { background: rgb(11 30 61 / 92%); }
+.masonry__lightbox img {
+  display: block; width: 100%; height: auto; max-height: 88vh; object-fit: contain;
+  border-radius: var(--radius-media);
+}
+.masonry__close {
+  position: absolute; z-index: 2; top: -3.4rem; right: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 2.75rem; height: 2.75rem; padding: 0;
+  border: 1px solid rgb(255 255 255 / 40%); background: transparent; color: #fff;
+}
+.masonry__close:hover { background: rgb(255 255 255 / 12%); }
+.masonry__close svg { width: 1rem; height: 1rem; }
+
+@media (min-width: 47rem) {
+  .masonry__grid { columns: 2; }
+}
+@media (min-width: 68rem) {
+  .masonry__grid { columns: 3; }
+  .carousel__frame { height: clamp(22rem, 34vw, 30rem); }
+}
+
+/* ---- Trusted by marquee ---- */
+.clients-section__heading { max-width: 51rem; }
+.clients-section__heading h2 { max-width: 22ch; margin-top: var(--space-4); }
+.clients-section__body { max-width: 42rem; margin-top: var(--space-6); color: var(--color-text-body); }
+.logo-marquee {
+  overflow: hidden;
+  margin-top: var(--space-12);
+  border-block: 1px solid var(--color-border-subtle);
+  padding: var(--space-8) 0;
+}
+.logo-marquee__track {
+  display: flex; align-items: center;
+  width: max-content;
+  animation: logo-scroll 46s linear infinite;
+  list-style: none;
+}
+.logo-marquee:hover .logo-marquee__track { animation-play-state: paused; }
+.logo-marquee__item { display: inline-flex; margin-right: var(--space-4); }
+.logo-marquee__chip {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 10rem; min-height: 6rem; padding: 0.9rem 1.6rem;
+  border: 1px solid var(--color-border-subtle); border-radius: var(--radius-media);
+  background: var(--color-bg-primary);
+}
+.logo-marquee__chip img { width: auto !important; height: 3.4rem !important; object-fit: contain; }
+@keyframes logo-scroll {
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee__track { width: 100%; flex-wrap: wrap; justify-content: center; row-gap: var(--space-4); animation: none; }
+}
+
+/* ---- Company profile page ---- */
+.profile-stats {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+  max-width: 42rem; margin-top: var(--space-8);
+  border-top: 1px solid var(--color-border-subtle);
+}
+.profile-stats div { padding: var(--space-4) var(--space-4) 0 0; }
+.profile-stats dt { color: var(--color-text-body); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.09em; text-transform: uppercase; }
+.profile-stats dd { margin: 0; color: var(--color-brand-navy); font-family: var(--font-display); font-size: clamp(1.3rem, 2.6vw, 2rem); letter-spacing: -0.04em; }
+.profile-directions { display: grid; grid-template-columns: 1fr; margin-top: var(--space-8); }
+.profile-direction {
+  display: grid; position: relative;
+  grid-template-columns: 3rem minmax(0, 1fr) 2rem; align-items: baseline; align-content: start;
+  padding: var(--space-6) 0;
+  border-top: 1px solid var(--color-border-subtle);
+  transition: color var(--duration-fast) ease;
+}
+.profile-direction__number { color: var(--color-brand-blue); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; }
+.profile-direction__title { color: var(--color-text-primary); font-family: var(--font-display); font-size: clamp(1.2rem, 2.4vw, 1.9rem); font-weight: 500; letter-spacing: -0.04em; line-height: 1.05; }
+.profile-direction__body { grid-column: 2 / 3; max-width: 36rem; margin-top: var(--space-2); color: var(--color-text-body); font-size: 0.92rem; }
+.profile-direction__arrow { position: absolute; top: var(--space-6); right: 0; color: var(--color-brand-blue); transition: transform var(--duration-fast) ease; }
+.profile-direction:hover .profile-direction__arrow { transform: translateX(0.35rem); }
+.profile-direction:hover .profile-direction__title { color: var(--color-brand-blue); }
+.profile-enquiry { max-width: 42rem; margin-top: var(--space-12); border-top: 1px solid var(--color-border-subtle); padding-top: var(--space-6); }
+.profile-enquiry ul { margin-top: var(--space-4); padding-left: 1.1rem; display: grid; row-gap: var(--space-2); color: var(--color-text-body); }
+.profile-enquiry .text-link { margin-top: var(--space-6); }
+.profile-download { margin-top: var(--space-8); }
+@media (min-width: 47rem) {
+  .profile-directions { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--space-8); }
+}
+@media (min-width: 68rem) {
+  .profile-directions { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Carousel on dark sections: invert controls so contrast passes WCAG AA. */
+.community-gallery-section .carousel__count { color: var(--color-text-dark-body); }
+.community-gallery-section .carousel__button { background: transparent; border-color: var(--color-border-dark-subtle); color: var(--color-text-dark-primary); }
+.community-gallery-section .carousel__button:hover:not(:disabled) { background: var(--color-bg-dark-secondary); border-color: var(--color-brand-blue); color: var(--color-text-dark-primary); }
+.community-gallery-section .carousel__dot { background: var(--color-border-dark-subtle); }
+.community-gallery-section .carousel__dot.is-active { background: var(--color-brand-blue); }

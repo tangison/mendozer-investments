@@ -59,7 +59,6 @@ export function SectorExplorer({ idPrefix, label = "Mendozer sectors" }: SectorE
         <div aria-labelledby={`${idPrefix}-tab-${activeIndex}`} className="sector-explorer__panel" id={`${idPrefix}-panel`} role="tabpanel">
           <figure className="sector-explorer__media">
             <Image alt={activeSector.hero.alt} fill sizes="(max-width: 900px) 100vw, 48vw" src={activeSector.hero.src} style={{ objectPosition: activeSector.hero.focus }} />
-            <figcaption>{activeSector.hero.caption}</figcaption>
           </figure>
           <div className="sector-explorer__detail">
             <p className="eyebrow">{activeSector.eyebrow}</p>
@@ -81,7 +80,6 @@ export function SectorExplorer({ idPrefix, label = "Mendozer sectors" }: SectorE
             <div>
               <figure>
                 <Image alt={sector.hero.alt} fill sizes="100vw" src={sector.hero.src} style={{ objectPosition: sector.hero.focus }} />
-                <figcaption>{sector.hero.caption}</figcaption>
               </figure>
               <p>{sector.description}</p>
               <Link aria-label={`Explore this sector: ${sector.title}`} className="text-link" href={`/sectors/${sector.slug}`}>Explore this sector <ArrowIcon /></Link>

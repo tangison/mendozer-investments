@@ -92,7 +92,6 @@ export function HeroFollowSection() {
                 <source src={videoSrc} type="video/mp4" />
               </video>
             )}
-            <figcaption>{hero.media.caption}</figcaption>
           </figure>
         </div>
       </div>

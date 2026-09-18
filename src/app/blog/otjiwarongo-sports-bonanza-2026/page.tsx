@@ -67,9 +67,9 @@ const gallery = [
 ] as const;
 
 const kit = [
-  { src: `${ASSET}/osb-2026-kit-safety-vest.webp`, caption: "Mendozer safety vest", width: 1081, height: 992 },
-  { src: `${ASSET}/osb-2026-kit-tshirt-front.webp`, caption: "Mendozer shirt, front", width: 1081, height: 992 },
-  { src: `${ASSET}/osb-2026-kit-tshirt-back.webp`, caption: "Mendozer shirt, back", width: 532, height: 717 },
+  { src: `${ASSET}/osb-2026-kit-safety-vest.webp`, alt: "Mendozer-branded marshal safety vest laid flat", width: 1081, height: 992 },
+  { src: `${ASSET}/osb-2026-kit-tshirt-front.webp`, alt: "Mendozer event shirt, front view", width: 1081, height: 992 },
+  { src: `${ASSET}/osb-2026-kit-tshirt-back.webp`, alt: "Mendozer event shirt, back view", width: 532, height: 717 },
 ] as const;
 
 const fridayGames = [
@@ -254,7 +254,6 @@ export default function OtjiwarongoSportsBonanzaPage() {
                   src={CONCLUSION_POSTER}
                   width={1122}
                 />
-                <figcaption>Final result poster. Namaqua FC 2 to 1 Ama Roots FC.</figcaption>
               </figure>
             </Reveal>
           </div>
@@ -346,7 +345,6 @@ export default function OtjiwarongoSportsBonanzaPage() {
                     src={photo.src}
                     width={photo.width}
                   />
-                  <figcaption>Otjiwarongo Sports Bonanza 2026</figcaption>
                 </figure>
               ))}
             </div>
@@ -421,7 +419,6 @@ export default function OtjiwarongoSportsBonanzaPage() {
                   src={`${ASSET}/osb-2026-poster-today-gates.webp`}
                   width={1600}
                 />
-                <figcaption>Gates-open poster for Friday 21 August.</figcaption>
               </figure>
               <figure className="osb-inline-poster">
                 <Image
@@ -431,7 +428,6 @@ export default function OtjiwarongoSportsBonanzaPage() {
                   src={`${ASSET}/osb-2026-poster-opening-programme.webp`}
                   width={1131}
                 />
-                <figcaption>Printed opening programme.</figcaption>
               </figure>
               <ol className="osb-opening">
                 {opening.map((item) => (
@@ -451,7 +447,6 @@ export default function OtjiwarongoSportsBonanzaPage() {
                   src={`${ASSET}/osb-2026-poster-soccer-fixtures.webp`}
                   width={1122}
                 />
-                <figcaption>Printed soccer fixtures.</figcaption>
               </figure>
               <h4>Friday 21 August</h4>
               <table className="blog-post__prizes osb-fixtures">
@@ -511,7 +506,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
               {artistPosters.map((poster) => (
                 <figure className="osb-artists__item" key={poster.src}>
                   <Image alt={`${poster.name} poster for Otjiwarongo Sports Bonanza 2026`} height={poster.height} sizes="(max-width: 700px) 100vw, 32vw" src={poster.src} width={poster.width} />
-                  <figcaption>
+                  <figcaption className="sr-only">
                     <ArtistTag name={poster.name} />
                   </figcaption>
                 </figure>
@@ -530,7 +525,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
               {portraits.map((portrait) => (
                 <figure className="osb-portraits__item" key={portrait.src}>
                   <Image alt={`${portrait.name} portrait`} height={portrait.height} sizes="(max-width: 700px) 50vw, 20vw" src={portrait.src} width={portrait.width} />
-                  <figcaption>
+                  <figcaption className="sr-only">
                     <ArtistTag name={portrait.name} />
                   </figcaption>
                 </figure>
@@ -549,8 +544,7 @@ export default function OtjiwarongoSportsBonanzaPage() {
             <div className="osb-kit">
               {kit.map((item) => (
                 <figure className="osb-kit__item" key={item.src}>
-                  <Image alt="" height={item.height} sizes="(max-width: 700px) 100vw, 30vw" src={item.src} width={item.width} />
-                  <figcaption>{item.caption}</figcaption>
+                  <Image alt={item.alt} height={item.height} sizes="(max-width: 700px) 100vw, 30vw" src={item.src} width={item.width} />
                 </figure>
               ))}
             </div>

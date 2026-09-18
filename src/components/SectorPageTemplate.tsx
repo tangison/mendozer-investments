@@ -2,7 +2,7 @@ import Link from "next/link";
 import { absoluteUrl } from "@/brand/site-config";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { MediaFrame } from "@/components/MediaFrame";
+import { MasonryGallery } from "@/components/MasonryGallery";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
@@ -94,18 +94,17 @@ export function SectorPageTemplate({ sector }: SectorPageTemplateProps) {
       ) : null}
 
       <section className="section section--gallery">
-        <div className="site-container sector-gallery">
+        <div className="site-container">
           <div className="sector-gallery__heading">
             <SectionHeading
-              body="Client-supplied context photography is presented without named-project claims while sector tags remain to be confirmed."
+              body="Client-supplied context photography is presented without named-project claims. Select any image to view it larger."
               eyebrow="On site"
               title="The work is visible in the details."
             />
           </div>
-          <div className="sector-gallery__media">
-            <Reveal delay={80} variant="left"><MediaFrame asset={sector.gallery[0]} className="media-frame--portrait" /></Reveal>
-            <Reveal delay={170} variant="right"><MediaFrame asset={sector.gallery[1]} className="media-frame--wide" /></Reveal>
-          </div>
+          <Reveal delay={80} variant="up">
+            <MasonryGallery items={sector.gallery} label={`${sector.title} gallery`} />
+          </Reveal>
         </div>
       </section>
 

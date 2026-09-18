@@ -49,8 +49,9 @@ export function SiteFooter() {
         <div className="site-footer__menus">
           {kind === "home" ? (
             <>
-              <FooterAccordion title="This weekend" defaultOpen>
+              <FooterAccordion title="News & events" defaultOpen>
                 <Link href="/blog/otjiwarongo-sports-bonanza-2026">Sports Bonanza 2026</Link>
+                <Link href="/blog">All news</Link>
                 <Link href="/community">Community</Link>
                 <Link href="/contact">Send an enquiry</Link>
               </FooterAccordion>
@@ -62,6 +63,7 @@ export function SiteFooter() {
               </FooterAccordion>
               <FooterAccordion title="Group">
                 <Link href="/about">About</Link>
+                <Link href="/profile">Company profile</Link>
                 <Link href="/work">Work</Link>
                 <Link href="/compliance">Public records</Link>
                 <Link href="/contact">Contact</Link>
@@ -153,6 +155,7 @@ export function SiteFooter() {
               <FooterAccordion title="Group" defaultOpen>
                 <Link href="/">Home</Link>
                 <Link href="/about">About</Link>
+                <Link href="/profile">Company profile</Link>
                 <Link href="/services">Services</Link>
                 <Link href="/work">Work</Link>
                 <Link href="/updates">Updates</Link>

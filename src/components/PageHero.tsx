@@ -24,7 +24,7 @@ export function PageHero({ eyebrow, title, body, media, breadcrumbLabel, index }
             {index ? <span aria-hidden="true" className="page-hero__index">{index}</span> : null}
           </div>
           <Reveal delay={100} variant="right">
-            <MediaFrame asset={media} caption priority sizes="(max-width: 820px) 100vw, 47vw" />
+            <MediaFrame asset={media} priority sizes="(max-width: 820px) 100vw, 47vw" />
           </Reveal>
         </div>
       </section>

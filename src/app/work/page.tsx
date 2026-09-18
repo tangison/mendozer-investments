@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { MediaFrame } from "@/components/MediaFrame";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHeading } from "@/components/SectionHeading";
-import { siteContent, workContexts } from "@/content/site-content";
+import { siteContent, workContexts, workMasonry } from "@/content/site-content";
+
+const MasonryGallery = dynamic(
+  () => import("@/components/MasonryGallery").then((module) => module.MasonryGallery),
+);
 
 export const metadata: Metadata = {
   title: "Work Context",
@@ -34,7 +39,7 @@ export default function WorkPage() {
             {workContexts.map((context, index) => (
               <Reveal delay={index * 100} key={context.title} variant={index % 2 === 0 ? "left" : "right"}>
                 <article className="work-context-card">
-                  <MediaFrame asset={context.media} className="media-frame--work-context" sizes="(max-width: 760px) 100vw, 33vw" />
+                  <MediaFrame asset={context.media} className="media-frame--work-context media-frame--rounded" sizes="(max-width: 760px) 100vw, 33vw" />
                   <div>
                     <p className="eyebrow">{context.sector}</p>
                     <h2>{context.title}</h2>
@@ -45,6 +50,18 @@ export default function WorkPage() {
               </Reveal>
             ))}
           </div>
+        </div>
+      </section>
+      <section className="section section--surface work-masonry-section">
+        <div className="site-container">
+          <SectionHeading
+            body="Previous work from the Mendozer archive across construction, technology, cooling, logistics, energy and community directions. Select any image to view it larger."
+            eyebrow="Previous work"
+            title="Recent work, in one view."
+          />
+          <Reveal delay={100} variant="up">
+            <MasonryGallery items={workMasonry} label="Previous work gallery" />
+          </Reveal>
         </div>
       </section>
       <section className="section section--cta">

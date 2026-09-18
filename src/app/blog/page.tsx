@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 const posts = [
   {
     href: "/blog/mendozer-windhoek-satellite-office",
-    image: "/images/projects/construction/road-works-2.jpg",
+    image: "/images/projects/construction/road-works-2.webp",
     imageAlt: "Mendozer Investments construction work in progress on a site in Namibia",
     imageWidth: 810,
     imageHeight: 1080,
