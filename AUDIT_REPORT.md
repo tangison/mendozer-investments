@@ -539,3 +539,31 @@ Guardrails updated with the copy: scripts/check-content.mjs now asserts the appr
 - Palette, fonts, spacing scale, copy, and information architecture untouched (brand-locked).
 
 **Result: 2 critical · 5 major · 1 minor — all resolved.** QA evidence: `tsc --noEmit` clean, `eslint --max-warnings=0` clean, content integrity passed (6 sectors, 75 mapped assets), production build succeeded (34/34 routes), Playwright responsive suite 79/79 (including horizontal-overflow checks at the 320px floor), Playwright axe suite 22/22 across all routes. Gate sweep notes: `overflow-x: clip` extended to `body` (gate 34), marquee pause extended to `:focus-within` (gate 18), `:active` states added to re-voiced controls (gate 26), form inputs equalised to the 3rem control height (gate 39), `--space-5: 1.25rem` formalised in the token scale (gate 24). Visual verification screenshots confirmed pill controls, circular icon buttons, soft-rounded inputs, and watermark placement on About, Services, FAQ, CTA, and mobile surfaces.
+
+---
+
+## Full Verification Round: 2026-09-20 (live crawl + CSS audit + client-logo freedom)
+
+**Scope:** Fresh comprehensive audit requested against the audit report. Live crawl of all 28 sitemap URLs plus checklist extras (robots.txt, favicon.ico, 404 behaviour, security headers, staging noindex), repo-wide dead-CSS and duplicate-rule detection, AI-cliche copy scan, client-logo image alpha verification, and full QA/test suite execution.
+
+### Verified healthy
+
+- All 28 sitemap URLs return 200 with unique titles, in-band descriptions, canonical, og:url, OG/Twitter tags, and valid JSON-LD; every image carries alt.
+- Security headers complete (HSTS, XCTO, referrer, CSP, frame); staging host correctly serves `X-Robots-Tag: noindex, nofollow`; favicon.ico and robots.txt healthy; footer credit present site-wide.
+- Zero em dashes and zero AI cliche words across source and rendered copy; captions remain removed except documented sr-only artist link wrappers and `/brand` identity documentation cards.
+- Dead-CSS detector: 355 classes, 0 unreferenced. Both keyframes used; single `!important` is the reduced-motion block; no `transition: all`, no drop-shadow/backdrop-filter slop; gradients are the two functional hero-contrast layers.
+
+### Issues found and fixed in this round
+
+1. **[High] Namibian coat of arms client logo shipped with a baked navy border frame** (`public/images/clients/coat-of-arms-namibia.webp`). Edge pixels were opaque navy (`rgb(47,54,109)`, alpha 255) so the logo rendered inside a visible box on the light `#f5f8fc` clients band, unlike the other eleven free-floating marks. Removed by edge flood-fill (646 frame pixels cleared, 13 feathered) with the emblem artwork untouched; re-encoded WebP q90. Verified: corners now alpha 0, composite on surface colour clean.
+2. **[Medium] `/profile` meta description at 187 characters**, outside the 120-160 house band. Trimmed to 134 characters ("...one Namibian group across six sectors since 2009...") without losing the profile's facts.
+3. **[Medium] Footer CSS block duplicated wholesale** (`globals.css` second `.site-footer__*` cluster): seven rules byte-identical to the primary footer block, plus two dead `.site-footer__giant` rules from a retired footer layout. Removed 64 duplicated/dead lines; the two load-bearing unique rules (`.site-footer__legal-inner .site-footer__social` reset and the 50rem `grid-template-columns: 1fr` stack) were merged into the primary block first. Duplicate-rule detector now reports 0.
+
+### Post-fix verification
+
+- `npm run qa` (typecheck, lint zero warnings, content integrity, production build 34/34): pass.
+- Playwright responsive suite: 79/79. Playwright axe suite: 22/22.
+- Built `/profile` HTML carries the 134-character description.
+- No route, component, palette, font, or copy changes beyond the description trim.
+
+**Result: 3 findings (1 high, 2 medium), all resolved.**

@@ -11,7 +11,7 @@ import { verifiedFacts } from "@/content/site-content";
 export const metadata: Metadata = {
   title: "Company Profile",
   description:
-    "The Mendozer Investments company profile: one Namibian group across construction, technology, cooling, logistics, energy and tourism since 2009, led by Managing Director Johannes Negumbo.",
+    "The Mendozer Investments company profile: one Namibian group across six sectors since 2009, led by Managing Director Johannes Negumbo.",
   alternates: { canonical: "/profile" },
   openGraph: {
     url: "/profile",
