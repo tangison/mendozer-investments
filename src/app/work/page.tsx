@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   description: "Past work from the Mendozer archive: sites, field work and facilities across Namibia, published only with approval.",
   alternates: { canonical: "/work" },
   openGraph: {
+    type: "website",
     url: "/work",
     images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments past work" }],
   },

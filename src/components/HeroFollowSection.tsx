@@ -1,55 +1,15 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { siteContent } from "@/content/site-content";
 
 /**
- * Second section. The motion file must not download until the card is on screen.
+ * Second section. Photography only: the AI-generated motion loop was retired
+ * by client decision, so this card serves the still site-context image alone.
  */
 export function HeroFollowSection() {
-  const frameRef = useRef<HTMLElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [reduceMotion, setReduceMotion] = useState(false);
-  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
-
-  useEffect(() => {
-    const mqMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const updateMotion = () => setReduceMotion(mqMotion.matches);
-    updateMotion();
-    mqMotion.addEventListener("change", updateMotion);
-    return () => mqMotion.removeEventListener("change", updateMotion);
-  }, []);
-
-  useEffect(() => {
-    if (reduceMotion || shouldLoadVideo) return;
-    const node = frameRef.current;
-    if (!node || !("IntersectionObserver" in window)) {
-      return;
-    }
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries.some((entry) => entry.isIntersecting)) {
-          setShouldLoadVideo(true);
-          observer.disconnect();
-        }
-      },
-      { rootMargin: "80px 0px" },
-    );
-    observer.observe(node);
-    return () => observer.disconnect();
-  }, [reduceMotion, shouldLoadVideo]);
-
-  useEffect(() => {
-    if (!shouldLoadVideo || reduceMotion) return;
-    videoRef.current?.play().catch(() => undefined);
-  }, [shouldLoadVideo, reduceMotion]);
-
   const { hero } = siteContent;
   const poster = "/images/projects/construction/mendozer-home-hero.webp";
-  const videoSrc = "/media/mendozer-hero-motion-mobile.mp4";
 
   return (
     <section className="hero-follow" aria-labelledby="hero-follow-title">
@@ -76,22 +36,8 @@ export function HeroFollowSection() {
         </div>
 
         <div className="hero-follow__media">
-          <figure className="hero-follow__figure" ref={frameRef}>
-            {reduceMotion || !shouldLoadVideo ? (
-              <Image alt="Mendozer Investments site context" className="hero-follow__poster" fill sizes="(max-width: 900px) 100vw, 40vw" src={poster} />
-            ) : (
-              <video
-                ref={videoRef}
-                className="hero-follow__video"
-                loop
-                muted
-                playsInline
-                poster={poster}
-                preload="none"
-              >
-                <source src={videoSrc} type="video/mp4" />
-              </video>
-            )}
+          <figure className="hero-follow__figure">
+            <Image alt="Mendozer Investments site context" className="hero-follow__poster" fill sizes="(max-width: 900px) 100vw, 40vw" src={poster} />
           </figure>
         </div>
       </div>

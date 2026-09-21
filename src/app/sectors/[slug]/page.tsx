@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: SectorPageProps): Promise<Met
     description: sector.metaDescription ?? sector.description,
     alternates: { canonical: pathname },
     openGraph: {
+    type: "website",
       url: pathname,
       images: [{
         url: `/og/${sector.slug}.png`,

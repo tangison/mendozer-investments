@@ -27,6 +27,7 @@ const SectorExplorer = dynamic(
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
+    type: "website",
     url: "/",
     images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments" }],
   },

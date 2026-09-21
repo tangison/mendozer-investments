@@ -567,3 +567,34 @@ Guardrails updated with the copy: scripts/check-content.mjs now asserts the appr
 - No route, component, palette, font, or copy changes beyond the description trim.
 
 **Result: 3 findings (1 high, 2 medium), all resolved.**
+
+---
+
+## External Audit Remediation: 2026-09-21 (MENDOZER-AUDIT-REPORT.md, 2026-09-19)
+
+The external audit (verdict 7/10, conditional release) was supplied by the client and its code-actionable findings are implemented here. Findings that require external authority or a design decision are recorded, not faked.
+
+### Fixed in this round
+
+1. **Dependency security (audit item 1).** `next` 16.3.0 -> 16.3.5 (>= 16.3.3 required by GHSA-p293-qw3h-jr36 and GHSA-2xp9-vwfh-vxw4) and `sharp` to >= 0.35.4 via `npm audit fix`. `npm audit` now reports 0 vulnerabilities.
+2. **Robots `Host:` directive (audit item 3).** Removed from `src/app/robots.ts`; the sitemap line remains.
+3. **`og:type` missing on 18 routes (audit item 4).** Added `type: "website"` to every page-level Open Graph block and confirmed `type: "article"` on the five blog posts. Verified in served HTML on all four route shapes.
+4. **`/.well-known/security.txt` 404 (audit item 7a).** Added per RFC 9116 (Contact, Expires, Preferred-Languages, Canonical). Returns 200.
+5. **Generic 500 surface (audit item 7b).** Added `src/app/global-error.tsx`, a branded root boundary with its own shell, on-palette copy, and a retry action.
+6. **Mobile footer legal-row padding (Impeccable mobile finding).** `.site-footer__legal-inner` gains `padding: var(--space-4) 0` inside the 34rem breakpoint.
+7. **Client direction: secondary motion loops retired.** Both hero-follow motion files and the desktop `mendozer-hero-motion.*` pair are deleted; `HeroFollowSection` now serves the still site-context photograph only, and the hero desert-loop remains the site's single video. `scripts/check-content.mjs` now fails if the retired motion files are reintroduced; ASSET_MANIFEST MOT-001 records the retirement.
+
+### Documented, not code-fixable here
+
+- **Production build killed in the audit sandbox:** full `next build` completes cleanly here and on Vercel (34/34 routes); the kill was the audit environment, not the repo.
+- **`NEXT_PUBLIC_SITE_URL` defaults to staging in source:** the deployed project must keep `https://mendozer.com` in its Vercel environment (live responses already do). This is deployment configuration by design for preview correctness.
+- **Resend end-to-end delivery proof:** requires an approved test mailbox; not simulated.
+- **Durable rate limiter and CAPTCHA:** require provider accounts and keys.
+- **Lighthouse performance 75 (LCP 2.7 s):** the audit's own capture shows total transfer 457 KiB, within budget; LCP work continues separately. Removing the hero-follow motion layer removes a deferred media request and one client component from the home path this round.
+- **Impeccable design-signature findings (tracking, micro-labels, marquee):** the tracking and label scale are locked brand-voice decisions from the hallmark round; accepted consciously rather than churned. The marquee already pauses on hover, focus-within, and reduced motion.
+
+### Verification
+
+- `npm run qa` (typecheck, lint zero warnings, content integrity, build 34/34): pass.
+- Playwright responsive: 79/79. Playwright axe: 22/22.
+- Served checks on a local production server: `og:type` correct on all four route shapes, `/robots.txt` without `Host`, `/­.well-known/security.txt` 200, homepage contains exactly one video element.

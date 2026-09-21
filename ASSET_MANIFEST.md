@@ -222,19 +222,15 @@ All entries below are real, reusable SVG outputs in both `/assets/vectors/` (sou
 
 ## Supplied-photo motion derivative
 
-### MOT-001: Home hero motion loop
+### MOT-001: Home hero motion loop — RETIRED 2026-09-21
 
 | Field | Record |
 |---|---|
-| Source image | `/public/images/projects/construction/mendozer-home-hero.webp`, a WebP derivative of supplied `IMG-20260808-WA0033.jpg` |
-| Browser files | `/public/media/mendozer-hero-motion.webm` and `/public/media/mendozer-hero-motion.mp4` |
-| Purpose | A quiet home-hero motion layer created from supplied Mendozer construction context. It replaces the request for an unverified third-party video and keeps image rights within the supplied archive. |
-| Motion treatment | Ten-second, muted, looping slow push with minimal horizontal drift. The video contains no generated imagery, audio, added people, added objects, logo, text, or project claim. |
-| Size and performance | WebM: 157 KB. MP4 fallback: 286 KB. The home page uses the existing 72 KB WebP as the poster and keeps motion available on compact layouts. `prefers-reduced-motion` hides video and preserves the poster. |
-| Page and placement | `/`, full-bleed home hero background only |
-| Visible caption | `Building work in progress` |
-| Alt treatment | Decorative background motion. The visible hero content is conveyed in text, and the poster has no duplicated alternate text. |
-| Authenticity guard | This is a supplied-photo derivative, not a documentary video of a named project and not an AI-generated visual. |
+| Status | Retired by client decision. The homepage now keeps only the hero desert-loop video; every secondary motion loop is removed from the site and from `public/media/`. |
+| Former browser files | `/public/media/mendozer-hero-motion.webm` and `/public/media/mendozer-hero-motion.mp4` (deleted) |
+| Former purpose | A quiet home-hero motion layer created from supplied Mendozer construction context. |
+| Replacement | The still WebP poster `/public/images/projects/construction/mendozer-home-hero.webp` remains in use as the hero-follow image card. |
+| Removal note | The motion files were removed from the repository and the content integrity suite now fails if they are reintroduced. |
 
 ## Otjiwarongo Sports Bonanza conclusion pack: 2026-08-26
 

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description: "Website terms for the Mendozer Investments site: how the introductory group and sector information may be used, and the limits that apply to that information.",
   alternates: { canonical: "/terms" },
   openGraph: {
+    type: "website",
     title: "Website Terms | Mendozer Investments",
     description: "Website terms for the Mendozer Investments site: how the introductory group and sector information may be used, and the limits that apply to that information.",
     url: "/terms",

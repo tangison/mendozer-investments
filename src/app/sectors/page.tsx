@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   description: "Mendozer Investments sectors across Namibia: construction, technology, cooling, logistics, energy, tourism and agriculture.",
   alternates: { canonical: "/sectors" },
   openGraph: {
+    type: "website",
     url: "/sectors",
     images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments sectors" }],
   },

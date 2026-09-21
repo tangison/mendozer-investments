@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   description: "Mendozer Investments CC: a Namibian group delivering construction, technology, cooling, logistics, energy and tourism since 2009.",
   alternates: { canonical: "/about" },
   openGraph: {
+    type: "website",
     url: "/about",
     images: [{ url: "/og/about.png", width: 1200, height: 630, alt: "About Mendozer Investments" }],
   },

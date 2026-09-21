@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   description: "Mendozer Investments community sponsorship presence: local events, sports, and initiatives supported across Namibia, including the Otjiwarongo Sports Bonanza.",
   alternates: { canonical: "/community" },
   openGraph: {
+    type: "website",
     url: "/community",
     images: [{ url: "/og/community.png", width: 1200, height: 630, alt: "Mendozer Investments community sponsorship" }],
   },

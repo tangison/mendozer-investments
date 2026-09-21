@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description: "Published Mendozer Investments news and event reports, including the Otjiwarongo Sports Bonanza 2026 conclusion and official releases.",
   alternates: { canonical: "/blog" },
   openGraph: {
+    type: "article",
     title: "News and Event Reports | Mendozer Investments",
     description: "Published Mendozer Investments news and event reports, including the Otjiwarongo Sports Bonanza 2026 conclusion and official releases.",
     url: "/blog",

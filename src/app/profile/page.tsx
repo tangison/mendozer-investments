@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     "The Mendozer Investments company profile: one Namibian group across six sectors since 2009, led by Managing Director Johannes Negumbo.",
   alternates: { canonical: "/profile" },
   openGraph: {
+    type: "website",
     url: "/profile",
     images: [{ url: "/og/about.png", width: 1200, height: 630, alt: "Mendozer Investments company profile" }],
   },

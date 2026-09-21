@@ -656,15 +656,16 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
   .community-gallery, .work-contexts__grid, .updates-page__grid { grid-template-columns: 1fr; }
   .work-contexts__grid > :last-child, .updates-page__grid > :last-child { grid-column: auto; }
   .compliance-page__records > div { grid-template-columns: 1fr; gap: var(--space-2); }
+  .site-footer__legal-inner { padding: var(--space-4) 0; min-height: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
-  .home-hero__video, .hero-follow__video { display: none; }
+  .home-hero__video { display: none; }
 }
 
 /* ============================================================
-   HERO FOLLOW SECTION: 2-col with overlapping video card
+   HERO FOLLOW SECTION: 2-col with overlapping image card
    ============================================================ */
 
 .hero-follow {
@@ -733,7 +734,6 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
   aspect-ratio: 16 / 9;
 }
 
-.hero-follow__video,
 .hero-follow__poster {
   position: absolute;
   inset: 0;
