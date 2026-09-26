@@ -9,29 +9,26 @@ import { brandAssets } from "@/brand/assets";
 import { siteConfig } from "@/brand/site-config";
 import { sectors, siteContent } from "@/content/site-content";
 
-type MenuTab = "group" | "sectors" | "contact";
-
-const menuTabs: readonly { id: MenuTab; label: string }[] = [
-  { id: "group", label: "Group" },
-  { id: "sectors", label: "Sectors" },
-  { id: "contact", label: "Contact" },
-];
-
-const primaryLinks = [
-  { label: "Home", href: "/" },
-  ...siteContent.navigation,
-  { label: "Bonanza 2026", href: "/blog/otjiwarongo-sports-bonanza-2026" },
-  { label: "Contact", href: "/contact" },
+/** Desktop primary nav: two quiet dropdown groups plus direct links. */
+const groupLinks = [
+  { label: "About", href: "/about" },
+  { label: "Company profile", href: "/profile" },
+  { label: "Services", href: "/services" },
+  { label: "Public records", href: "/compliance" },
+  { label: "Updates", href: "/updates" },
 ] as const;
 
-const desktopLinks = [
-  { label: "About", href: "/about" },
-  { label: "Profile", href: "/profile" },
-  { label: "Services", href: "/services" },
-  { label: "Sectors", href: "/sectors" },
+const directLinks = [
   { label: "Work", href: "/work" },
   { label: "Community", href: "/community" },
-  { label: "Bonanza", href: "/blog/otjiwarongo-sports-bonanza-2026" },
+  { label: "News", href: "/blog" },
+] as const;
+
+/** Off-canvas menu: one compact list, one contact strip. */
+const menuLinks = [
+  { label: "Home", href: "/" },
+  ...siteContent.navigation,
+  { label: "News", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
@@ -56,15 +53,23 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeTab, setActiveTab] = useState<MenuTab>("group");
+  const [openDropdown, setOpenDropdown] = useState<"group" | "sectors" | null>(null);
   const headerRef = useRef<HTMLElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const previousFocusRef = useRef<HTMLElement | null>(null);
+  const closeDropdownTimeout = useRef<number | null>(null);
 
   const isOverDarkHero = usesDarkHero(pathname);
   const logoSrc = isOverDarkHero && !isScrolled ? brandAssets.logoDark : brandAssets.logoLight;
-  const menuFeature = siteContent.home.introduction.media;
+
+  /** Close transient navigation states when the route changes (render-time reset). */
+  const [prevPathname, setPrevPathname] = useState(pathname);
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname);
+    setOpenDropdown(null);
+    setIsOpen(false);
+  }
 
   useEffect(() => {
     const updateScrollState = () => setIsScrolled((current) => {
@@ -76,6 +81,16 @@ export function SiteHeader() {
     window.addEventListener("scroll", updateScrollState, { passive: true });
     return () => window.removeEventListener("scroll", updateScrollState);
   }, []);
+
+  /** Non-modal dropdowns: Escape closes, pointer leaves close after a short grace period. */
+  useEffect(() => {
+    if (!openDropdown) return;
+    const onKeyDown = (event: globalThis.KeyboardEvent) => {
+      if (event.key === "Escape") setOpenDropdown(null);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [openDropdown]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -131,9 +146,12 @@ export function SiteHeader() {
     };
   }, [isOpen]);
 
+  useEffect(() => () => {
+    if (closeDropdownTimeout.current) window.clearTimeout(closeDropdownTimeout.current);
+  }, []);
+
   function openMenu() {
     previousFocusRef.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
-    setActiveTab("group");
     setIsOpen(true);
   }
 
@@ -141,20 +159,17 @@ export function SiteHeader() {
     setIsOpen(false);
   }
 
-  function handleTabKeys(event: KeyboardEvent<HTMLButtonElement>, currentTab: MenuTab) {
-    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
-    event.preventDefault();
-    const currentIndex = menuTabs.findIndex((tab) => tab.id === currentTab);
-    let nextIndex = currentIndex;
+  function scheduleDropdownClose() {
+    if (closeDropdownTimeout.current) window.clearTimeout(closeDropdownTimeout.current);
+    closeDropdownTimeout.current = window.setTimeout(() => setOpenDropdown(null), 140);
+  }
 
-    if (event.key === "ArrowLeft") nextIndex = (currentIndex - 1 + menuTabs.length) % menuTabs.length;
-    if (event.key === "ArrowRight") nextIndex = (currentIndex + 1) % menuTabs.length;
-    if (event.key === "Home") nextIndex = 0;
-    if (event.key === "End") nextIndex = menuTabs.length - 1;
+  function cancelDropdownClose() {
+    if (closeDropdownTimeout.current) window.clearTimeout(closeDropdownTimeout.current);
+  }
 
-    const nextTab = menuTabs[nextIndex].id;
-    setActiveTab(nextTab);
-    window.requestAnimationFrame(() => document.getElementById(`mendozer-menu-tab-${nextTab}`)?.focus());
+  function handleDropdownKeys(event: KeyboardEvent<HTMLButtonElement>) {
+    if (event.key === "Escape") setOpenDropdown(null);
   }
 
   return (
@@ -166,11 +181,74 @@ export function SiteHeader() {
           </Link>
           <div className="site-header__tools">
             <nav aria-label="Primary" className="site-header__nav">
-              {desktopLinks.map((item) => (
+              <div
+                className={`site-header__nav-item ${openDropdown === "group" ? "is-open" : ""}`}
+                onPointerEnter={() => { cancelDropdownClose(); setOpenDropdown("group"); }}
+                onPointerLeave={scheduleDropdownClose}
+              >
+                <button
+                  aria-expanded={openDropdown === "group"}
+                  aria-haspopup="true"
+                  onClick={() => setOpenDropdown((current) => (current === "group" ? null : "group"))}
+                  onKeyDown={handleDropdownKeys}
+                  type="button"
+                >
+                  The group
+                  <span aria-hidden="true" className="site-header__caret" />
+                </button>
+                <div className="site-header__dropdown" onPointerEnter={cancelDropdownClose} onPointerLeave={scheduleDropdownClose}>
+                  <ul>
+                    {groupLinks.map((item) => (
+                      <li key={item.href}>
+                        <Link href={item.href} onClick={() => setOpenDropdown(null)} tabIndex={openDropdown === "group" ? 0 : -1}>
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <div
+                className={`site-header__nav-item ${openDropdown === "sectors" ? "is-open" : ""}`}
+                onPointerEnter={() => { cancelDropdownClose(); setOpenDropdown("sectors"); }}
+                onPointerLeave={scheduleDropdownClose}
+              >
+                <button
+                  aria-expanded={openDropdown === "sectors"}
+                  aria-haspopup="true"
+                  onClick={() => setOpenDropdown((current) => (current === "sectors" ? null : "sectors"))}
+                  onKeyDown={handleDropdownKeys}
+                  type="button"
+                >
+                  Sectors
+                  <span aria-hidden="true" className="site-header__caret" />
+                </button>
+                <div className="site-header__dropdown site-header__dropdown--wide" onPointerEnter={cancelDropdownClose} onPointerLeave={scheduleDropdownClose}>
+                  <ul className="site-header__dropdown-grid">
+                    {sectors.map((sector) => (
+                      <li key={sector.slug}>
+                        <Link href={`/sectors/${sector.slug}`} onClick={() => setOpenDropdown(null)} tabIndex={openDropdown === "sectors" ? 0 : -1}>
+                          <span aria-hidden="true">{sector.number}</span>
+                          {sector.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link className="site-header__dropdown-cta" href="/sectors" onClick={() => setOpenDropdown(null)} tabIndex={openDropdown === "sectors" ? 0 : -1}>
+                    All six sectors
+                  </Link>
+                </div>
+              </div>
+
+              {directLinks.map((item) => (
                 <Link href={item.href} key={item.href}>
                   {item.label}
                 </Link>
               ))}
+              <Link className="site-header__nav-cta" href="/contact">
+                Contact
+              </Link>
             </nav>
             <button
               aria-expanded={isOpen}
@@ -198,88 +276,25 @@ export function SiteHeader() {
             </div>
 
             <div className="site-container site-menu__main">
-              <div aria-label="Navigation sections" className="site-menu__tabs" role="tablist">
-                {menuTabs.map((tab) => (
-                  <button
-                    aria-controls={`mendozer-menu-panel-${tab.id}`}
-                    aria-selected={activeTab === tab.id}
-                    id={`mendozer-menu-tab-${tab.id}`}
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id)}
-                    onKeyDown={(event) => handleTabKeys(event, tab.id)}
-                    role="tab"
-                    tabIndex={activeTab === tab.id ? 0 : -1}
-                    type="button"
-                  >
-                    {tab.label}
-                  </button>
+              <nav aria-label="Group pages" className="site-menu__links">
+                {menuLinks.map((item) => (
+                  <Link href={item.href} key={item.href} onClick={closeMenu}>
+                    <span>{item.label}</span>
+                    <span aria-hidden="true">{String(menuLinks.indexOf(item) + 1).padStart(2, "0")}</span>
+                  </Link>
                 ))}
+              </nav>
+
+              <div className="site-menu__strip">
+                <div className="site-menu__strip-actions">
+                  <Link className="button button--light" href="/contact" onClick={closeMenu}>Start an enquiry</Link>
+                </div>
+                <dl className="site-menu__contact-details">
+                  <div><dt>Email</dt><dd><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></dd></div>
+                  <div><dt>Telephone</dt><dd><a href={siteConfig.phone.href}>{siteConfig.phone.display}</a></dd></div>
+                  <div><dt>Public record</dt><dd><Link href="/compliance" onClick={closeMenu}>Registration, VAT and licences</Link></dd></div>
+                </dl>
               </div>
-
-              {activeTab === "group" ? (
-                <section aria-labelledby="mendozer-menu-tab-group" className="site-menu__panel site-menu__panel--group" id="mendozer-menu-panel-group" role="tabpanel">
-                  <div className="site-menu__primary">
-                    <p className="eyebrow eyebrow--light">Mendozer Investments</p>
-                    <nav aria-label="Group pages" className="site-menu__links">
-                      {primaryLinks.map((item, index) => (
-                        <Link href={item.href} key={item.href} onClick={closeMenu}>
-                          <span>{item.label}</span>
-                          <span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                        </Link>
-                      ))}
-                    </nav>
-                  </div>
-                  <figure className="site-menu__feature">
-                    <Image alt={menuFeature.alt} fill sizes="(max-width: 760px) 100vw, 35vw" src={menuFeature.src} />
-                  </figure>
-                </section>
-              ) : null}
-
-              {activeTab === "sectors" ? (
-                <section aria-labelledby="mendozer-menu-tab-sectors" className="site-menu__panel site-menu__panel--sectors" id="mendozer-menu-panel-sectors" role="tabpanel">
-                  <div className="site-menu__sectors-heading">
-                    <p className="eyebrow eyebrow--light">Our sectors</p>
-                    <p>Start with the closest fit. Use the group contact route when the work crosses disciplines.</p>
-                  </div>
-                  <div className="site-menu__sector-list">
-                    {sectors.map((sector) => (
-                      <details className="site-menu__sector" key={sector.slug}>
-                        <summary>
-                          <span>{sector.number}</span>
-                          <span>{sector.title}</span>
-                          <span aria-hidden="true" className="site-menu__sector-marker" />
-                        </summary>
-                        <div className="site-menu__sector-detail">
-                          <figure>
-                            <Image alt={sector.hero.alt} fill loading="eager" sizes="(max-width: 760px) 100vw, 35vw" src={sector.hero.src} />
-                          </figure>
-                          <div>
-                            <p>{sector.description}</p>
-                            <Link href={`/sectors/${sector.slug}`} onClick={closeMenu}>Explore {sector.shortTitle}</Link>
-                          </div>
-                        </div>
-                      </details>
-                    ))}
-                  </div>
-                </section>
-              ) : null}
-
-              {activeTab === "contact" ? (
-                <section aria-labelledby="mendozer-menu-tab-contact" className="site-menu__panel site-menu__panel--contact" id="mendozer-menu-panel-contact" role="tabpanel">
-                  <div>
-                    <p className="eyebrow eyebrow--light">Start a conversation</p>
-                    <h2>Bring the right work into focus.</h2>
-                    <p>Tell the group what needs attention and choose the closest sector. The contact route can carry a group enquiry when more than one sector is involved.</p>
-                    <Link className="button button--light" href="/contact" onClick={closeMenu}>Prepare an enquiry</Link>
-                  </div>
-                  <dl className="site-menu__contact-details">
-                    <div><dt>Email</dt><dd><a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a></dd></div>
-                    <div><dt>Registration</dt><dd>{siteConfig.registration}</dd></div>
-                    <div><dt>VAT</dt><dd>{siteConfig.vat}</dd></div>
-                    <div><dt>Public record</dt><dd><Link href="/compliance" onClick={closeMenu}>Licences and records</Link></dd></div>
-                  </dl>
-                </section>
-              ) : null}
             </div>
 
             <div className="site-container site-menu__footer">

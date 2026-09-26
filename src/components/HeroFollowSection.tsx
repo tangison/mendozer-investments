@@ -1,15 +1,13 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { siteContent } from "@/content/site-content";
 
 /**
- * Second section. Photography only: the AI-generated motion loop was retired
- * by client decision, so this card serves the still site-context image alone.
+ * Second section. Copy only: the media card was removed by client decision
+ * because it duplicated the hero footage directly beneath it.
  */
 export function HeroFollowSection() {
   const { hero } = siteContent;
-  const poster = "/images/projects/construction/mendozer-home-hero.webp";
 
   return (
     <section className="hero-follow" aria-labelledby="hero-follow-title">
@@ -21,7 +19,7 @@ export function HeroFollowSection() {
           </h2>
           <p className="hero-follow__body">
             {hero.followBody ??
-              "Construction, technology, cooling, logistics, energy and tourism are connected by one operational backbone. Start with the sector closest to the work in front of you, and bring the group in when the brief crosses disciplines."}
+              "Start with the sector closest to the job, and bring the wider team in when the brief crosses disciplines. One point of contact, one standard, and decisions made close to the work."}
           </p>
           <div className="hero-follow__actions">
             <Link className="text-link" href="/about">
@@ -33,12 +31,6 @@ export function HeroFollowSection() {
               <ArrowIcon />
             </Link>
           </div>
-        </div>
-
-        <div className="hero-follow__media">
-          <figure className="hero-follow__figure">
-            <Image alt="Mendozer Investments site context" className="hero-follow__poster" fill sizes="(max-width: 900px) 100vw, 40vw" src={poster} />
-          </figure>
         </div>
       </div>
     </section>

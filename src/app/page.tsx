@@ -153,7 +153,7 @@ export default function HomePage() {
       <section className="section section--cta">
         <div className="site-container cta-panel">
           <Reveal><p className="eyebrow">Get in touch</p><h2>Tell us what you are building.</h2></Reveal>
-          <Reveal><Link className="button button--primary" href="/contact">Start your enquiry <ArrowIcon /></Link></Reveal>
+          <Reveal><Link className="button button--primary" href="/contact">Brief the team <ArrowIcon /></Link></Reveal>
         </div>
       </section>
     </>

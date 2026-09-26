@@ -20,6 +20,17 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/henties-bay-school-2026",
+    image: "/images/projects/construction/henties-bay-school-02.webp",
+    imageAlt: "New classroom blocks with red-tiled roofs at the Mendozer school site in Henties Bay",
+    imageWidth: 810,
+    imageHeight: 1080,
+    eyebrow: "Site update / 26 September 2026",
+    title: "A new school takes shape in Henties Bay",
+    summary: "Mendozer Investments is on site on a new school build in Henties Bay. Classroom blocks are at roof stage while earthworks and siteworks continue around them.",
+    cta: "Read the site update",
+  },
+  {
     href: "/blog/mendozer-windhoek-satellite-office",
     image: "/images/projects/construction/road-works-2.webp",
     imageAlt: "Mendozer Investments construction work in progress on a site in Namibia",

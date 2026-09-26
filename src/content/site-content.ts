@@ -34,6 +34,8 @@ export type GalleryItem = MediaAsset & { width: number; height: number };
 export type ClientLogo = {
   name: string;
   src: string;
+  /** Official organisation site. Only set when the URL is verified; marks without a verifiable site render static. */
+  href?: string;
 };
 
 export type Service = {
@@ -109,18 +111,19 @@ export type Sector = {
 
 /** Partner and client marks shown in the Trusted by band, exactly as supplied by the group. */
 export const clientLogos: ClientLogo[] = [
-  { name: "Roads Authority", src: "/images/clients/roads-authority.webp" },
-  { name: "NamPower", src: "/images/clients/nampower.webp" },
-  { name: "NamPost", src: "/images/clients/nampost.webp" },
-  { name: "MTC", src: "/images/clients/mtc.webp" },
-  { name: "PowerCom", src: "/images/clients/powercom.webp" },
-  { name: "Office of the Judiciary, Republic of Namibia", src: "/images/clients/office-of-the-judiciary.webp" },
+  { name: "Roads Authority", src: "/images/clients/roads-authority.webp", href: "https://www.ra.org.na" },
+  { name: "NamPower", src: "/images/clients/nampower.webp", href: "https://www.nampower.com.na" },
+  { name: "NamPost", src: "/images/clients/nampost.webp", href: "https://www.nampost.com.na" },
+  { name: "MTC", src: "/images/clients/mtc.webp", href: "https://www.mtc.com.na" },
+  { name: "PowerCom", src: "/images/clients/powercom.webp", href: "https://powercom.com.na" },
+  { name: "Office of the Judiciary, Republic of Namibia", src: "/images/clients/office-of-the-judiciary.webp", href: "https://judiciary.na" },
   { name: "Omusati Regional Council", src: "/images/clients/omusati-regional-council.webp" },
-  { name: "Kunene Regional Council", src: "/images/clients/kunene-regional-council.webp" },
+  { name: "Kunene Regional Council", src: "/images/clients/kunene-regional-council.webp", href: "https://kunenerc.gov.na" },
   { name: "Tsandi Constituency Office", src: "/images/clients/tsandi-constituency.webp" },
-  { name: "Bergrivier Municipality", src: "/images/clients/bergrivier-municipality.webp" },
+  { name: "Bergrivier Municipality", src: "/images/clients/bergrivier-municipality.webp", href: "https://www.bergmun.org.za" },
   { name: "JMAN", src: "/images/clients/jman.webp" },
-  { name: "Coat of Arms of the Republic of Namibia", src: "/images/clients/coat-of-arms-namibia.webp" },
+  { name: "Coat of Arms of the Republic of Namibia", src: "/images/clients/coat-of-arms-namibia.webp", href: "https://www.gov.na" },
+  { name: "Tangison", src: "/images/clients/tangison.webp", href: "https://www.tangison.com/" },
 ];
 
 /** Homepage image carousel, ordered as a working-day arc from crew to community. */
@@ -338,9 +341,9 @@ export const siteContent = {
   hero: {
     eyebrow: "Mendozer Investments",
     title: "Building Value. Delivering Excellence.",
-    subtext: "Construction, technology, cooling, logistics, energy and tourism: six sectors delivered by one team across Namibia since 2009.",
-    primaryCta: { label: "Start your enquiry", href: "/contact" },
-    secondaryCta: { label: "Explore the sectors", href: "/#sectors" },
+    subtext: "Construction, technology, cooling, logistics, energy and tourism, delivered by one accountable team across Namibia since 2009. Brief the sector you need; the group follows through.",
+    primaryCta: { label: "Brief the team", href: "/contact" },
+    secondaryCta: { label: "See the six sectors", href: "/#sectors" },
     proofBadge: "Since 2009",
     followEyebrow: "The Mendozer group",
     followTitle: "One team from the first brief to the delivered work.",
@@ -400,7 +403,7 @@ export const siteContent = {
     introduction: {
       eyebrow: "The Mendozer group",
       title: "Six sectors. One standard.",
-      body: "Construction, technology, cooling, logistics, energy, tourism. Pick the one closest to the job; the group handles the rest.",
+      body: "Tell us what the job needs and the right team picks it up, with the wider group a call away. One point of contact keeps scope, cost and quality moving in the same direction.",
       media: {
         src: "/images/projects/technology/tower-full-view.webp",
         alt: "A communications tower above a work site",
@@ -416,7 +419,7 @@ export const siteContent = {
     clients: {
       eyebrow: "Trusted by",
       title: "Working alongside Namibian institutions and partners.",
-      body: "Councils, utilities and national institutions the group has worked with across Namibia.",
+      body: "Councils, utilities and national institutions the group has worked with across Namibia. Select a mark to open that organisation's own website.",
     },
     connective: {
       eyebrow: "A connected view",
@@ -1021,6 +1024,7 @@ export const routes = [
   "/community",
   "/contact",
   "/blog",
+  "/blog/henties-bay-school-2026",
   "/blog/mendozer-windhoek-satellite-office",
   "/blog/namibia-heroes-day-2026",
   "/blog/otjiwarongo-sports-bonanza-2026",

@@ -9,6 +9,24 @@ const nextConfig: NextConfig = {
     imageSizes: [32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
+  async headers() {
+    return [
+      {
+        /** Static media: cached at the edge, revalidated in the background. */
+        source: "/images/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+      },
+      {
+        source: "/videos/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+      },
+      {
+        /** Brand vectors and documents under /assets are versioned by content; cache hard. */
+        source: "/assets/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+      },
+    ];
+  },
 };
 
 export default nextConfig;
