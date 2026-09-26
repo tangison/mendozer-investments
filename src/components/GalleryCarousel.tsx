@@ -115,7 +115,7 @@ export function GalleryCarousel({ items, label }: GalleryCarouselProps) {
           ))}
         </div>
         <p className="carousel__count">
-          {String(activeIndex + 1).padStart(2, "0")} / {String(items.length).padStart(2, "0")}
+          {activeIndex + 1} / {items.length}
         </p>
       </div>
     </div>

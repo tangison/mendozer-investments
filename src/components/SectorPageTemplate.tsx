@@ -60,10 +60,9 @@ export function SectorPageTemplate({ sector }: SectorPageTemplateProps) {
       <section className="section section--services">
         <div className="site-container">
           <div className="service-list">
-            {sector.services.map((service, index) => (
+            {sector.services.map((service) => (
               <Reveal key={service.title}>
                 <article className="service-item">
-                  <span className="service-item__number">0{index + 1}</span>
                   <div>
                     <h2>{service.title}</h2>
                     <p>{service.description}</p>

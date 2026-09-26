@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Website Terms | Mendozer Investments",
     description: "Website terms for the Mendozer Investments site: how the introductory group and sector information may be used, and the limits that apply to that information.",
     url: "/terms",
-    images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments" }],
+    images: [{ url: "/og/home.jpg", width: 1200, height: 630, alt: "Mendozer Investments" }],
   },
 };
 

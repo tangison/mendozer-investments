@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     description: "Electric fencing, walls and precast, gate automation, and general construction and building.",
     type: "website",
     url: "/services",
-    images: [{ url: "/og/services.png", width: 1200, height: 630, alt: "Mendozer Investments construction services" }],
+    images: [{ url: "/og/services.jpg", width: 1200, height: 630, alt: "Mendozer Investments construction services" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Construction Services | Mendozer Investments",
     description: "Electric fencing, walls and precast, gate automation, and general construction and building.",
-    images: ["/og/services.png"],
+    images: ["/og/services.jpg"],
   },
 };
 

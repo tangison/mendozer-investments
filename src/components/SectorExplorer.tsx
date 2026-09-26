@@ -50,7 +50,6 @@ export function SectorExplorer({ idPrefix, label = "Mendozer sectors" }: SectorE
               tabIndex={index === activeIndex ? 0 : -1}
               type="button"
             >
-              <span>{sector.number}</span>
               <span>{sector.title}</span>
               <span aria-hidden="true">+</span>
             </button>
@@ -73,7 +72,6 @@ export function SectorExplorer({ idPrefix, label = "Mendozer sectors" }: SectorE
         {sectors.map((sector) => (
           <details className="sector-explorer__accordion" key={sector.slug}>
             <summary>
-              <span>{sector.number}</span>
               <span>{sector.title}</span>
               <span aria-hidden="true" className="sector-explorer__accordion-marker" />
             </summary>

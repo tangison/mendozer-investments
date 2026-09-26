@@ -69,10 +69,9 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
 
             {section.scope && section.scope.length ? (
               <div className="service-list">
-                {section.scope.map((scopeItem, i) => (
+                {section.scope.map((scopeItem) => (
                   <Reveal key={scopeItem.title}>
                     <article className="service-item">
-                      <span className="service-item__number">0{i + 1}</span>
                       <div>
                         <h2>{scopeItem.title}</h2>
                         <p>{scopeItem.description}</p>

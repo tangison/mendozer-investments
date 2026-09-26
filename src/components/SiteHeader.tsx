@@ -229,7 +229,6 @@ export function SiteHeader() {
                     {sectors.map((sector) => (
                       <li key={sector.slug}>
                         <Link href={`/sectors/${sector.slug}`} onClick={() => setOpenDropdown(null)} tabIndex={openDropdown === "sectors" ? 0 : -1}>
-                          <span aria-hidden="true">{sector.number}</span>
                           {sector.title}
                         </Link>
                       </li>
@@ -280,7 +279,6 @@ export function SiteHeader() {
                 {menuLinks.map((item) => (
                   <Link href={item.href} key={item.href} onClick={closeMenu}>
                     <span>{item.label}</span>
-                    <span aria-hidden="true">{String(menuLinks.indexOf(item) + 1).padStart(2, "0")}</span>
                   </Link>
                 ))}
               </nav>

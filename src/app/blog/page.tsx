@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     title: "News and Event Reports | Mendozer Investments",
     description: "Published Mendozer Investments news and event reports, including the Otjiwarongo Sports Bonanza 2026 conclusion and official releases.",
     url: "/blog",
-    images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments news" }],
+    images: [{ url: "/og/home.jpg", width: 1200, height: 630, alt: "Mendozer Investments news" }],
   },
 };
 

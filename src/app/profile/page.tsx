@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/profile",
-    images: [{ url: "/og/about.png", width: 1200, height: 630, alt: "Mendozer Investments company profile" }],
+    images: [{ url: "/og/about.jpg", width: 1200, height: 630, alt: "Mendozer Investments company profile" }],
   },
 };
 
@@ -99,7 +99,7 @@ export default function ProfilePage() {
         <div className="site-container about-intro">
           <SectionHeading
             body="Construction, technology, cooling, logistics, energy and tourism run on one operating backbone. Start with the sector closest to the job; the rest of the group joins when the brief crosses disciplines."
-            eyebrow="01 · The group"
+            eyebrow="The group"
             title="One group for the work ahead."
           />
           <Reveal>
@@ -116,7 +116,7 @@ export default function ProfilePage() {
         <div className="site-container leadership-section__grid">
           <div className="leadership-section__index" aria-hidden="true" />
           <div>
-            <SectionHeading eyebrow="02 · Leadership" title="A clear line of accountability." />
+            <SectionHeading eyebrow="Leadership" title="A clear line of accountability." />
             <Reveal>
               <div className="leadership-card">
                 <p className="eyebrow">Group leadership</p>
@@ -149,14 +149,13 @@ export default function ProfilePage() {
         <div className="site-container">
           <SectionHeading
             body="Six sectors, one group. Start with the one closest to the work."
-            eyebrow="03 · Sectors"
+            eyebrow="Sectors"
             title="Six directions. One standard."
           />
           <div className="profile-directions">
             {directions.map((direction) => (
               <Reveal key={direction.number}>
                 <Link className="profile-direction" href={direction.href}>
-                  <span className="profile-direction__number">{direction.number}</span>
                   <span className="profile-direction__title">{direction.title}</span>
                   <span className="profile-direction__body">{direction.body}</span>
                   <span aria-hidden="true" className="profile-direction__arrow"><ArrowIcon /></span>
@@ -171,7 +170,7 @@ export default function ProfilePage() {
         <div className="site-container">
           <SectionHeading
             body="Every sector is planned around the people, systems, sites and logistics that surround it."
-            eyebrow="04 · How the group works"
+            eyebrow="How the group works"
             title="How the group works."
           />
           <div className="commitments-grid">
@@ -205,7 +204,7 @@ export default function ProfilePage() {
           <div>
             <SectionHeading
               body="Registration, VAT and licensing details you can check yourself. Anything further is published only when it is approved."
-              eyebrow="05 · Verified records"
+              eyebrow="Verified records"
               inverse
               title="The records behind the name."
             />
@@ -242,7 +241,7 @@ export default function ProfilePage() {
           <Reveal>
             <div className="community-report__index" aria-hidden="true">2026</div>
             <div>
-              <p className="eyebrow">06 · Community & sponsorship</p>
+              <p className="eyebrow">Community &amp; sponsorship</p>
               <h2>Sponsorship visible where people gather.</h2>
             </div>
           </Reveal>

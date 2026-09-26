@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/about",
-    images: [{ url: "/og/about.png", width: 1200, height: 630, alt: "About Mendozer Investments" }],
+    images: [{ url: "/og/about.jpg", width: 1200, height: 630, alt: "About Mendozer Investments" }],
   },
 };
 
@@ -46,7 +46,6 @@ export default function AboutPage() {
             {about.commitments.map((commitment) => (
               <Reveal key={commitment.number}>
                 <article className="commitment-card">
-                  <span>{commitment.number}</span>
                   <h2>{commitment.title}</h2>
                   <p>{commitment.body}</p>
                 </article>

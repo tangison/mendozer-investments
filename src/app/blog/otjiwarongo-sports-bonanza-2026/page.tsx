@@ -9,7 +9,7 @@ import { siteConfig } from "@/brand/site-config";
 
 const ASSET = "/images/events/otjiwarongo-sports-bonanza-2026";
 const CONCLUSION_POSTER = `${ASSET}/osb-2026-conclusion-poster.webp`;
-const OG_IMAGE = "/og/bonanza-conclusion.png";
+const OG_IMAGE = "/og/bonanza-conclusion.jpg";
 
 export const metadata: Metadata = {
   title: "Namaqua FC win Otjiwarongo Bonanza 2026",

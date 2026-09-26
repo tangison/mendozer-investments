@@ -8,7 +8,7 @@ import { siteConfig } from "@/brand/site-config";
 
 const SLUG = "/blog/mendozer-windhoek-satellite-office";
 const ASSET = "/images/projects/construction";
-const OG_IMAGE = "/og/windhoek-office.png";
+const OG_IMAGE = "/og/windhoek-office.jpg";
 
 export const metadata: Metadata = {
   title: "Mendozer opens a Windhoek office",

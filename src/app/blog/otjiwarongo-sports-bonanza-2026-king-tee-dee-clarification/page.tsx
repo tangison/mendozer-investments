@@ -4,7 +4,7 @@ import { MediaReleasePage } from "@/components/MediaReleasePage";
 
 const SLUG = "/blog/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarification";
 const PDF = "/documents/otjiwarongo-sports-bonanza-2026-king-tee-dee-clarification.pdf";
-const OG_IMAGE = "/og/bonanza-king-tee-dee.png";
+const OG_IMAGE = "/og/bonanza-king-tee-dee.jpg";
 
 export const metadata: Metadata = {
   title: "King Tee Dee: Otjiwarongo clarification",

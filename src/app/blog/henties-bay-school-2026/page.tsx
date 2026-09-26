@@ -8,7 +8,7 @@ import { siteConfig } from "@/brand/site-config";
 
 const SLUG = "/blog/henties-bay-school-2026";
 const ASSET = "/images/projects/construction";
-const OG_IMAGE = "/og/henties-bay-school.png";
+const OG_IMAGE = "/og/henties-bay-school.jpg";
 
 export const metadata: Metadata = {
   title: "A new school takes shape in Henties Bay",

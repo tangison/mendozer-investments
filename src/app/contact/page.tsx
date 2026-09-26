@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/contact",
-    images: [{ url: "/og/contact.png", width: 1200, height: 630, alt: "Contact Mendozer Investments" }],
+    images: [{ url: "/og/contact.jpg", width: 1200, height: 630, alt: "Contact Mendozer Investments" }],
   },
 };
 

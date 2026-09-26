@@ -12,6 +12,11 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
+        /** HSTS on the apex to match what www already sends (no includeSubDomains: other subdomains are out of scope). */
+        source: "/:path*",
+        headers: [{ key: "Strict-Transport-Security", value: "max-age=63072000" }],
+      },
+      {
         /** Static media: cached at the edge, revalidated in the background. */
         source: "/images/:path*",
         headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],

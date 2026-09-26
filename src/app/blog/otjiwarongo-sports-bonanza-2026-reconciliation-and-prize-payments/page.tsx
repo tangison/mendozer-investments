@@ -4,7 +4,7 @@ import { MediaReleasePage } from "@/components/MediaReleasePage";
 
 const SLUG = "/blog/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize-payments";
 const PDF = "/documents/otjiwarongo-sports-bonanza-2026-reconciliation-and-prize-payments.pdf";
-const OG_IMAGE = "/og/bonanza-reconciliation.png";
+const OG_IMAGE = "/og/bonanza-reconciliation.jpg";
 
 export const metadata: Metadata = {
   title: "Bonanza 2026: reconciliation and prizes",

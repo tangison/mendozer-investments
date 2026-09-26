@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Privacy Notice | Mendozer Investments",
     description: "The privacy notice explains what the Mendozer Investments website collects, how contact enquiries are handled, and the choices available to website visitors.",
     url: "/privacy",
-    images: [{ url: "/og/home.png", width: 1200, height: 630, alt: "Mendozer Investments" }],
+    images: [{ url: "/og/home.jpg", width: 1200, height: 630, alt: "Mendozer Investments" }],
   },
 };
 

@@ -8,7 +8,7 @@ import { siteConfig } from "@/brand/site-config";
 
 const SLUG = "/blog/namibia-heroes-day-2026";
 const ASSET = "/images/blog/heroes-day-2026";
-const OG_IMAGE = "/og/heroes-day.png";
+const OG_IMAGE = "/og/heroes-day.jpg";
 
 export const metadata: Metadata = {
   title: "Heroes' Day 2026: Namibia remembers",
