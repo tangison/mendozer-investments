@@ -14,6 +14,9 @@ import { siteConfig } from "@/brand/site-config";
 const ClientLogos = dynamic(
   () => import("@/components/ClientLogos").then((module) => module.ClientLogos),
 );
+const ClientLogoGrid = dynamic(
+  () => import("@/components/ClientLogoGrid").then((module) => module.ClientLogoGrid),
+);
 const GalleryCarousel = dynamic(
   () => import("@/components/GalleryCarousel").then((module) => module.GalleryCarousel),
 );
@@ -93,6 +96,13 @@ export default function HomePage() {
           <Reveal><SectorExplorer idPrefix="home-directions" /></Reveal>
         </div>
       </section>
+
+      <ClientLogoGrid
+        body="Ministries, regional councils, town councils and state-owned enterprises work with Mendozer across construction, fencing, walls, cooling and security systems. Reference letters and completion certificates are on file."
+        eyebrow="Clients"
+        id="clients"
+        title="Trusted by Government & Industry Across Namibia"
+ />
 
       <section className="section home-pathways">
         <div className="site-container">

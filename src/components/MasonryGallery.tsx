@@ -9,6 +9,8 @@ type MasonryImage = {
   alt: string;
   width?: number;
   height?: number;
+  /** Dominant-colour placeholder painted behind the image while it loads. */
+  tone?: string;
 };
 
 type MasonryGalleryProps = {
@@ -49,19 +51,21 @@ export function MasonryGallery({ items, label }: MasonryGalleryProps) {
   return (
     <div aria-label={label} className="masonry" role="region">
       <ul className="masonry__grid">
-        {items.map((item) => (
+        {items.map((item, index) => (
           <li className="masonry__item" key={item.src}>
             <button
               aria-label={`View image: ${item.alt}`}
               className="masonry__trigger"
               onClick={() => setActive(item)}
+              style={item.tone ? { backgroundColor: item.tone } : undefined}
               type="button"
             >
               <Image
                 alt={item.alt}
                 className="masonry__image"
                 height={dimsFor(item).height}
-                loading="lazy"
+                loading={index < 2 ? "eager" : "lazy"}
+                priority={index === 0}
                 sizes="(max-width: 700px) 92vw, (max-width: 1080px) 46vw, 30vw"
                 src={item.src}
                 width={dimsFor(item).width}

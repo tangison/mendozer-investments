@@ -21,3 +21,4 @@ _logo-intake/
 .DS_Store
 *.log
 .vercel
+.proof-scratch/
