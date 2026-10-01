@@ -9,6 +9,8 @@ type MasonryImage = {
   alt: string;
   width?: number;
   height?: number;
+  /** Dominant-colour placeholder painted behind the image while it loads. */
+  tone?: string;
 };
 
 type MasonryGalleryProps = {
@@ -55,6 +57,7 @@ export function MasonryGallery({ items, label }: MasonryGalleryProps) {
               aria-label={`View image: ${item.alt}`}
               className="masonry__trigger"
               onClick={() => setActive(item)}
+              style={item.tone ? { backgroundColor: item.tone } : undefined}
               type="button"
             >
               <Image

@@ -15,7 +15,7 @@ export function MediaFrame({
   sizes = "(max-width: 760px) 100vw, 640px",
 }: MediaFrameProps) {
   return (
-    <figure className={`media-frame ${className}`}>
+    <figure className={`media-frame ${className}`} style={asset.tone ? { backgroundColor: asset.tone } : undefined}>
       <Image
         alt={asset.alt}
         className="media-frame__image"

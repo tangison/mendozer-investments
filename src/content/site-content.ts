@@ -27,6 +27,8 @@ export type MediaAsset = {
   alt: string;
   status: "real" | "generated";
   focus?: string;
+  /** Dominant-colour placeholder painted behind the image while it loads. */
+  tone?: string;
 };
 
 export type GalleryItem = MediaAsset & { width: number; height: number };
@@ -285,6 +287,46 @@ export const workMasonry: GalleryItem[] = [
     status: "real",
     width: 810,
     height: 1080,
+  },
+  {
+    src: "/images/projects/construction/site-clearing-tipper-01-810.webp",
+    alt: "Tipper truck delivering fill material on a construction site",
+    status: "real",
+    width: 810,
+    height: 1080,
+    tone: "#a08f79",
+  },
+  {
+    src: "/images/projects/construction/front-end-loader-works-01-810.webp",
+    alt: "Front-end loader levelling sand on a work site",
+    status: "real",
+    width: 810,
+    height: 1080,
+    tone: "#aa9476",
+  },
+  {
+    src: "/images/projects/logistics/supply-delivery-bakkie-01-810.webp",
+    alt: "Loaded bakkie delivering supplies at an institutional building",
+    status: "real",
+    width: 810,
+    height: 1080,
+    tone: "#888681",
+  },
+  {
+    src: "/images/projects/construction/roadside-fencing-materials-01-1080.webp",
+    alt: "Worker in high-visibility clothing offloading fencing materials from a trailer",
+    status: "real",
+    width: 1080,
+    height: 810,
+    tone: "#80766f",
+  },
+  {
+    src: "/images/projects/construction/roadside-debris-clearing-01-1080.webp",
+    alt: "Worker clearing debris from a road verge",
+    status: "real",
+    width: 1080,
+    height: 810,
+    tone: "#807a74",
   },
 ];
 
@@ -602,6 +644,30 @@ export const sectors: Sector[] = [
         status: "real",
         focus: "50% 50%",
       },
+      {
+        src: "/images/projects/construction/site-clearing-tipper-01-810.webp",
+        alt: "Tipper truck delivering fill material on a construction site",
+        status: "real",
+        tone: "#a08f79",
+      },
+      {
+        src: "/images/projects/construction/front-end-loader-works-01-810.webp",
+        alt: "Front-end loader levelling sand on a work site",
+        status: "real",
+        tone: "#aa9476",
+      },
+      {
+        src: "/images/projects/construction/roadside-fencing-materials-01-1080.webp",
+        alt: "Worker in high-visibility clothing offloading fencing materials from a trailer",
+        status: "real",
+        tone: "#80766f",
+      },
+      {
+        src: "/images/projects/construction/roadside-debris-clearing-01-1080.webp",
+        alt: "Worker clearing debris from a road verge",
+        status: "real",
+        tone: "#807a74",
+      },
     ],
     services: [
       { title: "Site preparation", description: "Access, ground conditions and services worked out before crews move in." },
@@ -760,6 +826,12 @@ export const sectors: Sector[] = [
         alt: "A group walking through a work environment",
         status: "real",
         focus: "55% 50%",
+      },
+      {
+        src: "/images/projects/logistics/supply-delivery-bakkie-01-810.webp",
+        alt: "Loaded bakkie delivering supplies at an institutional building",
+        status: "real",
+        tone: "#888681",
       },
     ],
     services: [
