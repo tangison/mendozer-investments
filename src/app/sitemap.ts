@@ -32,6 +32,7 @@ const fallbackLastmod: Record<string, string> = {
   "/work": "2026-09-12",
   "/updates": "2026-09-12",
   "/compliance": "2026-09-12",
+  "/certifications": "2026-10-01",
   "/community": "2026-09-12",
   "/contact": "2026-09-12",
   "/blog": "2026-09-12",

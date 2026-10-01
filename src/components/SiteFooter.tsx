@@ -66,6 +66,7 @@ export function SiteFooter() {
                 <Link href="/profile">Company profile</Link>
                 <Link href="/work">Work</Link>
                 <Link href="/compliance">Public records</Link>
+                <Link href="/certifications">Proof of work</Link>
                 <Link href="/contact">Contact</Link>
               </FooterAccordion>
             </>
@@ -86,6 +87,7 @@ export function SiteFooter() {
               <FooterAccordion title="Group">
                 <Link href="/about">About</Link>
                 <Link href="/compliance">Public records</Link>
+                <Link href="/certifications">Proof of work</Link>
                 <Link href="/contact">Contact</Link>
               </FooterAccordion>
             </>
@@ -113,6 +115,7 @@ export function SiteFooter() {
                 <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
                 <Link href="/services">Services</Link>
                 <Link href="/compliance">Public records</Link>
+                <Link href="/certifications">Proof of work</Link>
                 <Link href="/privacy">Privacy</Link>
               </FooterAccordion>
               <FooterAccordion title="Sectors">

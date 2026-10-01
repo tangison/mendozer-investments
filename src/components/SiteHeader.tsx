@@ -13,6 +13,7 @@ import { sectors, siteContent } from "@/content/site-content";
 const groupLinks = [
   { label: "About", href: "/about" },
   { label: "Company profile", href: "/profile" },
+  { label: "Proof of work", href: "/certifications" },
   { label: "Services", href: "/services" },
   { label: "Public records", href: "/compliance" },
   { label: "Updates", href: "/updates" },
@@ -43,6 +44,7 @@ function usesDarkHero(pathname: string) {
     pathname === "/profile" ||
     pathname === "/updates" ||
     pathname === "/compliance" ||
+    pathname === "/certifications" ||
     pathname === "/community" ||
     pathname === "/contact" ||
     pathname.startsWith("/blog")

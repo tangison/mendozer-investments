@@ -8,6 +8,14 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { siteConfig } from "@/brand/site-config";
 import { siteContent } from "@/content/site-content";
 import { teamGallery } from "@/content/site-services";
+import dynamic from "next/dynamic";
+
+const ProofCarousel = dynamic(
+  () => import("@/components/ProofCarousel").then((module) => module.ProofCarousel),
+);
+const ClientLogoGrid = dynamic(
+  () => import("@/components/ClientLogoGrid").then((module) => module.ClientLogoGrid),
+);
 
 export const metadata: Metadata = {
   title: "About the Group",
@@ -54,6 +62,26 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <section className="section section--surface proof-section">
+        <div className="site-container">
+          <SectionHeading
+            body="Selected reference letters, completion certificates and awards from our clients. Every document is shown as received; contract values stay in the originals."
+            eyebrow="Proof of work"
+            title="The record behind the work."
+          />
+          <Reveal>
+            <ProofCarousel />
+          </Reveal>
+        </div>
+      </section>
+
+      <ClientLogoGrid
+        body="The fuller list of organisations the group serves across Namibia, from ministries and regional councils to schools, museums and industry. Organisations without a verified logo file show their name until an official mark is cleared for use."
+        eyebrow="Clients"
+        id="clients"
+        title="Trusted by Government & Industry Across Namibia"
+      />
 
       <section className="section leadership-section">
         <div className="site-container leadership-section__grid">

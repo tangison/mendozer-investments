@@ -12,7 +12,7 @@ const hash = (path) => createHash("sha256").update(readFileSync(path)).digest("h
 for (const slug of requiredSlugs) {
   if (!content.includes(`slug: "${slug}"`)) failures.push(`Missing sector content record: ${slug}`);
   if (!existsSync(resolve(root, `src/app/sectors/[slug]/page.tsx`))) failures.push("Missing reusable sector route template");
-  if (!content.includes(`/og/${slug}.png`) && !existsSync(resolve(root, `public/og/${slug}.png`))) failures.push(`Missing Open Graph asset: ${slug}`);
+  if (!content.includes(`/og/${slug}.jpg`) && !existsSync(resolve(root, `public/og/${slug}.jpg`))) failures.push(`Missing Open Graph asset: ${slug}`);
 }
 
 for (const utilityRoute of ["sectors", "work", "updates", "compliance", "privacy", "terms"]) {
@@ -51,7 +51,7 @@ for (const assetPath of assetPaths) {
 }
 
 for (const ogName of ["home", "about", "construction", "technology", "cooling", "logistics", "energy", "tourism", "community", "contact"]) {
-  if (!existsSync(resolve(root, `public/og/${ogName}.png`))) failures.push(`Missing social asset: /og/${ogName}.png`);
+  if (!existsSync(resolve(root, `public/og/${ogName}.jpg`))) failures.push(`Missing social asset: /og/${ogName}.jpg`);
 }
 
 const sourceLogo = resolve(root, "assets/logos/mendozer-logo-full.svg");
