@@ -1,0 +1,375 @@
+[
+  {
+    "id": "01",
+    "slug": "01-roads-authority-testimonial",
+    "client": "Roads Authority",
+    "type": "Testimonial",
+    "category": "references",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/01-roads-authority-testimonial-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/01-roads-authority-testimonial-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 1999
+      }
+    ],
+    "pdfPath": "/documents/pdf/01-roads-authority-testimonial.pdf",
+    "pdfFilename": "01-roads-authority-testimonial.pdf",
+    "pdfSizeKB": 58,
+    "altText": "Testimonial from Roads Authority",
+    "showPublic": true
+  },
+  {
+    "id": "02",
+    "slug": "02-roads-authority-award-letter",
+    "client": "Roads Authority",
+    "type": "Award letter",
+    "category": "awards",
+    "pageCount": 2,
+    "imagePaths": [
+      "/documents/images/02-roads-authority-award-letter-p1.webp",
+      "/documents/images/02-roads-authority-award-letter-p2.webp"
+    ],
+    "thumbPath": "/documents/thumbs/02-roads-authority-award-letter-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 1983
+      },
+      {
+        "width": 1400,
+        "height": 1802
+      }
+    ],
+    "pdfPath": "/documents/pdf/02-roads-authority-award-letter.pdf",
+    "pdfFilename": "02-roads-authority-award-letter.pdf",
+    "pdfSizeKB": 91,
+    "altText": "Award letter from Roads Authority",
+    "showPublic": true
+  },
+  {
+    "id": "03",
+    "slug": "03-nampower-ehomba-fencing-completion",
+    "client": "NamPower",
+    "type": "Completion certificate",
+    "category": "completion",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/03-nampower-ehomba-fencing-completion-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/03-nampower-ehomba-fencing-completion-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 1942
+      }
+    ],
+    "pdfPath": "/documents/pdf/03-nampower-ehomba-fencing-completion.pdf",
+    "pdfFilename": "03-nampower-ehomba-fencing-completion.pdf",
+    "pdfSizeKB": 240,
+    "altText": "Completion certificate from NamPower",
+    "showPublic": true
+  },
+  {
+    "id": "04",
+    "slug": "04-nampower-ehomba-fencing-reference",
+    "client": "NamPower",
+    "type": "Reference letter",
+    "category": "references",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/04-nampower-ehomba-fencing-reference-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/04-nampower-ehomba-fencing-reference-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 1963
+      }
+    ],
+    "pdfPath": "/documents/pdf/04-nampower-ehomba-fencing-reference.pdf",
+    "pdfFilename": "04-nampower-ehomba-fencing-reference.pdf",
+    "pdfSizeKB": 268,
+    "altText": "Reference letter from NamPower",
+    "showPublic": true
+  },
+  {
+    "id": "05",
+    "slug": "05-nampower-omaruru-electric-fencing-reference",
+    "client": "NamPower",
+    "type": "Reference letter",
+    "category": "references",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/05-nampower-omaruru-electric-fencing-reference-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/05-nampower-omaruru-electric-fencing-reference-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 1875
+      }
+    ],
+    "pdfPath": "/documents/pdf/05-nampower-omaruru-electric-fencing-reference.pdf",
+    "pdfFilename": "05-nampower-omaruru-electric-fencing-reference.pdf",
+    "pdfSizeKB": 266,
+    "altText": "Reference letter from NamPower",
+    "showPublic": true
+  },
+  {
+    "id": "06",
+    "slug": "06-nampower-okahandja-boundary-wall-completion",
+    "client": "NamPower",
+    "type": "Completion certificate",
+    "category": "completion",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/06-nampower-okahandja-boundary-wall-completion-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/06-nampower-okahandja-boundary-wall-completion-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 1996
+      }
+    ],
+    "pdfPath": "/documents/pdf/06-nampower-okahandja-boundary-wall-completion.pdf",
+    "pdfFilename": "06-nampower-okahandja-boundary-wall-completion.pdf",
+    "pdfSizeKB": 230,
+    "altText": "Completion certificate from NamPower",
+    "showPublic": true
+  },
+  {
+    "id": "07",
+    "slug": "07-powercom-erongo-towers-final-acceptance",
+    "client": "PowerCom",
+    "type": "Final acceptance certificate",
+    "category": "completion",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/07-powercom-erongo-towers-final-acceptance-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/07-powercom-erongo-towers-final-acceptance-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 1777
+      }
+    ],
+    "pdfPath": "/documents/pdf/07-powercom-erongo-towers-final-acceptance.pdf",
+    "pdfFilename": "07-powercom-erongo-towers-final-acceptance.pdf",
+    "pdfSizeKB": 238,
+    "altText": "Final acceptance certificate from PowerCom",
+    "showPublic": true
+  },
+  {
+    "id": "08",
+    "slug": "08-nampost-cctv-reference",
+    "client": "NamPost",
+    "type": "Reference letter",
+    "category": "references",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/08-nampost-cctv-reference-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/08-nampost-cctv-reference-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 2135
+      }
+    ],
+    "pdfPath": "/documents/pdf/08-nampost-cctv-reference.pdf",
+    "pdfFilename": "08-nampost-cctv-reference.pdf",
+    "pdfSizeKB": 351,
+    "altText": "Reference letter from NamPost",
+    "showPublic": true
+  },
+  {
+    "id": "09",
+    "slug": "09-kunene-regional-council-aircon-reference",
+    "client": "Kunene Regional Council",
+    "type": "Reference letter",
+    "category": "references",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/09-kunene-regional-council-aircon-reference-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/09-kunene-regional-council-aircon-reference-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 1814
+      }
+    ],
+    "pdfPath": "/documents/pdf/09-kunene-regional-council-aircon-reference.pdf",
+    "pdfFilename": "09-kunene-regional-council-aircon-reference.pdf",
+    "pdfSizeKB": 43,
+    "altText": "Reference letter from Kunene Regional Council",
+    "showPublic": true
+  },
+  {
+    "id": "10",
+    "slug": "10-kunene-regional-council-aircon-supply-reference",
+    "client": "Kunene Regional Council",
+    "type": "Reference letter",
+    "category": "references",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/10-kunene-regional-council-aircon-supply-reference-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/10-kunene-regional-council-aircon-supply-reference-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 1819
+      }
+    ],
+    "pdfPath": "/documents/pdf/10-kunene-regional-council-aircon-supply-reference.pdf",
+    "pdfFilename": "10-kunene-regional-council-aircon-supply-reference.pdf",
+    "pdfSizeKB": 41,
+    "altText": "Reference letter from Kunene Regional Council",
+    "showPublic": true
+  },
+  {
+    "id": "11",
+    "slug": "11-ehomba-school-food-supply-reference",
+    "client": "Ehomba Combined School",
+    "type": "Reference letter",
+    "category": "references",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/11-ehomba-school-food-supply-reference-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/11-ehomba-school-food-supply-reference-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 2071
+      }
+    ],
+    "pdfPath": "/documents/pdf/11-ehomba-school-food-supply-reference.pdf",
+    "pdfFilename": "11-ehomba-school-food-supply-reference.pdf",
+    "pdfSizeKB": 136,
+    "altText": "Reference letter from Ehomba Combined School",
+    "showPublic": true
+  },
+  {
+    "id": "12",
+    "slug": "12-outapi-town-council-reference",
+    "client": "Outapi Town Council",
+    "type": "Reference letter",
+    "category": "references",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/12-outapi-town-council-reference-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/12-outapi-town-council-reference-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 1979
+      }
+    ],
+    "pdfPath": "/documents/pdf/12-outapi-town-council-reference.pdf",
+    "pdfFilename": "12-outapi-town-council-reference.pdf",
+    "pdfSizeKB": 46,
+    "altText": "Reference letter from Outapi Town Council",
+    "showPublic": true
+  },
+  {
+    "id": "13",
+    "slug": "13-office-of-the-judiciary-award-notice",
+    "client": "Office of the Judiciary",
+    "type": "Award notice",
+    "category": "awards",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/13-office-of-the-judiciary-award-notice-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/13-office-of-the-judiciary-award-notice-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 1973
+      }
+    ],
+    "pdfPath": "/documents/pdf/13-office-of-the-judiciary-award-notice.pdf",
+    "pdfFilename": "13-office-of-the-judiciary-award-notice.pdf",
+    "pdfSizeKB": 59,
+    "altText": "Award notice from Office of the Judiciary",
+    "showPublic": true
+  },
+  {
+    "id": "14",
+    "slug": "14-museum-of-namibian-music-reference",
+    "client": "Museums Association of Namibia",
+    "type": "Reference letter",
+    "category": "references",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/14-museum-of-namibian-music-reference-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/14-museum-of-namibian-music-reference-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 1866
+      }
+    ],
+    "pdfPath": "/documents/pdf/14-museum-of-namibian-music-reference.pdf",
+    "pdfFilename": "14-museum-of-namibian-music-reference.pdf",
+    "pdfSizeKB": 345,
+    "altText": "Reference letter from Museums Association of Namibia",
+    "showPublic": true
+  },
+  {
+    "id": "15",
+    "slug": "15-museums-association-completion-certificate",
+    "client": "Museums Association of Namibia",
+    "type": "Completion certificate",
+    "category": "completion",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/15-museums-association-completion-certificate-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/15-museums-association-completion-certificate-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 2025
+      }
+    ],
+    "pdfPath": "/documents/pdf/15-museums-association-completion-certificate.pdf",
+    "pdfFilename": "15-museums-association-completion-certificate.pdf",
+    "pdfSizeKB": 1290,
+    "altText": "Completion certificate from Museums Association of Namibia",
+    "showPublic": true
+  },
+  {
+    "id": "16",
+    "slug": "16-bipa-good-standing-certificate",
+    "client": "Mendozer Investments CC",
+    "type": "Company credential",
+    "category": "credentials",
+    "pageCount": 1,
+    "imagePaths": [
+      "/documents/images/16-bipa-good-standing-certificate-p1.webp"
+    ],
+    "thumbPath": "/documents/thumbs/16-bipa-good-standing-certificate-p1.webp",
+    "pageDims": [
+      {
+        "width": 1400,
+        "height": 1957
+      }
+    ],
+    "pdfPath": "/documents/pdf/16-bipa-good-standing-certificate.pdf",
+    "pdfFilename": "16-bipa-good-standing-certificate.pdf",
+    "pdfSizeKB": 117,
+    "altText": "Company credential from Mendozer Investments CC",
+    "showPublic": true
+  }
+]
