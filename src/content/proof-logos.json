@@ -7,11 +7,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "Official site mwt.gov.na unreachable (WAF block). Renders styled text fallback until a verified mark is supplied."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Ministry of Defence",
@@ -21,11 +21,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "Only asset found was a 32px favicon, below the 200px minimum. Text fallback."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Ministry of Environment & Tourism",
@@ -35,11 +35,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "meft.gov.na sits behind a JavaScript challenge; no asset retrievable without a browser session. Text fallback."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Ministry of Finance (Customs)",
@@ -49,11 +49,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "Official site unreachable. Text fallback."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Ministry of Safety & Security",
@@ -71,17 +71,17 @@
   },
   {
     "name": "Ministry of Land Reform",
-    "file": null,
-    "sourceUrl": null,
-    "sourceType": "none",
+    "file": "/images/clients/ministry-of-land-reform.webp",
+    "sourceUrl": "https://mawlr.gov.na/",
+    "sourceType": "official-site",
     "retrievedAt": "2026-10-01",
-    "quality": "not-found",
-    "href": null,
+    "quality": "high",
+    "href": "https://mawlr.gov.na/",
     "showPublic": true,
     "feature": false,
-    "width": null,
-    "height": null,
-    "note": "Official site unreachable. Text fallback."
+    "width": 648,
+    "height": 112,
+    "note": "Official mark scraped from mawlr.gov.na portal header (Scrapling round 3). Land reform now sits with the Ministry of Agriculture, Fisheries, Water and Land Reform, whose wordmark this is; flag for owner confirmation like the other renamed ministries."
   },
   {
     "name": "Ministry of Justice and Labour Relations",
@@ -203,11 +203,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "khomasrc.gov.na returns WAF block. Text fallback."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Kavango Regional Council (East)",
@@ -217,11 +217,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "No reachable official site (kavangoerc.gov.na NXDOMAIN). Text fallback. Brief spelling kept; usual entity name is Kavango East Regional Council."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Zambezi Regional Council",
@@ -245,11 +245,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "No reachable official site. Text fallback."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Oshana Regional Council",
@@ -259,11 +259,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "oshanarc.gov.na returns WAF block. Text fallback."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Kunene Regional Council",
@@ -287,11 +287,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "Rural school with no official website or verifiable mark. Text fallback. Reference letter document 11 is the proof of relationship."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Otjiwarongo Town Council",
@@ -301,11 +301,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "No reachable official site. Text fallback."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Khorixas Town Council",
@@ -315,11 +315,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "No reachable official site. Text fallback."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Aranos Town Council",
@@ -329,11 +329,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "No reachable official site. Text fallback."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Outapi Town Council",
@@ -343,11 +343,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "outapitc.org.na resolves but times out. Text fallback. Reference letter document 12 carries the council's letterhead mark."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Loenaldville Village Council",
@@ -357,11 +357,11 @@
     "retrievedAt": "2026-10-01",
     "quality": "not-found",
     "href": null,
-    "showPublic": true,
+    "showPublic": false,
     "feature": false,
     "width": null,
     "height": null,
-    "note": "Brief spelling kept. The likely entity is Leonardville Village Council (Omaheke region); flagged for owner confirmation. Text fallback."
+    "note": "Text placeholder removed per owner instruction (2026-10-01): no verified official mark could be retrieved from the client's official domain (WAF 468 / JS challenge / DNS failure across three hunting rounds). Cell hidden until the owner supplies a mark."
   },
   {
     "name": "Total Namibia",

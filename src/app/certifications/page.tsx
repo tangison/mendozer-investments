@@ -77,7 +77,7 @@ export default function CertificationsPage() {
       </section>
 
       <ClientLogoGrid
-        body="Organisations we work with across government and industry. Marks without a verified logo file show their name until an official mark is cleared for use."
+        body="Organisations we work with across government and industry, shown with their verified official marks."
         eyebrow="Clients"
         id="clients"
         title="Trusted by Government & Industry Across Namibia"

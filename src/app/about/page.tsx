@@ -77,7 +77,7 @@ export default function AboutPage() {
       </section>
 
       <ClientLogoGrid
-        body="The fuller list of organisations the group serves across Namibia, from ministries and regional councils to schools, museums and industry. Organisations without a verified logo file show their name until an official mark is cleared for use."
+        body="The organisations the group serves across Namibia, from ministries and regional councils to schools, museums and industry, shown with their verified official marks."
         eyebrow="Clients"
         id="clients"
         title="Trusted by Government & Industry Across Namibia"

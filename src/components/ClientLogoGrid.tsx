@@ -8,40 +8,36 @@ type ClientLogoGridProps = {
   id?: string;
 };
 
-function LogoCell({ logo }: { logo: ProofLogo }) {
+type LogoWithFile = ProofLogo & { file: string };
+
+function LogoCell({ logo }: { logo: LogoWithFile }) {
   return (
     <li className={`logo-grid__cell ${logo.feature ? "logo-grid__cell--feature" : ""}`}>
-      {logo.file ? (
-        logo.href ? (
-          <a className="logo-grid__link" href={logo.href} rel="noopener noreferrer" target="_blank">
-            <Image
-              alt={`${logo.name} logo`}
-              className="logo-grid__image"
-              height={logo.height ?? 240}
-              loading="lazy"
-              sizes="(max-width: 700px) 46vw, (max-width: 1080px) 23vw, 15vw"
-              src={logo.file}
-              unoptimized={logo.file.endsWith(".svg")}
-              width={logo.width ?? 320}
-            />
-          </a>
-        ) : (
-          <div className="logo-grid__static">
-            <Image
-              alt={`${logo.name} logo`}
-              className="logo-grid__image"
-              height={logo.height ?? 240}
-              loading="lazy"
-              sizes="(max-width: 700px) 46vw, (max-width: 1080px) 23vw, 15vw"
-              src={logo.file}
-              unoptimized={logo.file.endsWith(".svg")}
-              width={logo.width ?? 320}
-            />
-          </div>
-        )
+      {logo.href ? (
+        <a className="logo-grid__link" href={logo.href} rel="noopener noreferrer" target="_blank">
+          <Image
+            alt={`${logo.name} logo`}
+            className="logo-grid__image"
+            height={logo.height ?? 240}
+            loading="lazy"
+            sizes="(max-width: 700px) 46vw, (max-width: 1080px) 23vw, 15vw"
+            src={logo.file}
+            unoptimized={logo.file.endsWith(".svg")}
+            width={logo.width ?? 320}
+          />
+        </a>
       ) : (
         <div className="logo-grid__static">
-          <span className="logo-grid__fallback">{logo.name}</span>
+          <Image
+            alt={`${logo.name} logo`}
+            className="logo-grid__image"
+            height={logo.height ?? 240}
+            loading="lazy"
+            sizes="(max-width: 700px) 46vw, (max-width: 1080px) 23vw, 15vw"
+            src={logo.file}
+            unoptimized={logo.file.endsWith(".svg")}
+            width={logo.width ?? 320}
+          />
         </div>
       )}
     </li>
@@ -49,9 +45,9 @@ function LogoCell({ logo }: { logo: ProofLogo }) {
 }
 
 /**
- * Static client grid: 2 columns mobile, 4 tablet, 6 desktop. Marks render in
- * the client-supplied order; organisations without a verified mark show their
- * name as styled text in the same cell rather than guessing a logo.
+ * Static client grid: 2 columns mobile, 4 tablet, 6 desktop. Only organisations
+ * with a verified official mark render here; per owner instruction (2026-10-01)
+ * organisations without a cleared logo file are omitted, no text placeholders.
  */
 export function ClientLogoGrid({ eyebrow, title, body, id }: ClientLogoGridProps) {
   return (

@@ -2297,4 +2297,4 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
 @media (hover: none) {
   .logo-grid__image { filter: none; opacity: 1; }
 }
-.logo-grid__fallback { color: var(--color-brand-navy); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; line-height: 1.45; text-align: center; text-transform: uppercase; }
+
