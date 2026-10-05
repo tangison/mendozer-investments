@@ -1096,6 +1096,7 @@ export const routes = [
   "/compliance",
   "/certifications",
   "/community",
+  "/careers",
   "/contact",
   "/blog",
   "/blog/henties-bay-school-2026",
