@@ -105,7 +105,7 @@ export async function POST(request: Request) {
   }
 
   if (isRateLimited(clientAddress(request))) {
-    return NextResponse.json({ ok: false, code: "RATE_LIMITED", message: "Too many enquiries were submitted from this connection. Please try again later or email contact@mendozer.com." }, { status: 429 });
+    return NextResponse.json({ ok: false, code: "RATE_LIMITED", message: "Too many enquiries were submitted from this connection. Please try again later or email info@mendozer.com." }, { status: 429 });
   }
 
   const resendKey = process.env.RESEND_API_KEY;
@@ -133,7 +133,7 @@ export async function POST(request: Request) {
   });
 
   if (!delivery.ok) {
-    return NextResponse.json({ ok: false, code: "DELIVERY_FAILED", message: "The enquiry could not be delivered. Please email contact@mendozer.com directly." }, { status: 502 });
+    return NextResponse.json({ ok: false, code: "DELIVERY_FAILED", message: "The enquiry could not be delivered. Please email info@mendozer.com directly." }, { status: 502 });
   }
 
   // A confirmation is best-effort. The group notification above remains the primary delivery event.

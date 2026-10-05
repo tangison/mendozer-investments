@@ -10,7 +10,7 @@ import { siteContent } from "@/content/site-content";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Contact Mendozer Investments: +264 85 777 7077 or contact@mendozer.com. Windhoek satellite office at Office 2, Continental Building, Judge JP Karuaihe Street.",
+    "Contact Mendozer Investments: +264 85 777 7077 or info@mendozer.com. Windhoek satellite office at Office 2, Continental Building, Judge JP Karuaihe Street.",
   alternates: { canonical: "/contact" },
   openGraph: {
     type: "website",

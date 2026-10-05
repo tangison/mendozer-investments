@@ -72,10 +72,10 @@ export function ContactForm() {
       }
 
       setSubmissionState("error");
-      setStatusMessage(result.message ?? "The enquiry could not be delivered. Please email contact@mendozer.com directly.");
+      setStatusMessage(result.message ?? "The enquiry could not be delivered. Please email info@mendozer.com directly.");
     } catch {
       setSubmissionState("error");
-      setStatusMessage("The enquiry could not be delivered. Please email contact@mendozer.com directly.");
+      setStatusMessage("The enquiry could not be delivered. Please email info@mendozer.com directly.");
     }
   }
 

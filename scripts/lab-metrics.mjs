@@ -11,6 +11,7 @@ import { chromium, devices } from "@playwright/test";
 const BASE = "http://127.0.0.1:3000";
 const PAGES = [
   ["/", "home"],
+  ["/careers", "careers"],
   ["/about", "about"],
   ["/certifications", "certifications"],
   ["/work", "work"],
