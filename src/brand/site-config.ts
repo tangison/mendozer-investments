@@ -1,10 +1,26 @@
+/**
+ * Resolve the canonical site URL.
+ * 1. NEXT_PUBLIC_SITE_URL (explicit owner override) wins.
+ * 2. On Vercel production builds the VERCEL_PROJECT_PRODUCTION_URL system
+ *    variable carries the real production domain (e.g. mendozer.com), so
+ *    sitemap URLs, canonicals and og:url never fall back to the preview host.
+ * 3. Otherwise (local dev, Tangison preview builds) keep the preview host.
+ */
+function resolveSiteUrl(): string {
+  if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
+  if (process.env.VERCEL_ENV === "production" && process.env.VERCEL_PROJECT_PRODUCTION_URL) {
+    return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  }
+  return "https://mendozer.tangison.com";
+}
+
 /** Centralized deployment configuration. Change the environment variable at cutover. */
 export const siteConfig = {
   name: "Mendozer Investments",
   shortName: "Mendozer",
   description: "Mendozer Investments runs six Namibian sectors under one team: construction, technology, cooling, logistics, energy and tourism. On site since 2009.",
   email: "info@mendozer.com",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://mendozer.tangison.com",
+  url: resolveSiteUrl(),
   locale: "en_NA",
   registration: "CC/2009/2399",
   vat: "04948459-015",

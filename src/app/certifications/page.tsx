@@ -17,7 +17,7 @@ const ClientLogoGrid = dynamic(
 export const metadata: Metadata = {
   title: "Proof of Work & Certifications",
   description:
-    "Selected reference letters, completion certificates and awards from our clients: Roads Authority, NamPower, PowerCom, NamPost, regional councils, town councils and more.",
+    "Reference letters, completion certificates and awards from Roads Authority, NamPower, PowerCom, NamPost, regional councils and town councils.",
   alternates: { canonical: "/certifications" },
 };
 

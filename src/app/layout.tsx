@@ -100,6 +100,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       { "@type": "PropertyValue", propertyID: "VAT number", value: siteConfig.vat },
     ],
   };
+  /** Site-name signal for search. SearchAction is omitted: Google retired the sitelinks search box in 2024. */
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: siteConfig.name,
+    url: siteConfig.url,
+    inLanguage: "en-NA",
+  };
 
   return (
     <html className={`${poppins.variable} ${redHatDisplay.variable}`} lang="en">
@@ -108,6 +116,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body>
         <script dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} type="application/ld+json" />
+        <script dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} type="application/ld+json" />
         <SkipLink />
         <SiteHeader />
         <main id="main-content" tabIndex={-1}>{children}</main>

@@ -64,6 +64,7 @@ export function SiteFooter() {
               <FooterAccordion title="Group">
                 <Link href="/about">About</Link>
                 <Link href="/profile">Company profile</Link>
+                <Link href="/careers">Careers</Link>
                 <Link href="/work">Work</Link>
                 <Link href="/compliance">Public records</Link>
                 <Link href="/certifications">Proof of work</Link>
@@ -159,6 +160,7 @@ export function SiteFooter() {
                 <Link href="/">Home</Link>
                 <Link href="/about">About</Link>
                 <Link href="/profile">Company profile</Link>
+                <Link href="/careers">Careers</Link>
                 <Link href="/services">Services</Link>
                 <Link href="/work">Work</Link>
                 <Link href="/updates">Updates</Link>
