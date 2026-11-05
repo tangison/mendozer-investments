@@ -37,6 +37,7 @@ const fallbackLastmod: Record<string, string> = {
   "/community": "2026-09-12",
   "/contact": "2026-09-12",
   "/blog": "2026-09-12",
+  "/blog/corner-spa": "2026-11-05",
   "/blog/henties-bay-school-2026": "2026-09-26",
   "/blog/mendozer-windhoek-satellite-office": "2026-09-12",
   "/privacy": "2026-09-12",

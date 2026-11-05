@@ -63,6 +63,8 @@ export type WorkContext = {
   body: string;
   media: MediaAsset;
   href: string;
+  /** Overrides the default "See this sector" card link label for non-sector entries. */
+  linkLabel?: string;
 };
 
 export type PublicUpdate = {
@@ -376,6 +378,7 @@ export const siteContent = {
     { label: "Services", href: "/services" },
     { label: "Sectors", href: "/sectors" },
     { label: "Work", href: "/work" },
+    { label: "Corner Spa", href: "/blog/corner-spa" },
     { label: "Proof of work", href: "/certifications" },
     { label: "Updates", href: "/updates" },
     { label: "Public records", href: "/compliance" },
@@ -972,6 +975,18 @@ export const workContexts: WorkContext[] = [
       focus: "50% 50%",
     },
   },
+  {
+    sector: "Venture",
+    title: "Corner Spa, Windhoek",
+    body: "Corner Spa is a concept by Mendozer Investments and the first project of Oryx Institute. Mendozer Investments is the financing partner and Oryx Institute leads operations.",
+    href: "/blog/corner-spa",
+    linkLabel: "Read the announcement",
+    media: {
+      src: "/images/corner-spa/hero-wide.webp",
+      alt: "Smooth wet stones and soft light at Corner Spa",
+      status: "real",
+    },
+  },
 ];
 
 export const publicUpdates: PublicUpdate[] = [
@@ -1099,6 +1114,7 @@ export const routes = [
   "/careers",
   "/contact",
   "/blog",
+  "/blog/corner-spa",
   "/blog/henties-bay-school-2026",
   "/blog/mendozer-windhoek-satellite-office",
   "/blog/namibia-heroes-day-2026",

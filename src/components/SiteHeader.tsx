@@ -21,6 +21,7 @@ const groupLinks = [
 
 const directLinks = [
   { label: "Work", href: "/work" },
+  { label: "Corner Spa", href: "/blog/corner-spa" },
   { label: "Community", href: "/community" },
   { label: "News", href: "/blog" },
 ] as const;

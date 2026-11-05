@@ -20,6 +20,17 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/corner-spa",
+    image: "/images/corner-spa/hero-wide.webp",
+    imageAlt: "Smooth wet stones and soft light at Corner Spa",
+    imageWidth: 1510,
+    imageHeight: 1041,
+    eyebrow: "Group news / 5 November 2026",
+    title: "Corner Spa is now online",
+    summary: "Corner Spa, a concept by Mendozer Investments and the first project of Oryx Institute, is now online. Massage, hot stone treatments, nails and waxing in Windhoek.",
+    cta: "Read the announcement",
+  },
+  {
     href: "/blog/henties-bay-school-2026",
     image: "/images/projects/construction/henties-bay-school-02.webp",
     imageAlt: "New classroom blocks with red-tiled roofs at the Mendozer school site in Henties Bay",

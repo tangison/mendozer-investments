@@ -74,6 +74,15 @@ export default function HomePage() {
       <HomeHero />
       <HeroFollowSection />
 
+      <section className="section home-announcement">
+        <div className="site-container home-announcement__inner">
+          <p className="eyebrow">Announcement</p>
+          <h2>Corner Spa is now online</h2>
+          <p>Corner Spa, a concept by Mendozer Investments and the first project of Oryx Institute, is now online.</p>
+          <Link className="text-link" href="/blog/corner-spa">Read the announcement <ArrowIcon /></Link>
+        </div>
+      </section>
+
       <section className="section introduction-section">
         <div className="site-container introduction-section__grid">
           <div className="introduction-section__copy">
