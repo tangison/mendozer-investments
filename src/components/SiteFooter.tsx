@@ -199,6 +199,7 @@ export function SiteFooter() {
             <a aria-label="Corner Spa website" href="https://spa.mendozer.com" rel="noopener noreferrer" target="_blank">Corner Spa</a>
             <a href={siteConfig.social.instagram} aria-label="Mendozer Investments on Instagram" rel="noopener noreferrer" target="_blank">Instagram</a>
             <a href={siteConfig.social.facebook} aria-label="Mendozer Investments on Facebook" rel="noopener noreferrer" target="_blank">Facebook</a>
+            <a href={siteConfig.social.linkedin} aria-label="Mendozer Investments on LinkedIn" rel="noopener noreferrer" target="_blank">LinkedIn</a>
             <a className="tangison-credit" href="https://studio.tangison.com" rel="noopener noreferrer" target="_blank">Made by Tangison Studio</a>
           </div>
         </div>

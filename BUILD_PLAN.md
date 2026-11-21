@@ -18,7 +18,7 @@ Original plan assumed a lean, rush-timeline brochure site. Scope is now upgraded
 
 - Static site, Next.js + Tailwind + Vercel
 - No auth, no payments, no database
-- Production canonical domain: `mendozer.com`; `mendozer.tangison.com` remains the staging hostname
+- Production canonical domain: `mendozer.com` (the former staging host was retired on 2026-11-09)
 - Model: Branded House, one site, dedicated sector pages (see `site-architecture.md`)
 
 ## Rejected alternatives

@@ -5,6 +5,7 @@ import { brandAssets } from "@/brand/assets";
 import { siteConfig } from "@/brand/site-config";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { AnnouncementPopup } from "@/components/AnnouncementPopup";
 import { SkipLink } from "@/components/SkipLink";
 import { UtilityWidgets } from "@/components/UtilityWidgets";
 
@@ -94,7 +95,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       siteConfig.phone.whatsapp,
       siteConfig.social.instagram,
       siteConfig.social.facebook,
+      siteConfig.social.linkedin,
     ],
+    contactPoint: [{ "@type": "ContactPoint", contactType: "Managing Director direct line", telephone: "+264 81 777 7077" }],
     identifier: [
       { "@type": "PropertyValue", propertyID: "Registration number", value: siteConfig.registration },
       { "@type": "PropertyValue", propertyID: "VAT number", value: siteConfig.vat },
@@ -122,6 +125,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <main id="main-content" tabIndex={-1}>{children}</main>
         <SiteFooter />
         <UtilityWidgets />
+        <AnnouncementPopup />
       </body>
     </html>
   );

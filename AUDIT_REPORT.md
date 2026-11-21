@@ -1,3 +1,5 @@
+> **2026-11-09 (owner directive):** the `mendozer.tangison.com` staging host is retired. `mendozer.com` is the only published host. Entries below are dated historical records and are kept as written.
+
 # Impeccable Technical Quality Audit: Mendozer Investments
 
 **Audit date:** 2026-08-10  

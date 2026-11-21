@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
     imageSizes: [32, 48, 64, 96, 128, 256, 384],
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
+  async rewrites() {
+    return [
+      {
+        /** Serve the packaged Shu Splush microsite at the clean URL the QR codes and flyers print. */
+        source: "/shu-splash",
+        destination: "/shu-splash/index.html",
+      },
+    ];
+  },
   async headers() {
     return [
       {
@@ -30,8 +39,14 @@ const nextConfig: NextConfig = {
         source: "/assets/:path*",
         headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
       },
+      {
+        /** Shu Splush campaign assets (fonts, posters, QR) are versioned by the package; cache hard. */
+        source: "/shu-splash/assets/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=86400, stale-while-revalidate=604800" }],
+      },
     ];
   },
 };
 
 export default nextConfig;
+

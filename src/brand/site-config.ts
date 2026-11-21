@@ -4,14 +4,16 @@
  * 2. On Vercel production builds the VERCEL_PROJECT_PRODUCTION_URL system
  *    variable carries the real production domain (e.g. mendozer.com), so
  *    sitemap URLs, canonicals and og:url never fall back to the preview host.
- * 3. Otherwise (local dev, Tangison preview builds) keep the preview host.
+ * 3. Otherwise (local dev, preview builds) fall back to the production host:
+ *    mendozer.com is the only published hostname since the staging host was
+ *    retired on 2026-11-09 (owner directive).
  */
 function resolveSiteUrl(): string {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
   if (process.env.VERCEL_ENV === "production" && process.env.VERCEL_PROJECT_PRODUCTION_URL) {
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
   }
-  return "https://mendozer.tangison.com";
+  return "https://mendozer.com";
 }
 
 /** Centralized deployment configuration. Change the environment variable at cutover. */
@@ -56,6 +58,7 @@ export const siteConfig = {
   social: {
     instagram: "https://www.instagram.com/mendozer_investments",
     facebook: "https://www.facebook.com/61593183452392",
+    linkedin: "https://www.linkedin.com/company/mendozer/",
   },
 } as const;
 

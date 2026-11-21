@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { siteConfig } from "@/brand/site-config";
 import { ArrowIcon } from "@/components/ArrowIcon";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -101,6 +102,34 @@ export default function CornerSpaPage() {
                   +264 81 623 4788
                 </a>
                 .
+              </p>
+            </Reveal>
+
+            <h2>What you will find on spa.mendozer.com</h2>
+            <Reveal>
+              <p>
+                The Corner Spa site carries the full treatment list: massage, hot stone treatments, nails and waxing. Each treatment is described in plain
+                language, with the current prices shown on the site rather than only at the counter, so you can decide before you book. There is also a
+                short gallery of the space, and every page links straight into booking.
+              </p>
+            </Reveal>
+
+            <h2>How booking works</h2>
+            <Reveal>
+              <p>
+                Booking runs on WhatsApp. You pick a treatment on spa.mendozer.com, press the booking button, and WhatsApp opens with your treatment
+                already filled in at <a aria-label="Book Corner Spa on WhatsApp" href="https://wa.me/264816234788" rel="noopener noreferrer" target="_blank">+264 81 623 4788</a>.
+                You can also skip the site and message that number directly. The spa confirms your time, and you arrive. No account, no forms.
+              </p>
+            </Reveal>
+
+            <h2>The group behind the spa</h2>
+            <Reveal>
+              <p>
+                Corner Spa sits inside a small family of Mendozer concepts. Mendozer Investments finances the concept; Oryx Institute leads operations; and
+                the technology partner Tangison builds and maintains the pages, under the two-year partnership that began in August 2026 (the{" "}
+                <Link href="/blog/tangison-technology-partnership">partnership announcement</Link> explains how that works). The newest concept is{" "}
+                <Link href="/shu-splash">Shu Splush</Link>, a sneaker-cleaning counter at Dorado Valley Shopping Centre.
               </p>
             </Reveal>
 

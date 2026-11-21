@@ -1,3 +1,5 @@
+> **2026-11-09 (owner directive):** the `mendozer.tangison.com` staging host is retired. `mendozer.com` is the only published host. Entries below are dated historical records and are kept as written.
+
 # PROOF.md: Mendozer Investments Build Record
 
 This is the material-action record for the implementation and release gate. No access token, secret, or credential is retained in this repository.

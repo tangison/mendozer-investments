@@ -2,7 +2,7 @@
 
 A production-ready, image-led corporate website for Mendozer Investments. Built with **Next.js, TypeScript, Tailwind, and Vercel** as a static-first site with a reusable Tangison multi-sector corporate starter architecture.
 
-> **Domain plan:** `mendozer.com` is the authorised production canonical hostname. `mendozer.tangison.com` remains the staging hostname for ongoing validation.
+> **Domain plan:** `mendozer.com` is the production canonical hostname and the only host this site publishes. The former `mendozer.tangison.com` staging host was retired on 2026-11-09 (owner directive).
 
 ## Quick start
 
@@ -152,15 +152,15 @@ CONTACT_TO_EMAIL=contact@mendozer.com
 NEXT_PUBLIC_SITE_URL=https://mendozer.com
 ```
 
-`NEXT_PUBLIC_SITE_URL` is the only canonical-domain setting. Production uses `https://mendozer.com`; previews and staging use `https://mendozer.tangison.com`.
+`NEXT_PUBLIC_SITE_URL` is the only canonical-domain setting. Production uses `https://mendozer.com`; local dev and previews fall back to `https://mendozer.com` as well.
 
 ### Vercel
 
 1. Import the private GitHub repository into the intended Vercel account/team or deploy via the Vercel CLI.
-2. Set `NEXT_PUBLIC_SITE_URL=https://mendozer.com` for production and `https://mendozer.tangison.com` for preview/staging.
+2. Set `NEXT_PUBLIC_SITE_URL=https://mendozer.com` (one setting; previews and local dev inherit it).
 3. Confirm production build success, canonical URLs, headers, mobile layout, metadata, redirects, and TLS.
 4. Keep `mendozer.com` as the canonical hostname and redirect `www.mendozer.com` to the apex hostname with HTTP 308.
-5. Retain `mendozer.tangison.com` as the staging hostname for validation and rollback checks.
+5. Validate and roll back on the production host `mendozer.com`; no staging hostname is published.
 6. Add Google and Bing verification values in Vercel when each platform provides its token, then submit `https://mendozer.com/sitemap.xml`.
 
 `vercel.json` includes conservative browser security headers. The site has no database or server-side secrets.

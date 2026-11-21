@@ -16,10 +16,10 @@ Full production build. Not a demo. Static site (no database, no auth, no CMS: co
 A large, high-production static corporate website for Mendozer Investments, covering the group homepage, About, six dedicated sector pages, a Community/Sponsorship page, and Contact: per `site-architecture.md`. Image-led design, minimal copy, bold typography carrying weight where images aren't present yet. Social sharing assets (Open Graph images, social banners) are part of this deliverable, not an afterthought.
 
 ## Domain / staging plan
-- **Now (build + demo phase):** `mendozer.tangison.com`: subdomain of the Tangison demo infrastructure, safe to iterate on publicly without touching the client's real domain
+- **Now (production phase):** `mendozer.com` is live and is the only published host; the former `mendozer.tangison.com` build/demo subdomain was retired on 2026-11-09 (owner directive)
 - **At launch (explicit authorization required):** cut over to `mendozer.com`: production domain, DNS controlled separately, do not connect without direct authorization
 - Contact form and any hardcoded email references: `contact@mendozer.com` (this stays the same across both phases: it's the real inbox, not a staging placeholder)
-- Do not hardcode `mendozer.tangison.com` into anything that would break on cutover: use an environment variable or config value for the canonical domain, so launch is a config change, not a rebuild
+- Do not hardcode any host into application code: the canonical domain comes from the environment and falls back to `https://mendozer.com`, so a host change stays a config change, not a rebuild
 
 ## Identity and asset rules
 - Use the exact supplied Mendozer logo files (`/svg`, `/png`, `/favicon`, `/webp`). Never regenerate the logo with an image model.
@@ -62,7 +62,7 @@ Mendozer already has a locked brand identity (`design-tokens.md`): colors, typog
 Reference example supplied for animation quality/pattern (staggered fade-up on load, clip-reveal headline words, custom easing): this is a pattern reference for *how* animation should feel, not literal content to reuse (that example's purple accent, video hero, and copy belong to a different brand). Apply the same discipline to Mendozer: staggered entrance animation on hero elements, restrained scroll motion elsewhere, full reduced-motion fallback. One primary motion engine, per `tangison-motion-master` and Ponytail discipline in the build prompt.
 
 ## Deployment authorization amendment
-Direct authorization has now been received to connect and deploy `mendozer.com` as the production canonical hostname. Retain `mendozer.tangison.com` for staging. Do not make unrelated DNS changes or remove the staging host.
+Direct authorization has been received to connect and deploy `mendozer.com` as the production canonical hostname. Owner directive 2026-11-09: `mendozer.tangison.com` is retired and `mendozer.com` is the only published host. Do not make unrelated DNS changes.
 
 ## Verification and release gate
 Before this project is considered ready for `tangison-web-build`:

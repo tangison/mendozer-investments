@@ -77,9 +77,18 @@ export default function HomePage() {
       <section className="section home-announcement">
         <div className="site-container home-announcement__inner">
           <p className="eyebrow">Announcement</p>
-          <h2>Corner Spa is now online</h2>
-          <p>Corner Spa, a concept by Mendozer Investments and the first project of Oryx Institute, is now online.</p>
-          <Link className="text-link" href="/blog/corner-spa">Read the announcement <ArrowIcon /></Link>
+          <div className="home-announcement__grid">
+            <div className="home-announcement__card">
+              <h2>Corner Spa is now online</h2>
+              <p>Corner Spa, a concept by Mendozer Investments and the first project of Oryx Institute, is now online.</p>
+              <Link className="text-link" href="/blog/corner-spa">Read the announcement <ArrowIcon /></Link>
+            </div>
+            <div className="home-announcement__card">
+              <h2>Shu Splush is open at Dorado Valley</h2>
+              <p>Sneaker cleaning at Dorado Valley Shopping Centre: 1 pair N$30, 2 pairs N$50. Black Friday: 1 pair N$25, 2 pairs N$40.</p>
+              <Link className="text-link" href="/shu-splash">See the Shu Splush page <ArrowIcon /></Link>
+            </div>
+          </div>
         </div>
       </section>
 

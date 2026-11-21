@@ -68,7 +68,8 @@ const appSources = [
   "src/app/sitemap.ts",
 ].map((path) => readFileSync(resolve(root, path), "utf8")).join("\n");
 if (!appSources.includes("NEXT_PUBLIC_SITE_URL")) failures.push("Canonical URL is not environment-configurable");
-if (appSources.includes("https://mendozer.com")) failures.push("Production mendozer.com was hardcoded into application sources");
+/** The staging host was retired on 2026-11-09 (owner directive); the production fallback in site-config is allowed. */
+if (appSources.includes("mendozer.tangison.com")) failures.push("Retired staging host mendozer.tangison.com must not appear in application sources");
 
 if (failures.length) {
   console.error("Content integrity checks failed:");

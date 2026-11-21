@@ -20,6 +20,28 @@ export const metadata: Metadata = {
 
 const posts = [
   {
+    href: "/blog/shu-splush-launch",
+    image: "/images/blog/shu-splush-promo.webp",
+    imageAlt: "Time to save: wash 2 pairs only N$50, Shu Splush flyer",
+    imageWidth: 1054,
+    imageHeight: 1400,
+    eyebrow: "Announcement / 21 November 2026",
+    title: "Shu Splush opens at Dorado Valley Shopping Centre",
+    summary: "Shu Splush, a sneaker-cleaning counter by Mendozer Investments, is open at Dorado Valley Shopping Centre. 1 pair N$30, 2 pairs N$50, Black Friday N$25 and N$40.",
+    cta: "Read the announcement",
+  },
+  {
+    href: "/blog/tangison-technology-partnership",
+    image: "/images/projects/technology/field-crew-01.webp",
+    imageAlt: "Technology sector field work by the Mendozer group",
+    imageWidth: 762,
+    imageHeight: 1032,
+    eyebrow: "Group news / 21 November 2026",
+    title: "Tangison and Mendozer: the technology partnership",
+    summary: "Tangison is Mendozer Investments' technology partner on a two-year agreement that began in August 2026, covering the group's websites, publishing workflow and standing checks.",
+    cta: "Read the partnership note",
+  },
+  {
     href: "/blog/corner-spa",
     image: "/images/corner-spa/hero-wide.webp",
     imageAlt: "Smooth wet stones and soft light at Corner Spa",

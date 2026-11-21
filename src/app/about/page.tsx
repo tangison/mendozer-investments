@@ -89,14 +89,70 @@ export default function AboutPage() {
           <div>
             <SectionHeading eyebrow={about.leadership.eyebrow} title={about.leadership.title} />
             <Reveal>
-              <div className="leadership-card">
-                <p className="eyebrow">Group leadership</p>
-                <h2>{about.leadership.name}</h2>
-                <p className="leadership-card__role">{about.leadership.role}</p>
-                <p>{about.leadership.note}</p>
+              <div className="leadership-card leadership-card--portrait">
+                <Image
+                  alt="Managing Director Johannes Negumbo"
+                  className="leadership-card__photo"
+                  height={683}
+                  sizes="(max-width: 760px) 100vw, 260px"
+                  src="/images/team/johannes-negumbo.webp"
+                  width={556}
+                />
+                <div>
+                  <p className="eyebrow">Group leadership</p>
+                  <h2>{about.leadership.name}</h2>
+                  <p className="leadership-card__role">{about.leadership.role}</p>
+                  <p>{about.leadership.note}</p>
+                </div>
               </div>
             </Reveal>
           </div>
+        </div>
+      </section>
+
+      <section className="section milestones-section">
+        <div className="site-container">
+          <SectionHeading
+            body="The group's record, from registration to the newest concepts. Each entry points at a verifiable document or published announcement."
+            eyebrow="Group history"
+            title="How the group got here."
+          />
+          <ol className="milestones-list">
+            <li key="m2009">
+              <Reveal>
+                <p className="milestones-list__year">2009</p>
+                <p>Mendozer Investments CC is registered (CC/2009/2399) and begins operating in Namibia.</p>
+              </Reveal>
+            </li>
+            <li key="m2012">
+              <Reveal>
+                <p className="milestones-list__year">2012</p>
+                <p>The project register opens: school, library and government-flat maintenance contracts in the Khomas and Kavango regions.</p>
+              </Reveal>
+            </li>
+            <li key="m2017">
+              <Reveal>
+                <p className="milestones-list__year">2017</p>
+                <p>The wholesale fuel distribution licence W/188/2017 is granted. It is listed in successive Government Gazette editions through 2026.</p>
+              </Reveal>
+            </li>
+            <li key="m2021">
+              <Reveal>
+                <p className="milestones-list__year">2021</p>
+                <p>Road maintenance programmes run for the Khorixas Town Council, Tsandi Village Council and Aranos Town Council.</p>
+              </Reveal>
+            </li>
+            <li key="m2026">
+              <Reveal>
+                <p className="milestones-list__year">2026</p>
+                <p>
+                  August: the Otjiwarongo Sports Bonanza fills Mokati Stadium, and the Tangison technology partnership begins. November: Corner Spa goes
+                  online at spa.mendozer.com as the first Oryx Institute project, and the Shu Splush sneaker-cleaning counter opens at Dorado Valley
+                  Shopping Centre.
+                </p>
+              </Reveal>
+            </li>
+          </ol>
         </div>
       </section>
 

@@ -52,6 +52,7 @@ export default function ContactPage() {
             <Reveal>
               <a className="contact-channel contact-channel--email" href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
             </Reveal>
+            <p className="sr-only">Managing Director direct line: +264 81 777 7077</p>
             <Reveal>
               <dl className="contact-legal">
                 <div>

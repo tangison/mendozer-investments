@@ -56,7 +56,7 @@ Help a Namibian investor, institutional buyer, commercial partner, or sector-spe
 - Add the exact Google Search Console verification value to Vercel as `GOOGLE_SITE_VERIFICATION`; the metadata layer will emit the required verification tag automatically.
 - Add the exact Bing Webmaster Tools verification value to Vercel as `BING_SITE_VERIFICATION`; the metadata layer will emit `msvalidate.01` automatically.
 - Submit `https://mendozer.com/sitemap.xml` to the authorised Google Search Console and Bing Webmaster Tools properties after the deployment using the production canonical environment is ready.
-- Keep `https://mendozer.tangison.com/sitemap.xml` available as a staging validation source, not the primary production submission.
+- Submit `https://mendozer.com/sitemap.xml` as the only sitemap source; no staging sitemap is published.
 - Check index coverage, crawl errors, canonical selection, and mobile usability monthly for the first quarter.
 - Track brand queries separately from sector-intent queries.
 - Use actual search queries to decide whether a service-area or sector expansion page is justified.

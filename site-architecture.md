@@ -1,6 +1,6 @@
 # SITE_ARCHITECTURE.md: Mendozer Investments
 
-**Staging domain:** mendozer.tangison.com (now, during build)
+**Staging domain:** none (retired 2026-11-09); mendozer.com is the only published host
 **Production domain:** mendozer.com (at launch, requires explicit authorization to connect)
 **Contact email (both phases):** contact@mendozer.com
 **Model:** Branded House: one site, one SEO authority pool, dedicated first-class pages per sector (not subdomains, not separate domains)
