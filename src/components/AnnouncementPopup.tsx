@@ -64,6 +64,13 @@ export function AnnouncementPopup() {
       if (focusables.length === 0) return;
       const first = focusables[0];
       const last = focusables[focusables.length - 1];
+      // Focus may land outside the panel (e.g. after a click on inert text);
+      // re-seat it at the panel edge instead of letting Tab escape.
+      if (!dialog.contains(document.activeElement)) {
+        event.preventDefault();
+        (event.shiftKey ? last : first).focus();
+        return;
+      }
       if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
         last.focus();

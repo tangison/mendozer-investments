@@ -94,8 +94,7 @@ export default function ReconciliationAndPrizePaymentsPage() {
               accountability, verification and an accurate audit trail for all payments relating to the event.
             </p>
             <p>
-              All outstanding reconciliations and supporting documentation should be submitted as soon as possible to facilitate the timely processing of
-              payments.
+              All outstanding reconciliations and supporting documents should be submitted as soon as possible so payments can be processed on time.
             </p>
           </Reveal>
 

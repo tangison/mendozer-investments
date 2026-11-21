@@ -109,7 +109,7 @@ export default function WorkPage() {
             title="Delivered work, 2012 to 2025."
           />
           <Reveal>
-            <div className="table-scroll">
+            <div className="table-scroll" role="region" aria-label="Project register, scrolls horizontally" tabIndex={0}>
               <table className="work-register">
                 <thead>
                   <tr>
@@ -130,7 +130,8 @@ export default function WorkPage() {
               </table>
             </div>
             <p className="work-register__note">
-              Transcribed from the Mendozer company profile. Client names and periods are reproduced as recorded there.
+              Transcribed from the Mendozer company profile. Client names and periods are reproduced as recorded there; obvious typographical errors are
+              corrected.
             </p>
           </Reveal>
         </div>

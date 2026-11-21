@@ -537,8 +537,9 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
 
 .site-footer__social {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-3) var(--space-4);
 }
 
 .site-footer__social a {
@@ -2460,11 +2461,6 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
   font-size: 1.4rem;
   line-height: 1;
   cursor: pointer;
-}
-
-.announce-popup__close:focus-visible {
-  outline: 3px solid var(--color-brand-sky, #4aa8ff);
-  outline-offset: 2px;
 }
 
 .announce-popup__later {

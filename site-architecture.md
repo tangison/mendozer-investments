@@ -2,7 +2,7 @@
 
 **Staging domain:** none (retired 2026-11-09); mendozer.com is the only published host
 **Production domain:** mendozer.com (at launch, requires explicit authorization to connect)
-**Contact email (both phases):** contact@mendozer.com
+**Contact email (both phases):** info@mendozer.com
 **Model:** Branded House: one site, one SEO authority pool, dedicated first-class pages per sector (not subdomains, not separate domains)
 
 ## Sitemap
@@ -18,7 +18,7 @@ mendozer.com/
 ├── /sectors/energy            Fuel & Energy Distribution
 ├── /sectors/tourism           Tourism & Agriculture
 ├── /community                 Sponsorships (Miss Teen Namibia, Otjiwarongo Sports Bonanza)
-└── /contact                   Contact form → contact@mendozer.com
+└── /contact                   Contact form → info@mendozer.com
 ```
 
 *Sector slugs above are placeholders pending final sector-list confirmation (4 vs 6: see onboarding form item 9). Update this file once confirmed.*
@@ -35,4 +35,4 @@ Each sector page is a full page, not a shared card: reinforces "one group, six r
 ## Notes
 - Group homepage stays high-level: it's the investor/partner-facing entry point. Depth lives on the sector pages.
 - Future option (not now): if one sector: most likely Tourism: outgrows the group site and needs its own consumer-facing brand/domain, that's a phase 2 decision, made after this site is live and proven.
-- Contact routing: all forms → contact@mendozer.com until Johannes confirms per-sector routing (if any) is needed.
+- Contact routing: all forms → info@mendozer.com until Johannes confirms per-sector routing (if any) is needed.

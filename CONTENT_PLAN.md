@@ -12,7 +12,7 @@
 2. Never invent testimonials, named clients, projects, certifications, staff biographies, metrics, operating hours, addresses, founding year, or social profiles.
 3. Caption every sector-context image generically: primarily **“Infrastructure work in progress.”**
 4. The six-sector model is a working configuration awaiting confirmation. Content source marks the service descriptions as placeholders.
-5. The verified public contact endpoint is `contact@mendozer.com`.
+5. The verified public contact endpoint is `info@mendozer.com`.
 6. A missing specific photograph uses a logged, ultra-minimal tangison-imagegen contextual master only after relevant supplied photography has been ruled out. Brand-gradient substitutes are not used.
 7. Generated visual captions must state their non-documentary status when a visitor could confuse them with real project or event coverage.
 
@@ -87,7 +87,7 @@ Each sector page has: hero, “What we do” service breakdown, visual “On sit
 
 | Element | Content | Status |
 |---|---|---|
-| Primary email | `contact@mendozer.com` | Verified by site architecture / system brief |
+| Primary email | `info@mendozer.com` | Verified by site architecture / system brief |
 | Registration/VAT | `CC/2009/2399`, `04948459-015` | Verified |
 | Contact hero | Reused supplied technology/site-context photograph | Real Mendozer-context photo; no abstract placeholder visual |
 | Enquiry fields | Name, organisation, email, phone, sector, message | Functional static-form configuration |

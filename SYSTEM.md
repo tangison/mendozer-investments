@@ -18,7 +18,7 @@ A large, high-production static corporate website for Mendozer Investments, cove
 ## Domain / staging plan
 - **Now (production phase):** `mendozer.com` is live and is the only published host; the former `mendozer.tangison.com` build/demo subdomain was retired on 2026-11-09 (owner directive)
 - **At launch (explicit authorization required):** cut over to `mendozer.com`: production domain, DNS controlled separately, do not connect without direct authorization
-- Contact form and any hardcoded email references: `contact@mendozer.com` (this stays the same across both phases: it's the real inbox, not a staging placeholder)
+- Contact form and any hardcoded email references: `info@mendozer.com` (this stays the same across both phases: it's the real inbox, not a staging placeholder)
 - Do not hardcode any host into application code: the canonical domain comes from the environment and falls back to `https://mendozer.com`, so a host change stays a config change, not a rebuild
 
 ## Identity and asset rules

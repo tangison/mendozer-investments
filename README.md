@@ -132,7 +132,7 @@ Configure the following **server-only** Vercel environment variables before trea
 ```bash
 RESEND_API_KEY=re_...
 CONTACT_FROM_EMAIL=website@your-verified-sending-domain.example
-CONTACT_TO_EMAIL=contact@mendozer.com
+CONTACT_TO_EMAIL=info@mendozer.com
 ```
 
 `CONTACT_FROM_EMAIL` must be a sender verified by the approved provider. Never place SMTP, Resend, or other delivery secrets in `NEXT_PUBLIC_*` variables. The in-memory limiter is a basic fallback only; use a durable rate-limit service before a production-domain launch.

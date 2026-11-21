@@ -49,7 +49,7 @@ Never place SMTP credentials, API keys, Vercel tokens, GitHub tokens, or other s
 
 ## Contact workflow
 
-The contact form posts to the server-side `/api/contact` route. The route validates required data, trims control characters, uses a honeypot, applies a basic in-memory rate limit, sends the group notification through Resend when configured, and attempts a visitor confirmation email. If server delivery is not configured, the form opens a prepared mailto fallback addressed to `contact@mendozer.com`.
+The contact form posts to the server-side `/api/contact` route. The route validates required data, trims control characters, uses a honeypot, applies a basic in-memory rate limit, sends the group notification through Resend when configured, and attempts a visitor confirmation email. If server delivery is not configured, the form opens a prepared mailto fallback addressed to `info@mendozer.com`.
 
 ## Utility controls
 

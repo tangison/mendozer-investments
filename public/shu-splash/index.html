@@ -97,7 +97,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3rem);margin:0 0 14px}
 .fcard h3{margin:0 0 6px;font-size:1.05rem}
 .fcard p{margin:0;color:var(--muted);font-size:.93rem}
 @media (max-width:900px){.feat{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.feat{grid-template-columns:1fr}.price-grid{gap:12px}.pcard,.bcard{padding:24px 10px}.bf .price-grid{grid-template-columns:1fr}.find img{max-width:min(360px,100%)}}
+@media (max-width:520px){.feat{grid-template-columns:1fr}.price-grid{gap:12px}.pcard,.bcard{padding:24px 10px}.bf .price-grid{grid-template-columns:1fr}}
 /* gallery */
 .gal{columns:3 260px;column-gap:18px}
 .gal a{display:block;margin:0 0 18px;border-radius:22px;overflow:hidden;box-shadow:0 12px 30px rgba(20,60,140,.12);break-inside:avoid;background:#fff}
@@ -108,7 +108,7 @@ h2{font-size:clamp(1.9rem,4.6vw,3rem);margin:0 0 14px}
 .find h2{font-size:clamp(2.2rem,7vw,4.6rem)}
 .find .addr{font-size:clamp(1.1rem,2.6vw,1.5rem);font-weight:700;margin:0 0 24px;color:#e8f1ff}
 .find img{border-radius:26px;box-shadow:0 26px 50px rgba(2,20,70,.4);border:6px solid rgba(255,255,255,.9)}
-@media (max-width:860px){.find .wrap{grid-template-columns:1fr}.find img{max-width:360px;margin-inline:auto}}
+@media (max-width:860px){.find .wrap{grid-template-columns:minmax(0,1fr)}.find img{width:min(360px,100%);max-width:100%;margin-inline:auto}}
 /* contact */
 .contact .wrap{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
 .contact .box{background:#fff;border:1px solid var(--line);border-radius:28px;padding:30px;box-shadow:0 14px 34px rgba(20,60,140,.08)}
@@ -334,6 +334,7 @@ var BF_DELAY_MS = 2500;
       var f = modal.querySelectorAll('a[href],button:not([hidden])');
       if (!f.length) return;
       var first = f[0], last = f[f.length - 1];
+      if (!modal.contains(document.activeElement)) { e.preventDefault(); (e.shiftKey ? last : first).focus(); return; }
       if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     }
