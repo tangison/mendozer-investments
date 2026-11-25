@@ -81,7 +81,7 @@ export function ContactForm() {
 
   return (
     <form className="contact-form" onSubmit={handleSubmit}>
-      <div className="contact-form__honeypot">
+      <div aria-hidden="true" className="contact-form__honeypot">
         <label>
           <span>Website</span>
           <input autoComplete="off" name="website" tabIndex={-1} type="text" />
