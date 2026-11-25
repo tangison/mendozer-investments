@@ -116,6 +116,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html className={`${poppins.variable} ${redHatDisplay.variable}`} lang="en">
       <head>
         <link fetchPriority="high" href="/videos/hero/desert-loop-poster.webp" rel="preload" as="image" />
+        {/* Pre-paint motion gate: reveal states in globals.css only apply under
+            .motion-ready, so no-JS and reduced-motion visitors always see content. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: 'try{if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("motion-ready")}catch(e){}',
+          }}
+        />
       </head>
       <body>
         <script dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} type="application/ld+json" />

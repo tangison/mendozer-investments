@@ -2563,3 +2563,34 @@ h3 { font-size: clamp(1.45rem, 2.5vw, 2.4rem); }
   color: var(--color-text-body);
   font-size: 0.8rem;
 }
+
+/* == Scroll life (owner-directed, 2026-11-25) =================================
+   One-shot reveal states driven by the shared IntersectionObserver in
+   Reveal.tsx. Hidden states only exist under html.motion-ready (set pre-paint
+   in layout.tsx, skipped for prefers-reduced-motion), so content is never
+   trapped from no-JS visitors. Transform/opacity only; never layout. */
+html.motion-ready [data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.65s var(--ease-out-expressive) var(--reveal-delay, 0ms),
+    transform 0.65s var(--ease-out-expressive) var(--reveal-delay, 0ms);
+}
+html.motion-ready [data-reveal="fade"] { transform: none; }
+html.motion-ready [data-reveal="left"] { transform: translateX(-18px); }
+html.motion-ready [data-reveal="right"] { transform: translateX(18px); }
+html.motion-ready [data-reveal="scale"] { transform: scale(0.986); }
+html.motion-ready [data-reveal].is-in { opacity: 1; transform: none; }
+
+/* The eyebrow's blue tick draws in as its section lands. */
+html.motion-ready .eyebrow::after {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s var(--ease-out-expressive) 0.15s;
+}
+html.motion-ready .is-in .eyebrow::after { transform: scaleX(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  html.motion-ready [data-reveal] { opacity: 1; transform: none; transition: none; }
+  html.motion-ready .eyebrow::after { transform: none; transition: none; }
+}

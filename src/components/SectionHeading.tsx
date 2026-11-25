@@ -14,11 +14,11 @@ export function SectionHeading({ eyebrow, title, body, inverse = false, align = 
       <Reveal>
         <p className="eyebrow">{eyebrow}</p>
       </Reveal>
-      <Reveal>
+      <Reveal delay={90}>
         <h2>{title}</h2>
       </Reveal>
       {body ? (
-        <Reveal>
+        <Reveal delay={180}>
           <p className="section-heading__body">{body}</p>
         </Reveal>
       ) : null}

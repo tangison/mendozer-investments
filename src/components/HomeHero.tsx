@@ -1,11 +1,15 @@
 import Link from "next/link";
 import { ArrowIcon } from "@/components/ArrowIcon";
+import { HeroParallax } from "@/components/HeroParallax";
+import { Reveal } from "@/components/Reveal";
 import { siteContent } from "@/content/site-content";
 
 /**
  * Full-bleed Namib landscape hero.
  * A raw img is the LCP node so first paint does not wait on Next/Image hydration.
  * The desert loop starts after the first scroll or pointer, not during first load.
+ * Scroll life: copy enters in a short stagger on load; the media plane drifts
+ * down at a slower rate than the copy for gentle depth (HeroParallax).
  */
 export function HomeHero() {
   const { hero } = siteContent;
@@ -14,6 +18,7 @@ export function HomeHero() {
 
   return (
     <section aria-labelledby="hero-title" className="home-hero">
+      <HeroParallax />
       <div aria-hidden="true" className="home-hero__media">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -40,21 +45,31 @@ export function HomeHero() {
 
       <div className="home-hero__inner">
         <div className="home-hero__copy">
-          <h1 id="hero-title">
-            {hero.title}
-          </h1>
-          <p className="home-hero__subtext">{hero.subtext}</p>
-          <div className="home-hero__actions">
-            <Link className="home-hero__cta" href={hero.primaryCta.href}>
-              <span>{hero.primaryCta.label}</span>
-              <ArrowIcon />
-            </Link>
-            <Link className="home-hero__cta home-hero__cta--ghost" href={hero.secondaryCta.href}>
-              <span>{hero.secondaryCta.label}</span>
-              <ArrowIcon />
-            </Link>
-          </div>
-          {hero.proofBadge ? <p className="home-hero__proof">{hero.proofBadge}</p> : null}
+          <Reveal delay={80}>
+            <h1 id="hero-title">
+              {hero.title}
+            </h1>
+          </Reveal>
+          <Reveal delay={200}>
+            <p className="home-hero__subtext">{hero.subtext}</p>
+          </Reveal>
+          <Reveal delay={320}>
+            <div className="home-hero__actions">
+              <Link className="home-hero__cta" href={hero.primaryCta.href}>
+                <span>{hero.primaryCta.label}</span>
+                <ArrowIcon />
+              </Link>
+              <Link className="home-hero__cta home-hero__cta--ghost" href={hero.secondaryCta.href}>
+                <span>{hero.secondaryCta.label}</span>
+                <ArrowIcon />
+              </Link>
+            </div>
+          </Reveal>
+          {hero.proofBadge ? (
+            <Reveal delay={440}>
+              <p className="home-hero__proof">{hero.proofBadge}</p>
+            </Reveal>
+          ) : null}
         </div>
         <div aria-hidden="true" className="home-hero__meta">
           <span>One team</span>
